@@ -46,10 +46,12 @@ module.exports = {
     'react/no-this-in-sfc': 0,
     'react/prop-types': 0,
     'react/display-name': 'off',
-    "react/jsx-uses-react": "off", // React ^16.14.0 以及 V17 以后将支持新的语法转换器
-    "react/react-in-jsx-scope": "off", // 新的语法转换器不必引入 React
+    'react/jsx-uses-react': 'off', // React ^16.14.0 以及 V17 以后将支持新的语法转换器
+    'react/react-in-jsx-scope': 'off', // 新的语法转换器不必引入 React
     // typescript
-    '@typescript-eslint/no-unused-vars': 'warn'
+    '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/no-explicit-any': 'warn',
+    '@typescript-eslint/no-this-alias': 'off'
 
   }
 }
