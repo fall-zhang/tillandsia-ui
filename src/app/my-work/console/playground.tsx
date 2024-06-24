@@ -47,10 +47,10 @@ console.info(
         </defs>
         <rect width="750" height="500" fill="url(#grad)" />
         <text text-anchor="end" font-size="50" x="725" y="125">
-    holy shit
+          welcome to
         </text>
         <text text-anchor="end" font-size="50" x="725" y="175">
-    your like
+         console playground
         </text>
       </svg>
     </>
