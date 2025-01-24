@@ -1,11 +1,11 @@
 import type { FC } from 'react'
 const WorkSection:FC<{
   label:string
-  defail:string
+  detail:string
   href:string
 }> = ({
   label,
-  defail
+  detail
 }) => {
   return <a
     href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
@@ -16,11 +16,11 @@ const WorkSection:FC<{
     <h2 className={'mb-3 text-2xl font-semibold'}>
       {label}{' '}
       <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
+        -&gt;
       </span>
     </h2>
     <p className={'m-0 max-w-[30ch] text-sm opacity-50'}>
-      {defail}
+      {detail}
     </p>
   </a>
 }
