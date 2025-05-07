@@ -1,1 +1,0 @@
-import MyLogo from './MyLogo1'
