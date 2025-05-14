@@ -135,7 +135,7 @@ export default function Component () {
   const id = useId()
 
   // Define the number of ticks
-  const tick_count = 40
+  const tickCount = 40
   // Find the min and max values across all items
   const minValue = Math.min(...items.map((item) => item.price))
   const maxValue = Math.max(...items.map((item) => item.price))
@@ -149,10 +149,10 @@ export default function Component () {
   } = useSliderWithInput({ minValue, maxValue, initialValue: [200, 780] }) // set initialValue: [minValue, maxValue] to show all items by default
 
   // Calculate the price step based on the min and max prices
-  const priceStep = (maxValue - minValue) / tick_count
+  const priceStep = (maxValue - minValue) / tickCount
 
   // Calculate item counts for each price range
-  const itemCounts = Array(tick_count)
+  const itemCounts = Array(tickCount)
     .fill(0)
     .map((_, tick) => {
       const rangeMin = minValue + tick * priceStep

@@ -245,19 +245,19 @@ const DraggableTableHeader = ({
     width: header.column.getSize(),
     zIndex: isDragging ? 1 : 0
   }
-
+  let sortState:'none' | 'ascending' | 'descending' = 'none'
+  const headSort = header.column.getIsSorted()
+  if (headSort === 'asc') {
+    sortState = 'ascending'
+  } else if (headSort === 'desc') {
+    sortState = 'descending'
+  }
   return (
     <TableHead
       ref={setNodeRef}
       className="before:bg-border relative h-10 border-t before:absolute before:inset-y-0 before:start-0 before:w-px first:before:bg-transparent"
       style={style}
-      aria-sort={
-        header.column.getIsSorted() === 'asc'
-          ? 'ascending'
-          : header.column.getIsSorted() === 'desc'
-            ? 'descending'
-            : 'none'
-      }
+      aria-sort={sortState}
     >
       <div className="flex items-center justify-start gap-0.5">
         <Button

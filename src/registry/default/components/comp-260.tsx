@@ -7,12 +7,12 @@ import { Label } from '@/registry/default/ui/label'
 import { Slider } from '@/registry/default/ui/slider'
 
 export default function Component () {
-  const min_price = 5
-  const max_price = 1240
-  const [value, setValue] = useState([min_price, max_price])
+  const minPrice = 5
+  const maxPrice = 1240
+  const [value, setValue] = useState([minPrice, maxPrice])
 
   const formatPrice = (price: number) => {
-    return price === max_price
+    return price === maxPrice
       ? `$${price.toLocaleString()}+`
       : `$${price.toLocaleString()}`
   }
@@ -26,8 +26,8 @@ export default function Component () {
         <Slider
           value={value}
           onValueChange={setValue}
-          min={min_price}
-          max={max_price}
+          min={minPrice}
+          max={maxPrice}
           aria-label="Price range slider"
         />
         <Button variant="outline">Go</Button>

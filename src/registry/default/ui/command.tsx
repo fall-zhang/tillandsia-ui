@@ -60,7 +60,6 @@ function CommandInput ({
   return (
     <div
       className="border-input flex items-center border-b px-5"
-      cmdk-input-wrapper=""
     >
       <SearchIcon size={20} className="text-muted-foreground/80 me-3" />
       <CommandPrimitive.Input

@@ -33,7 +33,7 @@ export default function Component () {
     e?.preventDefault?.()
 
     inputRef.current?.select()
-    await new Promise((r) => setTimeout(r, 1_00))
+    await new Promise((resolve) => { setTimeout(resolve, 1_00) })
 
     setHasGuessed(value === CORRECT_CODE)
 

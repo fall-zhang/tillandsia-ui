@@ -13,6 +13,7 @@ type StepperContextValue = {
   setActiveStep: (step: number) => void
   orientation: 'horizontal' | 'vertical'
 }
+type StepState = 'active' | 'completed' | 'inactive' | 'loading'
 
 type StepItemContextValue = {
   step: number
@@ -21,7 +22,6 @@ type StepItemContextValue = {
   isLoading: boolean
 }
 
-type StepState = 'active' | 'completed' | 'inactive' | 'loading'
 
 // Contexts
 const StepperContext = createContext<StepperContextValue | undefined>(undefined)
@@ -115,12 +115,18 @@ function StepperItem ({
 }: StepperItemProps) {
   const { activeStep } = useStepper()
 
-  const state: StepState =
-    completed || step < activeStep
-      ? 'completed'
-      : activeStep === step
-        ? 'active'
-        : 'inactive'
+  let state: StepState = 'inactive'
+  if (completed || step < activeStep) {
+    state = 'completed'
+  } else if (activeStep === step) {
+    state = 'active'
+  }
+  // const state: StepState =
+  //   completed || step < activeStep
+  //     ? 'completed'
+  //     : activeStep === step
+  //       ? 'active'
+  //       : 'inactive'
 
   const isLoading = loading && step === activeStep
 

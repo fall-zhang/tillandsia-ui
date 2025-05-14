@@ -12,7 +12,7 @@ import {
   AudioLines,
   LayoutGrid
 } from 'lucide-react'
-import useDebounce from '@/hooks/use-debounce'
+import { useDebounceValue } from 'usehooks-ts'
 
 interface Action {
     id: string;
@@ -82,7 +82,7 @@ function ActionSearchBar ({
   const [isFocused, setIsFocused] = useState(defaultOpen)
   const [isTyping, setIsTyping] = useState(false)
   const [selectedAction, setSelectedAction] = useState<Action | null>(null)
-  const debouncedQuery = useDebounce(query, 200)
+  const [debouncedQuery, setDebouncedQuery] = useDebounceValue(query, 200)
 
   useEffect(() => {
     if (!isFocused) {
@@ -166,7 +166,7 @@ function ActionSearchBar ({
             className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-1 block"
             htmlFor="search"
           >
-                        Search Commands
+            Search Commands
           </label>
           <div className="relative">
             <Input

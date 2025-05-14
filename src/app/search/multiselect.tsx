@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 'use client'
 
 import * as React from 'react'
@@ -314,7 +315,7 @@ const MultipleSelector = ({
       }
     }
 
-    void exec()
+    exec()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedSearchTerm, groupBy, open, triggerSearchOnFocus])
 
@@ -340,7 +341,7 @@ const MultipleSelector = ({
       }
     }
 
-    void exec()
+    exec()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedSearchTerm, groupBy, open, triggerSearchOnFocus])
 

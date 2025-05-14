@@ -143,17 +143,18 @@ export default function Component () {
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id} className="bg-muted/50">
               {headerGroup.headers.map((header) => {
+                let sortState:'none' | 'ascending' | 'descending' = 'none'
+                const headSort = header.column.getIsSorted()
+                if (headSort === 'asc') {
+                  sortState = 'ascending'
+                } else if (headSort === 'desc') {
+                  sortState = 'descending'
+                }
                 return (
                   <TableHead
                     key={header.id}
                     className="relative h-10 border-t select-none last:[&>.cursor-col-resize]:opacity-0"
-                    aria-sort={
-                      header.column.getIsSorted() === 'asc'
-                        ? 'ascending'
-                        : header.column.getIsSorted() === 'desc'
-                          ? 'descending'
-                          : 'none'
-                    }
+                    aria-sort={sortState}
                     {...{
                       colSpan: header.colSpan,
                       style: {
@@ -161,8 +162,9 @@ export default function Component () {
                       }
                     }}
                   >
-                    {header.isPlaceholder ? null : (
-                      <div
+                    {header.isPlaceholder
+                      ? null
+                      : (<div
                         className={cn(
                           header.column.getCanSort() &&
                             'flex h-full cursor-pointer items-center justify-between gap-2 select-none'
@@ -203,7 +205,7 @@ export default function Component () {
                           )
                         }[header.column.getIsSorted() as string] ?? null}
                       </div>
-                    )}
+                      )}
                     {header.column.getCanResize() && (
                       <div
                         {...{
