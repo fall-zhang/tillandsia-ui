@@ -20,7 +20,7 @@ export default function Card ({ card }: CardProps) {
       <figure className="bg-border/50 relative -m-px rounded-xl border p-4">
         <Image
           className="rounded-md"
-          src={`/layouts/app-${card.id}.png`}
+          src={`/img/layouts/app-${card.id}.png`}
           alt={card.title}
           width={1120}
           height={card.imgHeight}

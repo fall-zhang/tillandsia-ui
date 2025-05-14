@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { categories } from '@/config/components-fall'
-import { SearchButton } from './_components/search-button'
+import { SearchComp } from './_components/search-comp'
 
 import { SubscribeBottom } from '@/components/subscribe-form'
 import { NewIcon } from '@/components/icons/new-icon'
@@ -16,7 +16,7 @@ export default function Page () {
         <p className="text-muted-foreground mb-8 text-lg">
           一个复制粘贴即可用的 UI 集合，tailwind + css
         </p>
-        <SearchButton />
+        <SearchComp />
       </div>
       <div className="relative my-16">
         <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
