@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import { useId } from "react"
-import { CreditCardIcon } from "lucide-react"
-import { usePaymentInputs } from "react-payment-inputs"
+import { useId } from 'react'
+import { CreditCardIcon } from 'lucide-react'
+import { usePaymentInputs } from 'react-payment-inputs'
 
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+import { Input } from '@/registry/default/ui/input'
+import { Label } from '@/registry/default/ui/label'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   const { getCardNumberProps } = usePaymentInputs()
 
@@ -29,12 +29,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Built with{" "}
+        Built with{' '}
         <a
           className="hover:text-foreground underline"
           href="https://github.com/medipass/react-payment-inputs"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React Payment Inputs
         </a>

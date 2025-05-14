@@ -1,11 +1,11 @@
 import {
   Avatar,
   AvatarFallback,
-  AvatarImage,
-} from "@/registry/default/ui/avatar"
-import { Badge } from "@/registry/default/ui/badge"
+  AvatarImage
+} from '@/registry/default/ui/avatar'
+import { Badge } from '@/registry/default/ui/badge'
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="relative">
       <Avatar className="rounded-md">

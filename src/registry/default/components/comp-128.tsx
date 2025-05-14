@@ -1,8 +1,8 @@
-import { ChevronRightIcon } from "lucide-react"
+import { ChevronRightIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   return (
     <Button className="group h-auto gap-4 py-3 text-left" variant="outline">
       <div className="space-y-1">

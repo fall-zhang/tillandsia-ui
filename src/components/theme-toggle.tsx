@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { useId, useState } from "react"
-import { RiMoonClearLine, RiSunLine } from "@remixicon/react"
-import { useTheme } from "next-themes"
+import { useId, useState } from 'react'
+import { RiMoonClearLine, RiSunLine } from '@remixicon/react'
+import { useTheme } from 'next-themes'
 
-export default function ThemeToggle() {
+export default function ThemeToggle () {
   const id = useId()
   const { theme, setTheme } = useTheme()
   const [system, setSystem] = useState(false)
@@ -12,19 +12,19 @@ export default function ThemeToggle() {
   const smartToggle = () => {
     /* The smart toggle by @nrjdalal */
     const prefersDarkScheme = window.matchMedia(
-      "(prefers-color-scheme: dark)"
+      '(prefers-color-scheme: dark)'
     ).matches
-    if (theme === "system") {
-      setTheme(prefersDarkScheme ? "light" : "dark")
+    if (theme === 'system') {
+      setTheme(prefersDarkScheme ? 'light' : 'dark')
       setSystem(false)
     } else if (
-      (theme === "light" && !prefersDarkScheme) ||
-      (theme === "dark" && prefersDarkScheme)
+      (theme === 'light' && !prefersDarkScheme) ||
+      (theme === 'dark' && prefersDarkScheme)
     ) {
-      setTheme(theme === "light" ? "dark" : "light")
+      setTheme(theme === 'light' ? 'dark' : 'light')
       setSystem(false)
     } else {
-      setTheme("system")
+      setTheme('system')
       setSystem(true)
     }
   }

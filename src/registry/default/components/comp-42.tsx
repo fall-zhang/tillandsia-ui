@@ -1,27 +1,27 @@
-"use client"
+'use client'
 
-import { CalendarIcon } from "lucide-react"
+import { CalendarIcon } from 'lucide-react'
 import {
   Button,
   DateRangePicker,
   Dialog,
   Group,
   Label,
-  Popover,
-} from "react-aria-components"
+  Popover
+} from 'react-aria-components'
 
-import { cn } from "@/registry/default/lib/utils"
-import { RangeCalendar } from "@/registry/default/ui/calendar-rac"
-import { DateInput, dateInputStyle } from "@/registry/default/ui/datefield-rac"
+import { cn } from '@/registry/default/lib/utils'
+import { RangeCalendar } from '@/registry/default/ui/calendar-rac'
+import { DateInput, dateInputStyle } from '@/registry/default/ui/datefield-rac'
 
-export default function Component() {
+export default function Component () {
   return (
     <DateRangePicker className="*:not-first:mt-2">
       <Label className="text-foreground text-sm font-medium">
         Date range picker
       </Label>
       <div className="flex">
-        <Group className={cn(dateInputStyle, "pe-9")}>
+        <Group className={cn(dateInputStyle, 'pe-9')}>
           <DateInput slot="start" unstyled />
           <span aria-hidden="true" className="text-muted-foreground/70 px-2">
             -
@@ -45,12 +45,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Built with{" "}
+        Built with{' '}
         <a
           className="hover:text-foreground underline"
           href="https://react-spectrum.adobe.com/react-aria/DateRangePicker.html"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React Aria
         </a>

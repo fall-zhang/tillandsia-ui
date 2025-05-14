@@ -1,17 +1,17 @@
-import { useId } from "react"
+import { useId } from 'react'
 
-import { Badge } from "@/registry/default/ui/badge"
-import { Label } from "@/registry/default/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
+import { Badge } from '@/registry/default/ui/badge'
+import { Label } from '@/registry/default/ui/label'
+import { RadioGroup, RadioGroupItem } from '@/registry/default/ui/radio-group'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
 
   const items = [
-    { value: "1", label: "Hobby", price: "$9/mo" },
-    { value: "2", label: "Plus", price: "$29/mo" },
-    { value: "3", label: "Team", price: "$49/mo" },
-    { value: "4", label: "Enterprise", price: "Custom" },
+    { value: '1', label: 'Hobby', price: '$9/mo' },
+    { value: '2', label: 'Plus', price: '$29/mo' },
+    { value: '3', label: 'Team', price: '$49/mo' },
+    { value: '4', label: 'Enterprise', price: 'Custom' }
   ]
 
   return (
@@ -41,7 +41,7 @@ export default function Component() {
                   htmlFor={`${id}-${item.value}`}
                 >
                   {item.label}
-                  {item.value === "2" && (
+                  {item.value === '2' && (
                     <Badge className="ms-2 -mt-1">Popular</Badge>
                   )}
                 </Label>

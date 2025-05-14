@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 import {
   ColumnDef,
   flexRender,
@@ -9,41 +9,41 @@ import {
   getSortedRowModel,
   PaginationState,
   SortingState,
-  useReactTable,
-} from "@tanstack/react-table"
+  useReactTable
+} from '@tanstack/react-table'
 import {
   ChevronDownIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
-  ChevronUpIcon,
-} from "lucide-react"
+  ChevronUpIcon
+} from 'lucide-react'
 
-import { usePagination } from "@/registry/default/hooks/use-pagination"
-import { cn } from "@/registry/default/lib/utils"
-import { Badge } from "@/registry/default/ui/badge"
-import { Button } from "@/registry/default/ui/button"
-import { Checkbox } from "@/registry/default/ui/checkbox"
+import { usePagination } from '@/registry/default/hooks/use-pagination'
+import { cn } from '@/registry/default/lib/utils'
+import { Badge } from '@/registry/default/ui/badge'
+import { Button } from '@/registry/default/ui/button'
+import { Checkbox } from '@/registry/default/ui/checkbox'
 import {
   Pagination,
   PaginationContent,
   PaginationEllipsis,
-  PaginationItem,
-} from "@/registry/default/ui/pagination"
+  PaginationItem
+} from '@/registry/default/ui/pagination'
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
-} from "@/registry/default/ui/select"
+  SelectValue
+} from '@/registry/default/ui/select'
 import {
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableHeader,
-  TableRow,
-} from "@/registry/default/ui/table"
+  TableRow
+} from '@/registry/default/ui/table'
 
 type Item = {
   id: string
@@ -51,18 +51,18 @@ type Item = {
   email: string
   location: string
   flag: string
-  status: "Active" | "Inactive" | "Pending"
+  status: 'Active' | 'Inactive' | 'Pending'
   balance: number
 }
 
 const columns: ColumnDef<Item>[] = [
   {
-    id: "select",
+    id: 'select',
     header: ({ table }) => (
       <Checkbox
         checked={
           table.getIsAllPageRowsSelected() ||
-          (table.getIsSomePageRowsSelected() && "indeterminate")
+          (table.getIsSomePageRowsSelected() && 'indeterminate')
         }
         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
         aria-label="Select all rows"
@@ -76,82 +76,82 @@ const columns: ColumnDef<Item>[] = [
       />
     ),
     size: 28,
-    enableSorting: false,
+    enableSorting: false
   },
   {
-    header: "Name",
-    accessorKey: "name",
+    header: 'Name',
+    accessorKey: 'name',
     cell: ({ row }) => (
-      <div className="font-medium">{row.getValue("name")}</div>
+      <div className="font-medium">{row.getValue('name')}</div>
     ),
-    size: 180,
+    size: 180
   },
   {
-    header: "Email",
-    accessorKey: "email",
-    size: 200,
+    header: 'Email',
+    accessorKey: 'email',
+    size: 200
   },
   {
-    header: "Location",
-    accessorKey: "location",
+    header: 'Location',
+    accessorKey: 'location',
     cell: ({ row }) => (
       <div>
-        <span className="text-lg leading-none">{row.original.flag}</span>{" "}
-        {row.getValue("location")}
+        <span className="text-lg leading-none">{row.original.flag}</span>{' '}
+        {row.getValue('location')}
       </div>
     ),
-    size: 180,
+    size: 180
   },
   {
-    header: "Status",
-    accessorKey: "status",
+    header: 'Status',
+    accessorKey: 'status',
     cell: ({ row }) => (
       <Badge
         className={cn(
-          row.getValue("status") === "Inactive" &&
-            "bg-muted-foreground/60 text-primary-foreground"
+          row.getValue('status') === 'Inactive' &&
+            'bg-muted-foreground/60 text-primary-foreground'
         )}
       >
-        {row.getValue("status")}
+        {row.getValue('status')}
       </Badge>
     ),
-    size: 120,
+    size: 120
   },
   {
-    header: "Balance",
-    accessorKey: "balance",
+    header: 'Balance',
+    accessorKey: 'balance',
     cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("balance"))
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
+      const amount = parseFloat(row.getValue('balance'))
+      const formatted = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD'
       }).format(amount)
       return formatted
     },
-    size: 120,
-  },
+    size: 120
+  }
 ]
 
-export default function Component() {
+export default function Component () {
   const pageSize = 5
 
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
-    pageSize: pageSize,
+    pageSize
   })
 
   const [sorting, setSorting] = useState<SortingState>([
     {
-      id: "name",
-      desc: false,
-    },
+      id: 'name',
+      desc: false
+    }
   ])
 
   const [data, setData] = useState<Item[]>([])
   useEffect(() => {
-    async function fetchPosts() {
+    async function fetchPosts () {
       const res = await fetch(
-        "https://res.cloudinary.com/dlzlfasou/raw/upload/users-01_fertyx.json"
+        'https://res.cloudinary.com/dlzlfasou/raw/upload/users-01_fertyx.json'
       )
       const data = await res.json()
       setData(data)
@@ -170,14 +170,14 @@ export default function Component() {
     onPaginationChange: setPagination,
     state: {
       sorting,
-      pagination,
-    },
+      pagination
+    }
   })
 
   const { pages, showLeftEllipsis, showRightEllipsis } = usePagination({
     currentPage: table.getState().pagination.pageIndex + 1,
     totalPages: table.getPageCount(),
-    paginationItemsToDisplay: 5,
+    paginationItemsToDisplay: 5
   })
 
   return (
@@ -198,14 +198,14 @@ export default function Component() {
                         <div
                           className={cn(
                             header.column.getCanSort() &&
-                              "flex h-full cursor-pointer items-center justify-between gap-2 select-none"
+                              'flex h-full cursor-pointer items-center justify-between gap-2 select-none'
                           )}
                           onClick={header.column.getToggleSortingHandler()}
                           onKeyDown={(e) => {
                             // Enhanced keyboard handling for sorting
                             if (
                               header.column.getCanSort() &&
-                              (e.key === "Enter" || e.key === " ")
+                              (e.key === 'Enter' || e.key === ' ')
                             ) {
                               e.preventDefault()
                               header.column.getToggleSortingHandler()?.(e)
@@ -231,7 +231,7 @@ export default function Component() {
                                 size={16}
                                 aria-hidden="true"
                               />
-                            ),
+                            )
                           }[header.column.getIsSorted() as string] ?? null}
                         </div>
                       ) : (
@@ -247,32 +247,34 @@ export default function Component() {
             ))}
           </TableHeader>
           <TableBody>
-            {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
-                <TableRow
-                  key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
-                >
-                  {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              ))
-            ) : (
-              <TableRow>
-                <TableCell
-                  colSpan={columns.length}
-                  className="h-24 text-center"
-                >
+            {table.getRowModel().rows?.length
+              ? (
+                table.getRowModel().rows.map((row) => (
+                  <TableRow
+                    key={row.id}
+                    data-state={row.getIsSelected() && 'selected'}
+                  >
+                    {row.getVisibleCells().map((cell) => (
+                      <TableCell key={cell.id}>
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))
+              )
+              : (
+                <TableRow>
+                  <TableCell
+                    colSpan={columns.length}
+                    className="h-24 text-center"
+                  >
                   No results.
-                </TableCell>
-              </TableRow>
-            )}
+                  </TableCell>
+                </TableRow>
+              )}
           </TableBody>
         </Table>
       </div>
@@ -284,10 +286,10 @@ export default function Component() {
           className="text-muted-foreground flex-1 text-sm whitespace-nowrap"
           aria-live="polite"
         >
-          Page{" "}
+          Page{' '}
           <span className="text-foreground">
             {table.getState().pagination.pageIndex + 1}
-          </span>{" "}
+          </span>{' '}
           of <span className="text-foreground">{table.getPageCount()}</span>
         </p>
 
@@ -324,9 +326,9 @@ export default function Component() {
                   <PaginationItem key={page}>
                     <Button
                       size="icon"
-                      variant={`${isActive ? "outline" : "ghost"}`}
+                      variant={`${isActive ? 'outline' : 'ghost'}`}
                       onClick={() => table.setPageIndex(page - 1)}
-                      aria-current={isActive ? "page" : undefined}
+                      aria-current={isActive ? 'page' : undefined}
                     >
                       {page}
                     </Button>
@@ -384,7 +386,7 @@ export default function Component() {
         </div>
       </div>
       <p className="text-muted-foreground mt-4 text-center text-sm">
-        Numeric pagination made with{" "}
+        Numeric pagination made with{' '}
         <a
           className="hover:text-foreground underline"
           href="https://tanstack.com/table"

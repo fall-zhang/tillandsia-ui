@@ -4,10 +4,10 @@ import {
   CopyPlusIcon,
   FilesIcon,
   Layers2Icon,
-  TrashIcon,
-} from "lucide-react"
+  TrashIcon
+} from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,10 +15,10 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu"
+  DropdownMenuTrigger
+} from '@/registry/default/ui/dropdown-menu'
 
-export default function Component() {
+export default function Component () {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

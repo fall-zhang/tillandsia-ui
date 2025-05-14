@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { addDays } from "date-fns"
+import { useState } from 'react'
+import { addDays } from 'date-fns'
 
-import { Button } from "@/registry/default/ui/button"
-import { Calendar } from "@/registry/default/ui/calendar"
+import { Button } from '@/registry/default/ui/button'
+import { Calendar } from '@/registry/default/ui/calendar'
 
-export default function Component() {
+export default function Component () {
   const today = new Date()
   const selectedDay = addDays(today, -28)
   const [month, setMonth] = useState(selectedDay)
@@ -36,12 +36,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        With button -{" "}
+        With button -{' '}
         <a
           className="hover:text-foreground underline"
           href="https://daypicker.dev/"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React DayPicker
         </a>

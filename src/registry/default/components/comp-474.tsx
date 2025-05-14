@@ -2,10 +2,10 @@ import {
   Table,
   TableBody,
   TableCell,
-  TableRow,
-} from "@/registry/default/ui/table"
+  TableRow
+} from '@/registry/default/ui/table'
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="mx-auto max-w-lg">
       <div className="bg-background overflow-hidden rounded-md border">

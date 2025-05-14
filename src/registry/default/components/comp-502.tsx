@@ -1,28 +1,28 @@
-"use client"
+'use client'
 
-import { useEffect, useId, useState } from "react"
-import { format } from "date-fns"
-import { CalendarIcon } from "lucide-react"
+import { useEffect, useId, useState } from 'react'
+import { format } from 'date-fns'
+import { CalendarIcon } from 'lucide-react'
 
-import { Calendar } from "@/registry/default/ui/calendar"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+import { Calendar } from '@/registry/default/ui/calendar'
+import { Input } from '@/registry/default/ui/input'
+import { Label } from '@/registry/default/ui/label'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   const today = new Date()
   const [month, setMonth] = useState(today)
   const [date, setDate] = useState<Date | undefined>(today)
-  const [inputValue, setInputValue] = useState("")
+  const [inputValue, setInputValue] = useState('')
 
   const handleDayPickerSelect = (date: Date | undefined) => {
     if (!date) {
-      setInputValue("")
+      setInputValue('')
       setDate(undefined)
     } else {
       setDate(date)
       setMonth(date)
-      setInputValue(format(date, "yyyy-MM-dd"))
+      setInputValue(format(date, 'yyyy-MM-dd'))
     }
   }
 
@@ -40,7 +40,7 @@ export default function Component() {
   }
 
   useEffect(() => {
-    setInputValue(format(today, "yyyy-MM-dd"))
+    setInputValue(format(today, 'yyyy-MM-dd'))
   }, [])
 
   return (
@@ -80,12 +80,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Date input -{" "}
+        Date input -{' '}
         <a
           className="hover:text-foreground underline"
           href="https://daypicker.dev/"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React DayPicker
         </a>

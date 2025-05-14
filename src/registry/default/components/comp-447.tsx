@@ -1,4 +1,4 @@
-import { FoldersIcon } from "lucide-react"
+import { FoldersIcon } from 'lucide-react'
 
 import {
   Breadcrumb,
@@ -6,16 +6,16 @@ import {
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/registry/default/ui/breadcrumb"
+  BreadcrumbSeparator
+} from '@/registry/default/ui/breadcrumb'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu"
+  DropdownMenuTrigger
+} from '@/registry/default/ui/dropdown-menu'
 
-export default function Component() {
+export default function Component () {
   return (
     <Breadcrumb>
       <BreadcrumbList>

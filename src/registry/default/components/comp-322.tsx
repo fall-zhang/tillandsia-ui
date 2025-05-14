@@ -1,15 +1,15 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-} from "@/registry/default/ui/dialog"
-import { Textarea } from "@/registry/default/ui/textarea"
+  DialogTrigger
+} from '@/registry/default/ui/dialog'
+import { Textarea } from '@/registry/default/ui/textarea'
 
-export default function Component() {
+export default function Component () {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -19,18 +19,18 @@ export default function Component() {
         <DialogHeader>
           <DialogTitle>Send us feedback</DialogTitle>
           <DialogDescription>
-            Watch{" "}
+            Watch{' '}
             <a className="text-foreground hover:underline" href="#">
               tutorials
             </a>
-            , read Origin UI&lsquo;s{" "}
+            , read Origin UI&lsquo;s{' '}
             <a className="text-foreground hover:underline" href="#">
               documentation
             </a>
-            , or join our{" "}
+            , or join our{' '}
             <a className="text-foreground hover:underline" href="#">
               Discord
-            </a>{" "}
+            </a>{' '}
             for community help.
           </DialogDescription>
         </DialogHeader>

@@ -1,20 +1,20 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 import {
   AlignCenterIcon,
   AlignJustifyIcon,
   AlignLeftIcon,
-  AlignRightIcon,
-} from "lucide-react"
+  AlignRightIcon
+} from 'lucide-react'
 
 import {
   ToggleGroup,
-  ToggleGroupItem,
-} from "@/registry/default/ui/toggle-group"
+  ToggleGroupItem
+} from '@/registry/default/ui/toggle-group'
 
-export default function Component() {
-  const [value, setValue] = useState<string>("center")
+export default function Component () {
+  const [value, setValue] = useState<string>('center')
 
   return (
     <ToggleGroup

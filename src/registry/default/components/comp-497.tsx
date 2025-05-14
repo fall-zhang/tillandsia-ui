@@ -1,18 +1,18 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { DropdownNavProps, DropdownProps } from "react-day-picker"
+import { useState } from 'react'
+import { DropdownNavProps, DropdownProps } from 'react-day-picker'
 
-import { Calendar } from "@/registry/default/ui/calendar"
+import { Calendar } from '@/registry/default/ui/calendar'
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
-} from "@/registry/default/ui/select"
+  SelectValue
+} from '@/registry/default/ui/select'
 
-export default function Component() {
+export default function Component () {
   const [date, setDate] = useState<Date | undefined>(new Date())
 
   const handleCalendarChange = (
@@ -21,8 +21,8 @@ export default function Component() {
   ) => {
     const _event = {
       target: {
-        value: String(_value),
-      },
+        value: String(_value)
+      }
     } as React.ChangeEvent<HTMLSelectElement>
     _e(_event)
   }
@@ -35,7 +35,7 @@ export default function Component() {
         onSelect={setDate}
         className="rounded-md border p-2"
         classNames={{
-          month_caption: "mx-0",
+          month_caption: 'mx-0'
         }}
         captionLayout="dropdown"
         defaultMonth={new Date()}
@@ -75,7 +75,7 @@ export default function Component() {
                 </SelectContent>
               </Select>
             )
-          },
+          }
         }}
       />
       <p
@@ -83,12 +83,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Monthly / yearly selects -{" "}
+        Monthly / yearly selects -{' '}
         <a
           className="hover:text-foreground underline"
           href="https://daypicker.dev/"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React DayPicker
         </a>

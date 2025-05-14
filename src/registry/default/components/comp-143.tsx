@@ -1,9 +1,9 @@
-import { useId } from "react"
+import { useId } from 'react'
 
-import { Checkbox } from "@/registry/default/ui/checkbox"
-import { Label } from "@/registry/default/ui/label"
+import { Checkbox } from '@/registry/default/ui/checkbox'
+import { Label } from '@/registry/default/ui/label'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   return (
     <div className="flex items-start gap-2">
@@ -14,7 +14,7 @@ export default function Component() {
       />
       <div className="grid grow gap-2">
         <Label htmlFor={id}>
-          Label{" "}
+          Label{' '}
           <span className="text-muted-foreground text-xs leading-[inherit] font-normal">
             (Sublabel)
           </span>

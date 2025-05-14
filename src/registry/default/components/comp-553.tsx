@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 import {
   AlertCircleIcon,
   FileArchiveIcon,
@@ -12,39 +12,39 @@ import {
   Trash2Icon,
   UploadIcon,
   VideoIcon,
-  XIcon,
-} from "lucide-react"
+  XIcon
+} from 'lucide-react'
 
 import {
   formatBytes,
   useFileUpload,
-  type FileWithPreview,
-} from "@/registry/default/hooks/use-file-upload"
-import { Button } from "@/registry/default/ui/button"
+  type FileWithPreview
+} from '@/registry/default/hooks/use-file-upload'
+import { Button } from '@/registry/default/ui/button'
 
 // Create some dummy initial files
 const initialFiles = [
   {
-    name: "intro.zip",
+    name: 'intro.zip',
     size: 252873,
-    type: "application/zip",
-    url: "https://example.com/intro.zip",
-    id: "intro.zip-1744638436563-8u5xuls",
+    type: 'application/zip',
+    url: 'https://example.com/intro.zip',
+    id: 'intro.zip-1744638436563-8u5xuls'
   },
   {
-    name: "image-01.jpg",
+    name: 'image-01.jpg',
     size: 1528737,
-    type: "image/jpeg",
-    url: "https://picsum.photos/1000/800?grayscale&random=1",
-    id: "image-01-123456789",
+    type: 'image/jpeg',
+    url: 'https://picsum.photos/1000/800?grayscale&random=1',
+    id: 'image-01-123456789'
   },
   {
-    name: "audio.mp3",
+    name: 'audio.mp3',
     size: 1528737,
-    type: "audio/mpeg",
-    url: "https://example.com/audio.mp3",
-    id: "audio-123456789",
-  },
+    type: 'audio/mpeg',
+    url: 'https://example.com/audio.mp3',
+    id: 'audio-123456789'
+  }
 ]
 
 const getFileIcon = (file: { file: File | { type: string; name: string } }) => {
@@ -55,39 +55,39 @@ const getFileIcon = (file: { file: File | { type: string; name: string } }) => {
     pdf: {
       icon: FileTextIcon,
       conditions: (type: string, name: string) =>
-        type.includes("pdf") ||
-        name.endsWith(".pdf") ||
-        type.includes("word") ||
-        name.endsWith(".doc") ||
-        name.endsWith(".docx"),
+        type.includes('pdf') ||
+        name.endsWith('.pdf') ||
+        type.includes('word') ||
+        name.endsWith('.doc') ||
+        name.endsWith('.docx')
     },
     archive: {
       icon: FileArchiveIcon,
       conditions: (type: string, name: string) =>
-        type.includes("zip") ||
-        type.includes("archive") ||
-        name.endsWith(".zip") ||
-        name.endsWith(".rar"),
+        type.includes('zip') ||
+        type.includes('archive') ||
+        name.endsWith('.zip') ||
+        name.endsWith('.rar')
     },
     excel: {
       icon: FileSpreadsheetIcon,
       conditions: (type: string, name: string) =>
-        type.includes("excel") ||
-        name.endsWith(".xls") ||
-        name.endsWith(".xlsx"),
+        type.includes('excel') ||
+        name.endsWith('.xls') ||
+        name.endsWith('.xlsx')
     },
     video: {
       icon: VideoIcon,
-      conditions: (type: string) => type.includes("video/"),
+      conditions: (type: string) => type.includes('video/')
     },
     audio: {
       icon: HeadphonesIcon,
-      conditions: (type: string) => type.includes("audio/"),
+      conditions: (type: string) => type.includes('audio/')
     },
     image: {
       icon: ImageIcon,
-      conditions: (type: string) => type.startsWith("image/"),
-    },
+      conditions: (type: string) => type.startsWith('image/')
+    }
   }
 
   for (const { icon: Icon, conditions } of Object.values(iconMap)) {
@@ -115,20 +115,26 @@ const getFilePreview = (file: {
 
   return (
     <div className="bg-accent flex aspect-square items-center justify-center overflow-hidden rounded-t-[inherit]">
-      {fileType.startsWith("image/") ? (
-        file.file instanceof File ? (
-          (() => {
-            const previewUrl = URL.createObjectURL(file.file)
-            return renderImage(previewUrl)
-          })()
-        ) : file.file.url ? (
-          renderImage(file.file.url)
-        ) : (
-          <ImageIcon className="size-5 opacity-60" />
+      {fileType.startsWith('image/')
+        ? (
+          file.file instanceof File
+            ? (
+              (() => {
+                const previewUrl = URL.createObjectURL(file.file)
+                return renderImage(previewUrl)
+              })()
+            )
+            : file.file.url
+              ? (
+                renderImage(file.file.url)
+              )
+              : (
+                <ImageIcon className="size-5 opacity-60" />
+              )
         )
-      ) : (
-        getFileIcon(file)
-      )}
+        : (
+          getFileIcon(file)
+        )}
     </div>
   )
 }
@@ -190,7 +196,7 @@ const simulateUpload = (
   }
 }
 
-export default function Component() {
+export default function Component () {
   const maxSizeMB = 5
   const maxSize = maxSizeMB * 1024 * 1024 // 5MB default
   const maxFiles = 6
@@ -204,7 +210,7 @@ export default function Component() {
     const newProgressItems = addedFiles.map((file) => ({
       fileId: file.id,
       progress: 0,
-      completed: false,
+      completed: false
     }))
 
     // Add new progress items to state
@@ -225,7 +231,7 @@ export default function Component() {
         (progress) => {
           setUploadProgress((prev) =>
             prev.map((item) =>
-              item.fileId === file.id ? { ...item, progress } : item
+              (item.fileId === file.id ? { ...item, progress } : item)
             )
           )
         },
@@ -233,7 +239,7 @@ export default function Component() {
         () => {
           setUploadProgress((prev) =>
             prev.map((item) =>
-              item.fileId === file.id ? { ...item, completed: true } : item
+              (item.fileId === file.id ? { ...item, completed: true } : item)
             )
           )
         }
@@ -263,14 +269,14 @@ export default function Component() {
       openFileDialog,
       removeFile,
       clearFiles,
-      getInputProps,
-    },
+      getInputProps
+    }
   ] = useFileUpload({
     multiple: true,
     maxFiles,
     maxSize,
     initialFiles,
-    onFilesAdded: handleFilesAdded,
+    onFilesAdded: handleFilesAdded
   })
 
   return (
@@ -432,11 +438,11 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-center text-xs"
       >
-        With simulated progress track ∙{" "}
+        With simulated progress track ∙{' '}
         <a
           href="https://github.com/origin-space/originui/tree/main/docs/use-file-upload.md"
           className="hover:text-foreground underline"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           API
         </a>

@@ -1,18 +1,18 @@
-"use client"
+'use client'
 
-import { useCopy } from "@/hooks/use-copy"
-import { cn } from "@/registry/default/lib/utils"
-import { Button } from "@/registry/default/ui/button"
+import { useCopy } from '@/hooks/use-copy'
+import { cn } from '@/registry/default/lib/utils'
+import { Button } from '@/registry/default/ui/button'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
-  TooltipTrigger,
-} from "@/registry/default/ui/tooltip"
+  TooltipTrigger
+} from '@/registry/default/ui/tooltip'
 
 const CopyButton = ({
   componentSource,
-  className,
+  className
 }: {
   componentSource: string | null
   className?: string
@@ -20,7 +20,7 @@ const CopyButton = ({
   const { copied, copy } = useCopy()
 
   return (
-    <div className={cn("dark absolute top-2 right-2", className)}>
+    <div className={cn('dark absolute top-2 right-2', className)}>
       <TooltipProvider delayDuration={0}>
         <Tooltip>
           <TooltipTrigger asChild>
@@ -28,14 +28,14 @@ const CopyButton = ({
               variant="ghost"
               size="icon"
               className="text-muted-foreground hover:text-foreground transition-none hover:bg-transparent disabled:opacity-100"
-              onClick={() => copy(componentSource || "")}
-              aria-label={copied ? "Copied" : "Copy component source"}
+              onClick={() => copy(componentSource || '')}
+              aria-label={copied ? 'Copied' : 'Copy component source'}
               disabled={copied}
             >
               <div
                 className={cn(
-                  "transition-all",
-                  copied ? "scale-100 opacity-100" : "scale-0 opacity-0"
+                  'transition-all',
+                  copied ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
                 )}
               >
                 <svg
@@ -53,8 +53,8 @@ const CopyButton = ({
               </div>
               <div
                 className={cn(
-                  "absolute transition-all",
-                  copied ? "scale-0 opacity-0" : "scale-100 opacity-100"
+                  'absolute transition-all',
+                  copied ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
                 )}
               >
                 <svg

@@ -1,6 +1,6 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="bg-muted flex items-center rounded-full p-0.5">
       <div className="flex -space-x-3">

@@ -41,15 +41,15 @@ console.info(
 
         <defs>
           <linearGradient id="grad">
-            <stop id="stop1" offset="0%" stop-color="#388bee" />
-            <stop id="stop2" offset="100%" stop-color="#514a9d" />
+            <stop id="stop1" offset="0%" stopColor="#388bee" />
+            <stop id="stop2" offset="100%" stopColor="#514a9d" />
           </linearGradient>
         </defs>
         <rect width="750" height="500" fill="url(#grad)" />
-        <text text-anchor="end" font-size="50" x="725" y="125">
+        <text textAnchor="end" fontSize="50" x="725" y="125">
           welcome to
         </text>
-        <text text-anchor="end" font-size="50" x="725" y="175">
+        <text textAnchor="end" fontSize="50" x="725" y="175">
          console playground
         </text>
       </svg>

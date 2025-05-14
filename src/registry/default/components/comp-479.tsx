@@ -1,25 +1,25 @@
-"use client"
+'use client'
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 import {
   ColumnDef,
   flexRender,
   getCoreRowModel,
   getSortedRowModel,
   SortingState,
-  useReactTable,
-} from "@tanstack/react-table"
-import { ChevronDownIcon, ChevronUpIcon } from "lucide-react"
+  useReactTable
+} from '@tanstack/react-table'
+import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react'
 
-import { cn } from "@/registry/default/lib/utils"
+import { cn } from '@/registry/default/lib/utils'
 import {
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableHeader,
-  TableRow,
-} from "@/registry/default/ui/table"
+  TableRow
+} from '@/registry/default/ui/table'
 
 type Item = {
   id: string
@@ -27,90 +27,90 @@ type Item = {
   email: string
   location: string
   flag: string
-  status: "Active" | "Inactive" | "Pending"
+  status: 'Active' | 'Inactive' | 'Pending'
   balance: number
   department: string
   role: string
   joinDate: string
   lastActive: string
-  performance: "Excellent" | "Good" | "Average" | "Poor"
+  performance: 'Excellent' | 'Good' | 'Average' | 'Poor'
 }
 
 const columns: ColumnDef<Item>[] = [
   {
-    header: "Name",
-    accessorKey: "name",
+    header: 'Name',
+    accessorKey: 'name',
     cell: ({ row }) => (
-      <div className="truncate font-medium">{row.getValue("name")}</div>
+      <div className="truncate font-medium">{row.getValue('name')}</div>
     ),
-    sortUndefined: "last",
-    sortDescFirst: false,
+    sortUndefined: 'last',
+    sortDescFirst: false
   },
   {
-    header: "Email",
-    accessorKey: "email",
+    header: 'Email',
+    accessorKey: 'email'
   },
   {
-    header: "Location",
-    accessorKey: "location",
+    header: 'Location',
+    accessorKey: 'location',
     cell: ({ row }) => (
       <div className="truncate">
-        <span className="text-lg leading-none">{row.original.flag}</span>{" "}
-        {row.getValue("location")}
+        <span className="text-lg leading-none">{row.original.flag}</span>{' '}
+        {row.getValue('location')}
       </div>
-    ),
+    )
   },
   {
-    header: "Status",
-    accessorKey: "status",
+    header: 'Status',
+    accessorKey: 'status'
   },
   {
-    header: "Balance",
-    accessorKey: "balance",
+    header: 'Balance',
+    accessorKey: 'balance',
     cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("balance"))
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
+      const amount = parseFloat(row.getValue('balance'))
+      const formatted = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD'
       }).format(amount)
       return formatted
-    },
+    }
   },
   {
-    header: "Department",
-    accessorKey: "department",
+    header: 'Department',
+    accessorKey: 'department'
   },
   {
-    header: "Role",
-    accessorKey: "role",
+    header: 'Role',
+    accessorKey: 'role'
   },
   {
-    header: "Join Date",
-    accessorKey: "joinDate",
+    header: 'Join Date',
+    accessorKey: 'joinDate'
   },
   {
-    header: "Last Active",
-    accessorKey: "lastActive",
+    header: 'Last Active',
+    accessorKey: 'lastActive'
   },
   {
-    header: "Performance",
-    accessorKey: "performance",
-  },
+    header: 'Performance',
+    accessorKey: 'performance'
+  }
 ]
 
-export default function Component() {
+export default function Component () {
   const [data, setData] = useState<Item[]>([])
   const [sorting, setSorting] = useState<SortingState>([
     {
-      id: "name",
-      desc: false,
-    },
+      id: 'name',
+      desc: false
+    }
   ])
 
   useEffect(() => {
-    async function fetchPosts() {
+    async function fetchPosts () {
       const res = await fetch(
-        "https://res.cloudinary.com/dlzlfasou/raw/upload/users-01_fertyx.json"
+        'https://res.cloudinary.com/dlzlfasou/raw/upload/users-01_fertyx.json'
       )
       const data = await res.json()
       setData(data.slice(0, 5)) // Limit to 5 items
@@ -121,14 +121,14 @@ export default function Component() {
   const table = useReactTable({
     data,
     columns,
-    columnResizeMode: "onChange",
+    columnResizeMode: 'onChange',
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     onSortingChange: setSorting,
     state: {
-      sorting,
+      sorting
     },
-    enableSortingRemoval: false,
+    enableSortingRemoval: false
   })
 
   return (
@@ -136,7 +136,7 @@ export default function Component() {
       <Table
         className="table-fixed"
         style={{
-          width: table.getCenterTotalSize(),
+          width: table.getCenterTotalSize()
         }}
       >
         <TableHeader>
@@ -148,31 +148,31 @@ export default function Component() {
                     key={header.id}
                     className="relative h-10 border-t select-none last:[&>.cursor-col-resize]:opacity-0"
                     aria-sort={
-                      header.column.getIsSorted() === "asc"
-                        ? "ascending"
-                        : header.column.getIsSorted() === "desc"
-                          ? "descending"
-                          : "none"
+                      header.column.getIsSorted() === 'asc'
+                        ? 'ascending'
+                        : header.column.getIsSorted() === 'desc'
+                          ? 'descending'
+                          : 'none'
                     }
                     {...{
                       colSpan: header.colSpan,
                       style: {
-                        width: header.getSize(),
-                      },
+                        width: header.getSize()
+                      }
                     }}
                   >
                     {header.isPlaceholder ? null : (
                       <div
                         className={cn(
                           header.column.getCanSort() &&
-                            "flex h-full cursor-pointer items-center justify-between gap-2 select-none"
+                            'flex h-full cursor-pointer items-center justify-between gap-2 select-none'
                         )}
                         onClick={header.column.getToggleSortingHandler()}
                         onKeyDown={(e) => {
                           // Enhanced keyboard handling for sorting
                           if (
                             header.column.getCanSort() &&
-                            (e.key === "Enter" || e.key === " ")
+                            (e.key === 'Enter' || e.key === ' ')
                           ) {
                             e.preventDefault()
                             header.column.getToggleSortingHandler()?.(e)
@@ -200,7 +200,7 @@ export default function Component() {
                               size={16}
                               aria-hidden="true"
                             />
-                          ),
+                          )
                         }[header.column.getIsSorted() as string] ?? null}
                       </div>
                     )}
@@ -211,7 +211,7 @@ export default function Component() {
                           onMouseDown: header.getResizeHandler(),
                           onTouchStart: header.getResizeHandler(),
                           className:
-                            "absolute top-0 h-full w-4 cursor-col-resize user-select-none touch-none -right-2 z-10 flex justify-center before:absolute before:w-px before:inset-y-0 before:bg-border before:translate-x-px",
+                            'absolute top-0 h-full w-4 cursor-col-resize user-select-none touch-none -right-2 z-10 flex justify-center before:absolute before:w-px before:inset-y-0 before:bg-border before:translate-x-px'
                         }}
                       />
                     )}
@@ -222,30 +222,32 @@ export default function Component() {
           ))}
         </TableHeader>
         <TableBody>
-          {table.getRowModel().rows?.length ? (
-            table.getRowModel().rows.map((row) => (
-              <TableRow
-                key={row.id}
-                data-state={row.getIsSelected() && "selected"}
-              >
-                {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className="truncate">
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </TableCell>
-                ))}
-              </TableRow>
-            ))
-          ) : (
-            <TableRow>
-              <TableCell colSpan={columns.length} className="h-24 text-center">
+          {table.getRowModel().rows?.length
+            ? (
+              table.getRowModel().rows.map((row) => (
+                <TableRow
+                  key={row.id}
+                  data-state={row.getIsSelected() && 'selected'}
+                >
+                  {row.getVisibleCells().map((cell) => (
+                    <TableCell key={cell.id} className="truncate">
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))
+            )
+            : (
+              <TableRow>
+                <TableCell colSpan={columns.length} className="h-24 text-center">
                 No results.
-              </TableCell>
-            </TableRow>
-          )}
+                </TableCell>
+              </TableRow>
+            )}
         </TableBody>
       </Table>
       <p className="text-muted-foreground mt-4 text-center text-sm">
-        Resizable and sortable columns made with{" "}
+        Resizable and sortable columns made with{' '}
         <a
           className="hover:text-foreground underline"
           href="https://tanstack.com/table"

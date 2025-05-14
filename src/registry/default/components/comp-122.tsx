@@ -2,12 +2,12 @@ import {
   RiFacebookFill,
   RiGithubFill,
   RiGoogleFill,
-  RiTwitterXFill,
-} from "@remixicon/react"
+  RiTwitterXFill
+} from '@remixicon/react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="flex flex-col gap-2">
       <Button className="bg-[#DB4437] text-white after:flex-1 hover:bg-[#DB4437]/90">

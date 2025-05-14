@@ -1,14 +1,14 @@
-"use client"
+'use client'
 
-import { useId, useState } from "react"
+import { useId, useState } from 'react'
 
-import { Checkbox } from "@/registry/default/ui/checkbox"
-import { Label } from "@/registry/default/ui/label"
+import { Checkbox } from '@/registry/default/ui/checkbox'
+import { Label } from '@/registry/default/ui/label'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
-  const [checked, setChecked] = useState<boolean | "indeterminate">(
-    "indeterminate"
+  const [checked, setChecked] = useState<boolean | 'indeterminate'>(
+    'indeterminate'
   )
 
   return (

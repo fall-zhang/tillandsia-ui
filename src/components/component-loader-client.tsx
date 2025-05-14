@@ -1,15 +1,15 @@
-"use client"
+'use client'
 
-import { ComponentType } from "react"
-import dynamic from "next/dynamic"
-import { LoaderCircleIcon } from "lucide-react"
-import type { RegistryItem } from "shadcn/registry"
+import { ComponentType } from 'react'
+import dynamic from 'next/dynamic'
+import { LoaderCircleIcon } from 'lucide-react'
+import type { RegistryItem } from 'shadcn/registry'
 
 interface ComponentLoaderProps {
   component: RegistryItem
 }
 
-export default function ComponentLoader<TProps extends object>({
+export default function ComponentLoader<TProps extends object> ({
   component,
   ...props
 }: ComponentLoaderProps & TProps) {
@@ -17,7 +17,7 @@ export default function ComponentLoader<TProps extends object>({
     return null
   }
   const path = component.files[0].path
-  const newPath = path.replace("registry/", "")
+  const newPath = path.replace('registry/', '')
   const Component = dynamic(
     () => import(`@/registry/${newPath}`).catch(() => () => null),
     {
@@ -34,7 +34,7 @@ export default function ComponentLoader<TProps extends object>({
           />
         </div>
       ),
-      ssr: false,
+      ssr: false
     }
   ) as ComponentType<TProps>
 

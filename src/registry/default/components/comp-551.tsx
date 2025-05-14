@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   AlertCircleIcon,
@@ -12,46 +12,46 @@ import {
   Trash2Icon,
   UploadCloudIcon,
   UploadIcon,
-  VideoIcon,
-} from "lucide-react"
+  VideoIcon
+} from 'lucide-react'
 
 import {
   formatBytes,
-  useFileUpload,
-} from "@/registry/default/hooks/use-file-upload"
-import { Button } from "@/registry/default/ui/button"
+  useFileUpload
+} from '@/registry/default/hooks/use-file-upload'
+import { Button } from '@/registry/default/ui/button'
 import {
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableHeader,
-  TableRow,
-} from "@/registry/default/ui/table"
+  TableRow
+} from '@/registry/default/ui/table'
 
 // Create some dummy initial files
 const initialFiles = [
   {
-    name: "document.pdf",
+    name: 'document.pdf',
     size: 528737,
-    type: "application/pdf",
-    url: "https://originui.com",
-    id: "document.pdf-1744638436563-8u5xuls",
+    type: 'application/pdf',
+    url: 'https://originui.com',
+    id: 'document.pdf-1744638436563-8u5xuls'
   },
   {
-    name: "intro.zip",
+    name: 'intro.zip',
     size: 252873,
-    type: "application/zip",
-    url: "https://originui.com",
-    id: "intro.zip-1744638436563-8u5xuls",
+    type: 'application/zip',
+    url: 'https://originui.com',
+    id: 'intro.zip-1744638436563-8u5xuls'
   },
   {
-    name: "conclusion.xlsx",
+    name: 'conclusion.xlsx',
     size: 352873,
-    type: "application/xlsx",
-    url: "https://originui.com",
-    id: "conclusion.xlsx-1744638436563-8u5xuls",
-  },
+    type: 'application/xlsx',
+    url: 'https://originui.com',
+    id: 'conclusion.xlsx-1744638436563-8u5xuls'
+  }
 ]
 
 const getFileIcon = (file: { file: File | { type: string; name: string } }) => {
@@ -59,37 +59,37 @@ const getFileIcon = (file: { file: File | { type: string; name: string } }) => {
   const fileName = file.file instanceof File ? file.file.name : file.file.name
 
   if (
-    fileType.includes("pdf") ||
-    fileName.endsWith(".pdf") ||
-    fileType.includes("word") ||
-    fileName.endsWith(".doc") ||
-    fileName.endsWith(".docx")
+    fileType.includes('pdf') ||
+    fileName.endsWith('.pdf') ||
+    fileType.includes('word') ||
+    fileName.endsWith('.doc') ||
+    fileName.endsWith('.docx')
   ) {
     return <FileTextIcon className="size-4 opacity-60" />
   } else if (
-    fileType.includes("zip") ||
-    fileType.includes("archive") ||
-    fileName.endsWith(".zip") ||
-    fileName.endsWith(".rar")
+    fileType.includes('zip') ||
+    fileType.includes('archive') ||
+    fileName.endsWith('.zip') ||
+    fileName.endsWith('.rar')
   ) {
     return <FileArchiveIcon className="size-4 opacity-60" />
   } else if (
-    fileType.includes("excel") ||
-    fileName.endsWith(".xls") ||
-    fileName.endsWith(".xlsx")
+    fileType.includes('excel') ||
+    fileName.endsWith('.xls') ||
+    fileName.endsWith('.xlsx')
   ) {
     return <FileSpreadsheetIcon className="size-4 opacity-60" />
-  } else if (fileType.includes("video/")) {
+  } else if (fileType.includes('video/')) {
     return <VideoIcon className="size-4 opacity-60" />
-  } else if (fileType.includes("audio/")) {
+  } else if (fileType.includes('audio/')) {
     return <HeadphonesIcon className="size-4 opacity-60" />
-  } else if (fileType.startsWith("image/")) {
+  } else if (fileType.startsWith('image/')) {
     return <ImageIcon className="size-4 opacity-60" />
   }
   return <FileIcon className="size-4 opacity-60" />
 }
 
-export default function Component() {
+export default function Component () {
   const maxSize = 10 * 1024 * 1024 // 10MB default
   const maxFiles = 10
 
@@ -103,13 +103,13 @@ export default function Component() {
       openFileDialog,
       removeFile,
       clearFiles,
-      getInputProps,
-    },
+      getInputProps
+    }
   ] = useFileUpload({
     multiple: true,
     maxFiles,
     maxSize,
-    initialFiles,
+    initialFiles
   })
 
   return (
@@ -185,12 +185,12 @@ export default function Component() {
                   <TableRow key={file.id}>
                     <TableCell className="max-w-48 py-2 font-medium">
                       <span className="flex items-center gap-2">
-                        <span className="shrink-0">{getFileIcon(file)}</span>{" "}
+                        <span className="shrink-0">{getFileIcon(file)}</span>{' '}
                         <span className="truncate">{file.file.name}</span>
                       </span>
                     </TableCell>
                     <TableCell className="text-muted-foreground py-2">
-                      {file.file.type.split("/")[1]?.toUpperCase() || "UNKNOWN"}
+                      {file.file.type.split('/')[1]?.toUpperCase() || 'UNKNOWN'}
                     </TableCell>
                     <TableCell className="text-muted-foreground py-2">
                       {formatBytes(file.file.size)}
@@ -201,7 +201,7 @@ export default function Component() {
                         variant="ghost"
                         className="text-muted-foreground/80 hover:text-foreground size-8 hover:bg-transparent"
                         aria-label={`Download ${file.file.name}`}
-                        onClick={() => window.open(file.preview, "_blank")}
+                        onClick={() => window.open(file.preview, '_blank')}
                       >
                         <DownloadIcon className="size-4" />
                       </Button>
@@ -238,7 +238,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-center text-xs"
       >
-        Multiple files uploader w/ table ∙{" "}
+        Multiple files uploader w/ table ∙{' '}
         <a
           href="https://github.com/origin-space/originui/tree/main/docs/use-file-upload.md"
           className="hover:text-foreground underline"

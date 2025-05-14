@@ -1,6 +1,6 @@
-import { useId } from "react"
+import { useId } from 'react'
 
-import { Label } from "@/registry/default/ui/label"
+import { Label } from '@/registry/default/ui/label'
 import {
   Select,
   SelectContent,
@@ -8,52 +8,52 @@ import {
   SelectItem,
   SelectLabel,
   SelectTrigger,
-  SelectValue,
-} from "@/registry/default/ui/select"
+  SelectValue
+} from '@/registry/default/ui/select'
 
 const countries = [
   {
-    continent: "America",
+    continent: 'America',
     items: [
-      { value: "1", label: "United States", flag: "🇺🇸" },
-      { value: "2", label: "Canada", flag: "🇨🇦" },
-      { value: "3", label: "Mexico", flag: "🇲🇽" },
-    ],
+      { value: '1', label: 'United States', flag: '🇺🇸' },
+      { value: '2', label: 'Canada', flag: '🇨🇦' },
+      { value: '3', label: 'Mexico', flag: '🇲🇽' }
+    ]
   },
   {
-    continent: "Africa",
+    continent: 'Africa',
     items: [
-      { value: "4", label: "South Africa", flag: "🇿🇦" },
-      { value: "5", label: "Nigeria", flag: "🇳🇬" },
-      { value: "6", label: "Morocco", flag: "🇲🇦" },
-    ],
+      { value: '4', label: 'South Africa', flag: '🇿🇦' },
+      { value: '5', label: 'Nigeria', flag: '🇳🇬' },
+      { value: '6', label: 'Morocco', flag: '🇲🇦' }
+    ]
   },
   {
-    continent: "Asia",
+    continent: 'Asia',
     items: [
-      { value: "7", label: "China", flag: "🇨🇳" },
-      { value: "8", label: "Japan", flag: "🇯🇵" },
-      { value: "9", label: "India", flag: "🇮🇳" },
-    ],
+      { value: '7', label: 'China', flag: '🇨🇳' },
+      { value: '8', label: 'Japan', flag: '🇯🇵' },
+      { value: '9', label: 'India', flag: '🇮🇳' }
+    ]
   },
   {
-    continent: "Europe",
+    continent: 'Europe',
     items: [
-      { value: "10", label: "United Kingdom", flag: "🇬🇧" },
-      { value: "11", label: "France", flag: "🇫🇷" },
-      { value: "12", label: "Germany", flag: "🇩🇪" },
-    ],
+      { value: '10', label: 'United Kingdom', flag: '🇬🇧' },
+      { value: '11', label: 'France', flag: '🇫🇷' },
+      { value: '12', label: 'Germany', flag: '🇩🇪' }
+    ]
   },
   {
-    continent: "Oceania",
+    continent: 'Oceania',
     items: [
-      { value: "13", label: "Australia", flag: "🇦🇺" },
-      { value: "14", label: "New Zealand", flag: "🇳🇿" },
-    ],
-  },
+      { value: '13', label: 'Australia', flag: '🇦🇺' },
+      { value: '14', label: 'New Zealand', flag: '🇳🇿' }
+    ]
+  }
 ]
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   return (
     <div className="*:not-first:mt-2">
@@ -71,7 +71,7 @@ export default function Component() {
               <SelectLabel className="ps-2">{continent.continent}</SelectLabel>
               {continent.items.map((item) => (
                 <SelectItem key={item.value} value={item.value}>
-                  <span className="text-lg leading-none">{item.flag}</span>{" "}
+                  <span className="text-lg leading-none">{item.flag}</span>{' '}
                   <span className="truncate">{item.label}</span>
                 </SelectItem>
               ))}

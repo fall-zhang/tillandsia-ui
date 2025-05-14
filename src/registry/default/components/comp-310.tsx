@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useEffect, useState } from "react"
-import { TicketPercent, XIcon } from "lucide-react"
+import { useEffect, useState } from 'react'
+import { TicketPercent, XIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
 // Define the sale end date - eg: new Date('2024-12-31T23:59:59');
 const saleEndDate = new Date(
@@ -18,14 +18,14 @@ interface TimeLeft {
   isExpired: boolean
 }
 
-export default function Component() {
+export default function Component () {
   const [isVisible, setIsVisible] = useState(true)
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0,
-    isExpired: false,
+    isExpired: false
   })
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export default function Component() {
           hours: 0,
           minutes: 0,
           seconds: 0,
-          isExpired: true,
+          isExpired: true
         })
         return
       }
@@ -56,7 +56,7 @@ export default function Component() {
         hours,
         minutes,
         seconds,
-        isExpired: false,
+        isExpired: false
       })
     }
 
@@ -96,15 +96,15 @@ export default function Component() {
                   </span>
                 )}
                 <span className="flex h-8 items-center justify-center p-2">
-                  {timeLeft.hours.toString().padStart(2, "0")}
+                  {timeLeft.hours.toString().padStart(2, '0')}
                   <span className="text-muted-foreground">h</span>
                 </span>
                 <span className="flex h-8 items-center justify-center p-2">
-                  {timeLeft.minutes.toString().padStart(2, "0")}
+                  {timeLeft.minutes.toString().padStart(2, '0')}
                   <span className="text-muted-foreground">m</span>
                 </span>
                 <span className="flex h-8 items-center justify-center p-2">
-                  {timeLeft.seconds.toString().padStart(2, "0")}
+                  {timeLeft.seconds.toString().padStart(2, '0')}
                   <span className="text-muted-foreground">s</span>
                 </span>
               </div>

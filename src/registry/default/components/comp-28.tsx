@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { MinusIcon, PlusIcon } from "lucide-react"
-import { Button, Group, Input, Label, NumberField } from "react-aria-components"
+import { MinusIcon, PlusIcon } from 'lucide-react'
+import { Button, Group, Input, Label, NumberField } from 'react-aria-components'
 
-export default function Component() {
+export default function Component () {
   return (
     <NumberField defaultValue={2048} minValue={0}>
       <div className="*:not-first:mt-2">
@@ -31,12 +31,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Built with{" "}
+        Built with{' '}
         <a
           className="hover:text-foreground underline"
           href="https://react-spectrum.adobe.com/react-aria/DateField.html"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React Aria
         </a>

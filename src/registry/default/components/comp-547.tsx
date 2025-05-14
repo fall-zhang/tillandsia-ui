@@ -1,39 +1,39 @@
-"use client"
+'use client'
 
-import { AlertCircleIcon, ImageIcon, UploadIcon, XIcon } from "lucide-react"
+import { AlertCircleIcon, ImageIcon, UploadIcon, XIcon } from 'lucide-react'
 
 import {
   formatBytes,
-  useFileUpload,
-} from "@/registry/default/hooks/use-file-upload"
-import { Button } from "@/registry/default/ui/button"
+  useFileUpload
+} from '@/registry/default/hooks/use-file-upload'
+import { Button } from '@/registry/default/ui/button'
 
 // Create some dummy initial files
 const initialFiles = [
   {
-    name: "image-01.jpg",
+    name: 'image-01.jpg',
     size: 1528737,
-    type: "image/jpeg",
-    url: "https://picsum.photos/1000/800?grayscale&random=1",
-    id: "image-01-123456789",
+    type: 'image/jpeg',
+    url: 'https://picsum.photos/1000/800?grayscale&random=1',
+    id: 'image-01-123456789'
   },
   {
-    name: "image-02.jpg",
+    name: 'image-02.jpg',
     size: 2345678,
-    type: "image/jpeg",
-    url: "https://picsum.photos/1000/800?grayscale&random=2",
-    id: "image-02-123456789",
+    type: 'image/jpeg',
+    url: 'https://picsum.photos/1000/800?grayscale&random=2',
+    id: 'image-02-123456789'
   },
   {
-    name: "image-03.jpg",
+    name: 'image-03.jpg',
     size: 3456789,
-    type: "image/jpeg",
-    url: "https://picsum.photos/1000/800?grayscale&random=3",
-    id: "image-03-123456789",
-  },
+    type: 'image/jpeg',
+    url: 'https://picsum.photos/1000/800?grayscale&random=3',
+    id: 'image-03-123456789'
+  }
 ]
 
-export default function Component() {
+export default function Component () {
   const maxSizeMB = 5
   const maxSize = maxSizeMB * 1024 * 1024 // 5MB default
   const maxFiles = 6
@@ -48,14 +48,14 @@ export default function Component() {
       openFileDialog,
       removeFile,
       clearFiles,
-      getInputProps,
-    },
+      getInputProps
+    }
   ] = useFileUpload({
-    accept: "image/svg+xml,image/png,image/jpeg,image/jpg,image/gif",
+    accept: 'image/svg+xml,image/png,image/jpeg,image/jpg,image/gif',
     maxSize,
     multiple: true,
     maxFiles,
-    initialFiles,
+    initialFiles
   })
 
   return (
@@ -157,7 +157,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-center text-xs"
       >
-        Multiple image uploader w/ image list ∙{" "}
+        Multiple image uploader w/ image list ∙{' '}
         <a
           href="https://github.com/origin-space/originui/tree/main/docs/use-file-upload.md"
           className="hover:text-foreground underline"

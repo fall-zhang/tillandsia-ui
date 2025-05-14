@@ -1,29 +1,29 @@
-"use client"
+'use client'
 
-import Image from "next/image"
-import Link from "next/link"
-import LogoDark from "/public/logo-dark.svg"
-import Logo from "/public/logo.svg"
-import { RiGithubFill, RiMenu2Line, RiTwitterXFill } from "@remixicon/react"
+import Image from 'next/image'
+import Link from 'next/link'
+import LogoDark from '../../../../public/logo-dark.svg'
+import Logo from '../../../../public/logo.svg'
+import { RiGithubFill, RiMenu2Line, RiTwitterXFill } from '@remixicon/react'
 
-import { useIsMobile } from "@/hooks/use-mobile"
-import HeaderLink from "@/components/header-link"
-import ThemeToggle from "@/components/theme-toggle"
+import { useIsMobile } from '@/hooks/use-mobile'
+import HeaderLink from '@/components/header-link'
+import ThemeToggle from '@/components/theme-toggle'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu"
+  DropdownMenuTrigger
+} from '@/registry/default/ui/dropdown-menu'
 
 const links = [
-  { text: "Layouts", href: "/layouts", isNew: true },
-  { text: "Fall", href: "/fall" },
+  { text: 'Layouts', href: '/layouts', isNew: true },
+  { text: 'Fall', href: '/fall' },
   // { text: "Colors", href: "/colors" },
-  { text: "Easing Classes", href: "/easings" },
+  { text: 'Easing Classes', href: '/easings' }
 ]
 
-export default function Header() {
+export default function Header () {
   const isMobile = useIsMobile()
 
   return (

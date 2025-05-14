@@ -1,8 +1,8 @@
-import { useId } from "react"
+import { useId } from 'react'
 
-import { SelectNative } from "@/registry/default/ui/select-native"
+import { SelectNative } from '@/registry/default/ui/select-native'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   return (
     <div className="group relative">

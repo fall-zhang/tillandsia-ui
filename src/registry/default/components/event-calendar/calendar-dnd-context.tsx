@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   createContext,
@@ -6,8 +6,8 @@ import {
   useId,
   useRef,
   useState,
-  type ReactNode,
-} from "react"
+  type ReactNode
+} from 'react'
 import {
   DndContext,
   DragOverlay,
@@ -19,20 +19,20 @@ import {
   type DragEndEvent,
   type DragOverEvent,
   type DragStartEvent,
-  type UniqueIdentifier,
-} from "@dnd-kit/core"
-import { addMinutes, differenceInMinutes } from "date-fns"
+  type UniqueIdentifier
+} from '@dnd-kit/core'
+import { addMinutes, differenceInMinutes } from 'date-fns'
 
 import {
   EventItem,
-  type CalendarEvent,
-} from "@/registry/default/components/event-calendar"
+  type CalendarEvent
+} from '@/registry/default/components/event-calendar'
 
 // Define the context type
 type CalendarDndContextType = {
   activeEvent: CalendarEvent | null
   activeId: UniqueIdentifier | null
-  activeView: "month" | "week" | "day" | null
+  activeView: 'month' | 'week' | 'day' | null
   currentTime: Date | null
   eventHeight: number | null
   isMultiDay: boolean
@@ -56,7 +56,7 @@ const CalendarDndContext = createContext<CalendarDndContextType>({
   eventHeight: null,
   isMultiDay: false,
   multiDayWidth: null,
-  dragHandlePosition: null,
+  dragHandlePosition: null
 })
 
 // Hook to use the context
@@ -68,13 +68,13 @@ interface CalendarDndProviderProps {
   onEventUpdate: (event: CalendarEvent) => void
 }
 
-export function CalendarDndProvider({
+export function CalendarDndProvider ({
   children,
-  onEventUpdate,
+  onEventUpdate
 }: CalendarDndProviderProps) {
   const [activeEvent, setActiveEvent] = useState<CalendarEvent | null>(null)
   const [activeId, setActiveId] = useState<UniqueIdentifier | null>(null)
-  const [activeView, setActiveView] = useState<"month" | "week" | "day" | null>(
+  const [activeView, setActiveView] = useState<'month' | 'week' | 'day' | null>(
     null
   )
   const [currentTime, setCurrentTime] = useState<Date | null>(null)
@@ -98,21 +98,21 @@ export function CalendarDndProvider({
     useSensor(MouseSensor, {
       // Require the mouse to move by 5px before activating
       activationConstraint: {
-        distance: 5,
-      },
+        distance: 5
+      }
     }),
     useSensor(TouchSensor, {
       // Press delay of 250ms, with tolerance of 5px of movement
       activationConstraint: {
         delay: 250,
-        tolerance: 5,
-      },
+        tolerance: 5
+      }
     }),
     useSensor(PointerSensor, {
       // Require the pointer to move by 5px before activating
       activationConstraint: {
-        distance: 5,
-      },
+        distance: 5
+      }
     })
   )
 
@@ -124,7 +124,7 @@ export function CalendarDndProvider({
 
     // Add safety check for data.current
     if (!active.data.current) {
-      console.error("Missing data in drag start event", event)
+      console.error('Missing data in drag start event', event)
       return
     }
 
@@ -134,10 +134,10 @@ export function CalendarDndProvider({
       height,
       isMultiDay: eventIsMultiDay,
       multiDayWidth: eventMultiDayWidth,
-      dragHandlePosition: eventDragHandlePosition,
+      dragHandlePosition: eventDragHandlePosition
     } = active.data.current as {
       event: CalendarEvent
-      view: "month" | "week" | "day"
+      view: 'month' | 'week' | 'day'
       height?: number
       isMultiDay?: boolean
       multiDayWidth?: number
@@ -173,7 +173,7 @@ export function CalendarDndProvider({
       const { date, time } = over.data.current as { date: Date; time?: number }
 
       // Update time for week/day views
-      if (time !== undefined && activeView !== "month") {
+      if (time !== undefined && activeView !== 'month') {
         const newTime = new Date(date)
 
         // Calculate hours and minutes with 15-minute precision
@@ -200,7 +200,7 @@ export function CalendarDndProvider({
         ) {
           setCurrentTime(newTime)
         }
-      } else if (activeView === "month") {
+      } else if (activeView === 'month') {
         // For month view, just update the date but preserve time
         const newTime = new Date(date)
         if (currentTime) {
@@ -245,7 +245,7 @@ export function CalendarDndProvider({
     try {
       // Safely access data with checks
       if (!active.data.current || !over.data.current) {
-        throw new Error("Missing data in drag event")
+        throw new Error('Missing data in drag event')
       }
 
       const activeData = active.data.current as {
@@ -256,7 +256,7 @@ export function CalendarDndProvider({
 
       // Verify we have all required data
       if (!activeData.event || !overData.date) {
-        throw new Error("Missing required event data")
+        throw new Error('Missing required event data')
       }
 
       const calendarEvent = activeData.event
@@ -308,11 +308,11 @@ export function CalendarDndProvider({
         onEventUpdate({
           ...calendarEvent,
           start: newStart,
-          end: newEnd,
+          end: newEnd
         })
       }
     } catch (error) {
-      console.error("Error in drag end handler:", error)
+      console.error('Error in drag end handler:', error)
     } finally {
       // Always reset state
       setActiveEvent(null)
@@ -343,7 +343,7 @@ export function CalendarDndProvider({
           eventHeight,
           isMultiDay,
           multiDayWidth,
-          dragHandlePosition,
+          dragHandlePosition
         }}
       >
         {children}
@@ -352,9 +352,9 @@ export function CalendarDndProvider({
           {activeEvent && activeView && (
             <div
               style={{
-                height: eventHeight ? `${eventHeight}px` : "auto",
+                height: eventHeight ? `${eventHeight}px` : 'auto',
                 width:
-                  isMultiDay && multiDayWidth ? `${multiDayWidth}%` : "100%",
+                  isMultiDay && multiDayWidth ? `${multiDayWidth}%` : '100%'
                 // Remove the transform that was causing the shift
               }}
             >
@@ -362,7 +362,7 @@ export function CalendarDndProvider({
                 event={activeEvent}
                 view={activeView}
                 isDragging={true}
-                showTime={activeView !== "month"}
+                showTime={activeView !== 'month'}
                 currentTime={currentTime || undefined}
                 isFirstDay={dragHandlePosition?.data?.isFirstDay !== false}
                 isLastDay={dragHandlePosition?.data?.isLastDay !== false}

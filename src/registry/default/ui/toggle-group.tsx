@@ -1,20 +1,20 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group"
-import { type VariantProps } from "class-variance-authority"
+import * as React from 'react'
+import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group'
+import { type VariantProps } from 'class-variance-authority'
 
-import { cn } from "@/registry/default/lib/utils"
-import { toggleVariants } from "@/registry/default/ui/toggle"
+import { cn } from '@/registry/default/lib/utils'
+import { toggleVariants } from '@/registry/default/ui/toggle'
 
 const ToggleGroupContext = React.createContext<
   VariantProps<typeof toggleVariants>
 >({
-  size: "default",
-  variant: "default",
+  size: 'default',
+  variant: 'default'
 })
 
-function ToggleGroup({
+function ToggleGroup ({
   className,
   variant,
   size,
@@ -28,7 +28,7 @@ function ToggleGroup({
       data-variant={variant}
       data-size={size}
       className={cn(
-        "group/toggle-group flex items-center rounded-md data-[variant=outline]:shadow-xs",
+        'group/toggle-group flex items-center rounded-md data-[variant=outline]:shadow-xs',
         className
       )}
       {...props}
@@ -40,7 +40,7 @@ function ToggleGroup({
   )
 }
 
-function ToggleGroupItem({
+function ToggleGroupItem ({
   className,
   children,
   variant,
@@ -58,9 +58,9 @@ function ToggleGroupItem({
       className={cn(
         toggleVariants({
           variant: context.variant || variant,
-          size: context.size || size,
+          size: context.size || size
         }),
-        "min-w-0 shrink-0 rounded-none shadow-none first:rounded-l-md last:rounded-r-md focus:z-10 focus-visible:z-10 data-[variant=outline]:border-l-0 data-[variant=outline]:first:border-l",
+        'min-w-0 shrink-0 rounded-none shadow-none first:rounded-l-md last:rounded-r-md focus:z-10 focus-visible:z-10 data-[variant=outline]:border-l-0 data-[variant=outline]:first:border-l',
         className
       )}
       {...props}

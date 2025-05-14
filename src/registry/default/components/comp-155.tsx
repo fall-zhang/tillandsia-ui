@@ -1,9 +1,9 @@
-import { useId } from "react"
+import { useId } from 'react'
 
-import { Label } from "@/registry/default/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
+import { Label } from '@/registry/default/ui/label'
+import { RadioGroup, RadioGroupItem } from '@/registry/default/ui/radio-group'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   return (
     <RadioGroup className="gap-6" defaultValue="1">
@@ -15,7 +15,7 @@ export default function Component() {
         />
         <div className="grid grow gap-2">
           <Label htmlFor={`${id}-1`}>
-            Small{" "}
+            Small{' '}
             <span className="text-muted-foreground text-xs leading-[inherit] font-normal">
               (Sublabel)
             </span>
@@ -36,7 +36,7 @@ export default function Component() {
         />
         <div className="grid grow gap-2">
           <Label htmlFor={`${id}-2`}>
-            Large{" "}
+            Large{' '}
             <span className="text-muted-foreground text-xs leading-[inherit] font-normal">
               (Sublabel)
             </span>

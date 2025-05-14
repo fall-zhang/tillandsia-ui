@@ -1,8 +1,8 @@
-import { cn } from "@/registry/default/lib/utils"
-import { Label } from "@/registry/default/ui/label"
-import { Slider } from "@/registry/default/ui/slider"
+import { cn } from '@/registry/default/lib/utils'
+import { Label } from '@/registry/default/ui/label'
+import { Slider } from '@/registry/default/ui/slider'
 
-export default function Component() {
+export default function Component () {
   const max = 12
   const skipInterval = 2 // Set to 1 to allow no text skipping
   const ticks = [...Array(max + 1)].map((_, i) => i)
@@ -23,11 +23,11 @@ export default function Component() {
             >
               <span
                 className={cn(
-                  "bg-muted-foreground/70 h-1 w-px",
-                  i % skipInterval !== 0 && "h-0.5"
+                  'bg-muted-foreground/70 h-1 w-px',
+                  i % skipInterval !== 0 && 'h-0.5'
                 )}
               />
-              <span className={cn(i % skipInterval !== 0 && "opacity-0")}>
+              <span className={cn(i % skipInterval !== 0 && 'opacity-0')}>
                 {i}
               </span>
             </span>

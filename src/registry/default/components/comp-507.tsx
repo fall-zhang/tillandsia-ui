@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 import {
   endOfMonth,
   endOfYear,
@@ -8,42 +8,42 @@ import {
   startOfYear,
   subDays,
   subMonths,
-  subYears,
-} from "date-fns"
-import { DateRange } from "react-day-picker"
+  subYears
+} from 'date-fns'
+import { DateRange } from 'react-day-picker'
 
-import { Button } from "@/registry/default/ui/button"
-import { Calendar } from "@/registry/default/ui/calendar"
+import { Button } from '@/registry/default/ui/button'
+import { Calendar } from '@/registry/default/ui/calendar'
 
-export default function Component() {
+export default function Component () {
   const today = new Date()
   const yesterday = {
     from: subDays(today, 1),
-    to: subDays(today, 1),
+    to: subDays(today, 1)
   }
   const last7Days = {
     from: subDays(today, 6),
-    to: today,
+    to: today
   }
   const last30Days = {
     from: subDays(today, 29),
-    to: today,
+    to: today
   }
   const monthToDate = {
     from: startOfMonth(today),
-    to: today,
+    to: today
   }
   const lastMonth = {
     from: startOfMonth(subMonths(today, 1)),
-    to: endOfMonth(subMonths(today, 1)),
+    to: endOfMonth(subMonths(today, 1))
   }
   const yearToDate = {
     from: startOfYear(today),
-    to: today,
+    to: today
   }
   const lastYear = {
     from: startOfYear(subYears(today, 1)),
-    to: endOfYear(subYears(today, 1)),
+    to: endOfYear(subYears(today, 1))
   }
   const [month, setMonth] = useState(today)
   const [date, setDate] = useState<DateRange | undefined>(last7Days)
@@ -62,7 +62,7 @@ export default function Component() {
                   onClick={() => {
                     setDate({
                       from: today,
-                      to: today,
+                      to: today
                     })
                     setMonth(today)
                   }}
@@ -161,7 +161,7 @@ export default function Component() {
             onMonthChange={setMonth}
             className="p-2"
             disabled={[
-              { after: today }, // Dates before today
+              { after: today } // Dates before today
             ]}
           />
         </div>
@@ -171,12 +171,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Range calendar with presets -{" "}
+        Range calendar with presets -{' '}
         <a
           className="hover:text-foreground underline"
           href="https://daypicker.dev/"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React DayPicker
         </a>

@@ -1,18 +1,18 @@
-import { useId } from "react"
+import { useId } from 'react'
 
-import { Checkbox } from "@/registry/default/ui/checkbox"
+import { Checkbox } from '@/registry/default/ui/checkbox'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
 
   const items = [
-    { value: "1", label: "Monday", defaultChecked: true },
-    { value: "2", label: "Tuesday", defaultChecked: true },
-    { value: "3", label: "Wednesday" },
-    { value: "4", label: "Thursday", defaultChecked: true },
-    { value: "5", label: "Friday", defaultChecked: true },
-    { value: "6", label: "Saturday" },
-    { value: "7", label: "Sunday", disabled: true },
+    { value: '1', label: 'Monday', defaultChecked: true },
+    { value: '2', label: 'Tuesday', defaultChecked: true },
+    { value: '3', label: 'Wednesday' },
+    { value: '4', label: 'Thursday', defaultChecked: true },
+    { value: '5', label: 'Friday', defaultChecked: true },
+    { value: '6', label: 'Saturday' },
+    { value: '7', label: 'Sunday', disabled: true }
   ]
 
   return (

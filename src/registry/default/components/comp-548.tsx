@@ -1,25 +1,25 @@
-"use client"
+'use client'
 
-import { AlertCircleIcon, PaperclipIcon, UploadIcon, XIcon } from "lucide-react"
+import { AlertCircleIcon, PaperclipIcon, UploadIcon, XIcon } from 'lucide-react'
 
 import {
   formatBytes,
-  useFileUpload,
-} from "@/registry/default/hooks/use-file-upload"
-import { Button } from "@/registry/default/ui/button"
+  useFileUpload
+} from '@/registry/default/hooks/use-file-upload'
+import { Button } from '@/registry/default/ui/button'
 
 // Create some dummy initial files
 const initialFiles = [
   {
-    name: "document.pdf",
+    name: 'document.pdf',
     size: 1528737,
-    type: "application/pdf",
-    url: "https://picsum.photos/1000/800?grayscale&random=1",
-    id: "document.pdf-1744638436563-8u5xuls",
-  },
+    type: 'application/pdf',
+    url: 'https://picsum.photos/1000/800?grayscale&random=1',
+    id: 'document.pdf-1744638436563-8u5xuls'
+  }
 ]
 
-export default function Component() {
+export default function Component () {
   const maxSize = 10 * 1024 * 1024 // 10MB default
 
   const [
@@ -31,11 +31,11 @@ export default function Component() {
       handleDrop,
       openFileDialog,
       removeFile,
-      getInputProps,
-    },
+      getInputProps
+    }
   ] = useFileUpload({
     maxSize,
-    initialFiles,
+    initialFiles
   })
 
   const file = files[0]
@@ -121,7 +121,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-center text-xs"
       >
-        Single file uploader w/ max size ∙{" "}
+        Single file uploader w/ max size ∙{' '}
         <a
           href="https://github.com/origin-space/originui/tree/main/docs/use-file-upload.md"
           className="hover:text-foreground underline"

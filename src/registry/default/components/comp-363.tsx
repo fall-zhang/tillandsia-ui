@@ -1,11 +1,11 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   HoverCard,
   HoverCardContent,
-  HoverCardTrigger,
-} from "@/registry/default/ui/hover-card"
+  HoverCardTrigger
+} from '@/registry/default/ui/hover-card'
 
-export default function HoverCardDemo() {
+export default function HoverCardDemo () {
   return (
     <HoverCard>
       <HoverCardTrigger asChild>

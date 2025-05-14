@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { CircleCheckIcon, XIcon } from "lucide-react"
-import { toast } from "sonner"
+import { CircleCheckIcon, XIcon } from 'lucide-react'
+import { toast } from 'sonner'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   return (
     <Button
       variant="outline"
@@ -24,8 +24,8 @@ export default function Component() {
                   <div className="text-sm whitespace-nowrap">
                     <button className="text-sm font-medium hover:underline">
                       View
-                    </button>{" "}
-                    <span className="text-muted-foreground mx-1">·</span>{" "}
+                    </button>{' '}
+                    <span className="text-muted-foreground mx-1">·</span>{' '}
                     <button
                       className="text-sm font-medium hover:underline"
                       onClick={() => toast.dismiss(t)}

@@ -1,20 +1,20 @@
-import { BoxIcon, HouseIcon, PanelsTopLeftIcon } from "lucide-react"
+import { BoxIcon, HouseIcon, PanelsTopLeftIcon } from 'lucide-react'
 
-import { Badge } from "@/registry/default/ui/badge"
+import { Badge } from '@/registry/default/ui/badge'
 import {
   Tabs,
   TabsContent,
   TabsList,
-  TabsTrigger,
-} from "@/registry/default/ui/tabs"
+  TabsTrigger
+} from '@/registry/default/ui/tabs'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
-  TooltipTrigger,
-} from "@/registry/default/ui/tooltip"
+  TooltipTrigger
+} from '@/registry/default/ui/tooltip'
 
-export default function Component() {
+export default function Component () {
   return (
     <Tabs defaultValue="tab-1" className="items-center">
       <TabsList>

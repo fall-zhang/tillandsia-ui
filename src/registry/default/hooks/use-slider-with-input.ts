@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { useCallback, useState } from "react"
+import { useCallback, useState } from 'react'
 
 type UseSliderWithInputProps = {
   minValue?: number
@@ -9,11 +9,11 @@ type UseSliderWithInputProps = {
   defaultValue?: number[]
 }
 
-export function useSliderWithInput({
+export function useSliderWithInput ({
   minValue = 0,
   maxValue = 100,
   initialValue = [minValue],
-  defaultValue = [minValue],
+  defaultValue = [minValue]
 }: UseSliderWithInputProps) {
   const [sliderValue, setSliderValue] = useState(initialValue)
   const [inputValues, setInputValues] = useState(
@@ -26,9 +26,9 @@ export function useSliderWithInput({
 
   const validateAndUpdateValue = useCallback(
     (rawValue: string, index: number) => {
-      if (rawValue === "" || rawValue === "-") {
+      if (rawValue === '' || rawValue === '-') {
         const newInputValues = [...inputValues]
-        newInputValues[index] = "0"
+        newInputValues[index] = '0'
         setInputValues(newInputValues)
 
         const newSliderValues = [...sliderValue]
@@ -70,7 +70,7 @@ export function useSliderWithInput({
   const handleInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
       const newValue = e.target.value
-      if (newValue === "" || /^-?\d*\.?\d*$/.test(newValue)) {
+      if (newValue === '' || /^-?\d*\.?\d*$/.test(newValue)) {
         const newInputValues = [...inputValues]
         newInputValues[index] = newValue
         setInputValues(newInputValues)
@@ -96,6 +96,6 @@ export function useSliderWithInput({
     handleInputChange,
     handleSliderChange,
     resetToDefault,
-    showReset,
+    showReset
   }
 }

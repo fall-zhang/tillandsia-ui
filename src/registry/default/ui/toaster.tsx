@@ -1,16 +1,16 @@
-"use client"
+'use client'
 
-import { useToast } from "@/registry/default/hooks/use-toast"
+import { useToast } from '@/registry/default/hooks/use-toast'
 import {
   Toast,
   ToastClose,
   ToastDescription,
   ToastProvider,
   ToastTitle,
-  ToastViewport,
-} from "@/registry/default/ui/toast"
+  ToastViewport
+} from '@/registry/default/ui/toast'
 
-export function Toaster() {
+export function Toaster () {
   const { toasts } = useToast()
 
   return (

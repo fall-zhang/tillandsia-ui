@@ -1,14 +1,14 @@
-import { useId } from "react"
+import { useId } from 'react'
 
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
-} from "@/registry/default/ui/select"
+  SelectValue
+} from '@/registry/default/ui/select'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   return (
     <div className="group relative">

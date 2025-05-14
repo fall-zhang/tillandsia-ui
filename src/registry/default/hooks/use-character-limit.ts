@@ -1,15 +1,15 @@
-"use client"
+'use client'
 
-import { ChangeEvent, useState } from "react"
+import { ChangeEvent, useState } from 'react'
 
 type UseCharacterLimitProps = {
   maxLength: number
   initialValue?: string
 }
 
-export function useCharacterLimit({
+export function useCharacterLimit ({
   maxLength,
-  initialValue = "",
+  initialValue = ''
 }: UseCharacterLimitProps) {
   const [value, setValue] = useState(initialValue)
   const [characterCount, setCharacterCount] = useState(initialValue.length)
@@ -28,6 +28,6 @@ export function useCharacterLimit({
     value,
     characterCount,
     handleChange,
-    maxLength,
+    maxLength
   }
 }

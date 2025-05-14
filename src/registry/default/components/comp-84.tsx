@@ -1,8 +1,8 @@
-import { SparklesIcon } from "lucide-react"
+import { SparklesIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   return (
     <Button variant="outline">
       Button

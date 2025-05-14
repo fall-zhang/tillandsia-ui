@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from 'react'
 import {
   eachMonthOfInterval,
   eachYearOfInterval,
@@ -8,21 +8,21 @@ import {
   format,
   isAfter,
   isBefore,
-  startOfYear,
-} from "date-fns"
-import { ChevronDownIcon } from "lucide-react"
-import { CaptionLabelProps, MonthGridProps } from "react-day-picker"
+  startOfYear
+} from 'date-fns'
+import { ChevronDownIcon } from 'lucide-react'
+import { CaptionLabelProps, MonthGridProps } from 'react-day-picker'
 
-import { Button } from "@/registry/default/ui/button"
-import { Calendar } from "@/registry/default/ui/calendar"
+import { Button } from '@/registry/default/ui/button'
+import { Calendar } from '@/registry/default/ui/calendar'
 import {
   Collapsible,
   CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/registry/default/ui/collapsible"
-import { ScrollArea } from "@/registry/default/ui/scroll-area"
+  CollapsibleTrigger
+} from '@/registry/default/ui/collapsible'
+import { ScrollArea } from '@/registry/default/ui/scroll-area'
 
-export default function Component() {
+export default function Component () {
   const today = new Date()
   const [month, setMonth] = useState(today)
   const [date, setDate] = useState<Date | undefined>(today)
@@ -32,7 +32,7 @@ export default function Component() {
 
   const years = eachYearOfInterval({
     start: startOfYear(startDate),
-    end: endOfYear(endDate),
+    end: endOfYear(endDate)
   })
 
   return (
@@ -48,8 +48,8 @@ export default function Component() {
         endMonth={endDate}
         className="overflow-hidden rounded-md border p-2"
         classNames={{
-          month_caption: "ms-2.5 me-20 justify-start",
-          nav: "justify-end",
+          month_caption: 'ms-2.5 me-20 justify-start',
+          nav: 'justify-end'
         }}
         components={{
           CaptionLabel: (props: CaptionLabelProps) => (
@@ -78,7 +78,7 @@ export default function Component() {
                 {props.children}
               </MonthGrid>
             )
-          },
+          }
         }}
       />
       <p
@@ -86,12 +86,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Advanced selection -{" "}
+        Advanced selection -{' '}
         <a
           className="hover:text-foreground underline"
           href="https://daypicker.dev/"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React DayPicker
         </a>
@@ -100,7 +100,7 @@ export default function Component() {
   )
 }
 
-function MonthGrid({
+function MonthGrid ({
   className,
   children,
   isYearView,
@@ -109,7 +109,7 @@ function MonthGrid({
   years,
   currentYear,
   currentMonth,
-  onMonthSelect,
+  onMonthSelect
 }: {
   className?: string
   children: React.ReactNode
@@ -129,7 +129,7 @@ function MonthGrid({
   useEffect(() => {
     if (isYearView && currentYearRef.current && scrollAreaRef.current) {
       const viewport = scrollAreaRef.current.querySelector(
-        "[data-radix-scroll-area-viewport]"
+        '[data-radix-scroll-area-viewport]'
       ) as HTMLElement
       if (viewport) {
         const yearTop = currentYearRef.current.offsetTop
@@ -150,7 +150,7 @@ function MonthGrid({
             {years.map((year) => {
               const months = eachMonthOfInterval({
                 start: startOfYear(year),
-                end: endOfYear(year),
+                end: endOfYear(year)
               })
               const isCurrentYear = year.getFullYear() === currentYear
 
@@ -177,13 +177,13 @@ function MonthGrid({
                             ref={
                               isCurrentMonth ? currentMonthButtonRef : undefined
                             }
-                            variant={isCurrentMonth ? "default" : "outline"}
+                            variant={isCurrentMonth ? 'default' : 'outline'}
                             size="sm"
                             className="h-7"
                             disabled={isDisabled}
                             onClick={() => onMonthSelect(month)}
                           >
-                            {format(month, "MMM")}
+                            {format(month, 'MMM')}
                           </Button>
                         )
                       })}
@@ -199,10 +199,10 @@ function MonthGrid({
   )
 }
 
-function CaptionLabel({
+function CaptionLabel ({
   children,
   isYearView,
-  setIsYearView,
+  setIsYearView
 }: {
   isYearView: boolean
   setIsYearView: React.Dispatch<React.SetStateAction<boolean>>
@@ -213,7 +213,7 @@ function CaptionLabel({
       variant="ghost"
       size="sm"
       onClick={() => setIsYearView((prev) => !prev)}
-      data-state={isYearView ? "open" : "closed"}
+      data-state={isYearView ? 'open' : 'closed'}
     >
       {children}
       <ChevronDownIcon
@@ -225,10 +225,10 @@ function CaptionLabel({
   )
 }
 
-function CollapsibleYear({
+function CollapsibleYear ({
   title,
   children,
-  open,
+  open
 }: {
   title: string
   children: React.ReactNode

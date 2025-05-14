@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { useLayoutEffect, useMemo, useRef, useState } from "react"
+import { useLayoutEffect, useMemo, useRef, useState } from 'react'
 
 interface EventVisibilityOptions {
   eventHeight: number
@@ -17,9 +17,9 @@ interface EventVisibilityResult {
  * Hook for calculating event visibility based on container height
  * Uses ResizeObserver for efficient updates
  */
-export function useEventVisibility({
+export function useEventVisibility ({
   eventHeight,
-  eventGap,
+  eventGap
 }: EventVisibilityOptions): EventVisibilityResult {
   // Use the standard pattern for React refs
   const contentRef = useRef<HTMLDivElement>(null)
@@ -70,10 +70,9 @@ export function useEventVisibility({
       // If all events fit, show them all
       if (totalEvents <= maxEvents) {
         return totalEvents
-      } else {
-        // Otherwise, reserve space for "more" button by showing one less
-        return maxEvents > 0 ? maxEvents - 1 : 0
       }
+      // Otherwise, reserve space for "more" button by showing one less
+      return maxEvents > 0 ? maxEvents - 1 : 0
     }
   }, [contentHeight, eventHeight, eventGap])
 
@@ -81,6 +80,6 @@ export function useEventVisibility({
   return {
     contentRef,
     contentHeight,
-    getVisibleEventCount,
+    getVisibleEventCount
   } as EventVisibilityResult
 }

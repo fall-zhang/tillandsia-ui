@@ -1,20 +1,20 @@
-"use client"
+'use client'
 
-import { toast } from "sonner"
+import { toast } from 'sonner'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   return (
     <Button
       variant="outline"
       onClick={() => {
-        toast("Your request was completed!", {
-          description: "It was a long journey, but we made it!",
+        toast('Your request was completed!', {
+          description: 'It was a long journey, but we made it!',
           action: {
-            label: "Undo",
-            onClick: () => console.log("Undo"),
-          },
+            label: 'Undo',
+            onClick: () => console.log('Undo')
+          }
         })
       }}
     >

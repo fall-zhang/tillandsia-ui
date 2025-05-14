@@ -1,19 +1,19 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { ChevronDownIcon } from "lucide-react"
+import { useState } from 'react'
+import { ChevronDownIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
-  DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu"
+  DropdownMenuTrigger
+} from '@/registry/default/ui/dropdown-menu'
 
-export default function Component() {
-  const [framework, setFramework] = useState("nextjs")
+export default function Component () {
+  const [framework, setFramework] = useState('nextjs')
 
   return (
     <DropdownMenu>

@@ -1,6 +1,6 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="bg-background flex items-center rounded-full border p-1 shadow-sm">
       <div className="flex -space-x-3">

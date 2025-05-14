@@ -1,11 +1,11 @@
-import { ComponentType } from "react"
-import type { RegistryItem } from "shadcn/registry"
+import { ComponentType } from 'react'
+import type { RegistryItem } from 'shadcn/registry'
 
 interface ComponentLoaderProps {
   component: RegistryItem
 }
 
-export default async function ComponentLoader<TProps extends object>({
+export default async function ComponentLoader<TProps extends object> ({
   component,
   ...props
 }: ComponentLoaderProps & TProps) {

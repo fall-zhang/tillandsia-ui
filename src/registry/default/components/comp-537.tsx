@@ -5,43 +5,43 @@ import {
   TimelineIndicator,
   TimelineItem,
   TimelineSeparator,
-  TimelineTitle,
-} from "@/registry/default/ui/timeline"
+  TimelineTitle
+} from '@/registry/default/ui/timeline'
 
 const items = [
   {
     id: 1,
-    date: "Mar 15, 2024",
-    title: "Project Kickoff",
+    date: 'Mar 15, 2024',
+    title: 'Project Kickoff'
   },
   {
     id: 2,
-    date: "Mar 22, 2024",
-    title: "Design Phase",
+    date: 'Mar 22, 2024',
+    title: 'Design Phase'
   },
   {
     id: 3,
-    date: "Apr 5, 2024",
-    title: "Development Sprint",
+    date: 'Apr 5, 2024',
+    title: 'Development Sprint'
   },
   {
     id: 4,
-    date: "Apr 19, 2024",
-    title: "Testing & Deployment",
+    date: 'Apr 19, 2024',
+    title: 'Testing & Deployment'
   },
   {
     id: 5,
-    date: "May 3, 2024",
-    title: "User Training",
+    date: 'May 3, 2024',
+    title: 'User Training'
   },
   {
     id: 6,
-    date: "May 17, 2024",
-    title: "Project Handover",
-  },
+    date: 'May 17, 2024',
+    title: 'Project Handover'
+  }
 ]
 
-export default function Component() {
+export default function Component () {
   return (
     <Timeline defaultValue={3}>
       {items.map((item) => (

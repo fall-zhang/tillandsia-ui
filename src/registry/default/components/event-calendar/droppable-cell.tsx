@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useDroppable } from "@dnd-kit/core"
+import { useDroppable } from '@dnd-kit/core'
 
-import { useCalendarDnd } from "@/registry/default/components/event-calendar"
-import { cn } from "@/registry/default/lib/utils"
+import { useCalendarDnd } from '@/registry/default/components/event-calendar'
+import { cn } from '@/registry/default/lib/utils'
 
 interface DroppableCellProps {
   id: string
@@ -14,13 +14,13 @@ interface DroppableCellProps {
   onClick?: () => void
 }
 
-export function DroppableCell({
+export function DroppableCell ({
   id,
   date,
   time,
   children,
   className,
-  onClick,
+  onClick
 }: DroppableCellProps) {
   const { activeEvent } = useCalendarDnd()
 
@@ -28,16 +28,16 @@ export function DroppableCell({
     id,
     data: {
       date,
-      time,
-    },
+      time
+    }
   })
 
   // Format time for display in tooltip (only for debugging)
   const formattedTime =
     time !== undefined
       ? `${Math.floor(time)}:${Math.round((time - Math.floor(time)) * 60)
-          .toString()
-          .padStart(2, "0")}`
+        .toString()
+        .padStart(2, '0')}`
       : null
 
   return (
@@ -45,7 +45,7 @@ export function DroppableCell({
       ref={setNodeRef}
       onClick={onClick}
       className={cn(
-        "data-dragging:bg-accent flex h-full flex-col overflow-hidden px-0.5 py-1 sm:px-1",
+        'data-dragging:bg-accent flex h-full flex-col overflow-hidden px-0.5 py-1 sm:px-1',
         className
       )}
       title={formattedTime ? `${formattedTime}` : undefined}

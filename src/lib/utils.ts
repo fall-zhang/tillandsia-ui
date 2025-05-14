@@ -1,7 +1,7 @@
-import registry from "@/registry.json"
-import type { RegistryItem } from "shadcn/registry"
+import registry from '@/registry.json'
+import type { RegistryItem } from 'shadcn/registry'
 
-import type { RegistryTag } from "@/registry/registry-tags"
+import type { RegistryTag } from '@/registry/registry-tags'
 
 const components = registry.items as unknown as RegistryItem[]
 
@@ -10,10 +10,10 @@ export const getComponents = (
 ): RegistryItem[] => {
   return selectedTags.length
     ? components.filter((component) =>
-        selectedTags.every(
-          (tag) => component.meta?.tags?.includes(tag) ?? false
-        )
+      selectedTags.every(
+        (tag) => component.meta?.tags?.includes(tag) ?? false
       )
+    )
     : components
 }
 
@@ -50,8 +50,8 @@ export const getAvailableTags = (
 
 export const convertRegistryPaths = (content: string): string => {
   return content
-    .replace(/@\/registry\/default\/ui/g, "@/components/ui")
-    .replace(/@\/registry\/default\/compositions/g, "@/components")
-    .replace(/@\/registry\/default\/hooks/g, "@/hooks")
-    .replace(/@\/registry\/default\/lib/g, "@/lib")
+    .replace(/@\/registry\/default\/ui/g, '@/components/ui')
+    .replace(/@\/registry\/default\/compositions/g, '@/components')
+    .replace(/@\/registry\/default\/hooks/g, '@/hooks')
+    .replace(/@\/registry\/default\/lib/g, '@/lib')
 }

@@ -4,68 +4,68 @@ import {
   TableCell,
   TableHead,
   TableHeader,
-  TableRow,
-} from "@/registry/default/ui/table"
+  TableRow
+} from '@/registry/default/ui/table'
 
 const programmingLanguages = [
   {
-    id: "1",
-    name: "JavaScript",
-    releaseYear: "1995",
-    developer: "Brendan Eich",
-    typing: "Dynamic",
-    paradigm: "Multi-paradigm",
-    extension: ".js",
-    latestVersion: "ES2021",
-    popularity: "High",
+    id: '1',
+    name: 'JavaScript',
+    releaseYear: '1995',
+    developer: 'Brendan Eich',
+    typing: 'Dynamic',
+    paradigm: 'Multi-paradigm',
+    extension: '.js',
+    latestVersion: 'ES2021',
+    popularity: 'High'
   },
   {
-    id: "2",
-    name: "Python",
-    releaseYear: "1991",
-    developer: "Guido van Rossum",
-    typing: "Dynamic",
-    paradigm: "Multi-paradigm",
-    extension: ".py",
-    latestVersion: "3.10",
-    popularity: "High",
+    id: '2',
+    name: 'Python',
+    releaseYear: '1991',
+    developer: 'Guido van Rossum',
+    typing: 'Dynamic',
+    paradigm: 'Multi-paradigm',
+    extension: '.py',
+    latestVersion: '3.10',
+    popularity: 'High'
   },
   {
-    id: "3",
-    name: "Java",
-    releaseYear: "1995",
-    developer: "James Gosling",
-    typing: "Static",
-    paradigm: "Object-oriented",
-    extension: ".java",
-    latestVersion: "17",
-    popularity: "High",
+    id: '3',
+    name: 'Java',
+    releaseYear: '1995',
+    developer: 'James Gosling',
+    typing: 'Static',
+    paradigm: 'Object-oriented',
+    extension: '.java',
+    latestVersion: '17',
+    popularity: 'High'
   },
   {
-    id: "4",
-    name: "C++",
-    releaseYear: "1985",
-    developer: "Bjarne Stroustrup",
-    typing: "Static",
-    paradigm: "Multi-paradigm",
-    extension: ".cpp",
-    latestVersion: "C++20",
-    popularity: "High",
+    id: '4',
+    name: 'C++',
+    releaseYear: '1985',
+    developer: 'Bjarne Stroustrup',
+    typing: 'Static',
+    paradigm: 'Multi-paradigm',
+    extension: '.cpp',
+    latestVersion: 'C++20',
+    popularity: 'High'
   },
   {
-    id: "5",
-    name: "Ruby",
-    releaseYear: "1995",
-    developer: "Yukihiro Matsumoto",
-    typing: "Dynamic",
-    paradigm: "Multi-paradigm",
-    extension: ".rb",
-    latestVersion: "3.0",
-    popularity: "Low",
-  },
+    id: '5',
+    name: 'Ruby',
+    releaseYear: '1995',
+    developer: 'Yukihiro Matsumoto',
+    typing: 'Dynamic',
+    paradigm: 'Multi-paradigm',
+    extension: '.rb',
+    latestVersion: '3.0',
+    popularity: 'Low'
+  }
 ]
 
-export default function Component() {
+export default function Component () {
   return (
     <div>
       <div className="bg-background overflow-hidden rounded-md border">

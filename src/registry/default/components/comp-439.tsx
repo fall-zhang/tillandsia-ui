@@ -1,12 +1,12 @@
-import { Badge } from "@/registry/default/ui/badge"
+import { Badge } from '@/registry/default/ui/badge'
 import {
   Tabs,
   TabsContent,
   TabsList,
-  TabsTrigger,
-} from "@/registry/default/ui/tabs"
+  TabsTrigger
+} from '@/registry/default/ui/tabs'
 
-export default function Component() {
+export default function Component () {
   return (
     <Tabs defaultValue="tab-1">
       <TabsList className="mx-auto flex w-full max-w-xs bg-transparent">

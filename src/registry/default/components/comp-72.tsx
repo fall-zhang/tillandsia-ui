@@ -1,8 +1,8 @@
-import { useId } from "react"
+import { useId } from 'react'
 
-import { Textarea } from "@/registry/default/ui/textarea"
+import { Textarea } from '@/registry/default/ui/textarea'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   return (
     <div className="group relative">

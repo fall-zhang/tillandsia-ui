@@ -1,16 +1,16 @@
-import { useId } from "react"
-import { ClockIcon } from "lucide-react"
+import { useId } from 'react'
+import { ClockIcon } from 'lucide-react'
 
-import { Label } from "@/registry/default/ui/label"
+import { Label } from '@/registry/default/ui/label'
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
-} from "@/registry/default/ui/select"
+  SelectValue
+} from '@/registry/default/ui/select'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   return (
     <div className="*:not-first:mt-2">

@@ -1,50 +1,50 @@
-import * as AccordionPrimitive from "@radix-ui/react-accordion"
+import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import {
   AtSignIcon,
   CommandIcon,
   EclipseIcon,
   PlusIcon,
-  ZapIcon,
-} from "lucide-react"
+  ZapIcon
+} from 'lucide-react'
 
 import {
   Accordion,
   AccordionContent,
-  AccordionItem,
-} from "@/registry/default/ui/accordion"
+  AccordionItem
+} from '@/registry/default/ui/accordion'
 
 const items = [
   {
-    id: "1",
+    id: '1',
     icon: CommandIcon,
-    title: "What makes Origin UI different?",
+    title: 'What makes Origin UI different?',
     content:
-      "Origin UI focuses on developer experience and performance. Built with TypeScript, it offers excellent type safety, follows accessibility standards, and provides comprehensive documentation with regular updates.",
+      'Origin UI focuses on developer experience and performance. Built with TypeScript, it offers excellent type safety, follows accessibility standards, and provides comprehensive documentation with regular updates.'
   },
   {
-    id: "2",
+    id: '2',
     icon: EclipseIcon,
-    title: "How can I customize the components?",
+    title: 'How can I customize the components?',
     content:
-      "Use our CSS variables for global styling, or className and style props for component-specific changes. We support CSS modules, Tailwind, and dark mode out of the box.",
+      'Use our CSS variables for global styling, or className and style props for component-specific changes. We support CSS modules, Tailwind, and dark mode out of the box.'
   },
   {
-    id: "3",
+    id: '3',
     icon: ZapIcon,
-    title: "Is Origin UI optimized for performance?",
+    title: 'Is Origin UI optimized for performance?',
     content:
-      "Yes, with tree-shaking, code splitting, and minimal runtime overhead. Most components are under 5KB gzipped.",
+      'Yes, with tree-shaking, code splitting, and minimal runtime overhead. Most components are under 5KB gzipped.'
   },
   {
-    id: "4",
+    id: '4',
     icon: AtSignIcon,
-    title: "How accessible are the components?",
+    title: 'How accessible are the components?',
     content:
-      "All components follow WAI-ARIA standards, featuring proper ARIA attributes, keyboard navigation, and screen reader support. Regular testing ensures compatibility with NVDA, VoiceOver, and JAWS.",
-  },
+      'All components follow WAI-ARIA standards, featuring proper ARIA attributes, keyboard navigation, and screen reader support. Regular testing ensures compatibility with NVDA, VoiceOver, and JAWS.'
+  }
 ]
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="space-y-4">
       <h2 className="text-xl font-bold">W/ icon and plus-minus</h2>

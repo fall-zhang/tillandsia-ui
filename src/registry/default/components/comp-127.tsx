@@ -3,12 +3,12 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
   ChevronUpIcon,
-  CircleIcon,
-} from "lucide-react"
+  CircleIcon
+} from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="inline-grid w-fit grid-cols-3 gap-1">
       <Button

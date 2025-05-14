@@ -10,16 +10,16 @@ type UsePaginationReturn = {
   showRightEllipsis: boolean
 }
 
-export function usePagination({
+export function usePagination ({
   currentPage,
   totalPages,
-  paginationItemsToDisplay,
+  paginationItemsToDisplay
 }: UsePaginationProps): UsePaginationReturn {
   const showLeftEllipsis = currentPage - 1 > paginationItemsToDisplay / 2
   const showRightEllipsis =
     totalPages - currentPage + 1 > paginationItemsToDisplay / 2
 
-  function calculatePaginationRange(): number[] {
+  function calculatePaginationRange (): number[] {
     if (totalPages <= paginationItemsToDisplay) {
       return Array.from({ length: totalPages }, (_, i) => i + 1)
     }
@@ -27,12 +27,12 @@ export function usePagination({
     const halfDisplay = Math.floor(paginationItemsToDisplay / 2)
     const initialRange = {
       start: currentPage - halfDisplay,
-      end: currentPage + halfDisplay,
+      end: currentPage + halfDisplay
     }
 
     const adjustedRange = {
       start: Math.max(1, initialRange.start),
-      end: Math.min(totalPages, initialRange.end),
+      end: Math.min(totalPages, initialRange.end)
     }
 
     if (adjustedRange.start === 1) {
@@ -56,6 +56,6 @@ export function usePagination({
   return {
     pages,
     showLeftEllipsis,
-    showRightEllipsis,
+    showRightEllipsis
   }
 }

@@ -1,4 +1,4 @@
-import { usePagination } from "@/registry/default/hooks/use-pagination"
+import { usePagination } from '@/registry/default/hooks/use-pagination'
 import {
   Pagination,
   PaginationContent,
@@ -6,8 +6,8 @@ import {
   PaginationItem,
   PaginationLink,
   PaginationNext,
-  PaginationPrevious,
-} from "@/registry/default/ui/pagination"
+  PaginationPrevious
+} from '@/registry/default/ui/pagination'
 
 type PaginationProps = {
   currentPage: number
@@ -15,15 +15,15 @@ type PaginationProps = {
   paginationItemsToDisplay?: number
 }
 
-export default function Component({
+export default function Component ({
   currentPage,
   totalPages,
-  paginationItemsToDisplay = 5,
+  paginationItemsToDisplay = 5
 }: PaginationProps) {
   const { pages, showLeftEllipsis, showRightEllipsis } = usePagination({
     currentPage,
     totalPages,
-    paginationItemsToDisplay,
+    paginationItemsToDisplay
   })
 
   return (
@@ -35,7 +35,7 @@ export default function Component({
             className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
             href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}
             aria-disabled={currentPage === 1 ? true : undefined}
-            role={currentPage === 1 ? "link" : undefined}
+            role={currentPage === 1 ? 'link' : undefined}
           />
         </PaginationItem>
 
@@ -75,7 +75,7 @@ export default function Component({
                 : `#/page/${currentPage + 1}`
             }
             aria-disabled={currentPage === totalPages ? true : undefined}
-            role={currentPage === totalPages ? "link" : undefined}
+            role={currentPage === totalPages ? 'link' : undefined}
           />
         </PaginationItem>
       </PaginationContent>

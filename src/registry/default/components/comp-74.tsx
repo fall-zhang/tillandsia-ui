@@ -1,19 +1,19 @@
-"use client"
+'use client'
 
-import { useId } from "react"
+import { useId } from 'react'
 
-import { useCharacterLimit } from "@/registry/default/hooks/use-character-limit"
-import { Label } from "@/registry/default/ui/label"
-import { Textarea } from "@/registry/default/ui/textarea"
+import { useCharacterLimit } from '@/registry/default/hooks/use-character-limit'
+import { Label } from '@/registry/default/ui/label'
+import { Textarea } from '@/registry/default/ui/textarea'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   const maxLength = 180
   const {
     value,
     characterCount,
     handleChange,
-    maxLength: limit,
+    maxLength: limit
   } = useCharacterLimit({ maxLength })
 
   return (
@@ -32,7 +32,7 @@ export default function Component() {
         role="status"
         aria-live="polite"
       >
-        <span className="tabular-nums">{limit - characterCount}</span>{" "}
+        <span className="tabular-nums">{limit - characterCount}</span>{' '}
         characters left
       </p>
     </div>

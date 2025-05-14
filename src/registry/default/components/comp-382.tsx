@@ -1,68 +1,68 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { BellIcon } from "lucide-react"
+import { useState } from 'react'
+import { BellIcon } from 'lucide-react'
 
-import { Badge } from "@/registry/default/ui/badge"
-import { Button } from "@/registry/default/ui/button"
+import { Badge } from '@/registry/default/ui/badge'
+import { Button } from '@/registry/default/ui/button'
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
+  PopoverTrigger
+} from '@/registry/default/ui/popover'
 
 const initialNotifications = [
   {
     id: 1,
-    user: "Chris Tompson",
-    action: "requested review on",
-    target: "PR #42: Feature implementation",
-    timestamp: "15 minutes ago",
-    unread: true,
+    user: 'Chris Tompson',
+    action: 'requested review on',
+    target: 'PR #42: Feature implementation',
+    timestamp: '15 minutes ago',
+    unread: true
   },
   {
     id: 2,
-    user: "Emma Davis",
-    action: "shared",
-    target: "New component library",
-    timestamp: "45 minutes ago",
-    unread: true,
+    user: 'Emma Davis',
+    action: 'shared',
+    target: 'New component library',
+    timestamp: '45 minutes ago',
+    unread: true
   },
   {
     id: 3,
-    user: "James Wilson",
-    action: "assigned you to",
-    target: "API integration task",
-    timestamp: "4 hours ago",
-    unread: false,
+    user: 'James Wilson',
+    action: 'assigned you to',
+    target: 'API integration task',
+    timestamp: '4 hours ago',
+    unread: false
   },
   {
     id: 4,
-    user: "Alex Morgan",
-    action: "replied to your comment in",
-    target: "Authentication flow",
-    timestamp: "12 hours ago",
-    unread: false,
+    user: 'Alex Morgan',
+    action: 'replied to your comment in',
+    target: 'Authentication flow',
+    timestamp: '12 hours ago',
+    unread: false
   },
   {
     id: 5,
-    user: "Sarah Chen",
-    action: "commented on",
-    target: "Dashboard redesign",
-    timestamp: "2 days ago",
-    unread: false,
+    user: 'Sarah Chen',
+    action: 'commented on',
+    target: 'Dashboard redesign',
+    timestamp: '2 days ago',
+    unread: false
   },
   {
     id: 6,
-    user: "Miky Derya",
-    action: "mentioned you in",
-    target: "Origin UI open graph image",
-    timestamp: "2 weeks ago",
-    unread: false,
-  },
+    user: 'Miky Derya',
+    action: 'mentioned you in',
+    target: 'Origin UI open graph image',
+    timestamp: '2 weeks ago',
+    unread: false
+  }
 ]
 
-function Dot({ className }: { className?: string }) {
+function Dot ({ className }: { className?: string }) {
   return (
     <svg
       width="6"
@@ -78,7 +78,7 @@ function Dot({ className }: { className?: string }) {
   )
 }
 
-export default function Component() {
+export default function Component () {
   const [notifications, setNotifications] = useState(initialNotifications)
   const unreadCount = notifications.filter((n) => n.unread).length
 
@@ -86,7 +86,7 @@ export default function Component() {
     setNotifications(
       notifications.map((notification) => ({
         ...notification,
-        unread: false,
+        unread: false
       }))
     )
   }
@@ -94,9 +94,9 @@ export default function Component() {
   const handleNotificationClick = (id: number) => {
     setNotifications(
       notifications.map((notification) =>
-        notification.id === id
+        (notification.id === id
           ? { ...notification, unread: false }
-          : notification
+          : notification)
       )
     )
   }
@@ -113,7 +113,7 @@ export default function Component() {
           <BellIcon size={16} aria-hidden="true" />
           {unreadCount > 0 && (
             <Badge className="absolute -top-2 left-full min-w-5 -translate-x-1/2 px-1">
-              {unreadCount > 99 ? "99+" : unreadCount}
+              {unreadCount > 99 ? '99+' : unreadCount}
             </Badge>
           )}
         </Button>
@@ -148,8 +148,8 @@ export default function Component() {
                 >
                   <span className="text-foreground font-medium hover:underline">
                     {notification.user}
-                  </span>{" "}
-                  {notification.action}{" "}
+                  </span>{' '}
+                  {notification.action}{' '}
                   <span className="text-foreground font-medium hover:underline">
                     {notification.target}
                   </span>

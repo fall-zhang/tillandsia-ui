@@ -1,14 +1,14 @@
-"use client"
+'use client'
 
-import { CircleUserRoundIcon, XIcon } from "lucide-react"
+import { CircleUserRoundIcon, XIcon } from 'lucide-react'
 
-import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
-import { Button } from "@/registry/default/ui/button"
+import { useFileUpload } from '@/registry/default/hooks/use-file-upload'
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   const [{ files }, { removeFile, openFileDialog, getInputProps }] =
     useFileUpload({
-      accept: "image/*",
+      accept: 'image/*'
     })
 
   const previewUrl = files[0]?.preview || null
@@ -21,22 +21,24 @@ export default function Component() {
           variant="outline"
           className="relative size-16 overflow-hidden p-0 shadow-none"
           onClick={openFileDialog}
-          aria-label={previewUrl ? "Change image" : "Upload image"}
+          aria-label={previewUrl ? 'Change image' : 'Upload image'}
         >
-          {previewUrl ? (
-            <img
-              className="size-full object-cover"
-              src={previewUrl}
-              alt="Preview of uploaded image"
-              width={64}
-              height={64}
-              style={{ objectFit: "cover" }}
-            />
-          ) : (
-            <div aria-hidden="true">
-              <CircleUserRoundIcon className="size-4 opacity-60" />
-            </div>
-          )}
+          {previewUrl
+            ? (
+              <img
+                className="size-full object-cover"
+                src={previewUrl}
+                alt="Preview of uploaded image"
+                width={64}
+                height={64}
+                style={{ objectFit: 'cover' }}
+              />
+            )
+            : (
+              <div aria-hidden="true">
+                <CircleUserRoundIcon className="size-4 opacity-60" />
+              </div>
+            )}
         </Button>
         {previewUrl && (
           <Button

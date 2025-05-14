@@ -1,8 +1,8 @@
-import { UserRoundIcon } from "lucide-react"
+import { UserRoundIcon } from 'lucide-react'
 
-import { Avatar, AvatarFallback } from "@/registry/default/ui/avatar"
+import { Avatar, AvatarFallback } from '@/registry/default/ui/avatar'
 
-export default function Component() {
+export default function Component () {
   return (
     <Avatar>
       <AvatarFallback>

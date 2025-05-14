@@ -7,11 +7,11 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/registry/default/ui/alert-dialog"
-import { Button } from "@/registry/default/ui/button"
+  AlertDialogTrigger
+} from '@/registry/default/ui/alert-dialog'
+import { Button } from '@/registry/default/ui/button'
 
-export default function AlertComponent() {
+export default function AlertComponent () {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>

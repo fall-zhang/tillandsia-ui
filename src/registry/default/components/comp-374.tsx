@@ -1,15 +1,15 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 import {
   ArchiveRestoreIcon,
   ChevronDownIcon,
   PlusIcon,
   Share2Icon,
-  TrashIcon,
-} from "lucide-react"
+  TrashIcon
+} from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -24,11 +24,11 @@ import {
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu"
+  DropdownMenuTrigger
+} from '@/registry/default/ui/dropdown-menu'
 
-export default function Component() {
-  const [framework, setFramework] = useState("nextjs")
+export default function Component () {
+  const [framework, setFramework] = useState('nextjs')
   const [emailNotifications, setEmailNotifications] = useState(false)
   const [pushNotifications, setPushNotifications] = useState(true)
 

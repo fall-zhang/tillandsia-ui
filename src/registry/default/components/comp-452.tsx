@@ -1,4 +1,4 @@
-import { HomeIcon } from "lucide-react"
+import { HomeIcon } from 'lucide-react'
 
 import {
   Breadcrumb,
@@ -6,10 +6,10 @@ import {
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/registry/default/ui/breadcrumb"
+  BreadcrumbSeparator
+} from '@/registry/default/ui/breadcrumb'
 
-export default function Component() {
+export default function Component () {
   return (
     <Breadcrumb>
       <BreadcrumbList className="bg-background rounded-md border px-3 py-2 shadow-xs">

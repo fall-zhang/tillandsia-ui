@@ -1,8 +1,8 @@
-import { ChevronLeftIcon } from "lucide-react"
+import { ChevronLeftIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   return (
     <Button className="relative ps-12">
       Previous

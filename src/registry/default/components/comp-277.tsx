@@ -1,6 +1,6 @@
-import { CircleAlertIcon } from "lucide-react"
+import { CircleAlertIcon } from 'lucide-react'
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="rounded-md border px-4 py-3">
       <div className="flex gap-3">

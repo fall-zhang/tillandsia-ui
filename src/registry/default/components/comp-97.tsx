@@ -1,8 +1,8 @@
-import { PlusIcon } from "lucide-react"
+import { PlusIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   return (
     <Button
       className="rounded-full"

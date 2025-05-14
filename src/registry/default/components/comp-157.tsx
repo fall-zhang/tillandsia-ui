@@ -1,17 +1,17 @@
-import { useId } from "react"
-import { RiStarFill } from "@remixicon/react"
+import { useId } from 'react'
+import { RiStarFill } from '@remixicon/react'
 
-import { Label } from "@/registry/default/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
+import { Label } from '@/registry/default/ui/label'
+import { RadioGroup, RadioGroupItem } from '@/registry/default/ui/radio-group'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   return (
     <RadioGroup defaultValue="all">
       <div className="flex items-center gap-2">
         <RadioGroupItem value="all" id={`${id}-1`} />
         <Label htmlFor={`${id}-1`}>
-          All reviews{" "}
+          All reviews{' '}
           <span className="text-muted-foreground text-xs leading-[inherit] font-normal">
             (12,921)
           </span>
@@ -30,7 +30,7 @@ export default function Component() {
             <RiStarFill size={16} />
             <RiStarFill size={16} />
           </span>
-          <span className="sr-only">5 stars</span>{" "}
+          <span className="sr-only">5 stars</span>{' '}
           <span className="text-muted-foreground text-xs leading-[inherit] font-normal">
             (5,168)
           </span>
@@ -49,7 +49,7 @@ export default function Component() {
             <RiStarFill size={16} />
             <RiStarFill size={16} className="opacity-30" />
           </span>
-          <span className="sr-only">4 stars</span>{" "}
+          <span className="sr-only">4 stars</span>{' '}
           <span className="text-muted-foreground text-xs leading-[inherit] font-normal">
             (4,726)
           </span>
@@ -68,7 +68,7 @@ export default function Component() {
             <RiStarFill size={16} className="opacity-30" />
             <RiStarFill size={16} className="opacity-30" />
           </span>
-          <span className="sr-only">3 stars</span>{" "}
+          <span className="sr-only">3 stars</span>{' '}
           <span className="text-muted-foreground text-xs leading-[inherit] font-normal">
             (3,234)
           </span>
@@ -87,7 +87,7 @@ export default function Component() {
             <RiStarFill size={16} className="opacity-30" />
             <RiStarFill size={16} className="opacity-30" />
           </span>
-          <span className="sr-only">2 stars</span>{" "}
+          <span className="sr-only">2 stars</span>{' '}
           <span className="text-muted-foreground text-xs leading-[inherit] font-normal">
             (1,842)
           </span>
@@ -106,7 +106,7 @@ export default function Component() {
             <RiStarFill size={16} className="opacity-30" />
             <RiStarFill size={16} className="opacity-30" />
           </span>
-          <span className="sr-only">1 star</span>{" "}
+          <span className="sr-only">1 star</span>{' '}
           <span className="text-muted-foreground text-xs leading-[inherit] font-normal">
             (452)
           </span>

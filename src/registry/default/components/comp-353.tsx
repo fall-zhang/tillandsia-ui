@@ -6,102 +6,102 @@ import {
   EclipseIcon,
   GaugeIcon,
   LucideIcon,
-  ZapIcon,
-} from "lucide-react"
+  ZapIcon
+} from 'lucide-react'
 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger,
-} from "@/registry/default/ui/accordion"
+  AccordionTrigger
+} from '@/registry/default/ui/accordion'
 import {
   Collapsible,
   CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/registry/default/ui/collapsible"
+  CollapsibleTrigger
+} from '@/registry/default/ui/collapsible'
 
 const items = [
   {
-    id: "1",
-    title: "What makes Origin UI different?",
+    id: '1',
+    title: 'What makes Origin UI different?',
     icon: CommandIcon,
     collapsibles: [
       {
-        title: "What about performance?",
+        title: 'What about performance?',
         content:
-          "We optimize every component for maximum performance and minimal bundle size.",
-        icon: GaugeIcon,
+          'We optimize every component for maximum performance and minimal bundle size.',
+        icon: GaugeIcon
       },
       {
-        title: "How is the documentation?",
+        title: 'How is the documentation?',
         content:
-          "Our documentation is comprehensive and includes live examples for every component.",
-        icon: CircleDashedIcon,
-      },
-    ],
+          'Our documentation is comprehensive and includes live examples for every component.',
+        icon: CircleDashedIcon
+      }
+    ]
   },
   {
-    id: "2",
-    title: "How can I customize the components?",
+    id: '2',
+    title: 'How can I customize the components?',
     icon: EclipseIcon,
     collapsibles: [
       {
-        title: "Can I use custom themes?",
+        title: 'Can I use custom themes?',
         content:
-          "Yes, our theming system is fully customizable and supports both light and dark modes.",
-        icon: GaugeIcon,
+          'Yes, our theming system is fully customizable and supports both light and dark modes.',
+        icon: GaugeIcon
       },
       {
-        title: "What about Tailwind support?",
+        title: 'What about Tailwind support?',
         content:
-          "We have first-class support for Tailwind CSS with custom utility classes.",
-        icon: CircleDashedIcon,
-      },
-    ],
+          'We have first-class support for Tailwind CSS with custom utility classes.',
+        icon: CircleDashedIcon
+      }
+    ]
   },
   {
-    id: "3",
-    title: "Is Origin UI optimized for performance?",
+    id: '3',
+    title: 'Is Origin UI optimized for performance?',
     icon: ZapIcon,
     collapsibles: [
       {
         title: "What's the bundle size impact?",
         content:
-          "Our components are tree-shakeable and typically add minimal overhead to your bundle.",
+          'Our components are tree-shakeable and typically add minimal overhead to your bundle.',
         open: true,
-        icon: GaugeIcon,
+        icon: GaugeIcon
       },
       {
-        title: "How is code splitting handled?",
+        title: 'How is code splitting handled?',
         content:
-          "We support automatic code splitting for optimal loading performance.",
-        icon: CircleDashedIcon,
-      },
-    ],
+          'We support automatic code splitting for optimal loading performance.',
+        icon: CircleDashedIcon
+      }
+    ]
   },
   {
-    id: "4",
-    title: "How accessible are the components?",
+    id: '4',
+    title: 'How accessible are the components?',
     icon: AtSignIcon,
     collapsibles: [
       {
-        title: "Which screen readers are supported?",
+        title: 'Which screen readers are supported?',
         content:
-          "We test with NVDA, VoiceOver, and JAWS to ensure broad compatibility.",
-        icon: GaugeIcon,
+          'We test with NVDA, VoiceOver, and JAWS to ensure broad compatibility.',
+        icon: GaugeIcon
       },
       {
-        title: "What about keyboard navigation?",
+        title: 'What about keyboard navigation?',
         content:
-          "Full keyboard navigation support is implemented following WAI-ARIA best practices.",
-        icon: CircleDashedIcon,
-      },
-    ],
-  },
+          'Full keyboard navigation support is implemented following WAI-ARIA best practices.',
+        icon: CircleDashedIcon
+      }
+    ]
+  }
 ]
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="space-y-4">
       <h2 className="text-xl font-bold">Multi-level w/ icon</h2>
@@ -140,11 +140,11 @@ export default function Component() {
   )
 }
 
-function CollapsibleDemo({
+function CollapsibleDemo ({
   title,
   content,
   open,
-  icon: Icon,
+  icon: Icon
 }: {
   title: string
   content: string

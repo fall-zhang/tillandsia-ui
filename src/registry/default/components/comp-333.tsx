@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import * as React from "react"
+import * as React from 'react'
 import {
   ArrowUpRightIcon,
   CircleFadingPlusIcon,
   FileInputIcon,
   FolderPlusIcon,
-  SearchIcon,
-} from "lucide-react"
+  SearchIcon
+} from 'lucide-react'
 
 import {
   CommandDialog,
@@ -17,22 +17,22 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-  CommandShortcut,
-} from "@/registry/default/ui/command"
+  CommandShortcut
+} from '@/registry/default/ui/command'
 
-export default function Component() {
+export default function Component () {
   const [open, setOpen] = React.useState(false)
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault()
         setOpen((open) => !open)
       }
     }
 
-    document.addEventListener("keydown", down)
-    return () => document.removeEventListener("keydown", down)
+    document.addEventListener('keydown', down)
+    return () => document.removeEventListener('keydown', down)
   }, [])
 
   return (

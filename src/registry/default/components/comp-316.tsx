@@ -1,4 +1,4 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   Dialog,
   DialogClose,
@@ -7,11 +7,11 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-} from "@/registry/default/ui/dialog"
-import { ScrollArea } from "@/registry/default/ui/scroll-area"
+  DialogTrigger
+} from '@/registry/default/ui/dialog'
+import { ScrollArea } from '@/registry/default/ui/scroll-area'
 
-export default function Component() {
+export default function Component () {
   return (
     <Dialog>
       <DialogTrigger asChild>

@@ -1,8 +1,8 @@
-import { SquareArrowOutUpRightIcon } from "lucide-react"
+import { SquareArrowOutUpRightIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="inline-flex -space-x-px rounded-md shadow-xs rtl:space-x-reverse">
       <Button

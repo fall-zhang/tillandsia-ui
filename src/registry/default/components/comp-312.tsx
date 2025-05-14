@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { DownloadIcon, LoaderCircleIcon } from "lucide-react"
+import { useState } from 'react'
+import { DownloadIcon, LoaderCircleIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   const [isDownloading, setIsDownloading] = useState(false)
 
   const handleDownload = () => {
@@ -31,21 +31,23 @@ export default function Component() {
           onClick={handleDownload}
           className="min-w-24"
         >
-          {isDownloading ? (
-            <>
-              <LoaderCircleIcon
-                className="-ms-0.5 me-2 animate-spin"
-                size={16}
-                aria-hidden="true"
-              />
+          {isDownloading
+            ? (
+              <>
+                <LoaderCircleIcon
+                  className="-ms-0.5 me-2 animate-spin"
+                  size={16}
+                  aria-hidden="true"
+                />
               Updating...
-            </>
-          ) : (
-            <>
-              <DownloadIcon size={16} className="-ms-0.5" aria-hidden="true" />
+              </>
+            )
+            : (
+              <>
+                <DownloadIcon size={16} className="-ms-0.5" aria-hidden="true" />
               Update now
-            </>
-          )}
+              </>
+            )}
         </Button>
       </div>
     </div>

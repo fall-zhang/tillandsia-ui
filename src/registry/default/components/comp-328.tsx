@@ -1,31 +1,31 @@
-"use client"
+'use client'
 
-import { useId } from "react"
-import { CreditCardIcon, WalletIcon } from "lucide-react"
-import { usePaymentInputs } from "react-payment-inputs"
-import images, { type CardImages } from "react-payment-inputs/images"
+import { useId } from 'react'
+import { CreditCardIcon, WalletIcon } from 'lucide-react'
+import { usePaymentInputs } from 'react-payment-inputs'
+import images, { type CardImages } from 'react-payment-inputs/images'
 
-import { Button } from "@/registry/default/ui/button"
-import { Checkbox } from "@/registry/default/ui/checkbox"
+import { Button } from '@/registry/default/ui/button'
+import { Checkbox } from '@/registry/default/ui/checkbox'
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-} from "@/registry/default/ui/dialog"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+  DialogTrigger
+} from '@/registry/default/ui/dialog'
+import { Input } from '@/registry/default/ui/input'
+import { Label } from '@/registry/default/ui/label'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   const {
     meta,
     getCardNumberProps,
     getExpiryDateProps,
     getCVCProps,
-    getCardImageProps,
+    getCardImageProps
   } = usePaymentInputs()
 
   return (
@@ -64,17 +64,19 @@ export default function Component() {
                   className="peer pe-9 [direction:inherit]"
                 />
                 <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 peer-disabled:opacity-50">
-                  {meta.cardType ? (
-                    <svg
-                      className="overflow-hidden rounded-sm"
-                      {...getCardImageProps({
-                        images: images as unknown as CardImages,
-                      })}
-                      width={20}
-                    />
-                  ) : (
-                    <CreditCardIcon size={16} aria-hidden="true" />
-                  )}
+                  {meta.cardType
+                    ? (
+                      <svg
+                        className="overflow-hidden rounded-sm"
+                        {...getCardImageProps({
+                          images: images as unknown as CardImages
+                        })}
+                        width={20}
+                      />
+                    )
+                    : (
+                      <CreditCardIcon size={16} aria-hidden="true" />
+                    )}
                 </div>
               </div>
             </div>

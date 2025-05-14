@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { PlusIcon } from "lucide-react"
+import { useState } from 'react'
+import { PlusIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   const [open, setOpen] = useState<boolean>(false)
 
   return (
@@ -15,7 +15,7 @@ export default function Component() {
       size="icon"
       onClick={() => setOpen((prevState) => !prevState)}
       aria-expanded={open}
-      aria-label={open ? "Close menu" : "Open menu"}
+      aria-label={open ? 'Close menu' : 'Open menu'}
     >
       <PlusIcon
         className="transition-transform duration-500 ease-[cubic-bezier(0.68,-0.6,0.32,1.6)] group-aria-expanded:rotate-[135deg]"

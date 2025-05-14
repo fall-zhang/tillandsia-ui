@@ -1,9 +1,9 @@
-import { useId } from "react"
+import { useId } from 'react'
 
-import { Label } from "@/registry/default/ui/label"
-import { Switch } from "@/registry/default/ui/switch"
+import { Label } from '@/registry/default/ui/label'
+import { Switch } from '@/registry/default/ui/switch'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   return (
     <div className="border-input has-data-[state=checked]:border-primary/50 relative flex w-full items-start gap-2 rounded-md border p-4 shadow-xs outline-none">
@@ -14,7 +14,7 @@ export default function Component() {
       />
       <div className="grid grow gap-2">
         <Label htmlFor={id}>
-          Label{" "}
+          Label{' '}
           <span className="text-muted-foreground text-xs leading-[inherit] font-normal">
             (Sublabel)
           </span>

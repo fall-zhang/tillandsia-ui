@@ -2,10 +2,10 @@ import {
   Tabs,
   TabsContent,
   TabsList,
-  TabsTrigger,
-} from "@/registry/default/ui/tabs"
+  TabsTrigger
+} from '@/registry/default/ui/tabs'
 
-export default function Component() {
+export default function Component () {
   return (
     <Tabs defaultValue="tab-1">
       <TabsList className="before:bg-border relative h-auto w-full gap-0.5 bg-transparent p-0 before:absolute before:inset-x-0 before:bottom-0 before:h-px">

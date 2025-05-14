@@ -1,36 +1,36 @@
-"use client"
+'use client'
 
-import { useEffect, useId, useRef, useState } from "react"
-import { CreditCardIcon, StoreIcon } from "lucide-react"
-import { usePaymentInputs } from "react-payment-inputs"
-import images, { type CardImages } from "react-payment-inputs/images"
+import { useEffect, useId, useRef, useState } from 'react'
+import { CreditCardIcon, StoreIcon } from 'lucide-react'
+import { usePaymentInputs } from 'react-payment-inputs'
+import images, { type CardImages } from 'react-payment-inputs/images'
 
-import { Badge } from "@/registry/default/ui/badge"
-import { Button } from "@/registry/default/ui/button"
+import { Badge } from '@/registry/default/ui/badge'
+import { Button } from '@/registry/default/ui/button'
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-} from "@/registry/default/ui/dialog"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
+  DialogTrigger
+} from '@/registry/default/ui/dialog'
+import { Input } from '@/registry/default/ui/input'
+import { Label } from '@/registry/default/ui/label'
+import { RadioGroup, RadioGroupItem } from '@/registry/default/ui/radio-group'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   const {
     meta,
     getCardNumberProps,
     getExpiryDateProps,
     getCVCProps,
-    getCardImageProps,
+    getCardImageProps
   } = usePaymentInputs()
   const couponInputRef = useRef<HTMLInputElement>(null)
   const [showCouponInput, setShowCouponInput] = useState(false)
-  const [couponCode, setCouponCode] = useState("")
+  const [couponCode, setCouponCode] = useState('')
 
   // Auto-focus the coupon input when it's shown
   useEffect(() => {
@@ -102,17 +102,19 @@ export default function Component() {
                     {...getCardNumberProps()}
                   />
                   <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 peer-disabled:opacity-50">
-                    {meta.cardType ? (
-                      <svg
-                        className="overflow-hidden rounded-sm"
-                        {...getCardImageProps({
-                          images: images as unknown as CardImages,
-                        })}
-                        width={20}
-                      />
-                    ) : (
-                      <CreditCardIcon size={16} aria-hidden="true" />
-                    )}
+                    {meta.cardType
+                      ? (
+                        <svg
+                          className="overflow-hidden rounded-sm"
+                          {...getCardImageProps({
+                            images: images as unknown as CardImages
+                          })}
+                          width={20}
+                        />
+                      )
+                      : (
+                        <CreditCardIcon size={16} aria-hidden="true" />
+                      )}
                   </div>
                 </div>
                 <div className="-mt-px flex">
@@ -131,26 +133,28 @@ export default function Component() {
                 </div>
               </div>
             </div>
-            {!showCouponInput ? (
-              <button
-                type="button"
-                onClick={() => setShowCouponInput(true)}
-                className="text-sm underline hover:no-underline"
-              >
+            {!showCouponInput
+              ? (
+                <button
+                  type="button"
+                  onClick={() => setShowCouponInput(true)}
+                  className="text-sm underline hover:no-underline"
+                >
                 + Add coupon
-              </button>
-            ) : (
-              <div className="*:not-first:mt-2">
-                <Label htmlFor={`coupon-${id}`}>Coupon code</Label>
-                <Input
-                  id={`coupon-${id}`}
-                  ref={couponInputRef}
-                  placeholder="Enter your code"
-                  value={couponCode}
-                  onChange={(e) => setCouponCode(e.target.value)}
-                />
-              </div>
-            )}
+                </button>
+              )
+              : (
+                <div className="*:not-first:mt-2">
+                  <Label htmlFor={`coupon-${id}`}>Coupon code</Label>
+                  <Input
+                    id={`coupon-${id}`}
+                    ref={couponInputRef}
+                    placeholder="Enter your code"
+                    value={couponCode}
+                    onChange={(e) => setCouponCode(e.target.value)}
+                  />
+                </div>
+              )}
           </div>
           <Button type="button" className="w-full">
             Subscribe

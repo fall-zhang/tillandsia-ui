@@ -1,8 +1,8 @@
-import { LoaderCircleIcon } from "lucide-react"
+import { LoaderCircleIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   return (
     <Button disabled>
       <LoaderCircleIcon

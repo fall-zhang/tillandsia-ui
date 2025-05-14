@@ -1,4 +1,4 @@
-import { GitCompare, GitFork, GitMerge, GitPullRequest } from "lucide-react"
+import { GitCompare, GitFork, GitMerge, GitPullRequest } from 'lucide-react'
 
 import {
   Timeline,
@@ -8,44 +8,44 @@ import {
   TimelineIndicator,
   TimelineItem,
   TimelineSeparator,
-  TimelineTitle,
-} from "@/registry/default/ui/timeline"
+  TimelineTitle
+} from '@/registry/default/ui/timeline'
 
 const items = [
   {
     id: 1,
-    date: "15 minutes ago",
-    title: "Forked Repository",
+    date: '15 minutes ago',
+    title: 'Forked Repository',
     description:
-      "Forked the repository to create a new branch for development.",
-    icon: GitFork,
+      'Forked the repository to create a new branch for development.',
+    icon: GitFork
   },
   {
     id: 2,
-    date: "10 minutes ago",
-    title: "Pull Request Submitted",
+    date: '10 minutes ago',
+    title: 'Pull Request Submitted',
     description:
-      "Submitted PR #342 with new feature implementation. Waiting for code review from team leads.",
-    icon: GitPullRequest,
+      'Submitted PR #342 with new feature implementation. Waiting for code review from team leads.',
+    icon: GitPullRequest
   },
   {
     id: 3,
-    date: "5 minutes ago",
-    title: "Comparing Branches",
+    date: '5 minutes ago',
+    title: 'Comparing Branches',
     description:
-      "Received comments on PR. Minor adjustments needed in error handling and documentation.",
-    icon: GitCompare,
+      'Received comments on PR. Minor adjustments needed in error handling and documentation.',
+    icon: GitCompare
   },
   {
     id: 4,
-    title: "Merged Branch",
+    title: 'Merged Branch',
     description:
-      "Merged the feature branch into the main branch. Ready for deployment.",
-    icon: GitMerge,
-  },
+      'Merged the feature branch into the main branch. Ready for deployment.',
+    icon: GitMerge
+  }
 ]
 
-export default function Component() {
+export default function Component () {
   return (
     <Timeline defaultValue={3}>
       {items.map((item) => (

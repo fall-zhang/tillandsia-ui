@@ -1,17 +1,17 @@
-"use client"
+'use client'
 
-import { getLocalTimeZone, isWeekend, today } from "@internationalized/date"
-import { useLocale } from "react-aria"
-import type { DateValue } from "react-aria-components"
+import { getLocalTimeZone, isWeekend, today } from '@internationalized/date'
+import { useLocale } from 'react-aria'
+import type { DateValue } from 'react-aria-components'
 
-import { RangeCalendar } from "@/registry/default/ui/calendar-rac"
+import { RangeCalendar } from '@/registry/default/ui/calendar-rac'
 
-export default function Component() {
+export default function Component () {
   const now = today(getLocalTimeZone())
   const disabledRanges = [
     [now, now], // Disables today
     [now.add({ days: 14 }), now.add({ days: 14 })], // Disables only the 14th day from now
-    [now.add({ days: 23 }), now.add({ days: 23 })], // Disables only the 23rd day from now
+    [now.add({ days: 23 }), now.add({ days: 23 })] // Disables only the 23rd day from now
   ]
 
   const { locale } = useLocale()
@@ -34,12 +34,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Disabled dates -{" "}
+        Disabled dates -{' '}
         <a
           className="hover:text-foreground underline"
           href="https://react-spectrum.adobe.com/react-aria/DateRangePicker.html"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React Aria
         </a>

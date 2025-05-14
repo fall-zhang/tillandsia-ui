@@ -1,4 +1,4 @@
-export default function Component() {
+export default function Component () {
   return (
     <div className="flex -space-x-[0.45rem]">
       <img

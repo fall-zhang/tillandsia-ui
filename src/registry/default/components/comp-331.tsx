@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { useId, useState } from "react"
-import { CheckIcon, ImagePlusIcon, XIcon } from "lucide-react"
+import { useId, useState } from 'react'
+import { CheckIcon, ImagePlusIcon, XIcon } from 'lucide-react'
 
-import { useCharacterLimit } from "@/registry/default/hooks/use-character-limit"
-import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
-import { Button } from "@/registry/default/ui/button"
+import { useCharacterLimit } from '@/registry/default/hooks/use-character-limit'
+import { useFileUpload } from '@/registry/default/hooks/use-file-upload'
+import { Button } from '@/registry/default/ui/button'
 import {
   Dialog,
   DialogClose,
@@ -14,34 +14,34 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-} from "@/registry/default/ui/dialog"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
-import { Textarea } from "@/registry/default/ui/textarea"
+  DialogTrigger
+} from '@/registry/default/ui/dialog'
+import { Input } from '@/registry/default/ui/input'
+import { Label } from '@/registry/default/ui/label'
+import { Textarea } from '@/registry/default/ui/textarea'
 
 // Pretend we have initial image files
 const initialBgImage = [
   {
-    name: "profile-bg.jpg",
+    name: 'profile-bg.jpg',
     size: 1528737,
-    type: "image/jpeg",
-    url: "/profile-bg.jpg",
-    id: "profile-bg-123456789",
-  },
+    type: 'image/jpeg',
+    url: '/profile-bg.jpg',
+    id: 'profile-bg-123456789'
+  }
 ]
 
 const initialAvatarImage = [
   {
-    name: "avatar-72-01.jpg",
+    name: 'avatar-72-01.jpg',
     size: 1528737,
-    type: "image/jpeg",
-    url: "/avatar-72-01.jpg",
-    id: "avatar-123456789",
-  },
+    type: 'image/jpeg',
+    url: '/avatar-72-01.jpg',
+    id: 'avatar-123456789'
+  }
 ]
 
-export default function Component() {
+export default function Component () {
   const id = useId()
 
   const maxLength = 180
@@ -49,11 +49,11 @@ export default function Component() {
     value,
     characterCount,
     handleChange,
-    maxLength: limit,
+    maxLength: limit
   } = useCharacterLimit({
     maxLength,
     initialValue:
-      "Hey, I am Margaret, a web developer who loves turning ideas into amazing websites!",
+      'Hey, I am Margaret, a web developer who loves turning ideas into amazing websites!'
   })
 
   return (
@@ -149,7 +149,7 @@ export default function Component() {
                   role="status"
                   aria-live="polite"
                 >
-                  <span className="tabular-nums">{limit - characterCount}</span>{" "}
+                  <span className="tabular-nums">{limit - characterCount}</span>{' '}
                   characters left
                 </p>
               </div>
@@ -171,11 +171,11 @@ export default function Component() {
   )
 }
 
-function ProfileBg() {
+function ProfileBg () {
   const [{ files }, { removeFile, openFileDialog, getInputProps }] =
     useFileUpload({
-      accept: "image/*",
-      initialFiles: initialBgImage,
+      accept: 'image/*',
+      initialFiles: initialBgImage
     })
 
   const currentImage = files[0]?.preview || null
@@ -189,8 +189,8 @@ function ProfileBg() {
             src={currentImage}
             alt={
               files[0]?.preview
-                ? "Preview of uploaded image"
-                : "Default profile background"
+                ? 'Preview of uploaded image'
+                : 'Default profile background'
             }
             width={512}
             height={96}
@@ -201,7 +201,7 @@ function ProfileBg() {
             type="button"
             className="focus-visible:border-ring focus-visible:ring-ring/50 z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white transition-[color,box-shadow] outline-none hover:bg-black/80 focus-visible:ring-[3px]"
             onClick={openFileDialog}
-            aria-label={currentImage ? "Change image" : "Upload image"}
+            aria-label={currentImage ? 'Change image' : 'Upload image'}
           >
             <ImagePlusIcon size={16} aria-hidden="true" />
           </button>
@@ -226,10 +226,10 @@ function ProfileBg() {
   )
 }
 
-function Avatar() {
+function Avatar () {
   const [{ files }, { openFileDialog, getInputProps }] = useFileUpload({
-    accept: "image/*",
-    initialFiles: initialAvatarImage,
+    accept: 'image/*',
+    initialFiles: initialAvatarImage
   })
 
   const currentImage = files[0]?.preview || null

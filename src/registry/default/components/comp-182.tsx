@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { useId, useState } from "react"
-import { MoonIcon, SunIcon } from "lucide-react"
+import { useId, useState } from 'react'
+import { MoonIcon, SunIcon } from 'lucide-react'
 
-import { Switch } from "@/registry/default/ui/switch"
+import { Switch } from '@/registry/default/ui/switch'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   const [checked, setChecked] = useState(false)
 
@@ -14,7 +14,7 @@ export default function Component() {
   return (
     <div
       className="group inline-flex items-center gap-2"
-      data-state={checked ? "checked" : "unchecked"}
+      data-state={checked ? 'checked' : 'unchecked'}
     >
       <span
         id={`${id}-off`}

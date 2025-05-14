@@ -1,16 +1,16 @@
-"use client"
+'use client'
 
 import {
   Header,
   ListBox,
   ListBoxItem,
   ListBoxSection,
-  Separator,
-} from "react-aria-components"
+  Separator
+} from 'react-aria-components'
 
-import { Label } from "@/registry/default/ui/label"
+import { Label } from '@/registry/default/ui/label'
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="*:not-first:mt-2">
       <Label>Listbox with option groups</Label>
@@ -19,7 +19,7 @@ export default function Component() {
           className="bg-background max-h-72 min-h-20 space-y-2 overflow-auto p-1 text-sm shadow-xs transition-[color,box-shadow]"
           aria-label="Select some foods"
           selectionMode="multiple"
-          defaultSelectedKeys={["lettuce", "tuna"]}
+          defaultSelectedKeys={['lettuce', 'tuna']}
         >
           <ListBoxSection className="space-y-1">
             <Header className="text-muted-foreground px-2 py-1.5 text-xs font-medium">
@@ -99,12 +99,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Built with{" "}
+        Built with{' '}
         <a
           className="hover:text-foreground underline"
           href="https://react-spectrum.adobe.com/react-aria/ListBox.html"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React Aria
         </a>

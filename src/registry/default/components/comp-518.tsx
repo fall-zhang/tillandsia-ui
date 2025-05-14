@@ -1,14 +1,14 @@
-import { Shuffle } from "lucide-react"
+import { Shuffle } from 'lucide-react'
 
 import {
   Stepper,
   StepperIndicator,
   StepperItem,
   StepperSeparator,
-  StepperTrigger,
-} from "@/registry/default/ui/stepper"
+  StepperTrigger
+} from '@/registry/default/ui/stepper'
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="mx-auto max-w-xl space-y-8 text-center">
       <Stepper defaultValue={2}>

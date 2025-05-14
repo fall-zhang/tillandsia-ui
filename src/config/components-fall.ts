@@ -17,9 +17,9 @@ export const categories: ComponentCategory[] = [
         // name: 'comp-09',
         name: 'accordion/normal',
         type: 'registry:lib',
-        meta:{
-          tag:[]
-        },
+        meta: {
+          tag: []
+        }
       }
     ]
   }

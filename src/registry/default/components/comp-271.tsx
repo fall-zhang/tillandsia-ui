@@ -1,6 +1,6 @@
-import { CircleCheckIcon } from "lucide-react"
+import { CircleCheckIcon } from 'lucide-react'
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="border-eborder rounded-md border px-4 py-3">
       <p className="text-sm">

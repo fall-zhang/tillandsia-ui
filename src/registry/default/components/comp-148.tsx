@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { Fragment, useId } from "react"
+import { Fragment, useId } from 'react'
 
-import { Checkbox } from "@/registry/default/ui/checkbox"
-import { CheckboxTree } from "@/registry/default/ui/checkbox-tree"
-import { Label } from "@/registry/default/ui/label"
+import { Checkbox } from '@/registry/default/ui/checkbox'
+import { CheckboxTree } from '@/registry/default/ui/checkbox-tree'
+import { Label } from '@/registry/default/ui/label'
 
 interface TreeNode {
   id: string
@@ -14,23 +14,23 @@ interface TreeNode {
 }
 
 const initialTree: TreeNode = {
-  id: "1",
-  label: "Natural Wonders",
+  id: '1',
+  label: 'Natural Wonders',
   children: [
-    { id: "2", label: "Mountains", defaultChecked: true },
+    { id: '2', label: 'Mountains', defaultChecked: true },
     {
-      id: "3",
-      label: "Waterfalls",
+      id: '3',
+      label: 'Waterfalls',
       children: [
-        { id: "4", label: "Niagara Falls" },
-        { id: "5", label: "Angel Falls", defaultChecked: true },
-      ],
+        { id: '4', label: 'Niagara Falls' },
+        { id: '5', label: 'Angel Falls', defaultChecked: true }
+      ]
     },
-    { id: "6", label: "Grand Canyon" },
-  ],
+    { id: '6', label: 'Grand Canyon' }
+  ]
 }
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   return (
     <div className="space-y-3">

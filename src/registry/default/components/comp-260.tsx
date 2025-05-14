@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 
-import { Button } from "@/registry/default/ui/button"
-import { Label } from "@/registry/default/ui/label"
-import { Slider } from "@/registry/default/ui/slider"
+import { Button } from '@/registry/default/ui/button'
+import { Label } from '@/registry/default/ui/label'
+import { Slider } from '@/registry/default/ui/slider'
 
-export default function Component() {
+export default function Component () {
   const min_price = 5
   const max_price = 1240
   const [value, setValue] = useState([min_price, max_price])

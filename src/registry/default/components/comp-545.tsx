@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { AlertCircleIcon, ImageIcon, UploadIcon, XIcon } from "lucide-react"
+import { AlertCircleIcon, ImageIcon, UploadIcon, XIcon } from 'lucide-react'
 
-import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
-import { Button } from "@/registry/default/ui/button"
+import { useFileUpload } from '@/registry/default/hooks/use-file-upload'
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   const maxSizeMB = 2
   const maxSize = maxSizeMB * 1024 * 1024 // 2MB default
 
@@ -18,11 +18,11 @@ export default function Component() {
       handleDrop,
       openFileDialog,
       removeFile,
-      getInputProps,
-    },
+      getInputProps
+    }
   ] = useFileUpload({
-    accept: "image/svg+xml,image/png,image/jpeg,image/jpg,image/gif",
-    maxSize,
+    accept: 'image/svg+xml,image/png,image/jpeg,image/jpg,image/gif',
+    maxSize
   })
   const previewUrl = files[0]?.preview || null
   const fileName = files[0]?.file.name || null
@@ -44,39 +44,41 @@ export default function Component() {
             className="sr-only"
             aria-label="Upload image file"
           />
-          {previewUrl ? (
-            <div className="absolute inset-0 flex items-center justify-center p-4">
-              <img
-                src={previewUrl}
-                alt={files[0]?.file?.name || "Uploaded image"}
-                className="mx-auto max-h-full rounded object-contain"
-              />
-            </div>
-          ) : (
-            <div className="flex flex-col items-center justify-center px-4 py-3 text-center">
-              <div
-                className="bg-background mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border"
-                aria-hidden="true"
-              >
-                <ImageIcon className="size-4 opacity-60" />
-              </div>
-              <p className="mb-1.5 text-sm font-medium">Drop your image here</p>
-              <p className="text-muted-foreground text-xs">
-                SVG, PNG, JPG or GIF (max. {maxSizeMB}MB)
-              </p>
-              <Button
-                variant="outline"
-                className="mt-4"
-                onClick={openFileDialog}
-              >
-                <UploadIcon
-                  className="-ms-1 size-4 opacity-60"
-                  aria-hidden="true"
+          {previewUrl
+            ? (
+              <div className="absolute inset-0 flex items-center justify-center p-4">
+                <img
+                  src={previewUrl}
+                  alt={files[0]?.file?.name || 'Uploaded image'}
+                  className="mx-auto max-h-full rounded object-contain"
                 />
+              </div>
+            )
+            : (
+              <div className="flex flex-col items-center justify-center px-4 py-3 text-center">
+                <div
+                  className="bg-background mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border"
+                  aria-hidden="true"
+                >
+                  <ImageIcon className="size-4 opacity-60" />
+                </div>
+                <p className="mb-1.5 text-sm font-medium">Drop your image here</p>
+                <p className="text-muted-foreground text-xs">
+                SVG, PNG, JPG or GIF (max. {maxSizeMB}MB)
+                </p>
+                <Button
+                  variant="outline"
+                  className="mt-4"
+                  onClick={openFileDialog}
+                >
+                  <UploadIcon
+                    className="-ms-1 size-4 opacity-60"
+                    aria-hidden="true"
+                  />
                 Select image
-              </Button>
-            </div>
-          )}
+                </Button>
+              </div>
+            )}
         </div>
 
         {previewUrl && (
@@ -108,7 +110,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-center text-xs"
       >
-        Single image uploader w/ max size (drop area + button) ∙{" "}
+        Single image uploader w/ max size (drop area + button) ∙{' '}
         <a
           href="https://github.com/origin-space/originui/tree/main/docs/use-file-upload.md"
           className="hover:text-foreground underline"

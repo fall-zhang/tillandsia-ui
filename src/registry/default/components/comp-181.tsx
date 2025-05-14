@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import { useId, useState } from "react"
-import { MoonIcon, SunIcon } from "lucide-react"
+import { useId, useState } from 'react'
+import { MoonIcon, SunIcon } from 'lucide-react'
 
-import { Label } from "@/registry/default/ui/label"
-import { Switch } from "@/registry/default/ui/switch"
+import { Label } from '@/registry/default/ui/label'
+import { Switch } from '@/registry/default/ui/switch'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   const [checked, setChecked] = useState<boolean>(true)
 
@@ -20,11 +20,13 @@ export default function Component() {
       />
       <Label htmlFor={id}>
         <span className="sr-only">Toggle switch</span>
-        {checked ? (
-          <SunIcon size={16} aria-hidden="true" />
-        ) : (
-          <MoonIcon size={16} aria-hidden="true" />
-        )}
+        {checked
+          ? (
+            <SunIcon size={16} aria-hidden="true" />
+          )
+          : (
+            <MoonIcon size={16} aria-hidden="true" />
+          )}
       </Label>
     </div>
   )

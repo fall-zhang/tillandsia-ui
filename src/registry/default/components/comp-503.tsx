@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import { useId, useState } from "react"
-import { ClockIcon } from "lucide-react"
+import { useId, useState } from 'react'
+import { ClockIcon } from 'lucide-react'
 
-import { Calendar } from "@/registry/default/ui/calendar"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+import { Calendar } from '@/registry/default/ui/calendar'
+import { Input } from '@/registry/default/ui/input'
+import { Label } from '@/registry/default/ui/label'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   const [date, setDate] = useState<Date | undefined>(new Date())
 
@@ -45,12 +45,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Time input -{" "}
+        Time input -{' '}
         <a
           className="hover:text-foreground underline"
           href="https://daypicker.dev/"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React DayPicker
         </a>

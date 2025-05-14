@@ -2,10 +2,10 @@ import {
   Tabs,
   TabsContent,
   TabsList,
-  TabsTrigger,
-} from "@/registry/default/ui/tabs"
+  TabsTrigger
+} from '@/registry/default/ui/tabs'
 
-export default function Component() {
+export default function Component () {
   return (
     <Tabs defaultValue="tab-1" className="items-center">
       <TabsList className="text-foreground h-auto gap-2 rounded-none border-b bg-transparent px-0 py-1">

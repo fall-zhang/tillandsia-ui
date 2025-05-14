@@ -1,70 +1,70 @@
-"use client"
+'use client'
 
-import { Fragment, useId, useState } from "react"
-import { CheckIcon, ChevronDownIcon } from "lucide-react"
+import { Fragment, useId, useState } from 'react'
+import { CheckIcon, ChevronDownIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   Command,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
-  CommandList,
-} from "@/registry/default/ui/command"
-import { Label } from "@/registry/default/ui/label"
+  CommandList
+} from '@/registry/default/ui/command'
+import { Label } from '@/registry/default/ui/label'
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
+  PopoverTrigger
+} from '@/registry/default/ui/popover'
 
 const countries = [
   {
-    continent: "America",
+    continent: 'America',
     items: [
-      { value: "United States", flag: "🇺🇸" },
-      { value: "Canada", flag: "🇨🇦" },
-      { value: "Mexico", flag: "🇲🇽" },
-    ],
+      { value: 'United States', flag: '🇺🇸' },
+      { value: 'Canada', flag: '🇨🇦' },
+      { value: 'Mexico', flag: '🇲🇽' }
+    ]
   },
   {
-    continent: "Africa",
+    continent: 'Africa',
     items: [
-      { value: "South Africa", flag: "🇿🇦" },
-      { value: "Nigeria", flag: "🇳🇬" },
-      { value: "Morocco", flag: "🇲🇦" },
-    ],
+      { value: 'South Africa', flag: '🇿🇦' },
+      { value: 'Nigeria', flag: '🇳🇬' },
+      { value: 'Morocco', flag: '🇲🇦' }
+    ]
   },
   {
-    continent: "Asia",
+    continent: 'Asia',
     items: [
-      { value: "China", flag: "🇨🇳" },
-      { value: "Japan", flag: "🇯🇵" },
-      { value: "India", flag: "🇮🇳" },
-    ],
+      { value: 'China', flag: '🇨🇳' },
+      { value: 'Japan', flag: '🇯🇵' },
+      { value: 'India', flag: '🇮🇳' }
+    ]
   },
   {
-    continent: "Europe",
+    continent: 'Europe',
     items: [
-      { value: "United Kingdom", flag: "🇬🇧" },
-      { value: "France", flag: "🇫🇷" },
-      { value: "Germany", flag: "🇩🇪" },
-    ],
+      { value: 'United Kingdom', flag: '🇬🇧' },
+      { value: 'France', flag: '🇫🇷' },
+      { value: 'Germany', flag: '🇩🇪' }
+    ]
   },
   {
-    continent: "Oceania",
+    continent: 'Oceania',
     items: [
-      { value: "Australia", flag: "🇦🇺" },
-      { value: "New Zealand", flag: "🇳🇿" },
-    ],
-  },
+      { value: 'Australia', flag: '🇦🇺' },
+      { value: 'New Zealand', flag: '🇳🇿' }
+    ]
+  }
 ]
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   const [open, setOpen] = useState<boolean>(false)
-  const [value, setValue] = useState<string>("")
+  const [value, setValue] = useState<string>('')
 
   return (
     <div className="*:not-first:mt-2">
@@ -78,22 +78,24 @@ export default function Component() {
             aria-expanded={open}
             className="bg-background hover:bg-background border-input w-full justify-between px-3 font-normal outline-offset-0 outline-none focus-visible:outline-[3px]"
           >
-            {value ? (
-              <span className="flex min-w-0 items-center gap-2">
-                <span className="text-lg leading-none">
-                  {
-                    countries
-                      .map((group) =>
-                        group.items.find((item) => item.value === value)
-                      )
-                      .filter(Boolean)[0]?.flag
-                  }
+            {value
+              ? (
+                <span className="flex min-w-0 items-center gap-2">
+                  <span className="text-lg leading-none">
+                    {
+                      countries
+                        .map((group) =>
+                          group.items.find((item) => item.value === value)
+                        )
+                        .filter(Boolean)[0]?.flag
+                    }
+                  </span>
+                  <span className="truncate">{value}</span>
                 </span>
-                <span className="truncate">{value}</span>
-              </span>
-            ) : (
-              <span className="text-muted-foreground">Select country</span>
-            )}
+              )
+              : (
+                <span className="text-muted-foreground">Select country</span>
+              )}
             <ChevronDownIcon
               size={16}
               className="text-muted-foreground/80 shrink-0"
@@ -123,7 +125,7 @@ export default function Component() {
                       >
                         <span className="text-lg leading-none">
                           {country.flag}
-                        </span>{" "}
+                        </span>{' '}
                         {country.value}
                         {value === country.value && (
                           <CheckIcon size={16} className="ml-auto" />

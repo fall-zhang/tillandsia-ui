@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 
-import { Calendar } from "@/registry/default/ui/calendar"
+import { Calendar } from '@/registry/default/ui/calendar'
 
-export default function Component() {
+export default function Component () {
   const [date, setDate] = useState<Date | undefined>(new Date())
 
   return (
@@ -20,12 +20,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Calendar -{" "}
+        Calendar -{' '}
         <a
           className="hover:text-foreground underline"
           href="https://daypicker.dev/"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React DayPicker
         </a>

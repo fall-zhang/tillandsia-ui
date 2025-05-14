@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import { useId, useState } from "react"
+import { useId, useState } from 'react'
 
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
+import { RadioGroup, RadioGroupItem } from '@/registry/default/ui/radio-group'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
-  const [selectedValue, setSelectedValue] = useState("on")
+  const [selectedValue, setSelectedValue] = useState('on')
 
   return (
     <div className="bg-input/50 inline-flex h-9 rounded-md p-0.5">
@@ -22,7 +22,7 @@ export default function Component() {
         </label>
         <label className="group-data-[state=off]:text-muted-foreground/70 relative z-10 inline-flex h-full min-w-8 cursor-pointer items-center justify-center px-4 whitespace-nowrap transition-colors select-none">
           <span>
-            Bill Yearly{" "}
+            Bill Yearly{' '}
             <span className="group-data-[state=off]:text-muted-foreground/70 transition-colors group-data-[state=on]:text-emerald-500">
               -20%
             </span>

@@ -5,10 +5,10 @@ import {
   Layers2Icon,
   LogOutIcon,
   PinIcon,
-  UserPenIcon,
-} from "lucide-react"
+  UserPenIcon
+} from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,10 +16,10 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu"
+  DropdownMenuTrigger
+} from '@/registry/default/ui/dropdown-menu'
 
-export default function Component() {
+export default function Component () {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

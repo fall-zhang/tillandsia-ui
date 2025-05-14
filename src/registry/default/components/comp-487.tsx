@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { getLocalTimeZone, today } from "@internationalized/date"
-import type { DateValue } from "react-aria-components"
+import { useState } from 'react'
+import { getLocalTimeZone, today } from '@internationalized/date'
+import type { DateValue } from 'react-aria-components'
 
-import { Calendar } from "@/registry/default/ui/calendar-rac"
+import { Calendar } from '@/registry/default/ui/calendar-rac'
 
-export default function Component() {
+export default function Component () {
   const [date, setDate] = useState<DateValue | null>(today(getLocalTimeZone()))
 
   return (
@@ -21,12 +21,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Calendar -{" "}
+        Calendar -{' '}
         <a
           className="hover:text-foreground underline"
           href="https://react-spectrum.adobe.com/react-aria/DateRangePicker.html"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React Aria
         </a>

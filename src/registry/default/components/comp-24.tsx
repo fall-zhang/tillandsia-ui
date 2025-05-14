@@ -1,18 +1,18 @@
-"use client"
+'use client'
 
-import { useId, useRef, useState } from "react"
-import { CircleXIcon } from "lucide-react"
+import { useId, useRef, useState } from 'react'
+import { CircleXIcon } from 'lucide-react'
 
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+import { Input } from '@/registry/default/ui/input'
+import { Label } from '@/registry/default/ui/label'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
-  const [inputValue, setInputValue] = useState("Click to clear")
+  const [inputValue, setInputValue] = useState('Click to clear')
   const inputRef = useRef<HTMLInputElement>(null)
 
   const handleClearInput = () => {
-    setInputValue("")
+    setInputValue('')
     if (inputRef.current) {
       inputRef.current.focus()
     }

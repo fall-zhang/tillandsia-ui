@@ -4,53 +4,53 @@ import {
   TableCell,
   TableHead,
   TableHeader,
-  TableRow,
-} from "@/registry/default/ui/table"
+  TableRow
+} from '@/registry/default/ui/table'
 
 const items = [
   {
-    id: "1",
-    name: "Alex Thompson",
-    email: "alex.t@company.com",
-    location: "San Francisco, US",
-    status: "Active",
-    balance: "$1,250.00",
+    id: '1',
+    name: 'Alex Thompson',
+    email: 'alex.t@company.com',
+    location: 'San Francisco, US',
+    status: 'Active',
+    balance: '$1,250.00'
   },
   {
-    id: "2",
-    name: "Sarah Chen",
-    email: "sarah.c@company.com",
-    location: "Singapore",
-    status: "Active",
-    balance: "$600.00",
+    id: '2',
+    name: 'Sarah Chen',
+    email: 'sarah.c@company.com',
+    location: 'Singapore',
+    status: 'Active',
+    balance: '$600.00'
   },
   {
-    id: "3",
-    name: "James Wilson",
-    email: "j.wilson@company.com",
-    location: "London, UK",
-    status: "Inactive",
-    balance: "$650.00",
+    id: '3',
+    name: 'James Wilson',
+    email: 'j.wilson@company.com',
+    location: 'London, UK',
+    status: 'Inactive',
+    balance: '$650.00'
   },
   {
-    id: "4",
-    name: "Maria Garcia",
-    email: "m.garcia@company.com",
-    location: "Madrid, Spain",
-    status: "Active",
-    balance: "$0.00",
+    id: '4',
+    name: 'Maria Garcia',
+    email: 'm.garcia@company.com',
+    location: 'Madrid, Spain',
+    status: 'Active',
+    balance: '$0.00'
   },
   {
-    id: "5",
-    name: "David Kim",
-    email: "d.kim@company.com",
-    location: "Seoul, KR",
-    status: "Active",
-    balance: "-$1,000.00",
-  },
+    id: '5',
+    name: 'David Kim',
+    email: 'd.kim@company.com',
+    location: 'Seoul, KR',
+    status: 'Active',
+    balance: '-$1,000.00'
+  }
 ]
 
-export default function Component() {
+export default function Component () {
   return (
     <div>
       <Table>

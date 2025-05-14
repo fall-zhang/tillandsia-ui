@@ -1,19 +1,19 @@
-"use client"
+'use client'
 
-import { useRef, useState } from "react"
-import { useDraggable } from "@dnd-kit/core"
-import { CSS } from "@dnd-kit/utilities"
-import { differenceInDays } from "date-fns"
+import { useRef, useState } from 'react'
+import { useDraggable } from '@dnd-kit/core'
+import { CSS } from '@dnd-kit/utilities'
+import { differenceInDays } from 'date-fns'
 
 import {
   CalendarEvent,
   EventItem,
-  useCalendarDnd,
-} from "@/registry/default/components/event-calendar"
+  useCalendarDnd
+} from '@/registry/default/components/event-calendar'
 
 interface DraggableEventProps {
   event: CalendarEvent
-  view: "month" | "week" | "day"
+  view: 'month' | 'week' | 'day'
   showTime?: boolean
   onClick?: (e: React.MouseEvent) => void
   height?: number
@@ -21,10 +21,10 @@ interface DraggableEventProps {
   multiDayWidth?: number
   isFirstDay?: boolean
   isLastDay?: boolean
-  "aria-hidden"?: boolean | "true" | "false"
+  'aria-hidden'?: boolean | 'true' | 'false'
 }
 
-export function DraggableEvent({
+export function DraggableEvent ({
   event,
   view,
   showTime,
@@ -34,7 +34,7 @@ export function DraggableEvent({
   multiDayWidth,
   isFirstDay = true,
   isLastDay = true,
-  "aria-hidden": ariaHidden,
+  'aria-hidden': ariaHidden
 }: DraggableEventProps) {
   const { activeId } = useCalendarDnd()
   const elementRef = useRef<HTMLDivElement>(null)
@@ -57,11 +57,11 @@ export function DraggableEvent({
         view,
         height: height || elementRef.current?.offsetHeight || null,
         isMultiDay: isMultiDayEvent,
-        multiDayWidth: multiDayWidth,
+        multiDayWidth,
         dragHandlePosition,
         isFirstDay,
-        isLastDay,
-      },
+        isLastDay
+      }
     })
 
   // Handle mouse down to track where on the event the user clicked
@@ -70,7 +70,7 @@ export function DraggableEvent({
       const rect = elementRef.current.getBoundingClientRect()
       setDragHandlePosition({
         x: e.clientX - rect.left,
-        y: e.clientY - rect.top,
+        y: e.clientY - rect.top
       })
     }
   }
@@ -81,23 +81,23 @@ export function DraggableEvent({
       <div
         ref={setNodeRef}
         className="opacity-0"
-        style={{ height: height || "auto" }}
+        style={{ height: height || 'auto' }}
       />
     )
   }
 
   const style = transform
     ? {
-        transform: CSS.Translate.toString(transform),
-        height: height || "auto",
-        width:
-          isMultiDayEvent && multiDayWidth ? `${multiDayWidth}%` : undefined,
-      }
+      transform: CSS.Translate.toString(transform),
+      height: height || 'auto',
+      width:
+          isMultiDayEvent && multiDayWidth ? `${multiDayWidth}%` : undefined
+    }
     : {
-        height: height || "auto",
-        width:
-          isMultiDayEvent && multiDayWidth ? `${multiDayWidth}%` : undefined,
-      }
+      height: height || 'auto',
+      width:
+          isMultiDayEvent && multiDayWidth ? `${multiDayWidth}%` : undefined
+    }
 
   // Handle touch start to track where on the event the user touched
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -107,7 +107,7 @@ export function DraggableEvent({
       if (touch) {
         setDragHandlePosition({
           x: touch.clientX - rect.left,
-          y: touch.clientY - rect.top,
+          y: touch.clientY - rect.top
         })
       }
     }

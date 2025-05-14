@@ -1,8 +1,8 @@
-import { addDays } from "date-fns"
+import { addDays } from 'date-fns'
 
-import { Calendar } from "@/registry/default/ui/calendar"
+import { Calendar } from '@/registry/default/ui/calendar'
 
-export default function Component() {
+export default function Component () {
   const today = new Date()
 
   return (
@@ -15,12 +15,12 @@ export default function Component() {
           { dayOfWeek: [0, 6] }, // Weekends
           {
             from: addDays(today, 14), // 14th day from now
-            to: addDays(today, 16), // 16th day from now
+            to: addDays(today, 16) // 16th day from now
           },
           {
             from: addDays(today, 23), // 23th day from now
-            to: addDays(today, 24), // 24th day from now
-          },
+            to: addDays(today, 24) // 24th day from now
+          }
         ]}
         excludeDisabled
         className="rounded-md border p-2"
@@ -30,12 +30,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Disabled dates -{" "}
+        Disabled dates -{' '}
         <a
           className="hover:text-foreground underline"
           href="https://daypicker.dev/"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React DayPicker
         </a>

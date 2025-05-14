@@ -2,17 +2,17 @@ import {
   ChevronFirstIcon,
   ChevronLastIcon,
   ChevronLeftIcon,
-  ChevronRightIcon,
-} from "lucide-react"
+  ChevronRightIcon
+} from 'lucide-react'
 
-import { usePagination } from "@/registry/default/hooks/use-pagination"
+import { usePagination } from '@/registry/default/hooks/use-pagination'
 import {
   Pagination,
   PaginationContent,
   PaginationEllipsis,
   PaginationItem,
-  PaginationLink,
-} from "@/registry/default/ui/pagination"
+  PaginationLink
+} from '@/registry/default/ui/pagination'
 
 type PaginationProps = {
   currentPage: number
@@ -20,15 +20,15 @@ type PaginationProps = {
   paginationItemsToDisplay?: number
 }
 
-export default function Component({
+export default function Component ({
   currentPage,
   totalPages,
-  paginationItemsToDisplay = 5,
+  paginationItemsToDisplay = 5
 }: PaginationProps) {
   const { pages, showLeftEllipsis, showRightEllipsis } = usePagination({
     currentPage,
     totalPages,
-    paginationItemsToDisplay,
+    paginationItemsToDisplay
   })
 
   return (
@@ -41,7 +41,7 @@ export default function Component({
             href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}
             aria-label="Go to first page"
             aria-disabled={currentPage === 1 ? true : undefined}
-            role={currentPage === 1 ? "link" : undefined}
+            role={currentPage === 1 ? 'link' : undefined}
           >
             <ChevronFirstIcon size={16} aria-hidden="true" />
           </PaginationLink>
@@ -54,7 +54,7 @@ export default function Component({
             href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}
             aria-label="Go to previous page"
             aria-disabled={currentPage === 1 ? true : undefined}
-            role={currentPage === 1 ? "link" : undefined}
+            role={currentPage === 1 ? 'link' : undefined}
           >
             <ChevronLeftIcon size={16} aria-hidden="true" />
           </PaginationLink>
@@ -97,7 +97,7 @@ export default function Component({
             }
             aria-label="Go to next page"
             aria-disabled={currentPage === totalPages ? true : undefined}
-            role={currentPage === totalPages ? "link" : undefined}
+            role={currentPage === totalPages ? 'link' : undefined}
           >
             <ChevronRightIcon size={16} aria-hidden="true" />
           </PaginationLink>
@@ -112,7 +112,7 @@ export default function Component({
             }
             aria-label="Go to last page"
             aria-disabled={currentPage === totalPages ? true : undefined}
-            role={currentPage === totalPages ? "link" : undefined}
+            role={currentPage === totalPages ? 'link' : undefined}
           >
             <ChevronLastIcon size={16} aria-hidden="true" />
           </PaginationLink>

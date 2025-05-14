@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   const [open, setOpen] = useState<boolean>(false)
 
   return (
@@ -14,7 +14,7 @@ export default function Component() {
       size="icon"
       onClick={() => setOpen((prevState) => !prevState)}
       aria-expanded={open}
-      aria-label={open ? "Close menu" : "Open menu"}
+      aria-label={open ? 'Close menu' : 'Open menu'}
     >
       <svg
         className="pointer-events-none"

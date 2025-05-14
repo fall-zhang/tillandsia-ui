@@ -1,6 +1,6 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   return (
     // To make the notification fixed, add classes like `fixed bottom-4 inset-x-4` to the container element.
     <div className="bg-background z-50 rounded-md border px-4 py-3 shadow-lg">

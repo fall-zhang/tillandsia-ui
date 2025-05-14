@@ -1,6 +1,6 @@
-import { TriangleAlert } from "lucide-react"
+import { TriangleAlert } from 'lucide-react'
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="rounded-md border border-amber-500/50 px-4 py-3 text-amber-600">
       <p className="text-sm">

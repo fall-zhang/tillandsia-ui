@@ -1,6 +1,6 @@
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
+import { RadioGroup, RadioGroupItem } from '@/registry/default/ui/radio-group'
 
-export default function Component() {
+export default function Component () {
   return (
     <fieldset className="space-y-4">
       <legend className="text-foreground text-sm leading-none font-medium">

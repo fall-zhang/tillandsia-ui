@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 
-import { Label } from "@/registry/default/ui/label"
-import { Slider } from "@/registry/default/ui/slider"
+import { Label } from '@/registry/default/ui/label'
+import { Slider } from '@/registry/default/ui/slider'
 
-export default function Component() {
+export default function Component () {
   const [value, setValue] = useState([25, 75])
 
   return (

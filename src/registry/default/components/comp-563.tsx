@@ -1,17 +1,17 @@
-"use client"
+'use client'
 
-import React from "react"
+import React from 'react'
 
 import {
   Cropper,
   CropperCropArea,
   CropperDescription,
-  CropperImage,
-} from "@/registry/default/ui/cropper"
+  CropperImage
+} from '@/registry/default/ui/cropper'
 
 type Area = { x: number; y: number; width: number; height: number }
 
-export default function Component() {
+export default function Component () {
   const [cropData, setCropData] = React.useState<Area | null>(null)
 
   return (
@@ -40,7 +40,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Cropper with crop data output ∙{" "}
+        Cropper with crop data output ∙{' '}
         <a
           href="https://github.com/origin-space/image-cropper"
           className="hover:text-foreground underline"

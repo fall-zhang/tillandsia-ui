@@ -1,21 +1,21 @@
-"use client"
+'use client'
 
-import { RotateCcwIcon } from "lucide-react"
+import { RotateCcwIcon } from 'lucide-react'
 
-import { useSliderWithInput } from "@/registry/default/hooks/use-slider-with-input"
-import { cn } from "@/registry/default/lib/utils"
-import { Button } from "@/registry/default/ui/button"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
-import { Slider } from "@/registry/default/ui/slider"
+import { useSliderWithInput } from '@/registry/default/hooks/use-slider-with-input'
+import { cn } from '@/registry/default/lib/utils'
+import { Button } from '@/registry/default/ui/button'
+import { Input } from '@/registry/default/ui/input'
+import { Label } from '@/registry/default/ui/label'
+import { Slider } from '@/registry/default/ui/slider'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
-  TooltipTrigger,
-} from "@/registry/default/ui/tooltip"
+  TooltipTrigger
+} from '@/registry/default/ui/tooltip'
 
-export default function Component() {
+export default function Component () {
   const minValue = 0
   const maxValue = 2
   const initialValue = [1.25]
@@ -28,7 +28,7 @@ export default function Component() {
     handleInputChange,
     handleSliderChange,
     resetToDefault,
-    showReset,
+    showReset
   } = useSliderWithInput({ minValue, maxValue, initialValue, defaultValue })
 
   return (
@@ -43,8 +43,8 @@ export default function Component() {
                   size="icon"
                   variant="ghost"
                   className={cn(
-                    "size-7 transition-opacity",
-                    showReset ? "opacity-100" : "opacity-0"
+                    'size-7 transition-opacity',
+                    showReset ? 'opacity-100' : 'opacity-0'
                   )}
                   aria-label="Reset"
                   onClick={resetToDefault}
@@ -63,10 +63,10 @@ export default function Component() {
             inputMode="decimal"
             value={inputValues[0]}
             onChange={(e) => handleInputChange(e, 0)}
-            onBlur={() => validateAndUpdateValue(inputValues[0] ?? "", 0)}
+            onBlur={() => validateAndUpdateValue(inputValues[0] ?? '', 0)}
             onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                validateAndUpdateValue(inputValues[0] ?? "", 0)
+              if (e.key === 'Enter') {
+                validateAndUpdateValue(inputValues[0] ?? '', 0)
               }
             }}
             aria-label="Enter value"

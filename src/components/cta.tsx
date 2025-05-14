@@ -1,6 +1,6 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Cta() {
+export default function Cta () {
   return (
     <div className="mt-16 text-center md:mt-20">
       <h2 className="font-heading text-foreground mb-6 text-3xl/[1.1] font-bold tracking-tight">
@@ -9,7 +9,7 @@ export default function Cta() {
       <Button asChild className="rounded-full">
         <a
           href="https://github.com/origin-space/originui/discussions/categories/suggestions"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           <span className="text-primary-foreground">Suggest component</span>
         </a>

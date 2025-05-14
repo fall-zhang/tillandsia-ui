@@ -1,17 +1,17 @@
-import { MailIcon } from "lucide-react"
+import { MailIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-} from "@/registry/default/ui/dialog"
-import { Input } from "@/registry/default/ui/input"
+  DialogTrigger
+} from '@/registry/default/ui/dialog'
+import { Input } from '@/registry/default/ui/input'
 
-export default function Component() {
+export default function Component () {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -65,7 +65,7 @@ export default function Component() {
         </form>
 
         <p className="text-muted-foreground text-center text-xs">
-          By subscribing you agree to our{" "}
+          By subscribing you agree to our{' '}
           <a className="underline hover:no-underline" href="#">
             Privacy Policy
           </a>

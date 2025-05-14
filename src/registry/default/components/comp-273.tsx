@@ -1,6 +1,6 @@
-import { InfoIcon } from "lucide-react"
+import { InfoIcon } from 'lucide-react'
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="rounded-md border px-4 py-3">
       <p className="text-sm">

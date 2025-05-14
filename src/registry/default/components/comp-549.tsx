@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   AlertCircleIcon,
@@ -10,38 +10,38 @@ import {
   HeadphonesIcon,
   ImageIcon,
   VideoIcon,
-  XIcon,
-} from "lucide-react"
+  XIcon
+} from 'lucide-react'
 
 import {
   formatBytes,
-  useFileUpload,
-} from "@/registry/default/hooks/use-file-upload"
-import { Button } from "@/registry/default/ui/button"
+  useFileUpload
+} from '@/registry/default/hooks/use-file-upload'
+import { Button } from '@/registry/default/ui/button'
 
 // Create some dummy initial files
 const initialFiles = [
   {
-    name: "document.pdf",
+    name: 'document.pdf',
     size: 528737,
-    type: "application/pdf",
-    url: "https://example.com/document.pdf",
-    id: "document.pdf-1744638436563-8u5xuls",
+    type: 'application/pdf',
+    url: 'https://example.com/document.pdf',
+    id: 'document.pdf-1744638436563-8u5xuls'
   },
   {
-    name: "intro.zip",
+    name: 'intro.zip',
     size: 252873,
-    type: "application/zip",
-    url: "https://example.com/intro.zip",
-    id: "intro.zip-1744638436563-8u5xuls",
+    type: 'application/zip',
+    url: 'https://example.com/intro.zip',
+    id: 'intro.zip-1744638436563-8u5xuls'
   },
   {
-    name: "conclusion.xlsx",
+    name: 'conclusion.xlsx',
     size: 352873,
-    type: "application/xlsx",
-    url: "https://example.com/conclusion.xlsx",
-    id: "conclusion.xlsx-1744638436563-8u5xuls",
-  },
+    type: 'application/xlsx',
+    url: 'https://example.com/conclusion.xlsx',
+    id: 'conclusion.xlsx-1744638436563-8u5xuls'
+  }
 ]
 
 const getFileIcon = (file: { file: File | { type: string; name: string } }) => {
@@ -49,37 +49,37 @@ const getFileIcon = (file: { file: File | { type: string; name: string } }) => {
   const fileName = file.file instanceof File ? file.file.name : file.file.name
 
   if (
-    fileType.includes("pdf") ||
-    fileName.endsWith(".pdf") ||
-    fileType.includes("word") ||
-    fileName.endsWith(".doc") ||
-    fileName.endsWith(".docx")
+    fileType.includes('pdf') ||
+    fileName.endsWith('.pdf') ||
+    fileType.includes('word') ||
+    fileName.endsWith('.doc') ||
+    fileName.endsWith('.docx')
   ) {
     return <FileTextIcon className="size-4 opacity-60" />
   } else if (
-    fileType.includes("zip") ||
-    fileType.includes("archive") ||
-    fileName.endsWith(".zip") ||
-    fileName.endsWith(".rar")
+    fileType.includes('zip') ||
+    fileType.includes('archive') ||
+    fileName.endsWith('.zip') ||
+    fileName.endsWith('.rar')
   ) {
     return <FileArchiveIcon className="size-4 opacity-60" />
   } else if (
-    fileType.includes("excel") ||
-    fileName.endsWith(".xls") ||
-    fileName.endsWith(".xlsx")
+    fileType.includes('excel') ||
+    fileName.endsWith('.xls') ||
+    fileName.endsWith('.xlsx')
   ) {
     return <FileSpreadsheetIcon className="size-4 opacity-60" />
-  } else if (fileType.includes("video/")) {
+  } else if (fileType.includes('video/')) {
     return <VideoIcon className="size-4 opacity-60" />
-  } else if (fileType.includes("audio/")) {
+  } else if (fileType.includes('audio/')) {
     return <HeadphonesIcon className="size-4 opacity-60" />
-  } else if (fileType.startsWith("image/")) {
+  } else if (fileType.startsWith('image/')) {
     return <ImageIcon className="size-4 opacity-60" />
   }
   return <FileIcon className="size-4 opacity-60" />
 }
 
-export default function Component() {
+export default function Component () {
   const maxSize = 100 * 1024 * 1024 // 10MB default
   const maxFiles = 10
 
@@ -93,13 +93,13 @@ export default function Component() {
       openFileDialog,
       removeFile,
       clearFiles,
-      getInputProps,
-    },
+      getInputProps
+    }
   ] = useFileUpload({
     multiple: true,
     maxFiles,
     maxSize,
-    initialFiles,
+    initialFiles
   })
 
   return (
@@ -208,7 +208,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-center text-xs"
       >
-        Multiple files uploader w/ list ∙{" "}
+        Multiple files uploader w/ list ∙{' '}
         <a
           href="https://github.com/origin-space/originui/tree/main/docs/use-file-upload.md"
           className="hover:text-foreground underline"

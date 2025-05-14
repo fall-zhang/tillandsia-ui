@@ -1,19 +1,19 @@
-"use client"
+'use client'
 
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from 'react'
 
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+import { Input } from '@/registry/default/ui/input'
+import { Label } from '@/registry/default/ui/label'
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
-} from "@/registry/default/ui/select"
-import { Slider } from "@/registry/default/ui/slider"
+  SelectValue
+} from '@/registry/default/ui/select'
+import { Slider } from '@/registry/default/ui/slider'
 
-import CopyClass from "./copy-class"
+import CopyClass from './copy-class'
 
 interface Easing {
   name: string
@@ -24,7 +24,7 @@ interface EasingsProps {
   easings: Easing[]
 }
 
-type EasingFilter = "all" | "in" | "out" | "in-out"
+type EasingFilter = 'all' | 'in' | 'out' | 'in-out'
 
 const defaultConfig = {
   width: 140,
@@ -32,12 +32,12 @@ const defaultConfig = {
   padding: 20,
   plotSize: 100,
   animationDuration: 1000,
-  pauseDuration: 1000,
+  pauseDuration: 1000
 }
 
-type AnimationType = "translate" | "scale" | "rotate"
+type AnimationType = 'translate' | 'scale' | 'rotate'
 
-function useAnimationKey(
+function useAnimationKey (
   duration: number,
   pauseDuration: number,
   animationType: AnimationType
@@ -63,7 +63,7 @@ const EasingSVG = ({
   config,
   duration,
   animationType,
-  pauseDuration,
+  pauseDuration
 }: {
   easing: Easing
   config: typeof defaultConfig
@@ -77,15 +77,15 @@ const EasingSVG = ({
     if (!easing.points.length || duration <= 0) return {}
 
     return {
-      ["--bezier-coordinates" as string]: easing.points.join(","),
-      ["--animation-duration" as string]: `${duration}s`,
-      ["--total-duration" as string]: `${duration + pauseDuration}s`,
-      animationName: "moveCircleVertically",
+      ['--bezier-coordinates' as string]: easing.points.join(','),
+      ['--animation-duration' as string]: `${duration}s`,
+      ['--total-duration' as string]: `${duration + pauseDuration}s`,
+      animationName: 'moveCircleVertically',
       animationDuration: `${duration}s`,
-      animationTimingFunction: `cubic-bezier(${easing.points.join(",")})`,
-      animationIterationCount: "1",
-      animationFillMode: "forwards",
-      animationDelay: "0s",
+      animationTimingFunction: `cubic-bezier(${easing.points.join(',')})`,
+      animationIterationCount: '1',
+      animationFillMode: 'forwards',
+      animationDelay: '0s'
     }
   }
 
@@ -156,12 +156,12 @@ const EasingSVG = ({
           r="4"
           className="fill-primary"
           style={{
-            animationName: "moveCircleHorizontally",
+            animationName: 'moveCircleHorizontally',
             animationDuration: `${duration}s`,
-            animationTimingFunction: "linear",
-            animationIterationCount: "1",
-            animationFillMode: "forwards",
-            animationDelay: "0s",
+            animationTimingFunction: 'linear',
+            animationIterationCount: '1',
+            animationFillMode: 'forwards',
+            animationDelay: '0s'
           }}
         />
       </g>
@@ -191,7 +191,7 @@ const AnimatedSquare = ({
   easing,
   duration,
   animationType,
-  pauseDuration,
+  pauseDuration
 }: {
   easing: Easing
   duration: number
@@ -204,25 +204,25 @@ const AnimatedSquare = ({
     if (!easing.points.length || duration <= 0) return {}
 
     const baseStyle = {
-      ["--bezier-coordinates" as string]: easing.points.join(","),
-      ["--animation-duration" as string]: `${duration}s`,
-      ["--total-duration" as string]: `${duration + pauseDuration}s`,
+      ['--bezier-coordinates' as string]: easing.points.join(','),
+      ['--animation-duration' as string]: `${duration}s`,
+      ['--total-duration' as string]: `${duration + pauseDuration}s`
     }
 
     const animationName = {
-      translate: "translateSquare",
-      scale: "scaleSquare",
-      rotate: "rotateSquare",
+      translate: 'translateSquare',
+      scale: 'scaleSquare',
+      rotate: 'rotateSquare'
     }[animationType]
 
     return {
       ...baseStyle,
       animationName,
       animationDuration: `${duration}s`,
-      animationTimingFunction: `cubic-bezier(${easing.points.join(",")})`,
-      animationIterationCount: "1",
-      animationFillMode: "forwards",
-      animationDelay: "0s",
+      animationTimingFunction: `cubic-bezier(${easing.points.join(',')})`,
+      animationIterationCount: '1',
+      animationFillMode: 'forwards',
+      animationDelay: '0s'
     }
   }
 
@@ -231,12 +231,12 @@ const AnimatedSquare = ({
   return (
     <div
       key={`${key}-${duration}-${pauseDuration}-${animationType}`}
-      className={`pointer-events-none flex w-full items-center ${animationType === "translate" ? "justify-start" : "justify-center"}`}
-      style={animationType === "translate" ? animationStyle : undefined}
+      className={`pointer-events-none flex w-full items-center ${animationType === 'translate' ? 'justify-start' : 'justify-center'}`}
+      style={animationType === 'translate' ? animationStyle : undefined}
     >
       <div
         className="animated-square from-primary to-primary/80 shadow-primary/10 h-10 w-10 rounded-md bg-linear-to-tr shadow-lg"
-        style={animationType !== "translate" ? animationStyle : undefined}
+        style={animationType !== 'translate' ? animationStyle : undefined}
       />
       <style jsx>{`
         @keyframes translateSquare {
@@ -268,14 +268,14 @@ const AnimatedSquare = ({
   )
 }
 
-export default function Easings({ easings }: EasingsProps) {
+export default function Easings ({ easings }: EasingsProps) {
   const [duration, setDuration] = useState(defaultConfig.animationDuration)
   const [tempDuration, setTempDuration] = useState(
     defaultConfig.animationDuration
   )
   const pauseDuration = defaultConfig.pauseDuration
-  const [animationType, setAnimationType] = useState<AnimationType>("translate")
-  const [easingFilter, setEasingFilter] = useState<EasingFilter>("all")
+  const [animationType, setAnimationType] = useState<AnimationType>('translate')
+  const [easingFilter, setEasingFilter] = useState<EasingFilter>('all')
 
   const handleSliderChangeEnd = (value: number[]) => {
     setDuration(value[0])
@@ -301,26 +301,26 @@ export default function Easings({ easings }: EasingsProps) {
   }
 
   const getFilteredEasings = () => {
-    if (easingFilter === "all") return easings
+    if (easingFilter === 'all') return easings
 
     return easings.filter((easing) => {
       const name = easing.name.toLowerCase()
       switch (easingFilter) {
-        case "in":
-          return (
-            (name.startsWith("easein") && !name.includes("inout")) ||
-            name === "ease-in"
-          )
-        case "out":
-          return name.startsWith("easeout") || name === "ease-out"
-        case "in-out":
-          return (
-            name.startsWith("easeinout") ||
-            name === "ease-in-out" ||
-            name === "ease"
-          )
-        default:
-          return true
+      case 'in':
+        return (
+          (name.startsWith('easein') && !name.includes('inout')) ||
+            name === 'ease-in'
+        )
+      case 'out':
+        return name.startsWith('easeout') || name === 'ease-out'
+      case 'in-out':
+        return (
+          name.startsWith('easeinout') ||
+            name === 'ease-in-out' ||
+            name === 'ease'
+        )
+      default:
+        return true
       }
     })
   }
@@ -428,7 +428,7 @@ export default function Easings({ easings }: EasingsProps) {
               {/* Using decodeURIComponent to properly escape special characters in the class name.
                   Without this, Tailwind shows a warning: The class ... is ambiguous and matches multiple utilities. */}
               <CopyClass
-                value={`ease-[cubic-bezier(${easing.points.join(",")})]`}
+                value={`ease-[cubic-bezier(${easing.points.join(',')})]`}
               />
             </div>
           </div>

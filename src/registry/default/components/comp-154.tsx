@@ -1,9 +1,9 @@
-import { useId } from "react"
+import { useId } from 'react'
 
-import { Label } from "@/registry/default/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
+import { Label } from '@/registry/default/ui/label'
+import { RadioGroup, RadioGroupItem } from '@/registry/default/ui/radio-group'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   return (
     <RadioGroup defaultValue="2" disabled>

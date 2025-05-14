@@ -1,16 +1,16 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { addDays } from "date-fns"
-import { DateRange } from "react-day-picker"
+import { useState } from 'react'
+import { addDays } from 'date-fns'
+import { DateRange } from 'react-day-picker'
 
-import { Calendar } from "@/registry/default/ui/calendar"
+import { Calendar } from '@/registry/default/ui/calendar'
 
-export default function Component() {
+export default function Component () {
   const today = new Date()
   const [date, setDate] = useState<DateRange | undefined>({
     from: today,
-    to: addDays(today, 48),
+    to: addDays(today, 48)
   })
 
   return (
@@ -24,9 +24,9 @@ export default function Component() {
         showOutsideDays={false}
         className="rounded-md border p-2"
         classNames={{
-          months: "sm:flex-col md:flex-row gap-8",
+          months: 'sm:flex-col md:flex-row gap-8',
           month:
-            "relative first-of-type:before:hidden before:absolute max-md:before:inset-x-2 max-md:before:h-px max-md:before:-top-4 md:before:inset-y-2 md:before:w-px before:bg-border md:before:-left-4",
+            'relative first-of-type:before:hidden before:absolute max-md:before:inset-x-2 max-md:before:h-px max-md:before:-top-4 md:before:inset-y-2 md:before:w-px before:bg-border md:before:-left-4'
         }}
       />
       <p
@@ -34,12 +34,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Three months calendar -{" "}
+        Three months calendar -{' '}
         <a
           className="hover:text-foreground underline"
           href="https://daypicker.dev/"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React DayPicker
         </a>

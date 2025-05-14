@@ -1,9 +1,9 @@
-import Link from "next/link"
+import Link from 'next/link'
 
-import PageHeader from "@/components/page-header"
-import { Button } from "@/registry/default/ui/button"
+import PageHeader from '@/components/page-header'
+import { Button } from '@/registry/default/ui/button'
 
-export default function NotFound() {
+export default function NotFound () {
   return (
     <>
       <PageHeader title="404" className="mb-6">

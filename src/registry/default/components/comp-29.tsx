@@ -1,16 +1,16 @@
-"use client"
+'use client'
 
-import { ChevronDownIcon, ChevronUpIcon } from "lucide-react"
-import { Button, Group, Input, Label, NumberField } from "react-aria-components"
+import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react'
+import { Button, Group, Input, Label, NumberField } from 'react-aria-components'
 
-export default function Component() {
+export default function Component () {
   return (
     <NumberField
       defaultValue={99}
       formatOptions={{
-        style: "currency",
-        currency: "EUR",
-        currencySign: "accounting",
+        style: 'currency',
+        currency: 'EUR',
+        currencySign: 'accounting'
       }}
     >
       <div className="*:not-first:mt-2">
@@ -40,12 +40,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Built with{" "}
+        Built with{' '}
         <a
           className="hover:text-foreground underline"
           href="https://react-spectrum.adobe.com/react-aria/DateField.html"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React Aria
         </a>

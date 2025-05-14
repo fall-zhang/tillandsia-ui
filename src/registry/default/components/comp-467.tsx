@@ -4,57 +4,57 @@ import {
   TableCell,
   TableHead,
   TableHeader,
-  TableRow,
-} from "@/registry/default/ui/table"
+  TableRow
+} from '@/registry/default/ui/table'
 
 const items = [
   {
-    id: "1",
-    name: "Alex Thompson",
-    username: "@alexthompson",
+    id: '1',
+    name: 'Alex Thompson',
+    username: '@alexthompson',
     image:
-      "https://res.cloudinary.com/dlzlfasou/image/upload/v1736358071/avatar-40-02_upqrxi.jpg",
-    email: "alex.t@company.com",
-    location: "San Francisco, US",
-    status: "Active",
-    balance: "$1,250.00",
+      'https://res.cloudinary.com/dlzlfasou/image/upload/v1736358071/avatar-40-02_upqrxi.jpg',
+    email: 'alex.t@company.com',
+    location: 'San Francisco, US',
+    status: 'Active',
+    balance: '$1,250.00'
   },
   {
-    id: "2",
-    name: "Sarah Chen",
-    username: "@sarahchen",
+    id: '2',
+    name: 'Sarah Chen',
+    username: '@sarahchen',
     image:
-      "https://res.cloudinary.com/dlzlfasou/image/upload/v1736358073/avatar-40-01_ij9v7j.jpg",
-    email: "sarah.c@company.com",
-    location: "Singapore",
-    status: "Active",
-    balance: "$600.00",
+      'https://res.cloudinary.com/dlzlfasou/image/upload/v1736358073/avatar-40-01_ij9v7j.jpg',
+    email: 'sarah.c@company.com',
+    location: 'Singapore',
+    status: 'Active',
+    balance: '$600.00'
   },
   {
-    id: "4",
-    name: "Maria Garcia",
-    username: "@mariagarcia",
+    id: '4',
+    name: 'Maria Garcia',
+    username: '@mariagarcia',
     image:
-      "https://res.cloudinary.com/dlzlfasou/image/upload/v1736358072/avatar-40-03_dkeufx.jpg",
-    email: "m.garcia@company.com",
-    location: "Madrid, Spain",
-    status: "Active",
-    balance: "$0.00",
+      'https://res.cloudinary.com/dlzlfasou/image/upload/v1736358072/avatar-40-03_dkeufx.jpg',
+    email: 'm.garcia@company.com',
+    location: 'Madrid, Spain',
+    status: 'Active',
+    balance: '$0.00'
   },
   {
-    id: "5",
-    name: "David Kim",
-    username: "@davidkim",
+    id: '5',
+    name: 'David Kim',
+    username: '@davidkim',
     image:
-      "https://res.cloudinary.com/dlzlfasou/image/upload/v1736358070/avatar-40-05_cmz0mg.jpg",
-    email: "d.kim@company.com",
-    location: "Seoul, KR",
-    status: "Active",
-    balance: "-$1,000.00",
-  },
+      'https://res.cloudinary.com/dlzlfasou/image/upload/v1736358070/avatar-40-05_cmz0mg.jpg',
+    email: 'd.kim@company.com',
+    location: 'Seoul, KR',
+    status: 'Active',
+    balance: '-$1,000.00'
+  }
 ]
 
-export default function Component() {
+export default function Component () {
   return (
     <div>
       <Table>

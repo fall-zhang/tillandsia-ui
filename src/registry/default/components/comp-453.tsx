@@ -1,21 +1,21 @@
-import { DatabaseIcon } from "lucide-react"
+import { DatabaseIcon } from 'lucide-react'
 
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbSeparator,
-} from "@/registry/default/ui/breadcrumb"
+  BreadcrumbSeparator
+} from '@/registry/default/ui/breadcrumb'
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
-} from "@/registry/default/ui/select"
+  SelectValue
+} from '@/registry/default/ui/select'
 
-export default function Component() {
+export default function Component () {
   return (
     <Breadcrumb>
       <BreadcrumbList>

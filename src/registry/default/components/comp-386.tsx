@@ -1,44 +1,44 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react"
+import { useState } from 'react'
+import { ArrowLeftIcon, ArrowRightIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
+  PopoverTrigger
+} from '@/registry/default/ui/popover'
 
 const tips = [
   {
-    title: "Welcome to Dashboard",
+    title: 'Welcome to Dashboard',
     description:
-      "This is your new workspace. Here you'll find all your projects, recent activities, settings, and more.",
+      "This is your new workspace. Here you'll find all your projects, recent activities, settings, and more."
   },
   {
-    title: "Quick Actions",
+    title: 'Quick Actions',
     description:
-      "Use the toolbar above to create new projects, invite team members, or access settings.",
+      'Use the toolbar above to create new projects, invite team members, or access settings.'
   },
   {
-    title: "Need Help?",
+    title: 'Need Help?',
     description:
-      "Click the support icon in the top right corner to access our help center and documentation.",
+      'Click the support icon in the top right corner to access our help center and documentation.'
   },
   {
-    title: "Keyboard Shortcuts",
+    title: 'Keyboard Shortcuts',
     description:
-      "Press ⌘K to open the command palette. Use arrow keys to navigate and Enter to select an action.",
+      'Press ⌘K to open the command palette. Use arrow keys to navigate and Enter to select an action.'
   },
   {
-    title: "Stay Updated",
+    title: 'Stay Updated',
     description:
-      "Enable notifications to receive updates about your projects, team activity, and important deadlines.",
-  },
+      'Enable notifications to receive updates about your projects, team activity, and important deadlines.'
+  }
 ]
 
-export default function Component() {
+export default function Component () {
   const [currentTip, setCurrentTip] = useState(0)
 
   const handleNext = () => {

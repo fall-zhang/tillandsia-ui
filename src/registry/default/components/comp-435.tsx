@@ -1,14 +1,14 @@
-import { BoxIcon, HouseIcon, PanelsTopLeftIcon } from "lucide-react"
+import { BoxIcon, HouseIcon, PanelsTopLeftIcon } from 'lucide-react'
 
-import { ScrollArea, ScrollBar } from "@/registry/default/ui/scroll-area"
+import { ScrollArea, ScrollBar } from '@/registry/default/ui/scroll-area'
 import {
   Tabs,
   TabsContent,
   TabsList,
-  TabsTrigger,
-} from "@/registry/default/ui/tabs"
+  TabsTrigger
+} from '@/registry/default/ui/tabs'
 
-export default function Component() {
+export default function Component () {
   return (
     <Tabs defaultValue="tab-1">
       <ScrollArea>

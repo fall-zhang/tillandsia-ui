@@ -1,12 +1,12 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
-import { Textarea } from "@/registry/default/ui/textarea"
+  PopoverTrigger
+} from '@/registry/default/ui/popover'
+import { Textarea } from '@/registry/default/ui/textarea'
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="flex flex-col gap-4">
       <Popover>

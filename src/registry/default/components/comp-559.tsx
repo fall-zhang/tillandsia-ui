@@ -2,10 +2,10 @@ import {
   Cropper,
   CropperCropArea,
   CropperDescription,
-  CropperImage,
-} from "@/registry/default/ui/cropper"
+  CropperImage
+} from '@/registry/default/ui/cropper'
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="flex flex-col items-center gap-2">
       <Cropper
@@ -23,11 +23,11 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Cropper with full size crop area ∙{" "}
+        Cropper with full size crop area ∙{' '}
         <a
           href="https://github.com/origin-space/image-cropper"
           className="hover:text-foreground underline"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           API
         </a>

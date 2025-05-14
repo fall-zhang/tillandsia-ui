@@ -1,42 +1,42 @@
-import type { Metadata, Viewport } from "next"
-import { Outfit as FontHeading, Inter as FontSans } from "next/font/google"
-import Script from "next/script"
+import type { Metadata, Viewport } from 'next'
+import { Outfit as FontHeading, Inter as FontSans } from 'next/font/google'
+import Script from 'next/script'
 
-import Footer from "@/components/footer"
-import Header from "@/components/header"
-import { ThemeProvider } from "@/components/theme-provider"
-import { Toaster as Sonner } from "@/registry/default/ui/sonner"
-import { Toaster } from "@/registry/default/ui/toaster"
+import Footer from '@/components/footer'
+import Header from '@/components/header'
+import { ThemeProvider } from '@/components/theme-provider'
+import { Toaster as Sonner } from '@/registry/default/ui/sonner'
+import { Toaster } from '@/registry/default/ui/toaster'
 
-import "./globals.css"
+import './globals.css'
 
 const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
+  subsets: ['latin'],
+  variable: '--font-sans'
 })
 
 const fontHeading = FontHeading({
-  subsets: ["latin"],
-  variable: "--font-heading",
+  subsets: ['latin'],
+  variable: '--font-heading'
 })
 
 export const viewport: Viewport = {
   initialScale: 1,
-  width: "device-width",
+  width: 'device-width',
   maximumScale: 1,
-  viewportFit: "cover",
+  viewportFit: 'cover'
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://originui.com"),
+  metadataBase: new URL('https://originui.com'),
   title:
-    "Origin UI - Beautiful UI components built with Tailwind CSS and React",
+    'Origin UI - Beautiful UI components built with Tailwind CSS and React',
   description:
-    "An extensive collection of copy-and-paste components for quickly building app UIs. Free, open-source, and ready to drop into your projects.",
+    'An extensive collection of copy-and-paste components for quickly building app UIs. Free, open-source, and ready to drop into your projects.'
 }
 
-export default function RootLayout({
-  children,
+export default function RootLayout ({
+  children
 }: Readonly<{
   children: React.ReactNode
 }>) {

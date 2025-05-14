@@ -1,18 +1,18 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 import {
   MinusIcon,
   PlusIcon,
   Volume1Icon,
   Volume2Icon,
   VolumeIcon,
-  VolumeXIcon,
-} from "lucide-react"
+  VolumeXIcon
+} from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   const [volume, setVolume] = useState(3) // Initialize volume state (0-9)
 
   const decreaseVolume = () => setVolume((prev) => Math.max(0, prev - 1))

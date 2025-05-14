@@ -1,18 +1,18 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   Stepper,
   StepperIndicator,
   StepperItem,
-  StepperTrigger,
-} from "@/registry/default/ui/stepper"
+  StepperTrigger
+} from '@/registry/default/ui/stepper'
 
 const steps = [1, 2, 3, 4]
 
-export default function Component() {
+export default function Component () {
   const [currentStep, setCurrentStep] = useState(1)
 
   return (

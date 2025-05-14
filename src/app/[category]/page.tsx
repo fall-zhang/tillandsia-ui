@@ -1,20 +1,20 @@
-import type { Metadata } from "next"
-import { notFound } from "next/navigation"
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
-import { categories, getCategory } from "@/config/components"
-import { getComponentsByNames } from "@/lib/utils"
-import ComponentCard from "@/components/component-card"
-import ComponentDetails from "@/components/component-details"
-import ComponentLoader from "@/components/component-loader-server"
-import Cta from "@/components/cta"
-import PageGrid from "@/components/page-grid"
-import PageHeader from "@/components/page-header"
+import { categories, getCategory } from '@/config/components'
+import { getComponentsByNames } from '@/lib/utils'
+import ComponentCard from '@/components/component-card'
+import ComponentDetails from '@/components/component-details'
+import ComponentLoader from '@/components/component-loader-server'
+import Cta from '@/components/cta'
+import PageGrid from '@/components/page-grid'
+import PageHeader from '@/components/page-header'
 
 type Props = {
   params: Promise<{ category: string }>
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata ({ params }: Props): Promise<Metadata> {
   const category = getCategory((await params).category)
 
   if (!category) {
@@ -29,12 +29,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isSingleComponent = components.length === 1
 
   // Custom title and description for event-calendar
-  if (category.slug === "event-calendar") {
+  if (category.slug === 'event-calendar') {
     return {
       title:
-        "Event calendar component built with React and Tailwind CSS - Origin UI",
+        'Event calendar component built with React and Tailwind CSS - Origin UI',
       description:
-        "An event calendar component built with React and Tailwind CSS. Originally built in v0 and currently in early alpha stage.",
+        'An event calendar component built with React and Tailwind CSS. Originally built in v0 and currently in early alpha stage.'
     }
   }
 
@@ -44,17 +44,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       : `${category.name} components built with React and Tailwind CSS - Origin UI`,
     description: isSingleComponent
       ? `A beautiful and accessible ${category.name.toLowerCase()} component built with React and Tailwind CSS.`
-      : `A collection of beautiful and accessible ${category.name.toLowerCase()} components built with React and Tailwind CSS.`,
+      : `A collection of beautiful and accessible ${category.name.toLowerCase()} components built with React and Tailwind CSS.`
   }
 }
 
-export async function generateStaticParams() {
+export async function generateStaticParams () {
   return categories.map((category) => ({
-    category: category.slug,
+    category: category.slug
   }))
 }
 
-export default async function Page({ params }: Props) {
+export default async function Page ({ params }: Props) {
   const category = getCategory((await params).category)
 
   if (!category) {
@@ -68,11 +68,11 @@ export default async function Page({ params }: Props) {
   // Determine the description text based on category
   const getDescriptionText = () => {
     // Special case for event-calendar
-    if (category.slug === "event-calendar") {
+    if (category.slug === 'event-calendar') {
       return (
         <span className="block text-balance">
           An event calendar component built with React and Tailwind CSS.
-          Originally built in{" "}
+          Originally built in{' '}
           <a
             href="https://v0.dev"
             target="_blank"
@@ -80,8 +80,8 @@ export default async function Page({ params }: Props) {
             className="text-primary hover:underline"
           >
             v0
-          </a>{" "}
-          and currently in early alpha stage.{" "}
+          </a>{' '}
+          and currently in early alpha stage.{' '}
           <a
             href="https://github.com/origin-space/event-calendar"
             target="_blank"

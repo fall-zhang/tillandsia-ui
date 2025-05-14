@@ -1,26 +1,26 @@
-"use client"
+'use client'
 
-import { useCallback, useMemo } from "react"
-import { useSearchParams } from "next/navigation"
-import type { RegistryItem } from "shadcn/registry"
+import { useCallback, useMemo } from 'react'
+import { useSearchParams } from 'next/navigation'
+import type { RegistryItem } from 'shadcn/registry'
 
-import { getComponents } from "@/lib/utils"
-import ComponentCard from "@/components/component-card"
-import ComponentDetails from "@/components/component-details"
-import ComponentLoader from "@/components/component-loader-client"
-import PageGrid from "@/components/page-grid"
-import type { RegistryTag } from "@/registry/registry-tags"
+import { getComponents } from '@/lib/utils'
+import ComponentCard from '@/components/component-card'
+import ComponentDetails from '@/components/component-details'
+import ComponentLoader from '@/components/component-loader-client'
+import PageGrid from '@/components/page-grid'
+import type { RegistryTag } from '@/registry/registry-tags'
 
-import SearchField from "./search-field"
+import SearchField from './search-field'
 
-export default function ComponentsContainer() {
+export default function ComponentsContainer () {
   const searchParams = useSearchParams()
   const tags = useMemo(() => {
     return (searchParams
-      ?.get("tags")
-      ?.split(",")
+      ?.get('tags')
+      ?.split(',')
       .filter(Boolean)
-      .map((tag) => tag.replace(/\+/g, " ")) || []) as RegistryTag[]
+      .map((tag) => tag.replace(/\+/g, ' ')) || []) as RegistryTag[]
   }, [searchParams])
 
   const filtered = useMemo(() => {
@@ -32,13 +32,13 @@ export default function ComponentsContainer() {
     const url = new URL(window.location.href)
     if (newTags.length > 0) {
       const formattedTags = newTags
-        .map((tag) => tag.replace(/\s+/g, "+"))
-        .join(",")
-      url.searchParams.set("tags", formattedTags)
+        .map((tag) => tag.replace(/\s+/g, '+'))
+        .join(',')
+      url.searchParams.set('tags', formattedTags)
     } else {
-      url.searchParams.delete("tags")
+      url.searchParams.delete('tags')
     }
-    window.history.replaceState({}, "", url.toString())
+    window.history.replaceState({}, '', url.toString())
   }, [])
 
   return (

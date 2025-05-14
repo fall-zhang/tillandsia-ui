@@ -1,20 +1,20 @@
-"use client"
+'use client'
 
-import { useId } from "react"
-import { CreditCardIcon } from "lucide-react"
-import { usePaymentInputs } from "react-payment-inputs"
-import images, { type CardImages } from "react-payment-inputs/images"
+import { useId } from 'react'
+import { CreditCardIcon } from 'lucide-react'
+import { usePaymentInputs } from 'react-payment-inputs'
+import images, { type CardImages } from 'react-payment-inputs/images'
 
-import { Input } from "@/registry/default/ui/input"
+import { Input } from '@/registry/default/ui/input'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   const {
     meta,
     getCardNumberProps,
     getExpiryDateProps,
     getCVCProps,
-    getCardImageProps,
+    getCardImageProps
   } = usePaymentInputs()
 
   return (
@@ -30,17 +30,19 @@ export default function Component() {
             id={`number-${id}`}
           />
           <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 peer-disabled:opacity-50">
-            {meta.cardType ? (
-              <svg
-                className="overflow-hidden rounded-sm"
-                {...getCardImageProps({
-                  images: images as unknown as CardImages,
-                })}
-                width={20}
-              />
-            ) : (
-              <CreditCardIcon size={16} aria-hidden="true" />
-            )}
+            {meta.cardType
+              ? (
+                <svg
+                  className="overflow-hidden rounded-sm"
+                  {...getCardImageProps({
+                    images: images as unknown as CardImages
+                  })}
+                  width={20}
+                />
+              )
+              : (
+                <CreditCardIcon size={16} aria-hidden="true" />
+              )}
           </div>
         </div>
         <div className="-mt-px flex">
@@ -65,12 +67,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Built with{" "}
+        Built with{' '}
         <a
           className="hover:text-foreground underline"
           href="https://github.com/medipass/react-payment-inputs"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React Payment Inputs
         </a>

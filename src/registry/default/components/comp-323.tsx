@@ -1,16 +1,16 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-} from "@/registry/default/ui/dialog"
-import { Label } from "@/registry/default/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
-import { Textarea } from "@/registry/default/ui/textarea"
+  DialogTrigger
+} from '@/registry/default/ui/dialog'
+import { Label } from '@/registry/default/ui/label'
+import { RadioGroup, RadioGroupItem } from '@/registry/default/ui/radio-group'
+import { Textarea } from '@/registry/default/ui/textarea'
 
-export default function Component() {
+export default function Component () {
   return (
     <Dialog>
       <DialogTrigger asChild>

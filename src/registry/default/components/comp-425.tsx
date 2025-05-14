@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { XIcon } from "lucide-react"
+import { useState } from 'react'
+import { XIcon } from 'lucide-react'
 
-import { Badge } from "@/registry/default/ui/badge"
+import { Badge } from '@/registry/default/ui/badge'
 
-export default function Component() {
+export default function Component () {
   const [isActive, setIsActive] = useState(true)
 
   if (!isActive) return null

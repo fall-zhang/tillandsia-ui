@@ -1,11 +1,11 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
+  PopoverTrigger
+} from '@/registry/default/ui/popover'
 
-export default function Component() {
+export default function Component () {
   return (
     <Popover>
       <PopoverTrigger asChild>

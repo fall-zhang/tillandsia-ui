@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 
-import { Calendar } from "@/registry/default/ui/calendar"
+import { Calendar } from '@/registry/default/ui/calendar'
 
-export default function Component() {
+export default function Component () {
   const [date, setDate] = useState<Date | undefined>(new Date())
 
   return (
@@ -15,8 +15,8 @@ export default function Component() {
         onSelect={setDate}
         className="rounded-md border p-2"
         classNames={{
-          month_caption: "ms-2.5 me-20 justify-start",
-          nav: "justify-end",
+          month_caption: 'ms-2.5 me-20 justify-start',
+          nav: 'justify-end'
         }}
       />
       <p
@@ -24,12 +24,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Right navigation -{" "}
+        Right navigation -{' '}
         <a
           className="hover:text-foreground underline"
           href="https://daypicker.dev/"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React DayPicker
         </a>

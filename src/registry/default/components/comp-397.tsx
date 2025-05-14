@@ -1,10 +1,10 @@
 import {
   Avatar,
   AvatarFallback,
-  AvatarImage,
-} from "@/registry/default/ui/avatar"
+  AvatarImage
+} from '@/registry/default/ui/avatar'
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="relative">
       <Avatar>

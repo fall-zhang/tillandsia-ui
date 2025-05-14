@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import type { WeekNumberProps } from "react-day-picker"
+import { useState } from 'react'
+import type { WeekNumberProps } from 'react-day-picker'
 
-import { Calendar } from "@/registry/default/ui/calendar"
+import { Calendar } from '@/registry/default/ui/calendar'
 
-export default function Component() {
+export default function Component () {
   const [date, setDate] = useState<Date | undefined>(new Date())
 
   return (
@@ -26,7 +26,7 @@ export default function Component() {
                 </span>
               </th>
             )
-          },
+          }
         }}
       />
       <p
@@ -34,12 +34,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Weekly numbers -{" "}
+        Weekly numbers -{' '}
         <a
           className="hover:text-foreground underline"
           href="https://daypicker.dev/"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React DayPicker
         </a>

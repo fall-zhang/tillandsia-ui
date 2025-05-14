@@ -56,33 +56,32 @@ function CategoryCard ({
   isNew = false
 }: CategoryCardProps) {
   const href = `/fall/${slug}`
-  const imageBasePath = `/thumbs/${slug}`
+  const imageBasePath = `/img/thumbs/${slug}`
   const alt = `${name} components`
   const isComingSoon = componentsCount === undefined
 
-  return (
-    <div className="space-y-3 text-center">
-      <Link
-        href={href}
-        className="peer relative inline-flex overflow-hidden rounded-xl border sm:flex dark:border-zinc-700/80"
-        tabIndex={-1}
-      >
-        {isNew && (<NewIcon />)}
-        <ImageComponent imageBasePath={imageBasePath} alt={alt} />
-      </Link>
-      <div className="[&_a]:peer-hover:underline">
-        <h2>
-          <Link href={href} className="text-sm font-medium hover:underline">
-            {name}
-          </Link>
-        </h2>
-        <p className="text-muted-foreground text-[13px]">
-          {!isComingSoon
-            ? `${componentsCount} ${componentsCount === 1 ? 'Component' : 'Components'}`
-            : '-'}
-        </p>
-      </div>
+  return (<div className="space-y-3 text-center">
+    <Link
+      href={href}
+      className="peer relative inline-flex overflow-hidden rounded-xl border sm:flex dark:border-zinc-700/80"
+      tabIndex={-1}
+    >
+      {isNew && (<NewIcon />)}
+      <ImageComponent imageBasePath={imageBasePath} alt={alt} />
+    </Link>
+    <div className="[&_a]:peer-hover:underline">
+      <h2>
+        <Link href={href} className="text-sm font-medium hover:underline">
+          {name}
+        </Link>
+      </h2>
+      <p className="text-muted-foreground text-[13px]">
+        {!isComingSoon
+          ? `${componentsCount} ${componentsCount === 1 ? 'Component' : 'Components'}`
+          : '-'}
+      </p>
     </div>
+  </div>
   )
 }
 

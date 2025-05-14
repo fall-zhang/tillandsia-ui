@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import React, { useMemo } from "react"
+import React, { useMemo } from 'react'
 import {
   addHours,
   areIntervalsOverlapping,
@@ -10,8 +10,8 @@ import {
   getHours,
   getMinutes,
   isSameDay,
-  startOfDay,
-} from "date-fns"
+  startOfDay
+} from 'date-fns'
 
 import {
   DraggableEvent,
@@ -20,13 +20,13 @@ import {
   isMultiDayEvent,
   useCurrentTimeIndicator,
   WeekCellsHeight,
-  type CalendarEvent,
-} from "@/registry/default/components/event-calendar"
+  type CalendarEvent
+} from '@/registry/default/components/event-calendar'
 import {
   EndHour,
-  StartHour,
-} from "@/registry/default/components/event-calendar/constants"
-import { cn } from "@/registry/default/lib/utils"
+  StartHour
+} from '@/registry/default/components/event-calendar/constants'
+import { cn } from '@/registry/default/lib/utils'
 
 interface DayViewProps {
   currentDate: Date
@@ -44,17 +44,17 @@ interface PositionedEvent {
   zIndex: number
 }
 
-export function DayView({
+export function DayView ({
   currentDate,
   events,
   onEventSelect,
-  onEventCreate,
+  onEventCreate
 }: DayViewProps) {
   const hours = useMemo(() => {
     const dayStart = startOfDay(currentDate)
     return eachHourOfInterval({
       start: addHours(dayStart, StartHour),
-      end: addHours(dayStart, EndHour - 1),
+      end: addHours(dayStart, EndHour - 1)
     })
   }, [currentDate])
 
@@ -170,7 +170,7 @@ export function DayView({
         height,
         left,
         width,
-        zIndex: 10 + columnIndex, // Higher columns get higher z-index
+        zIndex: 10 + columnIndex // Higher columns get higher z-index
       })
     })
 
@@ -185,7 +185,7 @@ export function DayView({
   const showAllDaySection = allDayEvents.length > 0
   const { currentTimePosition, currentTimeVisible } = useCurrentTimeIndicator(
     currentDate,
-    "day"
+    'day'
   )
 
   return (
@@ -233,7 +233,7 @@ export function DayView({
             >
               {index > 0 && (
                 <span className="bg-background text-muted-foreground/70 absolute -top-3 left-0 flex h-6 w-16 max-w-full items-center justify-end pe-2 text-[10px] sm:pe-4 sm:text-xs">
-                  {format(hour, "h a")}
+                  {format(hour, 'h a')}
                 </span>
               )}
             </div>
@@ -251,7 +251,7 @@ export function DayView({
                 height: `${positionedEvent.height}px`,
                 left: `${positionedEvent.left * 100}%`,
                 width: `${positionedEvent.width * 100}%`,
-                zIndex: positionedEvent.zIndex,
+                zIndex: positionedEvent.zIndex
               }}
             >
               <div className="size-full">
@@ -297,14 +297,14 @@ export function DayView({
                       date={currentDate}
                       time={quarterHourTime}
                       className={cn(
-                        "absolute h-[calc(var(--week-cells-height)/4)] w-full",
-                        quarter === 0 && "top-0",
+                        'absolute h-[calc(var(--week-cells-height)/4)] w-full',
+                        quarter === 0 && 'top-0',
                         quarter === 1 &&
-                          "top-[calc(var(--week-cells-height)/4)]",
+                          'top-[calc(var(--week-cells-height)/4)]',
                         quarter === 2 &&
-                          "top-[calc(var(--week-cells-height)/4*2)]",
+                          'top-[calc(var(--week-cells-height)/4*2)]',
                         quarter === 3 &&
-                          "top-[calc(var(--week-cells-height)/4*3)]"
+                          'top-[calc(var(--week-cells-height)/4*3)]'
                       )}
                       onClick={() => {
                         const startTime = new Date(currentDate)

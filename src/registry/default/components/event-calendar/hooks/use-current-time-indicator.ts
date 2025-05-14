@@ -1,16 +1,16 @@
-"use client"
+'use client'
 
-import { useEffect, useState } from "react"
-import { endOfWeek, isSameDay, isWithinInterval, startOfWeek } from "date-fns"
+import { useEffect, useState } from 'react'
+import { endOfWeek, isSameDay, isWithinInterval, startOfWeek } from 'date-fns'
 
 import {
   EndHour,
-  StartHour,
-} from "@/registry/default/components/event-calendar/constants"
+  StartHour
+} from '@/registry/default/components/event-calendar/constants'
 
-export function useCurrentTimeIndicator(
+export function useCurrentTimeIndicator (
   currentDate: Date,
-  view: "day" | "week"
+  view: 'day' | 'week'
 ) {
   const [currentTimePosition, setCurrentTimePosition] = useState<number>(0)
   const [currentTimeVisible, setCurrentTimeVisible] = useState<boolean>(false)
@@ -32,14 +32,14 @@ export function useCurrentTimeIndicator(
       // Check if current day is in view based on the calendar view
       let isCurrentTimeVisible = false
 
-      if (view === "day") {
+      if (view === 'day') {
         isCurrentTimeVisible = isSameDay(now, currentDate)
-      } else if (view === "week") {
+      } else if (view === 'week') {
         const startOfWeekDate = startOfWeek(currentDate, { weekStartsOn: 0 })
         const endOfWeekDate = endOfWeek(currentDate, { weekStartsOn: 0 })
         isCurrentTimeVisible = isWithinInterval(now, {
           start: startOfWeekDate,
-          end: endOfWeekDate,
+          end: endOfWeekDate
         })
       }
 

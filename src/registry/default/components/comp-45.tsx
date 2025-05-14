@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import { useId } from "react"
-import { OTPInput, SlotProps } from "input-otp"
-import { MinusIcon } from "lucide-react"
+import { useId } from 'react'
+import { OTPInput, SlotProps } from 'input-otp'
+import { MinusIcon } from 'lucide-react'
 
-import { cn } from "@/registry/default/lib/utils"
-import { Label } from "@/registry/default/ui/label"
+import { cn } from '@/registry/default/lib/utils'
+import { Label } from '@/registry/default/ui/label'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   return (
     <div className="*:not-first:mt-2">
@@ -41,12 +41,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Built with{" "}
+        Built with{' '}
         <a
           className="hover:text-foreground underline"
           href="https://github.com/guilhermerodz/input-otp"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           Input OTP
         </a>
@@ -55,12 +55,12 @@ export default function Component() {
   )
 }
 
-function Slot(props: SlotProps) {
+function Slot (props: SlotProps) {
   return (
     <div
       className={cn(
-        "border-input bg-background text-foreground relative -ms-px flex size-9 items-center justify-center border font-medium shadow-xs transition-[color,box-shadow] first:ms-0 first:rounded-s-md last:rounded-e-md",
-        { "border-ring ring-ring/50 z-10 ring-[3px]": props.isActive }
+        'border-input bg-background text-foreground relative -ms-px flex size-9 items-center justify-center border font-medium shadow-xs transition-[color,box-shadow] first:ms-0 first:rounded-s-md last:rounded-e-md',
+        { 'border-ring ring-ring/50 z-10 ring-[3px]': props.isActive }
       )}
     >
       {props.char !== null && <div>{props.char}</div>}

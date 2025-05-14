@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { ArrowRightIcon } from "lucide-react"
+import { useState } from 'react'
+import { ArrowRightIcon } from 'lucide-react'
 
-import { cn } from "@/registry/default/lib/utils"
-import { Button } from "@/registry/default/ui/button"
+import { cn } from '@/registry/default/lib/utils'
+import { Button } from '@/registry/default/ui/button'
 import {
   Dialog,
   DialogClose,
@@ -13,33 +13,33 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-} from "@/registry/default/ui/dialog"
+  DialogTrigger
+} from '@/registry/default/ui/dialog'
 
-export default function Component() {
+export default function Component () {
   const [step, setStep] = useState(1)
 
   const stepContent = [
     {
-      title: "Welcome to Origin UI",
+      title: 'Welcome to Origin UI',
       description:
-        "Discover a powerful collection of components designed to enhance your development workflow.",
+        'Discover a powerful collection of components designed to enhance your development workflow.'
     },
     {
-      title: "Customizable Components",
+      title: 'Customizable Components',
       description:
-        "Each component is fully customizable and built with modern web standards in mind.",
+        'Each component is fully customizable and built with modern web standards in mind.'
     },
     {
-      title: "Ready to Start?",
+      title: 'Ready to Start?',
       description:
-        "Begin building amazing interfaces with our comprehensive component library.",
+        'Begin building amazing interfaces with our comprehensive component library.'
     },
     {
-      title: "Get Support",
+      title: 'Get Support',
       description:
-        "Access our extensive documentation and community resources to make the most of Origin UI.",
-    },
+        'Access our extensive documentation and community resources to make the most of Origin UI.'
+    }
   ]
 
   const totalSteps = stepContent.length
@@ -82,8 +82,8 @@ export default function Component() {
                 <div
                   key={index}
                   className={cn(
-                    "bg-primary size-1.5 rounded-full",
-                    index + 1 === step ? "bg-primary" : "opacity-20"
+                    'bg-primary size-1.5 rounded-full',
+                    index + 1 === step ? 'bg-primary' : 'opacity-20'
                   )}
                 />
               ))}
@@ -94,24 +94,26 @@ export default function Component() {
                   Skip
                 </Button>
               </DialogClose>
-              {step < totalSteps ? (
-                <Button
-                  className="group"
-                  type="button"
-                  onClick={handleContinue}
-                >
+              {step < totalSteps
+                ? (
+                  <Button
+                    className="group"
+                    type="button"
+                    onClick={handleContinue}
+                  >
                   Next
-                  <ArrowRightIcon
-                    className="-me-1 opacity-60 transition-transform group-hover:translate-x-0.5"
-                    size={16}
-                    aria-hidden="true"
-                  />
-                </Button>
-              ) : (
-                <DialogClose asChild>
-                  <Button type="button">Okay</Button>
-                </DialogClose>
-              )}
+                    <ArrowRightIcon
+                      className="-me-1 opacity-60 transition-transform group-hover:translate-x-0.5"
+                      size={16}
+                      aria-hidden="true"
+                    />
+                  </Button>
+                )
+                : (
+                  <DialogClose asChild>
+                    <Button type="button">Okay</Button>
+                  </DialogClose>
+                )}
             </DialogFooter>
           </div>
         </div>

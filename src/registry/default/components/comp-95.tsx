@@ -1,13 +1,13 @@
-import { ChevronDownIcon } from "lucide-react"
+import { ChevronDownIcon } from 'lucide-react'
 
 import {
   Avatar,
   AvatarFallback,
-  AvatarImage,
-} from "@/registry/default/ui/avatar"
-import { Button } from "@/registry/default/ui/button"
+  AvatarImage
+} from '@/registry/default/ui/avatar'
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   return (
     <Button variant="ghost" className="h-auto p-0 hover:bg-transparent">
       <Avatar>

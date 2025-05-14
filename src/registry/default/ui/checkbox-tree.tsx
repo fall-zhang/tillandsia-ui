@@ -5,9 +5,9 @@
  * headless component, your contributions are welcome!
  */
 
-"use client"
+'use client'
 
-import React, { useCallback, useMemo, useState } from "react"
+import React, { useCallback, useMemo, useState } from 'react'
 
 interface TreeNode {
   id: string
@@ -16,7 +16,7 @@ interface TreeNode {
   children?: TreeNode[]
 }
 
-function useCheckboxTree(initialTree: TreeNode) {
+function useCheckboxTree (initialTree: TreeNode) {
   const initialCheckedNodes = useMemo(() => {
     const checkedSet = new Set<string>()
     const initializeCheckedNodes = (node: TreeNode) => {
@@ -33,7 +33,7 @@ function useCheckboxTree(initialTree: TreeNode) {
     useState<Set<string>>(initialCheckedNodes)
 
   const isChecked = useCallback(
-    (node: TreeNode): boolean | "indeterminate" => {
+    (node: TreeNode): boolean | 'indeterminate' => {
       if (!node.children) {
         return checkedNodes.has(node.id)
       }
@@ -44,10 +44,10 @@ function useCheckboxTree(initialTree: TreeNode) {
       }
       if (
         childrenChecked.some(
-          (status) => status === true || status === "indeterminate"
+          (status) => status === true || status === 'indeterminate'
         )
       ) {
-        return "indeterminate"
+        return 'indeterminate'
       }
       return false
     },
@@ -83,13 +83,13 @@ interface CheckboxTreeProps {
   tree: TreeNode
   renderNode: (props: {
     node: TreeNode
-    isChecked: boolean | "indeterminate"
+    isChecked: boolean | 'indeterminate'
     onCheckedChange: () => void
     children: React.ReactNode
   }) => React.ReactNode
 }
 
-export function CheckboxTree({ tree, renderNode }: CheckboxTreeProps) {
+export function CheckboxTree ({ tree, renderNode }: CheckboxTreeProps) {
   const { isChecked, handleCheck } = useCheckboxTree(tree)
 
   const renderTreeNode = (node: TreeNode): React.ReactNode => {
@@ -99,7 +99,7 @@ export function CheckboxTree({ tree, renderNode }: CheckboxTreeProps) {
       node,
       isChecked: isChecked(node),
       onCheckedChange: () => handleCheck(node),
-      children,
+      children
     })
   }
 

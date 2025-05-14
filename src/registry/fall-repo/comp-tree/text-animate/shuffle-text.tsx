@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react'
-import styles from './index.module.scss'
 /**
 * Constructor.
 * @param element DOM 为参数
@@ -50,19 +49,18 @@ class ShuffleText {
 
   /** Play effect. 再生を開始します。 */
   start () {
-    const _this = this
     this.stop()
     this._randomIndex = []
     let str = ''
     for (let i = 0; i < this._originalLength; i++) {
       const rate = i / this._originalLength
-      _this._randomIndex[i] = Math.random() * (1 - rate) + rate
+      this._randomIndex[i] = Math.random() * (1 - rate) + rate
       str += this.emptyCharacter
     }
     this._timeStart = new Date().getTime()
     this._isRunning = true
-    this._requestAnimationFrameId = requestAnimationFrame(function () {
-      _this.__onInterval()
+    this._requestAnimationFrameId = requestAnimationFrame(() => {
+      this.__onInterval()
     })
     if (this._element) {
       this._element.textContent = this.contentText
@@ -76,35 +74,34 @@ class ShuffleText {
   }
 
   __onInterval () {
-    const _this = this
     this._timeCurrent = new Date().getTime() - this._timeStart
     const percent = this._timeCurrent / this.duration
     let str = ''
     for (let i = 0; i < this._originalLength; i++) {
-      if (percent >= _this._randomIndex[i]) {
-        str += _this._originalStr.charAt(i)
-      } else if (percent < _this._randomIndex[i] / 3) {
-        str += _this.emptyCharacter
+      if (percent >= this._randomIndex[i]) {
+        str += this._originalStr.charAt(i)
+      } else if (percent < this._randomIndex[i] / 3) {
+        str += this.emptyCharacter
       } else {
-        str += _this.sourceRandomCharacter.charAt(Math.floor(Math.random() * _this.sourceRandomCharacter.length))
+        str += this.sourceRandomCharacter.charAt(Math.floor(Math.random() * this.sourceRandomCharacter.length))
       }
     }
     if (percent > 1) {
-      str = _this._originalStr
-      _this._isRunning = false
+      str = this._originalStr
+      this._isRunning = false
     }
-    if (_this._element) {
-      _this._element.textContent = str
+    if (this._element) {
+      this._element.textContent = str
     }
-    if (_this._isRunning) {
-      _this._requestAnimationFrameId = requestAnimationFrame(function () {
-        _this.__onInterval()
+    if (this._isRunning) {
+      this._requestAnimationFrameId = requestAnimationFrame(() => {
+        this.__onInterval()
       })
     }
   }
 }
 Object.defineProperty(ShuffleText.prototype, 'isRunning', {
-  get: function () {
+  get () {
     return this._isRunning
   },
   enumerable: false,
@@ -120,7 +117,7 @@ const MainPage = () => {
     }
   }, [])
   return <>
-    <h2 className={styles.head} ref={shuffleDOM}>未来的前端艺术家</h2>
+    <h2 ref={shuffleDOM}>未来的前端艺术家</h2>
   </>
 }
 

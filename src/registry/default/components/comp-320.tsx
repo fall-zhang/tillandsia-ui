@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useId, useState } from "react"
-import { CircleAlertIcon } from "lucide-react"
+import { useId, useState } from 'react'
+import { CircleAlertIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   Dialog,
   DialogClose,
@@ -12,16 +12,16 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-} from "@/registry/default/ui/dialog"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+  DialogTrigger
+} from '@/registry/default/ui/dialog'
+import { Input } from '@/registry/default/ui/input'
+import { Label } from '@/registry/default/ui/label'
 
-const PROJECT_NAME = "Origin UI"
+const PROJECT_NAME = 'Origin UI'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
-  const [inputValue, setInputValue] = useState("")
+  const [inputValue, setInputValue] = useState('')
 
   return (
     <Dialog>

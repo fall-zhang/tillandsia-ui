@@ -1,15 +1,15 @@
-"use client"
+'use client'
 
-import React, { useRef } from "react"
-import { RotateCcwIcon } from "lucide-react"
+import React, { useRef } from 'react'
+import { RotateCcwIcon } from 'lucide-react'
 
-import { useSliderWithInput } from "@/registry/default/hooks/use-slider-with-input"
-import { Button } from "@/registry/default/ui/button"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
-import { Slider } from "@/registry/default/ui/slider"
+import { useSliderWithInput } from '@/registry/default/hooks/use-slider-with-input'
+import { Button } from '@/registry/default/ui/button'
+import { Input } from '@/registry/default/ui/input'
+import { Label } from '@/registry/default/ui/label'
+import { Slider } from '@/registry/default/ui/slider'
 
-export default function Component() {
+export default function Component () {
   // Create refs to store reset functions
   const resetFunctionsRef = useRef<(() => void)[]>([])
 
@@ -66,13 +66,13 @@ export default function Component() {
   )
 }
 
-function SliderWithInput({
+function SliderWithInput ({
   minValue,
   maxValue,
   initialValue,
   defaultValue,
   label,
-  onRegisterReset,
+  onRegisterReset
 }: {
   minValue: number
   maxValue: number
@@ -87,7 +87,7 @@ function SliderWithInput({
     validateAndUpdateValue,
     handleInputChange,
     handleSliderChange,
-    resetToDefault,
+    resetToDefault
   } = useSliderWithInput({ minValue, maxValue, initialValue, defaultValue })
 
   // Register the reset function when the component mounts
@@ -114,7 +114,7 @@ function SliderWithInput({
         onChange={(e) => handleInputChange(e, 0)}
         onBlur={() => validateAndUpdateValue(inputValues[0], 0)}
         onKeyDown={(e) => {
-          if (e.key === "Enter") {
+          if (e.key === 'Enter') {
             validateAndUpdateValue(inputValues[0], 0)
           }
         }}

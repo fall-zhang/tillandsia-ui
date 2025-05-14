@@ -1,33 +1,33 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
+  PopoverTrigger
+} from '@/registry/default/ui/popover'
 
 const tips = [
   {
-    title: "Welcome to Dashboard",
+    title: 'Welcome to Dashboard',
     description:
-      "This is your new workspace. Here you'll find all your projects, recent activities, settings, and more.",
+      "This is your new workspace. Here you'll find all your projects, recent activities, settings, and more."
   },
   {
-    title: "Quick Actions",
+    title: 'Quick Actions',
     description:
-      "Use the toolbar above to create new projects, invite team members, or access settings.",
+      'Use the toolbar above to create new projects, invite team members, or access settings.'
   },
   {
-    title: "Need Help?",
+    title: 'Need Help?',
     description:
-      "Click the support icon in the top right corner to access our help center and documentation.",
-  },
+      'Click the support icon in the top right corner to access our help center and documentation.'
+  }
 ]
 
-export default function Component() {
+export default function Component () {
   const [currentTip, setCurrentTip] = useState(0)
 
   const handleNavigation = () => {
@@ -59,7 +59,7 @@ export default function Component() {
               className="text-xs font-medium hover:underline"
               onClick={handleNavigation}
             >
-              {currentTip === tips.length - 1 ? "Start over" : "Next"}
+              {currentTip === tips.length - 1 ? 'Start over' : 'Next'}
             </button>
           </div>
         </div>

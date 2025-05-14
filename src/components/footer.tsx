@@ -1,4 +1,4 @@
-export default function Footer() {
+export default function Footer () {
   return (
     <footer className="before:bg-[linear-gradient(to_right,--theme(--color-border/.3),--theme(--color-border)_200px,--theme(--color-border)_calc(100%-200px),--theme(--color-border/.3))] relative mt-16 py-8 before:absolute before:-inset-x-32 before:top-0 before:h-px md:mt-20">
       <div
@@ -10,7 +10,7 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} Origin UI
         </p>
         <p className="text-muted-foreground text-sm">
-          A project by{" "}
+          A project by{' '}
           <a
             className="text-foreground decoration-border font-medium underline underline-offset-4 hover:no-underline"
             href="https://x.com/pacovitiello"
@@ -18,8 +18,8 @@ export default function Footer() {
             rel="noopener noreferrer"
           >
             Pasquale
-          </a>{" "}
-          and{" "}
+          </a>{' '}
+          and{' '}
           <a
             className="text-foreground decoration-border font-medium underline underline-offset-4 hover:no-underline"
             href="https://x.com/DavidePacilio"

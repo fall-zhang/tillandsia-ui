@@ -1,32 +1,32 @@
-"use client"
+'use client'
 
-import { JSX, useEffect, useState } from "react"
-import { DialogDescription } from "@radix-ui/react-dialog"
-import { CodeIcon } from "lucide-react"
-import type { RegistryItem } from "shadcn/registry"
+import { JSX, useEffect, useState } from 'react'
+import { DialogDescription } from '@radix-ui/react-dialog'
+import { CodeIcon } from 'lucide-react'
+import type { RegistryItem } from 'shadcn/registry'
 
-import { convertRegistryPaths } from "@/lib/utils"
-import ComponentCli from "@/components/cli-commands"
-import CodeBlock, { highlight } from "@/components/code-block"
-import CopyButton from "@/components/copy-button"
-import OpenInV0 from "@/components/open-in-v0"
-import { Button } from "@/registry/default/ui/button"
+import { convertRegistryPaths } from '@/lib/utils'
+import ComponentCli from '@/components/cli-commands'
+import CodeBlock, { highlight } from '@/components/code-block'
+import CopyButton from '@/components/copy-button'
+import OpenInV0 from '@/components/open-in-v0'
+import { Button } from '@/registry/default/ui/button'
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-} from "@/registry/default/ui/dialog"
+  DialogTrigger
+} from '@/registry/default/ui/dialog'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
-  TooltipTrigger,
-} from "@/registry/default/ui/tooltip"
+  TooltipTrigger
+} from '@/registry/default/ui/tooltip'
 
-export default function ComponentDetails({
-  component,
+export default function ComponentDetails ({
+  component
 }: {
   component: RegistryItem
 }) {
@@ -37,7 +37,7 @@ export default function ComponentDetails({
 
   useEffect(() => {
     const handleEmptyCode = () => {
-      setCode("")
+      setCode('')
       setHighlightedCode(null)
     }
 
@@ -49,21 +49,21 @@ export default function ComponentDetails({
           return
         }
 
-        const contentType = response.headers.get("content-type")
-        if (!contentType || !contentType.includes("application/json")) {
+        const contentType = response.headers.get('content-type')
+        if (!contentType || !contentType.includes('application/json')) {
           handleEmptyCode()
           return
         }
 
         const data = await response.json()
-        const codeContent = convertRegistryPaths(data.files[0].content) || ""
+        const codeContent = convertRegistryPaths(data.files[0].content) || ''
         setCode(codeContent)
 
         // Pre-highlight the code
-        const highlighted = await highlight(codeContent, "tsx")
+        const highlighted = await highlight(codeContent, 'tsx')
         setHighlightedCode(highlighted)
       } catch (error) {
-        console.error("Failed to load code:", error)
+        console.error('Failed to load code:', error)
         handleEmptyCode()
       }
     }
@@ -109,29 +109,31 @@ export default function ComponentDetails({
             <div className="space-y-4">
               <p className="text-lg font-semibold tracking-tight">Code</p>
               <div className="relative">
-                {code === "" ? (
-                  <p className="text-muted-foreground text-sm">
-                    No code available. If you think this is an error, please{" "}
-                    <a
-                      href="https://github.com/origin-space/originui/issues"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-foreground font-medium underline hover:no-underline"
-                    >
+                {code === ''
+                  ? (
+                    <p className="text-muted-foreground text-sm">
+                    No code available. If you think this is an error, please{' '}
+                      <a
+                        href="https://github.com/origin-space/originui/issues"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-foreground font-medium underline hover:no-underline"
+                      >
                       open an issue
-                    </a>
+                      </a>
                     .
-                  </p>
-                ) : (
-                  <>
-                    <CodeBlock
-                      code={code}
-                      lang="tsx"
-                      preHighlighted={highlightedCode}
-                    />
-                    <CopyButton componentSource={code} />
-                  </>
-                )}
+                    </p>
+                  )
+                  : (
+                    <>
+                      <CodeBlock
+                        code={code}
+                        lang="tsx"
+                        preHighlighted={highlightedCode}
+                      />
+                      <CopyButton componentSource={code} />
+                    </>
+                  )}
               </div>
             </div>
           </div>

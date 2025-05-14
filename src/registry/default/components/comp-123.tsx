@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { ChevronDownIcon, ChevronUpIcon } from "lucide-react"
+import { useState } from 'react'
+import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   const [isExpanded, setIsExpanded] = useState<boolean>(false)
 
   const toggleExpand = () => {
@@ -20,12 +20,14 @@ export default function Component() {
       aria-expanded={isExpanded}
       aria-controls="expandable-content" // Use this ID on the element that this button controls
     >
-      {isExpanded ? "Show less" : "Show more"}
-      {isExpanded ? (
-        <ChevronUpIcon className="-me-1" size={16} aria-hidden="true" />
-      ) : (
-        <ChevronDownIcon className="-me-1" size={16} aria-hidden="true" />
-      )}
+      {isExpanded ? 'Show less' : 'Show more'}
+      {isExpanded
+        ? (
+          <ChevronUpIcon className="-me-1" size={16} aria-hidden="true" />
+        )
+        : (
+          <ChevronDownIcon className="-me-1" size={16} aria-hidden="true" />
+        )}
     </Button>
   )
 }

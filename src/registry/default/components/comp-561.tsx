@@ -1,16 +1,16 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 
 import {
   Cropper,
   CropperCropArea,
   CropperDescription,
-  CropperImage,
-} from "@/registry/default/ui/cropper"
-import { Slider } from "@/registry/default/ui/slider"
+  CropperImage
+} from '@/registry/default/ui/cropper'
+import { Slider } from '@/registry/default/ui/slider'
 
-export default function Component() {
+export default function Component () {
   const [zoom, setZoom] = useState(1)
 
   return (
@@ -47,11 +47,11 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Cropper with zoom slider ∙{" "}
+        Cropper with zoom slider ∙{' '}
         <a
           href="https://github.com/origin-space/image-cropper"
           className="hover:text-foreground underline"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           API
         </a>

@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { CircleUserRoundIcon, XIcon } from "lucide-react"
+import { CircleUserRoundIcon, XIcon } from 'lucide-react'
 
-import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
-import { Button } from "@/registry/default/ui/button"
+import { useFileUpload } from '@/registry/default/hooks/use-file-upload'
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   const [
     { files, isDragging },
     {
@@ -15,10 +15,10 @@ export default function Component() {
       handleDragEnter,
       handleDragLeave,
       handleDragOver,
-      handleDrop,
-    },
+      handleDrop
+    }
   ] = useFileUpload({
-    accept: "image/*",
+    accept: 'image/*'
   })
 
   const previewUrl = files[0]?.preview || null
@@ -35,22 +35,24 @@ export default function Component() {
           onDragOver={handleDragOver}
           onDrop={handleDrop}
           data-dragging={isDragging || undefined}
-          aria-label={previewUrl ? "Change image" : "Upload image"}
+          aria-label={previewUrl ? 'Change image' : 'Upload image'}
         >
-          {previewUrl ? (
-            <img
-              className="size-full object-cover"
-              src={previewUrl}
-              alt={files[0]?.file?.name || "Uploaded image"}
-              width={64}
-              height={64}
-              style={{ objectFit: "cover" }}
-            />
-          ) : (
-            <div aria-hidden="true">
-              <CircleUserRoundIcon className="size-4 opacity-60" />
-            </div>
-          )}
+          {previewUrl
+            ? (
+              <img
+                className="size-full object-cover"
+                src={previewUrl}
+                alt={files[0]?.file?.name || 'Uploaded image'}
+                width={64}
+                height={64}
+                style={{ objectFit: 'cover' }}
+              />
+            )
+            : (
+              <div aria-hidden="true">
+                <CircleUserRoundIcon className="size-4 opacity-60" />
+              </div>
+            )}
         </button>
         {previewUrl && (
           <Button
@@ -74,7 +76,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Avatar uploader with droppable area ∙{" "}
+        Avatar uploader with droppable area ∙{' '}
         <a
           href="https://github.com/origin-space/originui/tree/main/docs/use-file-upload.md"
           className="hover:text-foreground underline"

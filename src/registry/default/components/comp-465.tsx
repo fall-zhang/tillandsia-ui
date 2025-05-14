@@ -1,16 +1,16 @@
-import { useId } from "react"
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
+import { useId } from 'react'
+import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 
-import { usePagination } from "@/registry/default/hooks/use-pagination"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+import { usePagination } from '@/registry/default/hooks/use-pagination'
+import { Input } from '@/registry/default/ui/input'
+import { Label } from '@/registry/default/ui/label'
 import {
   Pagination,
   PaginationContent,
   PaginationEllipsis,
   PaginationItem,
-  PaginationLink,
-} from "@/registry/default/ui/pagination"
+  PaginationLink
+} from '@/registry/default/ui/pagination'
 
 type PaginationProps = {
   currentPage: number
@@ -18,17 +18,17 @@ type PaginationProps = {
   paginationItemsToDisplay?: number
 }
 
-export default function Component({
+export default function Component ({
   currentPage,
   totalPages,
-  paginationItemsToDisplay = 5,
+  paginationItemsToDisplay = 5
 }: PaginationProps) {
   const id = useId()
 
   const { pages, showLeftEllipsis, showRightEllipsis } = usePagination({
     currentPage,
     totalPages,
-    paginationItemsToDisplay,
+    paginationItemsToDisplay
   })
 
   return (
@@ -46,7 +46,7 @@ export default function Component({
                 }
                 aria-label="Go to previous page"
                 aria-disabled={currentPage === 1 ? true : undefined}
-                role={currentPage === 1 ? "link" : undefined}
+                role={currentPage === 1 ? 'link' : undefined}
               >
                 <ChevronLeftIcon size={16} aria-hidden="true" />
               </PaginationLink>
@@ -89,7 +89,7 @@ export default function Component({
                 }
                 aria-label="Go to next page"
                 aria-disabled={currentPage === totalPages ? true : undefined}
-                role={currentPage === totalPages ? "link" : undefined}
+                role={currentPage === totalPages ? 'link' : undefined}
               >
                 <ChevronRightIcon size={16} aria-hidden="true" />
               </PaginationLink>

@@ -1,4 +1,4 @@
-export default function Component() {
+export default function Component () {
   return (
     <div className="bg-background flex items-center rounded-full border p-1 shadow-sm">
       <div className="flex -space-x-1.5">
@@ -32,7 +32,7 @@ export default function Component() {
         />
       </div>
       <p className="text-muted-foreground px-2 text-xs">
-        Trusted by <strong className="text-foreground font-medium">60K+</strong>{" "}
+        Trusted by <strong className="text-foreground font-medium">60K+</strong>{' '}
         developers.
       </p>
     </div>

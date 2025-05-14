@@ -1,8 +1,8 @@
-import { ThumbsUpIcon } from "lucide-react"
+import { ThumbsUpIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   return (
     <Button className="py-0 pe-0" variant="outline">
       <ThumbsUpIcon className="opacity-60" size={16} aria-hidden="true" />

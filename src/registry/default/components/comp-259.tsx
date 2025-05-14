@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { MinusIcon, PlusIcon } from "lucide-react"
+import { useState } from 'react'
+import { MinusIcon, PlusIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
-import { Label } from "@/registry/default/ui/label"
-import { Slider } from "@/registry/default/ui/slider"
+import { Button } from '@/registry/default/ui/button'
+import { Label } from '@/registry/default/ui/label'
+import { Slider } from '@/registry/default/ui/slider'
 
-export default function Component() {
+export default function Component () {
   const minValue = 0
   const maxValue = 200
   const steps = 5

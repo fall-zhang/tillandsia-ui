@@ -1,10 +1,10 @@
 import {
   HoverCard,
   HoverCardContent,
-  HoverCardTrigger,
-} from "@/registry/default/ui/hover-card"
+  HoverCardTrigger
+} from '@/registry/default/ui/hover-card'
 
-export default function HoverCardDemo() {
+export default function HoverCardDemo () {
   return (
     <div className="max-w-md text-sm">
       <HoverCard>

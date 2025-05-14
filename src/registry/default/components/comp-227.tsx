@@ -1,7 +1,7 @@
-import { useId } from "react"
+import { useId } from 'react'
 
-import { cn } from "@/registry/default/lib/utils"
-import { Label } from "@/registry/default/ui/label"
+import { cn } from '@/registry/default/lib/utils'
+import { Label } from '@/registry/default/ui/label'
 import {
   Select,
   SelectContent,
@@ -9,12 +9,12 @@ import {
   SelectItem,
   SelectLabel,
   SelectTrigger,
-  SelectValue,
-} from "@/registry/default/ui/select"
+  SelectValue
+} from '@/registry/default/ui/select'
 
 const Square = ({
   className,
-  children,
+  children
 }: {
   className?: string
   children: React.ReactNode
@@ -22,7 +22,7 @@ const Square = ({
   <span
     data-square
     className={cn(
-      "bg-muted text-muted-foreground flex size-5 items-center justify-center rounded text-xs font-medium",
+      'bg-muted text-muted-foreground flex size-5 items-center justify-center rounded text-xs font-medium',
       className
     )}
     aria-hidden="true"
@@ -31,7 +31,7 @@ const Square = ({
   </span>
 )
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   return (
     <div className="*:not-first:mt-2">

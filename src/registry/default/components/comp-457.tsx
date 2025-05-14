@@ -1,20 +1,20 @@
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
+import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 
 import {
   Pagination,
   PaginationContent,
   PaginationItem,
-  PaginationLink,
-} from "@/registry/default/ui/pagination"
+  PaginationLink
+} from '@/registry/default/ui/pagination'
 
 type PaginationProps = {
   currentPage: number
   totalPages: number
 }
 
-export default function Component({
+export default function Component ({
   currentPage,
-  totalPages,
+  totalPages
 }: PaginationProps) {
   return (
     <Pagination>
@@ -25,14 +25,14 @@ export default function Component({
             href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}
             aria-label="Go to previous page"
             aria-disabled={currentPage === 1 ? true : undefined}
-            role={currentPage === 1 ? "link" : undefined}
+            role={currentPage === 1 ? 'link' : undefined}
           >
             <ChevronLeftIcon size={16} aria-hidden="true" />
           </PaginationLink>
         </PaginationItem>
         <PaginationItem>
           <p className="text-muted-foreground text-sm" aria-live="polite">
-            Page <span className="text-foreground">{currentPage}</span> of{" "}
+            Page <span className="text-foreground">{currentPage}</span> of{' '}
             <span className="text-foreground">{totalPages}</span>
           </p>
         </PaginationItem>
@@ -46,7 +46,7 @@ export default function Component({
             }
             aria-label="Go to next page"
             aria-disabled={currentPage === totalPages ? true : undefined}
-            role={currentPage === totalPages ? "link" : undefined}
+            role={currentPage === totalPages ? 'link' : undefined}
           >
             <ChevronRightIcon size={16} aria-hidden="true" />
           </PaginationLink>

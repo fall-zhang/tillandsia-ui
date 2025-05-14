@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { useRef, useState } from "react"
+import { useRef, useState } from 'react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   Dialog,
   DialogClose,
@@ -11,10 +11,10 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-} from "@/registry/default/ui/dialog"
+  DialogTrigger
+} from '@/registry/default/ui/dialog'
 
-export default function Component() {
+export default function Component () {
   const [hasReadToBottom, setHasReadToBottom] = useState(false)
   const contentRef = useRef<HTMLDivElement>(null)
 

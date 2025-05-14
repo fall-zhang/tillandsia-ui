@@ -1,8 +1,8 @@
-import { XIcon } from "lucide-react"
+import { XIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   return (
     // To make the notification fixed, add classes like `fixed bottom-4 right-4` to the container element.
     <div className="bg-background z-50 max-w-[400px] rounded-md border p-4 shadow-lg">

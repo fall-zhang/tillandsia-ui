@@ -1,31 +1,31 @@
-"use client"
+'use client'
 
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from 'react'
 import {
   ArrowLeftIcon,
   CircleUserRoundIcon,
   XIcon,
   ZoomInIcon,
-  ZoomOutIcon,
-} from "lucide-react"
+  ZoomOutIcon
+} from 'lucide-react'
 
-import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
-import { Button } from "@/registry/default/ui/button"
+import { useFileUpload } from '@/registry/default/hooks/use-file-upload'
+import { Button } from '@/registry/default/ui/button'
 import {
   Cropper,
   CropperCropArea,
   CropperDescription,
-  CropperImage,
-} from "@/registry/default/ui/cropper"
+  CropperImage
+} from '@/registry/default/ui/cropper'
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
-  DialogTitle,
-} from "@/registry/default/ui/dialog"
-import { Slider } from "@/registry/default/ui/slider"
+  DialogTitle
+} from '@/registry/default/ui/dialog'
+import { Slider } from '@/registry/default/ui/slider'
 
 // Define type for pixel crop area
 type Area = { x: number; y: number; width: number; height: number }
@@ -34,13 +34,13 @@ type Area = { x: number; y: number; width: number; height: number }
 const createImage = (url: string): Promise<HTMLImageElement> =>
   new Promise((resolve, reject) => {
     const image = new Image()
-    image.addEventListener("load", () => resolve(image))
-    image.addEventListener("error", (error) => reject(error))
-    image.setAttribute("crossOrigin", "anonymous") // Needed for canvas Tainted check
+    image.addEventListener('load', () => resolve(image))
+    image.addEventListener('error', (error) => reject(error))
+    image.setAttribute('crossOrigin', 'anonymous') // Needed for canvas Tainted check
     image.src = url
   })
 
-async function getCroppedImg(
+async function getCroppedImg (
   imageSrc: string,
   pixelCrop: Area,
   outputWidth: number = pixelCrop.width, // Optional: specify output size
@@ -48,8 +48,8 @@ async function getCroppedImg(
 ): Promise<Blob | null> {
   try {
     const image = await createImage(imageSrc)
-    const canvas = document.createElement("canvas")
-    const ctx = canvas.getContext("2d")
+    const canvas = document.createElement('canvas')
+    const ctx = canvas.getContext('2d')
 
     if (!ctx) {
       return null
@@ -76,15 +76,15 @@ async function getCroppedImg(
     return new Promise((resolve) => {
       canvas.toBlob((blob) => {
         resolve(blob)
-      }, "image/jpeg") // Specify format and quality if needed
+      }, 'image/jpeg') // Specify format and quality if needed
     })
   } catch (error) {
-    console.error("Error in getCroppedImg:", error)
+    console.error('Error in getCroppedImg:', error)
     return null
   }
 }
 
-export default function Component() {
+export default function Component () {
   const [
     { files, isDragging },
     {
@@ -94,10 +94,10 @@ export default function Component() {
       handleDrop,
       openFileDialog,
       removeFile,
-      getInputProps,
-    },
+      getInputProps
+    }
   ] = useFileUpload({
-    accept: "image/*",
+    accept: 'image/*'
   })
 
   const previewUrl = files[0]?.preview || null
@@ -123,10 +123,10 @@ export default function Component() {
   const handleApply = async () => {
     // Check if we have the necessary data
     if (!previewUrl || !fileId || !croppedAreaPixels) {
-      console.error("Missing data for apply:", {
+      console.error('Missing data for apply:', {
         previewUrl,
         fileId,
-        croppedAreaPixels,
+        croppedAreaPixels
       })
       // Remove file if apply is clicked without crop data?
       if (fileId) {
@@ -141,7 +141,7 @@ export default function Component() {
       const croppedBlob = await getCroppedImg(previewUrl, croppedAreaPixels)
 
       if (!croppedBlob) {
-        throw new Error("Failed to generate cropped image blob.")
+        throw new Error('Failed to generate cropped image blob.')
       }
 
       // 2. Create a NEW object URL from the cropped blob
@@ -158,7 +158,7 @@ export default function Component() {
       // 5. Close the dialog (don't remove the file yet)
       setIsDialogOpen(false)
     } catch (error) {
-      console.error("Error during apply:", error)
+      console.error('Error during apply:', error)
       // Close the dialog even if cropping fails
       setIsDialogOpen(false)
     }
@@ -175,7 +175,7 @@ export default function Component() {
     const currentFinalUrl = finalImageUrl
     // Cleanup function
     return () => {
-      if (currentFinalUrl && currentFinalUrl.startsWith("blob:")) {
+      if (currentFinalUrl && currentFinalUrl.startsWith('blob:')) {
         URL.revokeObjectURL(currentFinalUrl)
       }
     }
@@ -205,22 +205,24 @@ export default function Component() {
           onDragOver={handleDragOver}
           onDrop={handleDrop}
           data-dragging={isDragging || undefined}
-          aria-label={finalImageUrl ? "Change image" : "Upload image"}
+          aria-label={finalImageUrl ? 'Change image' : 'Upload image'}
         >
-          {finalImageUrl ? (
-            <img
-              className="size-full object-cover"
-              src={finalImageUrl}
-              alt="User avatar"
-              width={64}
-              height={64}
-              style={{ objectFit: "cover" }}
-            />
-          ) : (
-            <div aria-hidden="true">
-              <CircleUserRoundIcon className="size-4 opacity-60" />
-            </div>
-          )}
+          {finalImageUrl
+            ? (
+              <img
+                className="size-full object-cover"
+                src={finalImageUrl}
+                alt="User avatar"
+                width={64}
+                height={64}
+                style={{ objectFit: 'cover' }}
+              />
+            )
+            : (
+              <div aria-hidden="true">
+                <CircleUserRoundIcon className="size-4 opacity-60" />
+              </div>
+            )}
         </button>
         {/* Remove button - depends on finalImageUrl */}
         {finalImageUrl && (
@@ -316,19 +318,19 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Avatar{" "}
+        Avatar{' '}
         <a
           href="https://github.com/origin-space/originui/tree/main/docs/use-file-upload.md"
           className="hover:text-foreground underline"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           uploader
-        </a>{" "}
-        with{" "}
+        </a>{' '}
+        with{' '}
         <a
           href="https://github.com/origin-space/image-cropper"
           className="hover:text-foreground underline"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           cropper
         </a>

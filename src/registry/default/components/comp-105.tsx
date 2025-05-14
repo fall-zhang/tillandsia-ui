@@ -1,18 +1,18 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { CheckIcon, CopyIcon } from "lucide-react"
+import { useState } from 'react'
+import { CheckIcon, CopyIcon } from 'lucide-react'
 
-import { cn } from "@/registry/default/lib/utils"
-import { Button } from "@/registry/default/ui/button"
+import { cn } from '@/registry/default/lib/utils'
+import { Button } from '@/registry/default/ui/button'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
-  TooltipTrigger,
-} from "@/registry/default/ui/tooltip"
+  TooltipTrigger
+} from '@/registry/default/ui/tooltip'
 
-export default function Component() {
+export default function Component () {
   const [copied, setCopied] = useState<boolean>(false)
 
   const handleCopy = async () => {
@@ -21,7 +21,7 @@ export default function Component() {
       setCopied(true)
       setTimeout(() => setCopied(false), 1500)
     } catch (err) {
-      console.error("Failed to copy text: ", err)
+      console.error('Failed to copy text: ', err)
     }
   }
 
@@ -34,13 +34,13 @@ export default function Component() {
             size="icon"
             className="disabled:opacity-100"
             onClick={handleCopy}
-            aria-label={copied ? "Copied" : "Copy to clipboard"}
+            aria-label={copied ? 'Copied' : 'Copy to clipboard'}
             disabled={copied}
           >
             <div
               className={cn(
-                "transition-all",
-                copied ? "scale-100 opacity-100" : "scale-0 opacity-0"
+                'transition-all',
+                copied ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
               )}
             >
               <CheckIcon
@@ -51,8 +51,8 @@ export default function Component() {
             </div>
             <div
               className={cn(
-                "absolute transition-all",
-                copied ? "scale-0 opacity-0" : "scale-100 opacity-100"
+                'absolute transition-all',
+                copied ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
               )}
             >
               <CopyIcon size={16} aria-hidden="true" />

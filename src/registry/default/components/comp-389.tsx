@@ -1,21 +1,21 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 import {
   ClubIcon,
   DiamondIcon,
   HeartIcon,
   LucideIcon,
-  SpadeIcon,
-} from "lucide-react"
+  SpadeIcon
+} from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   Popover,
   PopoverAnchor,
   PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
+  PopoverTrigger
+} from '@/registry/default/ui/popover'
 
 interface TourStep {
   icon: LucideIcon
@@ -26,28 +26,28 @@ interface TourStep {
 const tourSteps: TourStep[] = [
   {
     icon: HeartIcon,
-    title: "Heart",
+    title: 'Heart',
     description:
-      "This is your new workspace. Here you'll find all your projects, recent activities, settings, and more.",
+      "This is your new workspace. Here you'll find all your projects, recent activities, settings, and more."
   },
   {
     icon: DiamondIcon,
-    title: "Diamond",
+    title: 'Diamond',
     description:
-      "Use the toolbar above to create new projects, invite team members, or access settings.",
+      'Use the toolbar above to create new projects, invite team members, or access settings.'
   },
   {
     icon: ClubIcon,
-    title: "Club",
+    title: 'Club',
     description:
-      "Click the support icon in the top right corner to access our help center and documentation.",
+      'Click the support icon in the top right corner to access our help center and documentation.'
   },
   {
     icon: SpadeIcon,
-    title: "Spade",
+    title: 'Spade',
     description:
-      "Press ⌘K to open the command palette. Use arrow keys to navigate and Enter to select an action.",
-  },
+      'Press ⌘K to open the command palette. Use arrow keys to navigate and Enter to select an action.'
+  }
 ]
 
 interface CardProps {
@@ -55,7 +55,7 @@ interface CardProps {
   isActive: boolean
 }
 
-function Card({ number, isActive }: CardProps) {
+function Card ({ number, isActive }: CardProps) {
   const content = (
     <div className="bg-secondary text-muted-foreground flex size-10 items-center justify-center rounded-md text-sm font-medium">
       {number + 1}
@@ -65,7 +65,7 @@ function Card({ number, isActive }: CardProps) {
   return isActive ? <PopoverAnchor>{content}</PopoverAnchor> : content
 }
 
-export default function Component() {
+export default function Component () {
   const [currentTip, setCurrentTip] = useState(0)
 
   const handleNavigation = () => {
@@ -99,7 +99,7 @@ export default function Component() {
 
         <PopoverContent
           className="max-w-[280px] py-3 shadow-none"
-          side={currentTip % 2 === 0 ? "left" : "right"}
+          side={currentTip % 2 === 0 ? 'left' : 'right'}
           showArrow={true}
         >
           <div className="space-y-3">
@@ -119,7 +119,7 @@ export default function Component() {
                 className="text-xs font-medium hover:underline"
                 onClick={handleNavigation}
               >
-                {currentTip === tourSteps.length - 1 ? "Start over" : "Next"}
+                {currentTip === tourSteps.length - 1 ? 'Start over' : 'Next'}
               </button>
             </div>
           </div>

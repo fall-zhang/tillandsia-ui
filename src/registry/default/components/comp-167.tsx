@@ -1,16 +1,16 @@
-import { useId } from "react"
+import { useId } from 'react'
 
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
+import { RadioGroup, RadioGroupItem } from '@/registry/default/ui/radio-group'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
 
   const items = [
-    { value: "1", label: "Angry", icon: "😠" },
-    { value: "2", label: "Sad", icon: "🙁" },
-    { value: "3", label: "Neutral", icon: "😐" },
-    { value: "4", label: "Happy", icon: "🙂" },
-    { value: "5", label: "Laughing", icon: "😀" },
+    { value: '1', label: 'Angry', icon: '😠' },
+    { value: '2', label: 'Sad', icon: '🙁' },
+    { value: '3', label: 'Neutral', icon: '😐' },
+    { value: '4', label: 'Happy', icon: '🙂' },
+    { value: '5', label: 'Laughing', icon: '😀' }
   ]
 
   return (

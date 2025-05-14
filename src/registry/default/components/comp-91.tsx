@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { LoaderCircleIcon } from "lucide-react"
+import { useState } from 'react'
+import { LoaderCircleIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
   const handleClick = () => {

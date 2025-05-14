@@ -1,17 +1,17 @@
-"use client"
+'use client'
 
-import React, { useId, useState } from "react"
-import { ChevronDownIcon, PhoneIcon } from "lucide-react"
-import * as RPNInput from "react-phone-number-input"
-import flags from "react-phone-number-input/flags"
+import React, { useId, useState } from 'react'
+import { ChevronDownIcon, PhoneIcon } from 'lucide-react'
+import * as RPNInput from 'react-phone-number-input'
+import flags from 'react-phone-number-input/flags'
 
-import { cn } from "@/registry/default/lib/utils"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+import { cn } from '@/registry/default/lib/utils'
+import { Input } from '@/registry/default/ui/input'
+import { Label } from '@/registry/default/ui/label'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
-  const [value, setValue] = useState("")
+  const [value, setValue] = useState('')
 
   return (
     <div className="*:not-first:mt-2" dir="ltr">
@@ -25,19 +25,19 @@ export default function Component() {
         id={id}
         placeholder="Enter phone number"
         value={value}
-        onChange={(newValue) => setValue(newValue ?? "")}
+        onChange={(newValue) => setValue(newValue ?? '')}
       />
       <p
         className="text-muted-foreground mt-2 text-xs"
         role="region"
         aria-live="polite"
       >
-        Built with{" "}
+        Built with{' '}
         <a
           className="hover:text-foreground underline"
           href="https://gitlab.com/catamphetamine/react-phone-number-input"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           react-phone-number-input
         </a>
@@ -46,12 +46,12 @@ export default function Component() {
   )
 }
 
-const PhoneInput = ({ className, ...props }: React.ComponentProps<"input">) => {
+const PhoneInput = ({ className, ...props }: React.ComponentProps<'input'>) => {
   return (
     <Input
       data-slot="phone-input"
       className={cn(
-        "-ms-px rounded-s-none shadow-none focus-visible:z-10",
+        '-ms-px rounded-s-none shadow-none focus-visible:z-10',
         className
       )}
       {...props}
@@ -59,7 +59,7 @@ const PhoneInput = ({ className, ...props }: React.ComponentProps<"input">) => {
   )
 }
 
-PhoneInput.displayName = "PhoneInput"
+PhoneInput.displayName = 'PhoneInput'
 
 type CountrySelectProps = {
   disabled?: boolean
@@ -72,7 +72,7 @@ const CountrySelect = ({
   disabled,
   value,
   onChange,
-  options,
+  options
 }: CountrySelectProps) => {
   const handleSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
     onChange(event.target.value as RPNInput.Country)
@@ -100,7 +100,7 @@ const CountrySelect = ({
           .filter((x) => x.value)
           .map((option, i) => (
             <option key={option.value ?? `empty-${i}`} value={option.value}>
-              {option.label}{" "}
+              {option.label}{' '}
               {option.value &&
                 `+${RPNInput.getCountryCallingCode(option.value)}`}
             </option>
@@ -115,11 +115,13 @@ const FlagComponent = ({ country, countryName }: RPNInput.FlagProps) => {
 
   return (
     <span className="w-5 overflow-hidden rounded-sm">
-      {Flag ? (
-        <Flag title={countryName} />
-      ) : (
-        <PhoneIcon size={16} aria-hidden="true" />
-      )}
+      {Flag
+        ? (
+          <Flag title={countryName} />
+        )
+        : (
+          <PhoneIcon size={16} aria-hidden="true" />
+        )}
     </span>
   )
 }

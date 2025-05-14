@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import { useId } from "react"
+import { useId } from 'react'
 
-import { useSliderWithInput } from "@/registry/default/hooks/use-slider-with-input"
-import { Button } from "@/registry/default/ui/button"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
-import { Slider } from "@/registry/default/ui/slider"
+import { useSliderWithInput } from '@/registry/default/hooks/use-slider-with-input'
+import { Button } from '@/registry/default/ui/button'
+import { Input } from '@/registry/default/ui/input'
+import { Label } from '@/registry/default/ui/label'
+import { Slider } from '@/registry/default/ui/slider'
 
 const items = [
   { id: 1, price: 80 },
@@ -128,10 +128,10 @@ const items = [
   { id: 117, price: 890 },
   { id: 118, price: 895 },
   { id: 119, price: 898 },
-  { id: 120, price: 900 },
+  { id: 120, price: 900 }
 ]
 
-export default function Component() {
+export default function Component () {
   const id = useId()
 
   // Define the number of ticks
@@ -145,7 +145,7 @@ export default function Component() {
     inputValues,
     validateAndUpdateValue,
     handleInputChange,
-    handleSliderChange,
+    handleSliderChange
   } = useSliderWithInput({ minValue, maxValue, initialValue: [200, 780] }) // set initialValue: [minValue, maxValue] to show all items by default
 
   // Calculate the price step based on the min and max prices
@@ -200,7 +200,7 @@ export default function Component() {
               key={i}
               className="flex flex-1 justify-center"
               style={{
-                height: `${(count / maxCount) * 100}%`,
+                height: `${(count / maxCount) * 100}%`
               }}
             >
               <span
@@ -238,7 +238,7 @@ export default function Component() {
               onChange={(e) => handleInputChange(e, 0)}
               onBlur={() => validateAndUpdateValue(inputValues[0], 0)}
               onKeyDown={(e) => {
-                if (e.key === "Enter") {
+                if (e.key === 'Enter') {
                   validateAndUpdateValue(inputValues[0], 0)
                 }
               }}
@@ -261,7 +261,7 @@ export default function Component() {
               onChange={(e) => handleInputChange(e, 1)}
               onBlur={() => validateAndUpdateValue(inputValues[1], 1)}
               onKeyDown={(e) => {
-                if (e.key === "Enter") {
+                if (e.key === 'Enter') {
                   validateAndUpdateValue(inputValues[1], 1)
                 }
               }}

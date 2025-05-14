@@ -4,25 +4,25 @@ import {
   StepperItem,
   StepperSeparator,
   StepperTitle,
-  StepperTrigger,
-} from "@/registry/default/ui/stepper"
+  StepperTrigger
+} from '@/registry/default/ui/stepper'
 
 const steps = [
   {
     step: 1,
-    title: "Step One",
+    title: 'Step One'
   },
   {
     step: 2,
-    title: "Step Two",
+    title: 'Step Two'
   },
   {
     step: 3,
-    title: "Step Three",
-  },
+    title: 'Step Three'
+  }
 ]
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="space-y-8 text-center">
       <Stepper defaultValue={2}>

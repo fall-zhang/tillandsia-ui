@@ -3,12 +3,12 @@ import {
   StepperIndicator,
   StepperItem,
   StepperSeparator,
-  StepperTrigger,
-} from "@/registry/default/ui/stepper"
+  StepperTrigger
+} from '@/registry/default/ui/stepper'
 
 const steps = [1, 2, 3, 4]
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="space-y-8 text-center">
       <Stepper defaultValue={2} orientation="vertical">

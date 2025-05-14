@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { ListBox, ListBoxItem } from "react-aria-components"
+import { ListBox, ListBoxItem } from 'react-aria-components'
 
-import { Label } from "@/registry/default/ui/label"
+import { Label } from '@/registry/default/ui/label'
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="*:not-first:mt-2">
       <Label>Listbox with multiple options</Label>
@@ -13,7 +13,7 @@ export default function Component() {
           className="bg-background max-h-72 min-h-20 space-y-1 overflow-auto p-1 text-sm shadow-xs transition-[color,box-shadow]"
           aria-label="Select framework"
           selectionMode="multiple"
-          defaultSelectedKeys={["react", "vue"]}
+          defaultSelectedKeys={['react', 'vue']}
         >
           <ListBoxItem
             id="react"
@@ -46,12 +46,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Built with{" "}
+        Built with{' '}
         <a
           className="hover:text-foreground underline"
           href="https://react-spectrum.adobe.com/react-aria/ListBox.html"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React Aria
         </a>

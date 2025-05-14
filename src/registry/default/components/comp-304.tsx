@@ -1,6 +1,6 @@
-import { ArrowRightIcon, Eclipse } from "lucide-react"
+import { ArrowRightIcon, Eclipse } from 'lucide-react'
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="dark bg-muted text-foreground px-4 py-3">
       <div className="flex flex-col justify-between gap-2 md:flex-row">

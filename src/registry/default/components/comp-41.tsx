@@ -1,19 +1,19 @@
-"use client"
+'use client'
 
-import { CalendarIcon } from "lucide-react"
+import { CalendarIcon } from 'lucide-react'
 import {
   Button,
   DatePicker,
   Dialog,
   Group,
   Label,
-  Popover,
-} from "react-aria-components"
+  Popover
+} from 'react-aria-components'
 
-import { Calendar } from "@/registry/default/ui/calendar-rac"
-import { DateInput } from "@/registry/default/ui/datefield-rac"
+import { Calendar } from '@/registry/default/ui/calendar-rac'
+import { DateInput } from '@/registry/default/ui/datefield-rac'
 
-export default function Component() {
+export default function Component () {
   return (
     <DatePicker className="*:not-first:mt-2">
       <Label className="text-foreground text-sm font-medium">Date picker</Label>
@@ -38,12 +38,12 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Built with{" "}
+        Built with{' '}
         <a
           className="hover:text-foreground underline"
           href="https://react-spectrum.adobe.com/react-aria/DatePicker.html"
           target="_blank"
-          rel="noopener nofollow"
+          rel="noopener nofollow noreferrer"
         >
           React Aria
         </a>

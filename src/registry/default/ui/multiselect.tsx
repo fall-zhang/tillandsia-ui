@@ -1,17 +1,17 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import { useEffect } from "react"
-import { Command as CommandPrimitive, useCommandState } from "cmdk"
-import { XIcon } from "lucide-react"
+import * as React from 'react'
+import { useEffect } from 'react'
+import { Command as CommandPrimitive, useCommandState } from 'cmdk'
+import { XIcon } from 'lucide-react'
 
-import { cn } from "@/registry/default/lib/utils"
+import { cn } from '@/registry/default/lib/utils'
 import {
   Command,
   CommandGroup,
   CommandItem,
-  CommandList,
-} from "@/registry/default/ui/command"
+  CommandList
+} from '@/registry/default/ui/command'
 
 export interface Option {
   value: string
@@ -77,7 +77,7 @@ interface MultipleSelectorProps {
   /** Props of `CommandInput` */
   inputProps?: Omit<
     React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>,
-    "value" | "placeholder" | "disabled"
+    'value' | 'placeholder' | 'disabled'
   >
   /** hide the clear all button. */
   hideClearAllButton?: boolean
@@ -90,7 +90,7 @@ export interface MultipleSelectorRef {
   reset: () => void
 }
 
-export function useDebounce<T>(value: T, delay?: number): T {
+export function useDebounce<T> (value: T, delay?: number): T {
   const [debouncedValue, setDebouncedValue] = React.useState<T>(value)
 
   useEffect(() => {
@@ -104,19 +104,19 @@ export function useDebounce<T>(value: T, delay?: number): T {
   return debouncedValue
 }
 
-function transToGroupOption(options: Option[], groupBy?: string) {
+function transToGroupOption (options: Option[], groupBy?: string) {
   if (options.length === 0) {
     return {}
   }
   if (!groupBy) {
     return {
-      "": options,
+      '': options
     }
   }
 
   const groupOption: GroupOption = {}
   options.forEach((option) => {
-    const key = (option[groupBy] as string) || ""
+    const key = (option[groupBy] as string) || ''
     if (!groupOption[key]) {
       groupOption[key] = []
     }
@@ -125,7 +125,7 @@ function transToGroupOption(options: Option[], groupBy?: string) {
   return groupOption
 }
 
-function removePickedOption(groupOption: GroupOption, picked: Option[]) {
+function removePickedOption (groupOption: GroupOption, picked: Option[]) {
   const cloneOption = JSON.parse(JSON.stringify(groupOption)) as GroupOption
 
   for (const [key, value] of Object.entries(cloneOption)) {
@@ -136,7 +136,7 @@ function removePickedOption(groupOption: GroupOption, picked: Option[]) {
   return cloneOption
 }
 
-function isOptionsExist(groupOption: GroupOption, targetOption: Option[]) {
+function isOptionsExist (groupOption: GroupOption, targetOption: Option[]) {
   for (const [, value] of Object.entries(groupOption)) {
     if (
       value.some((option) => targetOption.find((p) => p.value === option.value))
@@ -157,7 +157,7 @@ const CommandEmpty = ({
 
   return (
     <div
-      className={cn("px-2 py-4 text-center text-sm", className)}
+      className={cn('px-2 py-4 text-center text-sm', className)}
       cmdk-empty=""
       role="presentation"
       {...props}
@@ -165,7 +165,7 @@ const CommandEmpty = ({
   )
 }
 
-CommandEmpty.displayName = "CommandEmpty"
+CommandEmpty.displayName = 'CommandEmpty'
 
 const MultipleSelector = ({
   value,
@@ -190,7 +190,7 @@ const MultipleSelector = ({
   triggerSearchOnFocus = false,
   commandProps,
   inputProps,
-  hideClearAllButton = false,
+  hideClearAllButton = false
 }: MultipleSelectorProps) => {
   const inputRef = React.useRef<HTMLInputElement>(null)
   const [open, setOpen] = React.useState(false)
@@ -202,7 +202,7 @@ const MultipleSelector = ({
   const [options, setOptions] = React.useState<GroupOption>(
     transToGroupOption(arrayDefaultOptions, groupBy)
   )
-  const [inputValue, setInputValue] = React.useState("")
+  const [inputValue, setInputValue] = React.useState('')
   const debouncedSearchTerm = useDebounce(inputValue, delay || 500)
 
   const handleClickOutside = (event: MouseEvent | TouchEvent) => {
@@ -230,8 +230,8 @@ const MultipleSelector = ({
     (e: React.KeyboardEvent<HTMLDivElement>) => {
       const input = inputRef.current
       if (input) {
-        if (e.key === "Delete" || e.key === "Backspace") {
-          if (input.value === "" && selected.length > 0) {
+        if (e.key === 'Delete' || e.key === 'Backspace') {
+          if (input.value === '' && selected.length > 0) {
             const lastSelectOption = selected[selected.length - 1]
             // If last item is fixed, we should not remove it.
             if (!lastSelectOption.fixed) {
@@ -240,7 +240,7 @@ const MultipleSelector = ({
           }
         }
         // This is not a default behavior of the <input /> field
-        if (e.key === "Escape") {
+        if (e.key === 'Escape') {
           input.blur()
         }
       }
@@ -250,16 +250,16 @@ const MultipleSelector = ({
 
   useEffect(() => {
     if (open) {
-      document.addEventListener("mousedown", handleClickOutside)
-      document.addEventListener("touchend", handleClickOutside)
+      document.addEventListener('mousedown', handleClickOutside)
+      document.addEventListener('touchend', handleClickOutside)
     } else {
-      document.removeEventListener("mousedown", handleClickOutside)
-      document.removeEventListener("touchend", handleClickOutside)
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('touchend', handleClickOutside)
     }
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-      document.removeEventListener("touchend", handleClickOutside)
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('touchend', handleClickOutside)
     }
   }, [open])
 
@@ -352,7 +352,7 @@ const MultipleSelector = ({
             onMaxSelected?.(selected.length)
             return
           }
-          setInputValue("")
+          setInputValue('')
           const newOptions = [...selected, { value, label: value }]
           setSelected(newOptions)
           onChange?.(newOptions)
@@ -419,7 +419,7 @@ const MultipleSelector = ({
         commandProps?.onKeyDown?.(e)
       }}
       className={cn(
-        "h-auto overflow-visible bg-transparent",
+        'h-auto overflow-visible bg-transparent',
         commandProps?.className
       )}
       shouldFilter={
@@ -431,12 +431,12 @@ const MultipleSelector = ({
     >
       <div
         className={cn(
-          "border-input focus-within:border-ring focus-within:ring-ring/50 has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/40 has-aria-invalid:border-destructive relative min-h-[38px] rounded-md border text-sm transition-[color,box-shadow] outline-none focus-within:ring-[3px] has-disabled:pointer-events-none has-disabled:cursor-not-allowed has-disabled:opacity-50",
+          'border-input focus-within:border-ring focus-within:ring-ring/50 has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/40 has-aria-invalid:border-destructive relative min-h-[38px] rounded-md border text-sm transition-[color,box-shadow] outline-none focus-within:ring-[3px] has-disabled:pointer-events-none has-disabled:cursor-not-allowed has-disabled:opacity-50',
           {
-            "p-1": selected.length !== 0,
-            "cursor-text": !disabled && selected.length !== 0,
+            'p-1': selected.length !== 0,
+            'cursor-text': !disabled && selected.length !== 0
           },
-          !hideClearAllButton && "pe-9",
+          !hideClearAllButton && 'pe-9',
           className
         )}
         onClick={() => {
@@ -450,7 +450,7 @@ const MultipleSelector = ({
               <div
                 key={option.value}
                 className={cn(
-                  "animate-fadeIn bg-background text-secondary-foreground hover:bg-background relative inline-flex h-7 cursor-default items-center rounded-md border ps-2 pe-7 pl-2 text-xs font-medium transition-all disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-fixed:pe-2",
+                  'animate-fadeIn bg-background text-secondary-foreground hover:bg-background relative inline-flex h-7 cursor-default items-center rounded-md border ps-2 pe-7 pl-2 text-xs font-medium transition-all disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-fixed:pe-2',
                   badgeClassName
                 )}
                 data-fixed={option.fixed}
@@ -460,7 +460,7 @@ const MultipleSelector = ({
                 <button
                   className="text-muted-foreground/80 hover:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 absolute -inset-y-px -end-px flex size-7 items-center justify-center rounded-e-md border border-transparent p-0 outline-hidden transition-[color,box-shadow] outline-none focus-visible:ring-[3px]"
                   onKeyDown={(e) => {
-                    if (e.key === "Enter") {
+                    if (e.key === 'Enter') {
                       handleUnselect(option)
                     }
                   }}
@@ -501,15 +501,15 @@ const MultipleSelector = ({
             }}
             placeholder={
               hidePlaceholderWhenSelected && selected.length !== 0
-                ? ""
+                ? ''
                 : placeholder
             }
             className={cn(
-              "placeholder:text-muted-foreground/70 flex-1 bg-transparent outline-hidden disabled:cursor-not-allowed",
+              'placeholder:text-muted-foreground/70 flex-1 bg-transparent outline-hidden disabled:cursor-not-allowed',
               {
-                "w-full": hidePlaceholderWhenSelected,
-                "px-3 py-2": selected.length === 0,
-                "ml-1": selected.length !== 0,
+                'w-full': hidePlaceholderWhenSelected,
+                'px-3 py-2': selected.length === 0,
+                'ml-1': selected.length !== 0
               },
               inputProps?.className
             )}
@@ -521,12 +521,12 @@ const MultipleSelector = ({
               onChange?.(selected.filter((s) => s.fixed))
             }}
             className={cn(
-              "text-muted-foreground/80 hover:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 absolute end-0 top-0 flex size-9 items-center justify-center rounded-md border border-transparent transition-[color,box-shadow] outline-none focus-visible:ring-[3px]",
+              'text-muted-foreground/80 hover:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 absolute end-0 top-0 flex size-9 items-center justify-center rounded-md border border-transparent transition-[color,box-shadow] outline-none focus-visible:ring-[3px]',
               (hideClearAllButton ||
                 disabled ||
                 selected.length < 1 ||
                 selected.filter((s) => s.fixed).length === selected.length) &&
-                "hidden"
+                'hidden'
             )}
             aria-label="Clear all"
           >
@@ -537,11 +537,11 @@ const MultipleSelector = ({
       <div className="relative">
         <div
           className={cn(
-            "border-input absolute top-2 z-10 w-full overflow-hidden rounded-md border",
-            "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
-            !open && "hidden"
+            'border-input absolute top-2 z-10 w-full overflow-hidden rounded-md border',
+            'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95',
+            !open && 'hidden'
           )}
-          data-state={open ? "open" : "closed"}
+          data-state={open ? 'open' : 'closed'}
         >
           {open && (
             <CommandList
@@ -556,57 +556,59 @@ const MultipleSelector = ({
                 inputRef?.current?.focus()
               }}
             >
-              {isLoading ? (
-                <>{loadingIndicator}</>
-              ) : (
-                <>
-                  {EmptyItem()}
-                  {CreatableItem()}
-                  {!selectFirstItem && (
-                    <CommandItem value="-" className="hidden" />
-                  )}
-                  {Object.entries(selectables).map(([key, dropdowns]) => (
-                    <CommandGroup
-                      key={key}
-                      heading={key}
-                      className="h-full overflow-auto"
-                    >
-                      <>
-                        {dropdowns.map((option) => {
-                          return (
-                            <CommandItem
-                              key={option.value}
-                              value={option.value}
-                              disabled={option.disable}
-                              onMouseDown={(e) => {
-                                e.preventDefault()
-                                e.stopPropagation()
-                              }}
-                              onSelect={() => {
-                                if (selected.length >= maxSelected) {
-                                  onMaxSelected?.(selected.length)
-                                  return
-                                }
-                                setInputValue("")
-                                const newOptions = [...selected, option]
-                                setSelected(newOptions)
-                                onChange?.(newOptions)
-                              }}
-                              className={cn(
-                                "cursor-pointer",
-                                option.disable &&
-                                  "pointer-events-none cursor-not-allowed opacity-50"
-                              )}
-                            >
-                              {option.label}
-                            </CommandItem>
-                          )
-                        })}
-                      </>
-                    </CommandGroup>
-                  ))}
-                </>
-              )}
+              {isLoading
+                ? (
+                  <>{loadingIndicator}</>
+                )
+                : (
+                  <>
+                    {EmptyItem()}
+                    {CreatableItem()}
+                    {!selectFirstItem && (
+                      <CommandItem value="-" className="hidden" />
+                    )}
+                    {Object.entries(selectables).map(([key, dropdowns]) => (
+                      <CommandGroup
+                        key={key}
+                        heading={key}
+                        className="h-full overflow-auto"
+                      >
+                        <>
+                          {dropdowns.map((option) => {
+                            return (
+                              <CommandItem
+                                key={option.value}
+                                value={option.value}
+                                disabled={option.disable}
+                                onMouseDown={(e) => {
+                                  e.preventDefault()
+                                  e.stopPropagation()
+                                }}
+                                onSelect={() => {
+                                  if (selected.length >= maxSelected) {
+                                    onMaxSelected?.(selected.length)
+                                    return
+                                  }
+                                  setInputValue('')
+                                  const newOptions = [...selected, option]
+                                  setSelected(newOptions)
+                                  onChange?.(newOptions)
+                                }}
+                                className={cn(
+                                  'cursor-pointer',
+                                  option.disable &&
+                                  'pointer-events-none cursor-not-allowed opacity-50'
+                                )}
+                              >
+                                {option.label}
+                              </CommandItem>
+                            )
+                          })}
+                        </>
+                      </CommandGroup>
+                    ))}
+                  </>
+                )}
             </CommandList>
           )}
         </div>
@@ -615,5 +617,5 @@ const MultipleSelector = ({
   )
 }
 
-MultipleSelector.displayName = "MultipleSelector"
+MultipleSelector.displayName = 'MultipleSelector'
 export default MultipleSelector

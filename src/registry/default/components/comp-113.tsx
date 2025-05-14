@@ -1,8 +1,8 @@
-import { ChevronDownIcon, PinIcon } from "lucide-react"
+import { ChevronDownIcon, PinIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   return (
     <div className="divide-primary-foreground/30 inline-flex divide-x rounded-md shadow-xs rtl:space-x-reverse">
       <Button

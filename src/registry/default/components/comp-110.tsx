@@ -1,14 +1,14 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 
 import {
   ToggleGroup,
-  ToggleGroupItem,
-} from "@/registry/default/ui/toggle-group"
+  ToggleGroupItem
+} from '@/registry/default/ui/toggle-group'
 
-export default function Component() {
-  const [value, setValue] = useState<string>("left")
+export default function Component () {
+  const [value, setValue] = useState<string>('left')
 
   return (
     <ToggleGroup

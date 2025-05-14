@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { AlertCircleIcon, ImageUpIcon, XIcon } from "lucide-react"
+import { AlertCircleIcon, ImageUpIcon, XIcon } from 'lucide-react'
 
-import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
+import { useFileUpload } from '@/registry/default/hooks/use-file-upload'
 
-export default function Component() {
+export default function Component () {
   const maxSizeMB = 5
   const maxSize = maxSizeMB * 1024 * 1024 // 5MB default
 
@@ -17,11 +17,11 @@ export default function Component() {
       handleDrop,
       openFileDialog,
       removeFile,
-      getInputProps,
-    },
+      getInputProps
+    }
   ] = useFileUpload({
-    accept: "image/*",
-    maxSize,
+    accept: 'image/*',
+    maxSize
   })
 
   const previewUrl = files[0]?.preview || null
@@ -45,30 +45,32 @@ export default function Component() {
             className="sr-only"
             aria-label="Upload file"
           />
-          {previewUrl ? (
-            <div className="absolute inset-0">
-              <img
-                src={previewUrl}
-                alt={files[0]?.file?.name || "Uploaded image"}
-                className="size-full object-cover"
-              />
-            </div>
-          ) : (
-            <div className="flex flex-col items-center justify-center px-4 py-3 text-center">
-              <div
-                className="bg-background mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border"
-                aria-hidden="true"
-              >
-                <ImageUpIcon className="size-4 opacity-60" />
+          {previewUrl
+            ? (
+              <div className="absolute inset-0">
+                <img
+                  src={previewUrl}
+                  alt={files[0]?.file?.name || 'Uploaded image'}
+                  className="size-full object-cover"
+                />
               </div>
-              <p className="mb-1.5 text-sm font-medium">
+            )
+            : (
+              <div className="flex flex-col items-center justify-center px-4 py-3 text-center">
+                <div
+                  className="bg-background mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border"
+                  aria-hidden="true"
+                >
+                  <ImageUpIcon className="size-4 opacity-60" />
+                </div>
+                <p className="mb-1.5 text-sm font-medium">
                 Drop your image here or click to browse
-              </p>
-              <p className="text-muted-foreground text-xs">
+                </p>
+                <p className="text-muted-foreground text-xs">
                 Max size: {maxSizeMB}MB
-              </p>
-            </div>
-          )}
+                </p>
+              </div>
+            )}
         </div>
         {previewUrl && (
           <div className="absolute top-4 right-4">
@@ -99,7 +101,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-center text-xs"
       >
-        Single image uploader w/ max size ∙{" "}
+        Single image uploader w/ max size ∙{' '}
         <a
           href="https://github.com/origin-space/originui/tree/main/docs/use-file-upload.md"
           className="hover:text-foreground underline"

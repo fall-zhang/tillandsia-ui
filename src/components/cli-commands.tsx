@@ -1,23 +1,23 @@
-"use client"
+'use client'
 
-import { useConfig } from "@/hooks/use-config"
-import CopyButton from "@/components/copy-button"
+import { useConfig } from '@/hooks/use-config'
+import CopyButton from '@/components/copy-button'
 import {
   Tabs,
   TabsContent,
   TabsList,
-  TabsTrigger,
-} from "@/registry/default/ui/tabs"
+  TabsTrigger
+} from '@/registry/default/ui/tabs'
 
-export default function CliCommands({ name }: { name: string }) {
+export default function CliCommands ({ name }: { name: string }) {
   const [config, setConfig] = useConfig()
-  const packageManager = config.packageManager || "pnpm"
+  const packageManager = config.packageManager || 'pnpm'
 
   const commands = {
     pnpm: `pnpm dlx shadcn@latest add https://originui.com/r/${name}.json`,
     npm: `npx shadcn@latest add https://originui.com/r/${name}.json`,
     yarn: `npx shadcn@latest add https://originui.com/r/${name}.json`,
-    bun: `bunx --bun shadcn@latest add https://originui.com/r/${name}.json`,
+    bun: `bunx --bun shadcn@latest add https://originui.com/r/${name}.json`
   }
 
   return (
@@ -27,7 +27,7 @@ export default function CliCommands({ name }: { name: string }) {
         onValueChange={(value) => {
           setConfig({
             ...config,
-            packageManager: value as "pnpm" | "npm" | "yarn" | "bun",
+            packageManager: value as 'pnpm' | 'npm' | 'yarn' | 'bun'
           })
         }}
         className="rounded-md bg-zinc-950 dark:bg-zinc-900"

@@ -1,6 +1,6 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   return (
     <Button className="gap-0 rounded-full py-0 ps-0">
       <div className="me-0.5 flex aspect-square h-full p-1.5">

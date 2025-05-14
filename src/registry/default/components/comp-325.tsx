@@ -1,18 +1,18 @@
-import { useId } from "react"
+import { useId } from 'react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-} from "@/registry/default/ui/dialog"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+  DialogTrigger
+} from '@/registry/default/ui/dialog'
+import { Input } from '@/registry/default/ui/input'
+import { Label } from '@/registry/default/ui/label'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   return (
     <Dialog>
@@ -88,7 +88,7 @@ export default function Component() {
         <Button variant="outline">Continue with Google</Button>
 
         <p className="text-muted-foreground text-center text-xs">
-          By signing up you agree to our{" "}
+          By signing up you agree to our{' '}
           <a className="underline hover:no-underline" href="#">
             Terms
           </a>
