@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 // 输出一个 3D 盒子
 console.info(
   '%c ',

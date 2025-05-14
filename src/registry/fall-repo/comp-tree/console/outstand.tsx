@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 // 输出一个奔跑的小马宝莉
 console.info(
   '%c ',

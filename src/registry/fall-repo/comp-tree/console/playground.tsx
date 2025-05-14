@@ -5,9 +5,9 @@ const Playground = () => {
 
   // Get our SVG values
   const svg = document.querySelector('svg')!
-  const viewboxValues = svg.getAttribute('viewBox').split(' ')
-  const width = svg.getAttribute('width') || viewboxValues[2]
-  const height = svg.getAttribute('height') || viewboxValues[3]
+  const viewBoxValues = svg.getAttribute('viewBox').split(' ')
+  const width = svg.getAttribute('width') || viewBoxValues[2]
+  const height = svg.getAttribute('height') || viewBoxValues[3]
 
   // Encode function from Yoksel: https://codepen.io/yoksel/pen/MWKeKK?editors=0010
   const encodedSvg = encodeSVG(svg.outerHTML)

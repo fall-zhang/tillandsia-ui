@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 // 添加粒子动画
 console.info(
   '%c ',

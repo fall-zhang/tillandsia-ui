@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 // 输出 svg，并且添加动画
 console.info(
   '%c ',
