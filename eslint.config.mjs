@@ -43,11 +43,11 @@ export default [
   // 只对我修改的部分进行
   {
     name: 'app/files-to-lint',
-    files: ['./app/fall/**/*.{tsx,ts,js,mjs,jsx}', './registry/fall-repo/**/*.{tsx,ts,js,mjs,jsx}']
+    files: ['./src/**/*.{tsx,ts,js,mjs,jsx}', './*.{ts,js,mjs}']
   },
   {
     name: 'app/files-to-ignore',
-    ignores: ['*.{tsx,ts,js,mjs,jsx}','**/temp.js', '**/lib/**', '**/.next/**', '**/node_modules/**']
+    ignores: ['**/temp.js', '**/.next/**', '**/node_modules/**']
   },
   jslint.configs.recommended,
   nextConfig,
