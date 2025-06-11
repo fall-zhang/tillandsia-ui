@@ -4,7 +4,7 @@ import { useState, useRef, type RefObject } from 'react'
 import { cn } from '@/registry/default/lib/utils'
 import { X, Check, Plus } from 'lucide-react'
 import { useTags } from '@/hooks/use-tags'
-import { useClickOutside } from '@/hooks/use-click-outside'
+import { useOnClickOutside } from 'usehooks-ts'
 
 interface Tag {
     id: string;
@@ -91,7 +91,7 @@ export default function InputTag ({
     }
   }
 
-  useClickOutside(containerRef as RefObject<HTMLElement>, () =>
+  useOnClickOutside(containerRef as RefObject<HTMLElement>, () =>
     setIsOpen(false)
   )
 
