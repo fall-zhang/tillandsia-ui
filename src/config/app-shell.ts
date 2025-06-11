@@ -2,9 +2,8 @@ import { RegistryItem } from 'shadcn/registry'
 interface FallRegistryItem extends RegistryItem{
   meta:{
     tags:string[],
-    colSpan?: 1 | 2 | 3
     style?: 1 | 2
-    originUrl?:string
+    originUrl:string
   }
 }
 export interface ComponentCategory {
@@ -15,17 +14,18 @@ export interface ComponentCategory {
   isNew?: boolean
 }
 
-export const categories: ComponentCategory[] = [
+export const appShellCategories: ComponentCategory[] = [
   {
     slug: 'accordion',
     name: 'Accordion',
     components: [
       {
+        // name: 'comp-09',
         name: 'accordion/normal',
         type: 'registry:lib',
         meta: {
-          tags: ['alert', 'warning'],
-          colSpan: 2
+          originUrl: '',
+          tags: ['alert', 'warning']
         }
       }
     ]
@@ -33,5 +33,5 @@ export const categories: ComponentCategory[] = [
 ]
 
 export function getCategory (slug: string): ComponentCategory | undefined {
-  return categories.find((category) => category.slug === slug)
+  return appShellCategories.find((category) => category.slug === slug)
 }
