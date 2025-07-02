@@ -19,7 +19,7 @@ import {
 const links = [
   { text: 'Layouts', href: '/layouts', isNew: true },
   { text: 'Fall', href: '/fall' },
-  // { text: "Colors", href: "/colors" },
+  { text: 'App Shell', href: '/app-shell' },
   { text: 'Easing Classes', href: '/easings' }
 ]
 
