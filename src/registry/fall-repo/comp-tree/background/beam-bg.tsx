@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useRef } from 'react'
 import { motion } from 'motion/react'
-import { cn } from '@/lib/utils'
+import { cn } from '@/registry/default/lib/utils'
 
 interface AnimatedGradientBackgroundProps {
   className?: string;
@@ -198,9 +198,9 @@ export default function BeamsBackground ({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-                        Beams
+            Beams
             <br />
-                        Background
+            Background
           </motion.h1>
           <motion.p
             className="text-lg md:text-2xl lg:text-3xl text-white/70 tracking-tighter"
@@ -208,7 +208,7 @@ export default function BeamsBackground ({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-                        For your pleasure
+            For your pleasure
           </motion.p>
         </div>
       </div>

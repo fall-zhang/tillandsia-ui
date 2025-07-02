@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils'
+import { cn } from '@/registry/default/lib/utils'
 import {
   Home,
   MapPin,
@@ -14,7 +14,7 @@ import {
   CardHeader,
   CardContent,
   CardFooter
-} from '@/components/ui/card'
+} from '@/registry/default/ui/card'
 
 interface BentoItem {
     title: string;

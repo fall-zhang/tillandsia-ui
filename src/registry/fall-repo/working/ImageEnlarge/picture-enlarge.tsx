@@ -1,7 +1,6 @@
 import React, { MouseEvent, useRef, useState } from 'react'
 import styles from './PictureEnlarge.module.css'
 import Animate from '/public/anime/wife-1.png'
-import { ImageElement } from '@visactor/vtable/es/ts-types'
 // import type { HTML } from 'react'
 
 

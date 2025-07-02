@@ -3,7 +3,7 @@
 import { motion } from 'motion/react'
 import { Pacifico } from 'next/font/google'
 import Image from 'next/image'
-import { cn } from '@/lib/utils'
+import { cn } from '@/registry/default/lib/utils'
 
 const pacifico = Pacifico({
   subsets: ['latin'],

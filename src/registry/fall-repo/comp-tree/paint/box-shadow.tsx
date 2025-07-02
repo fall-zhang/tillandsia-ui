@@ -1,4 +1,4 @@
-import $s from './PixelPaint.module.css'
+import $s from './box-shadow.module.css'
 import clsx from 'clsx'
 export default function () {
   return <>
