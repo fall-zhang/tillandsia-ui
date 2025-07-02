@@ -14,7 +14,7 @@ export default async function ComponentLoader<TProps extends object> ({
   }
 
   try {
-    const Comp = await import('@/registry/fall-repo/comp-tree/accordion/normal')
+    const Comp = await import('@/registry/fall-repo/comp-tree/' + component.name)
     console.log(`@/registry/default/comp-tree/${component.name}`)
     const FallComponent = Comp.default as ComponentType<TProps>
     return <FallComponent {...(props as TProps)} currentPage={1} totalPages={10} />

@@ -106,6 +106,7 @@ function ImageComponent ({ imageBasePath, alt }: ImageComponentProps) {
         alt={`${alt} dark`}
         width={268}
         height={198}
+        style={{ maxHeight: 198 }}
       />
     </>
   )

@@ -106,6 +106,7 @@ export default async function Page ({ params }: Props) {
       ? `A ${category.name.toLowerCase()} component built with React and Tailwind CSS.`
       : `A growing collection of ${components.length} ${category.name.toLowerCase()} components built with React and Tailwind CSS.`
   }
+  console.log(components)
 
   return (
     <>
