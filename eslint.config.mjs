@@ -4,6 +4,7 @@ import jslint from '@eslint/js'
 import lintReactHooks from 'eslint-plugin-react-hooks'
 import tslint from 'typescript-eslint'
 import lintNext from '@next/eslint-plugin-next'
+import { defineConfig } from 'eslint/config'
 const defaultConfig = {
   plugins: {
     react: lintReact,
@@ -20,6 +21,7 @@ const defaultConfig = {
     'react/no-this-in-sfc': 1,
     'react/prop-types': 0,
     'react/display-name': 'off',
+    'react/no-unknown-property': 'off',
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
     'react-hooks/rules-of-hooks': 'error',
@@ -39,12 +41,13 @@ const nextConfig = {
   rules: lintNext.configs.recommended.rules
 }
 // "extends": ["next/core-web-vitals", "next/typescript"]
-export default [
+export default defineConfig([
   // 只对我修改的部分进行
   {
     name: 'app/files-to-lint',
     files: ['./src/**/*.{tsx,ts,js,mjs,jsx}', './*.{ts,js,mjs}']
   },
+  // global ignores
   {
     name: 'app/files-to-ignore',
     ignores: ['**/temp.js', '**/.next/**', '**/node_modules/**']
@@ -56,4 +59,4 @@ export default [
   standard, // js 标准配置
   ...tslint.configs.recommended,
   defaultConfig
-]
+])
