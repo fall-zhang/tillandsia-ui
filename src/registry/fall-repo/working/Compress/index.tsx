@@ -1,7 +1,8 @@
-import React, { SyntheticEvent, useRef, useState } from 'react'
-import { Button as AntButton, Form, Upload } from 'antd'
-import type { UploadFile } from 'antd'
-import styles from './index.module.less'
+/* eslint-disable @next/next/no-img-element */
+import React, { DOMAttributes, FC, ReactNode, useRef, useState } from 'react'
+import type{ MouseEvent } from 'react'
+import { Button } from '@/registry/default/ui/button'
+import { cn } from '@/registry/default/lib/utils'
 
 /**
  * 实现图片压缩
@@ -9,10 +10,10 @@ import styles from './index.module.less'
  */
 const PicCompress: React.FC = () => {
   const [filePath, setFilePath] = useState('')
-  const [fileList, setFileList] = useState<UploadFile[]>([])
+  const [fileList, setFileList] = useState<FileList>()
   // const fileRef = useRef<HTMLInputElement>(null)
   const oldFilePath = useRef('')
-  function onChangePic(file: any) {
+  function onChangePic (file: any) {
     const fileReader = new FileReader()
     if (oldFilePath.current !== file.name) {
       oldFilePath.current = file.name
@@ -22,18 +23,17 @@ const PicCompress: React.FC = () => {
       }
     }
   }
-  function onFileChange(ev: any) {
-    setFileList([...ev.fileList])
+  function onFileChange (ev:FileList) {
+    setFileList(ev)
     // console.log(ev);
-    onChangePic(ev.file)
-
+    onChangePic(ev[0])
   }
-  function onPreview(file: any) {
+  function onPreview (file: any) {
     // console.log(file);
     onChangePic(file)
   }
-  function onDownloadPic() {
-    const MAX_WIDTH = 800 // 图片最大宽度
+  function onDownloadPic () {
+    const MAX_WIDTH = 800 // 图片最大宽度
     compress(filePath, 60, 'image/png').then(res => {
       const link = document.createElement('a')
       link.href = res as string
@@ -41,14 +41,14 @@ const PicCompress: React.FC = () => {
       link.click()
       link.remove()
     })
-    function compress(base64: string, quality: number, mimeType: string) {
+    function compress (base64: string, quality: number, mimeType: string) {
       const canvas = document.createElement('canvas')
       const img = document.createElement('img')
       img.crossOrigin = 'anonymous'
       return new Promise((resolve, reject) => {
         img.src = base64
         img.onload = () => {
-          let targetWidth = 0, targetHeight = 0
+          let targetWidth = 0; let targetHeight = 0
           if (img.width > MAX_WIDTH) {
             targetWidth = MAX_WIDTH
             targetHeight = (img.height / img.width) * MAX_WIDTH
@@ -59,7 +59,7 @@ const PicCompress: React.FC = () => {
           canvas.width = targetWidth
           canvas.height = targetHeight
           const ctx = canvas.getContext('2d')!
-          ctx.clearRect(0, 0, targetWidth, targetHeight) // 清除画布
+          ctx.clearRect(0, 0, targetWidth, targetHeight) // 清除画布
           ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
           const imageData = canvas.toDataURL(mimeType, quality / 100)
           resolve(imageData)
@@ -67,18 +67,44 @@ const PicCompress: React.FC = () => {
       })
     }
   }
-  return (<Form labelCol={{ span: 3, offset: 2 }} >
-    <Form.Item name="" label="当前文件：" className={styles.formItem} rules={[{ required: true }]}>
-      <Upload fileList={fileList}
-        listType="picture-card"
-        onPreview={onPreview}
-        beforeUpload={file => false}
-        onChange={(ev) => onFileChange(ev)}>
-        <AntButton type="link">上传文件</AntButton>
-      </Upload>
-    </Form.Item>
-    <img className={styles.image} src={filePath}></img>
-    <AntButton type="default" onClick={onDownloadPic}>压缩图片下载</AntButton>
-  </Form >)
+  return (<div>
+    当前文件：
+    <FormItemUpload
+      onChange={onFileChange}>
+      <Button >上传文件</Button>
+    </FormItemUpload>
+    <img className="max-width: 600px;max-height: 480px;" src={filePath}></img>
+    <Button onClick={onDownloadPic}>压缩图片下载</Button>
+  </div>)
 }
 export default PicCompress
+
+
+const FormItemUpload:FC<{
+  children:ReactNode
+  disable?:boolean
+  className?:string
+  accept?:DOMAttributes<'accept'>
+  onChange(newFileList:FileList):void
+}> = ({ children, className, onChange, disable }) => {
+  const uploadButtonRef = useRef<HTMLInputElement>(null)
+  function onUploadFile (ev:MouseEvent) {
+    ev.stopPropagation()
+    if (disable) return
+    if (!uploadButtonRef.current) {
+      return
+    }
+    uploadButtonRef.current.click()
+  }
+  function onChangeFile () {
+    const files = uploadButtonRef.current?.files
+    if (!files || files?.length === 0) {
+      return
+    }
+    onChange(files)
+  }
+  return <div className={cn(' touch-none none', className)} onClick={onUploadFile} aria-disabled={disable} >
+    {children}
+    <input type="file" className='hidden' ref={uploadButtonRef} onChange={onChangeFile} disabled={disable}/>
+  </div>
+}
