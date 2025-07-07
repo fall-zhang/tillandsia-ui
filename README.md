@@ -1,15 +1,18 @@
 # tillandsia
 
-> tillandsia 空气凤梨，没有土壤，在空气中，加入适当的水即可存活
+> tillandsia 空气凤梨，没有土壤，在空气中，加入适当的水即可存活的植物
+>
 > 希望该 UI 也同空气凤梨一样，只需要很少的配置即可运行
 
 ## 开始使用
 
-你只需要拥有 tailwindcss + react 的运行环境，然后复制粘贴即可使用该 ui 库
+你只需要拥有 tailwindcss + shadcn + react 的运行环境，然后复制粘贴即可使用该 ui 库（一些复杂的组件需要引用依赖）
+环境搭建可参考：https://tailwind.nodejs.cn/docs
+
 
 ## 有意思的项目集合
 
-这个项目也是我所有应用，所有作品的索引
+这个项目也是我所有 react 应用，所有作品的索引
 
 所写的所有觉得有价值的项目都放置在这里
 
@@ -17,12 +20,9 @@
 
 待完成内容
 
-以最小的侵入性，基于 origin-ui 成添加我自己的组件
-
 - 添加 zh-cn 语言
-- 对组件再次分组，form 表单控件，其它
-- 添加 Page Section 作为一个页面中的一部分元素
-  - 参考 https://tailwindcss.com/plus/ui-blocks
+- 对组件再次分组
+- 添加 Page Section 网站首页场景中部分内容
   - Hero Section，进入页面后的首页
   - Feature Section，应用特性介绍
   - Pricing Section，应用价格
@@ -38,3 +38,23 @@
 - 添加 app shells 应用外壳
   - 参考 https://tailwindcss.com/plus/ui-blocks
   - stacked layouts
+
+## 参考
+
+- 应用基于 [origin-ui](https://github.com/origin-space/originui)
+
+
+
+## 其他配置
+
+工具路径
+@/lib/utils
+
+@/registry/default/lib/utils
+
+
+
+
+@/components/ui
+
+@/registry/default/ui

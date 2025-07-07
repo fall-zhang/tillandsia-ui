@@ -11,11 +11,13 @@ export default function Page () {
     <div data-home>
       <div className="max-w-3xl max-sm:text-center">
         <h1 className="font-heading text-foreground mb-4 text-4xl/[1.1] font-bold tracking-tight md:text-5xl/[1.1]">
-          Beautiful UI components built with Tailwind CSS and React.
+          {/* Beautiful UI components built with Tailwind CSS and React. */}
+          使用 React 和 tailwindcss 构建的 UI 组件库
         </h1>
         <p className="text-muted-foreground mb-8 text-lg">
-          An open-source collection of copy-and-paste components for quickly
-          build application UIs.
+          {/* An open-source collection of copy-and-paste components for quickly
+          build application UIs. */}
+          复制粘贴即可快速开始搭建应用的组件集合
         </p>
         <SearchButton />
       </div>
