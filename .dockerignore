@@ -1,0 +1,19 @@
+<!-- git -->
+.git
+.gitignore
+
+<!-- js -->
+.next
+.vscode
+node_modules
+dist
+
+<!-- docs -->
+*.md
+
+<!-- docker relative -->
+Dockerfile
+.dockerignore
+
+<!-- log files -->
+*.log
