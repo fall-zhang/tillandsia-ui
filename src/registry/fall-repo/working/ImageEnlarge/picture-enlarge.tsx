@@ -1,6 +1,8 @@
 import React, { MouseEvent, useRef, useState } from 'react'
-import styles from './PictureEnlarge.module.css'
-import Animate from '/public/anime/wife-1.png'
+import styles from './picture-enlarge.module.css'
+import { Button } from '@/registry/default/ui/button'
+
+// import Animate from 'public/img/profile-bg.jpg'
 // import type { HTML } from 'react'
 
 
@@ -15,6 +17,7 @@ let imageHeight = 100
 const PictureBigger: React.FC = () => {
   const [showMask, setShowMask] = useState(false)
   const image = new Image()
+
   image.src = Animate.src
   const imageRef = useRef<HTMLImageElement>(null)
 
@@ -71,6 +74,9 @@ const PictureBigger: React.FC = () => {
   }
   return (
     <div className={styles.container}>
+      <Button onClick={openFileDialog} aria-haspopup="dialog">
+        {fileName ? 'Change image' : 'Upload image'}
+      </Button>
       {(imageWidth < 100 || imageWidth < 100) ? <h2>请选择长宽大于100px的图片</h2> : ''}
       <div className={styles['img-origin']} >
         <img ref={imageRef} src={Animate.src} onMouseOver={(ev) => mouseOverImage(ev)} onMouseMove={(e) => moveOrigin(e)} onMouseLeave={leaveOrigin} />

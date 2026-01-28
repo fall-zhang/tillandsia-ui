@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { Button, Form, Input, InputNumber, Upload } from 'antd'
-import styles from './index.module.less'
+import styles from './index.module.scss'
 import clsx from 'clsx'
-import { useParams } from 'react-router-dom'
+import { Button } from '@/registry/default/ui/button'
+
 export default function WaterMarkLayout() {
   const [imageSrc, setImageSrc] = useState('')
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -36,16 +36,14 @@ export default function WaterMarkLayout() {
       <div style={{ display: 'flex', marginTop: '20px' }}>
         {
           imageSrc ? <>
-            <Upload onChange={onSelectFile} showUploadList={false}>
-              <Button type='primary'>导入新图片</Button>
-            </Upload>
-            <Button type='default' onClick={onSaveImage}>另存为</Button>
+            <input onChange={onSelectFile}>
+              <Button >导入新图片</Button>
+            </input>
+            <Button onClick={onSaveImage}>另存为</Button>
           </> :
-            <Upload onChange={onSelectFile} showUploadList={false}>
               <div className={styles.operation}>
                 <Button>请选择文件</Button>
               </div>
-            </Upload>
         }
       </div>
     </div>
@@ -58,32 +56,20 @@ const WaterMarkConfig: React.FC<{ className?: string }> = ({ className }) => {
     x: ['left', 'center', 'right'],
     y: ['top', 'center', 'bottom']
   }
-  return (<Form className={className}>
-    <Form.Item label="水印位置">
-      {positionArr.y.map(item => (
-        <div key={item} className={styles.ninePatch}>
-          {
-            positionArr.x.map(xItem => (
-              <div className={clsx(styles.rect, xItem, item)} key={xItem}>
-              </div>
-            ))
-          }
-        </div>))
-      }
-    </Form.Item>
-    <Form.Item label="水印内容">
-      <Input ></Input>
-    </Form.Item>
-    <Form.Item label="水印大小">
-      <InputNumber type='number'></InputNumber>
-    </Form.Item>
-    <Form.Item label="预设水印">
+  return (<form className={className}>
+   
+      <div className="">
+        水印内容
+      </div>
+      <div className="">
+        水印大小
+      </div>
+    <span>预设水印</span>
       预设水印一：全局水印，斜方向排列，重复
       预设水印二：全局水印，斜方向排列，重复
       预设水印三：定制水印
-    </Form.Item>
     {/* <Form.Item >
       <Button type='primary'>应用</Button>
     </Form.Item> */}
-  </Form>)
+  </form>)
 }
