@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'motion/react'
 import { cn } from '@/registry/default/lib/utils'
 
@@ -46,7 +46,7 @@ export default function BeamsBackground ({
   const beamsRef = useRef<Beam[]>([])
   const animationFrameRef = useRef<number>(0)
   const MINIMUM_BEAMS = 20
-
+  const [start, setStart] = useState<boolean>(false)
   const opacityMap = {
     subtle: 0.7,
     medium: 0.85,
@@ -56,7 +56,7 @@ export default function BeamsBackground ({
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
-
+    if (!start) return
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
@@ -160,7 +160,7 @@ export default function BeamsBackground ({
         cancelAnimationFrame(animationFrameRef.current)
       }
     }
-  }, [intensity])
+  }, [intensity, start])
 
   return (
     <div
@@ -169,6 +169,9 @@ export default function BeamsBackground ({
         className
       )}
     >
+      <button className="px-6 py-2 text-white bg-indigo-600 rounded-md outline-none ring-offset-2 ring-indigo-600 focus:ring-2" onClick={() => setStart(true)}>
+        Start
+      </button>
       <canvas
         ref={canvasRef}
         className="absolute inset-0"

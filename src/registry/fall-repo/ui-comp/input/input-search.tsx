@@ -15,16 +15,16 @@ import {
 import { useDebounceValue } from 'usehooks-ts'
 
 interface Action {
-    id: string;
-    label: string;
-    icon: React.ReactNode;
-    description?: string;
-    short?: string;
-    end?: string;
+  id: string;
+  label: string;
+  icon: React.ReactNode;
+  description?: string;
+  short?: string;
+  end?: string;
 }
 
 interface SearchResult {
-    actions: Action[];
+  actions: Action[];
 }
 
 const allActionsSample = [

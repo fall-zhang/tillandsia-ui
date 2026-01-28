@@ -20,6 +20,8 @@ export const getComponents = (
 export const getComponentsByNames = (names: string[]): RegistryItem[] => {
   const componentsMap = new Map(components.map((comp) => [comp.name, comp]))
 
+  // const newPre = names.map((name) => componentsMap.get(name))
+  // console.log('🚀 ~ utils.ts:24 ~ getComponentsByNames ~ newPre:', newPre)
   return names
     .map((name) => componentsMap.get(name))
     .filter((comp): comp is RegistryItem => comp !== undefined)

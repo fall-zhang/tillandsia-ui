@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence, motion, Transition, Variants } from 'motion/react'
 import { cn } from '@/registry/default/lib/utils'
 import {
   Filter,
@@ -17,16 +17,16 @@ import {
 } from 'lucide-react'
 
 interface ToolbarItem {
-    id: string;
-    title: string;
-    icon: LucideIcon;
-    type?: never;
+  id: string;
+  title: string;
+  icon: LucideIcon;
+  type?: never;
 }
 
 interface ToolbarProps {
-    className?: string;
-    activeColor?: string;
-    onSearch?: (value: string) => void;
+  className?: string;
+  activeColor?: string;
+  onSearch?: (value: string) => void;
 }
 
 const buttonVariants = {
@@ -54,7 +54,7 @@ const notificationVariants = {
   exit: { opacity: 0, y: -20 }
 }
 
-const lineVariants = {
+const lineVariants:Variants = {
   initial: { scaleX: 0, x: '-50%' },
   animate: {
     scaleX: 1,
@@ -68,7 +68,7 @@ const lineVariants = {
   }
 }
 
-const transition = { type: 'spring', bounce: 0, duration: 0.4 }
+const transition:Transition = { type: 'spring', bounce: 0, duration: 0.4 }
 
 export function Toolbar ({
   className,
