@@ -56,7 +56,7 @@ const CalendarDndContext = createContext<CalendarDndContextType>({
   eventHeight: null,
   isMultiDay: false,
   multiDayWidth: null,
-  dragHandlePosition: null
+  dragHandlePosition: null,
 })
 
 // Hook to use the context
@@ -70,7 +70,7 @@ interface CalendarDndProviderProps {
 
 export function CalendarDndProvider ({
   children,
-  onEventUpdate
+  onEventUpdate,
 }: CalendarDndProviderProps) {
   const [activeEvent, setActiveEvent] = useState<CalendarEvent | null>(null)
   const [activeId, setActiveId] = useState<UniqueIdentifier | null>(null)
@@ -98,21 +98,21 @@ export function CalendarDndProvider ({
     useSensor(MouseSensor, {
       // Require the mouse to move by 5px before activating
       activationConstraint: {
-        distance: 5
-      }
+        distance: 5,
+      },
     }),
     useSensor(TouchSensor, {
       // Press delay of 250ms, with tolerance of 5px of movement
       activationConstraint: {
         delay: 250,
-        tolerance: 5
-      }
+        tolerance: 5,
+      },
     }),
     useSensor(PointerSensor, {
       // Require the pointer to move by 5px before activating
       activationConstraint: {
-        distance: 5
-      }
+        distance: 5,
+      },
     })
   )
 
@@ -134,7 +134,7 @@ export function CalendarDndProvider ({
       height,
       isMultiDay: eventIsMultiDay,
       multiDayWidth: eventMultiDayWidth,
-      dragHandlePosition: eventDragHandlePosition
+      dragHandlePosition: eventDragHandlePosition,
     } = active.data.current as {
       event: CalendarEvent
       view: 'month' | 'week' | 'day'
@@ -308,7 +308,7 @@ export function CalendarDndProvider ({
         onEventUpdate({
           ...calendarEvent,
           start: newStart,
-          end: newEnd
+          end: newEnd,
         })
       }
     } catch (error) {
@@ -343,7 +343,7 @@ export function CalendarDndProvider ({
           eventHeight,
           isMultiDay,
           multiDayWidth,
-          dragHandlePosition
+          dragHandlePosition,
         }}
       >
         {children}
@@ -354,7 +354,7 @@ export function CalendarDndProvider ({
               style={{
                 height: eventHeight ? `${eventHeight}px` : 'auto',
                 width:
-                  isMultiDay && multiDayWidth ? `${multiDayWidth}%` : '100%'
+                  isMultiDay && multiDayWidth ? `${multiDayWidth}%` : '100%',
                 // Remove the transform that was causing the shift
               }}
             >

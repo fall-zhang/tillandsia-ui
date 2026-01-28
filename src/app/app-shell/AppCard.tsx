@@ -37,7 +37,7 @@ export default function Card ({ card }: CardProps) {
                 className="inline-flex items-center gap-1 text-sm hover:underline"
                 target="_blank"
               >
-              Live Demo
+                Live Demo
                 <span className="text-muted-foreground">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@ export default function Card ({ card }: CardProps) {
                 className="inline-flex items-center gap-1 text-sm hover:underline"
                 target="_blank"
               >
-              GitHub
+                GitHub
                 <span className="text-muted-foreground">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

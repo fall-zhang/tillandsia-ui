@@ -53,7 +53,7 @@ export function WeekView ({
   currentDate,
   events,
   onEventSelect,
-  onEventCreate
+  onEventCreate,
 }: WeekViewProps) {
   const days = useMemo(() => {
     const weekStart = startOfWeek(currentDate, { weekStartsOn: 0 })
@@ -70,7 +70,7 @@ export function WeekView ({
     const dayStart = startOfDay(currentDate)
     return eachHourOfInterval({
       start: addHours(dayStart, StartHour),
-      end: addHours(dayStart, EndHour - 1)
+      end: addHours(dayStart, EndHour - 1),
     })
   }, [currentDate])
 
@@ -170,7 +170,7 @@ export function WeekView ({
                 { start: adjustedStart, end: adjustedEnd },
                 {
                   start: new Date(c.event.start),
-                  end: new Date(c.event.end)
+                  end: new Date(c.event.end),
                 }
               )
             )
@@ -197,7 +197,7 @@ export function WeekView ({
           height,
           left,
           width,
-          zIndex: 10 + columnIndex // Higher columns get higher z-index
+          zIndex: 10 + columnIndex, // Higher columns get higher z-index
         })
       })
 
@@ -335,7 +335,7 @@ export function WeekView ({
                   height: `${positionedEvent.height}px`,
                   left: `${positionedEvent.left * 100}%`,
                   width: `${positionedEvent.width * 100}%`,
-                  zIndex: positionedEvent.zIndex
+                  zIndex: positionedEvent.zIndex,
                 }}
                 onClick={(e) => e.stopPropagation()}
               >

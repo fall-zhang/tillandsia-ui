@@ -26,11 +26,11 @@ class LoveCanvasRun {
     opacity_prev_min: 0.003, // 透明度递减值最小值
     opacity_prev_max: 0.005, // 透明度递减值最大值
     light_min: 0, // 颜色亮度最小值
-    light_max: 90 // 颜色亮度最大值
+    light_max: 90, // 颜色亮度最大值
   }
 
   allElement: Array<any> = []
-  ctx:CanvasRenderingContext2D| null
+  ctx:CanvasRenderingContext2D | null
   colorHue = 0
   constructor (canvasDom:HTMLCanvasElement) {
     this.colorHue = findRandom(0, 360)
@@ -103,6 +103,9 @@ class LoveCanvasRun {
     this.ctx.bezierCurveTo(x + 55 * z, y + 22.5 * z, x + 55 * z, y - 15 * z, x + 25 * z, y - 15 * z)
     this.ctx.bezierCurveTo(x + 10 * z, y - 15 * z, x, y - 3 * z, x, y)
   }
+  destroy(){
+      this.ctx  = null
+  }
 }
 export default function () {
   const canvasDOM = useRef<HTMLCanvasElement>(null)
@@ -112,7 +115,7 @@ export default function () {
 
     // 返回一个介于参数 1 和参数 2 之间的随机数
     return () => {
-      loveCanvas.destory()
+      loveCanvas.destroy()
     }
   }, [])
   return <>

@@ -14,7 +14,7 @@ import {
 
 const Square = ({
   className,
-  children
+  children,
 }: {
   className?: string
   children: React.ReactNode

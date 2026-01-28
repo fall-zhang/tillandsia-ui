@@ -157,7 +157,7 @@ export default function Component () {
               )
               : (
                 <div className="bg-muted text-muted-foreground/80 flex h-full w-full items-center justify-center p-2 text-center text-xs">
-                Image preview
+                  Image preview
                 </div>
               )}
           </div>

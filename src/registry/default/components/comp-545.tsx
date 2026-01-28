@@ -18,11 +18,11 @@ export default function Component () {
       handleDrop,
       openFileDialog,
       removeFile,
-      getInputProps
-    }
+      getInputProps,
+    },
   ] = useFileUpload({
     accept: 'image/svg+xml,image/png,image/jpeg,image/jpg,image/gif',
-    maxSize
+    maxSize,
   })
   const previewUrl = files[0]?.preview || null
   const fileName = files[0]?.file.name || null
@@ -64,7 +64,7 @@ export default function Component () {
                 </div>
                 <p className="mb-1.5 text-sm font-medium">Drop your image here</p>
                 <p className="text-muted-foreground text-xs">
-                SVG, PNG, JPG or GIF (max. {maxSizeMB}MB)
+                  SVG, PNG, JPG or GIF (max. {maxSizeMB}MB)
                 </p>
                 <Button
                   variant="outline"
@@ -75,7 +75,7 @@ export default function Component () {
                     className="-ms-1 size-4 opacity-60"
                     aria-hidden="true"
                   />
-                Select image
+                  Select image
                 </Button>
               </div>
             )}

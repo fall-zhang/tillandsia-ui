@@ -20,7 +20,7 @@ export function DroppableCell ({
   time,
   children,
   className,
-  onClick
+  onClick,
 }: DroppableCellProps) {
   const { activeEvent } = useCalendarDnd()
 
@@ -28,8 +28,8 @@ export function DroppableCell ({
     id,
     data: {
       date,
-      time
-    }
+      time,
+    },
   })
 
   // Format time for display in tooltip (only for debugging)

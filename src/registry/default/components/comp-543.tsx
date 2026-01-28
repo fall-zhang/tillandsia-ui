@@ -15,10 +15,10 @@ export default function Component () {
       handleDragEnter,
       handleDragLeave,
       handleDragOver,
-      handleDrop
-    }
+      handleDrop,
+    },
   ] = useFileUpload({
-    accept: 'image/*'
+    accept: 'image/*',
   })
 
   const previewUrl = files[0]?.preview || null

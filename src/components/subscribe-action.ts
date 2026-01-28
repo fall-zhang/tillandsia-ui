@@ -9,7 +9,7 @@ type EmailOctopusError = {
 }
 
 const subscribeSchema = z.object({
-  email: z.string().email('Please enter a valid email address')
+  email: z.string().email('Please enter a valid email address'),
 })
 
 type SubscribeResult = { success: true } | { success: false; error: string }
@@ -26,7 +26,7 @@ export async function subscribe (email: string): Promise<SubscribeResult> {
   if (!result.success) {
     return {
       success: false,
-      error: result.error.errors[0]?.message || 'Invalid email format.'
+      error: result.error.errors[0]?.message || 'Invalid email format.',
     }
   }
 
@@ -37,14 +37,14 @@ export async function subscribe (email: string): Promise<SubscribeResult> {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${process.env.EMAIL_OCTOPUS_API_KEY}`
+          Authorization: `Bearer ${process.env.EMAIL_OCTOPUS_API_KEY}`,
         },
         body: JSON.stringify({
           email_address: result.data.email,
           status: 'subscribed',
           fields: {},
-          tags: []
-        })
+          tags: [],
+        }),
       }
     )
 
@@ -54,7 +54,7 @@ export async function subscribe (email: string): Promise<SubscribeResult> {
       console.error('API Error:', {
         status: response.status,
         statusText: response.statusText,
-        data
+        data,
       })
     }
 
@@ -62,13 +62,13 @@ export async function subscribe (email: string): Promise<SubscribeResult> {
       if (response.status === 429) {
         return {
           success: false,
-          error: 'Too many attempts. Please try again later.'
+          error: 'Too many attempts. Please try again later.',
         }
       }
 
       return {
         success: false,
-        error: data.detail || data.title || 'Failed to subscribe.'
+        error: data.detail || data.title || 'Failed to subscribe.',
       }
     }
 
@@ -80,7 +80,7 @@ export async function subscribe (email: string): Promise<SubscribeResult> {
 
     return {
       success: false,
-      error: error instanceof Error ? error.message : 'Failed to subscribe.'
+      error: error instanceof Error ? error.message : 'Failed to subscribe.',
     }
   }
 }

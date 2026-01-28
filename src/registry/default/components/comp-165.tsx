@@ -9,7 +9,7 @@ export default function Component () {
   const items = [
     { value: '1', label: 'USA' },
     { value: '2', label: 'UK' },
-    { value: '3', label: 'France' }
+    { value: '3', label: 'France' },
   ]
 
   return (

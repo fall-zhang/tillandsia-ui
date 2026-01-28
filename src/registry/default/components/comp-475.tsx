@@ -15,7 +15,7 @@ const items = [
     email: 'alex.t@company.com',
     location: 'San Francisco, US',
     status: 'Active',
-    balance: '$1,250.00'
+    balance: '$1,250.00',
   },
   {
     id: '2',
@@ -23,7 +23,7 @@ const items = [
     email: 'sarah.c@company.com',
     location: 'Singapore',
     status: 'Active',
-    balance: '$600.00'
+    balance: '$600.00',
   },
   {
     id: '3',
@@ -31,7 +31,7 @@ const items = [
     email: 'j.wilson@company.com',
     location: 'London, UK',
     status: 'Inactive',
-    balance: '$650.00'
+    balance: '$650.00',
   },
   {
     id: '4',
@@ -39,7 +39,7 @@ const items = [
     email: 'm.garcia@company.com',
     location: 'Madrid, Spain',
     status: 'Active',
-    balance: '$0.00'
+    balance: '$0.00',
   },
   {
     id: '5',
@@ -47,7 +47,7 @@ const items = [
     email: 'd.kim@company.com',
     location: 'Seoul, KR',
     status: 'Active',
-    balance: '-$1,000.00'
+    balance: '-$1,000.00',
   },
   {
     id: '6',
@@ -55,7 +55,7 @@ const items = [
     email: 'john.brown@company.com',
     location: 'New York, US',
     status: 'Active',
-    balance: '$1,500.00'
+    balance: '$1,500.00',
   },
   {
     id: '7',
@@ -63,7 +63,7 @@ const items = [
     email: 'jane.doe@company.com',
     location: 'Paris, FR',
     status: 'Inactive',
-    balance: '$200.00'
+    balance: '$200.00',
   },
   {
     id: '8',
@@ -71,7 +71,7 @@ const items = [
     email: 'peter.smith@company.com',
     location: 'Berlin, DE',
     status: 'Active',
-    balance: '$1,000.00'
+    balance: '$1,000.00',
   },
   {
     id: '9',
@@ -79,7 +79,7 @@ const items = [
     email: 'olivia.lee@company.com',
     location: 'Tokyo, JP',
     status: 'Active',
-    balance: '$500.00'
+    balance: '$500.00',
   },
   {
     id: '10',
@@ -87,7 +87,7 @@ const items = [
     email: 'liam.chen@company.com',
     location: 'Shanghai, CN',
     status: 'Inactive',
-    balance: '$300.00'
+    balance: '$300.00',
   },
   {
     id: '11',
@@ -95,7 +95,7 @@ const items = [
     email: 'ethan.kim@company.com',
     location: 'Busan, KR',
     status: 'Active',
-    balance: '$800.00'
+    balance: '$800.00',
   },
   {
     id: '12',
@@ -103,7 +103,7 @@ const items = [
     email: 'ava.brown@company.com',
     location: 'London, UK',
     status: 'Active',
-    balance: '$1,200.00'
+    balance: '$1,200.00',
   },
   {
     id: '13',
@@ -111,7 +111,7 @@ const items = [
     email: 'lily.lee@company.com',
     location: 'Seoul, KR',
     status: 'Active',
-    balance: '$400.00'
+    balance: '$400.00',
   },
   {
     id: '14',
@@ -119,7 +119,7 @@ const items = [
     email: 'noah.smith@company.com',
     location: 'New York, US',
     status: 'Inactive',
-    balance: '$600.00'
+    balance: '$600.00',
   },
   {
     id: '15',
@@ -127,8 +127,8 @@ const items = [
     email: 'eve.chen@company.com',
     location: 'Taipei, TW',
     status: 'Active',
-    balance: '$1,800.00'
-  }
+    balance: '$1,800.00',
+  },
 ]
 
 export default function Component () {

@@ -6,9 +6,9 @@ import { ChevronDown, Mail } from 'lucide-react'
 import { cn } from '@/registry/default/lib/utils'
 
 interface FAQItemProps {
-    question: string;
-    answer: string;
-    index: number;
+  question: string;
+  answer: string;
+  index: number;
 }
 
 function FAQItem ({ question, answer, index }: FAQItemProps) {
@@ -21,7 +21,7 @@ function FAQItem ({ question, answer, index }: FAQItemProps) {
       transition={{
         duration: 0.3,
         delay: index * 0.15,
-        ease: 'easeOut'
+        ease: 'easeOut',
       }}
       className={cn(
         'group rounded-lg border-[0.5px] border-gray-200/50 dark:border-gray-800/50',
@@ -48,11 +48,11 @@ function FAQItem ({ question, answer, index }: FAQItemProps) {
         <motion.div
           animate={{
             rotate: isOpen ? 180 : 0,
-            scale: isOpen ? 1.1 : 1
+            scale: isOpen ? 1.1 : 1,
           }}
           transition={{
             duration: 0.3,
-            ease: 'easeInOut'
+            ease: 'easeInOut',
           }}
           className={cn(
             'p-0.5 rounded-full shrink-0',
@@ -75,13 +75,13 @@ function FAQItem ({ question, answer, index }: FAQItemProps) {
               transition: {
                 height: {
                   duration: 0.4,
-                  ease: [0.04, 0.62, 0.23, 0.98]
+                  ease: [0.04, 0.62, 0.23, 0.98],
                 },
                 opacity: {
                   duration: 0.25,
-                  delay: 0.1
-                }
-              }
+                  delay: 0.1,
+                },
+              },
             }}
             exit={{
               height: 0,
@@ -89,12 +89,12 @@ function FAQItem ({ question, answer, index }: FAQItemProps) {
               transition: {
                 height: {
                   duration: 0.3,
-                  ease: 'easeInOut'
+                  ease: 'easeInOut',
                 },
                 opacity: {
-                  duration: 0.25
-                }
-              }
+                  duration: 0.25,
+                },
+              },
             }}
           >
             <div className="px-6 pb-4 pt-2">
@@ -104,7 +104,7 @@ function FAQItem ({ question, answer, index }: FAQItemProps) {
                 exit={{ y: -8, opacity: 0 }}
                 transition={{
                   duration: 0.3,
-                  ease: 'easeOut'
+                  ease: 'easeOut',
                 }}
                 className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed"
               >
@@ -122,20 +122,20 @@ function Faq02 () {
   const faqs: Omit<FAQItemProps, 'index'>[] = [
     {
       question: 'What makes your platform unique?',
-      answer: "Our platform stands out through its intuitive design, powerful automation capabilities, and seamless integration options. We've focused on creating a user experience that combines simplicity with advanced features."
+      answer: "Our platform stands out through its intuitive design, powerful automation capabilities, and seamless integration options. We've focused on creating a user experience that combines simplicity with advanced features.",
     },
     {
       question: 'How does the pricing structure work?',
-      answer: 'We offer flexible, transparent pricing tiers designed to scale with your needs. Each tier includes a core set of features, with additional capabilities as you move up. All plans start with a 14-day free trial.'
+      answer: 'We offer flexible, transparent pricing tiers designed to scale with your needs. Each tier includes a core set of features, with additional capabilities as you move up. All plans start with a 14-day free trial.',
     },
     {
       question: 'What kind of support do you offer?',
-      answer: 'We provide comprehensive support through multiple channels. This includes 24/7 live chat, detailed documentation, video tutorials, and dedicated account managers for enterprise clients.'
+      answer: 'We provide comprehensive support through multiple channels. This includes 24/7 live chat, detailed documentation, video tutorials, and dedicated account managers for enterprise clients.',
     },
     {
       question: 'How can I get started?',
-      answer: "You can get started by signing up for a free trial. Once you've signed up, you'll have access to our platform's full range of features. You can also contact our support team for assistance."
-    }
+      answer: "You can get started by signing up for a free trial. Once you've signed up, you'll have access to our platform's full range of features. You can also contact our support team for assistance.",
+    },
   ]
 
   return (
@@ -173,7 +173,7 @@ function Faq02 () {
             <Mail className="h-4 w-4" />
           </div>
           <p className="text-sm font-medium text-gray-900 dark:text-white mb-1">
-              Still have questions?
+            Still have questions?
           </p>
           <p className="text-xs text-gray-600 dark:text-gray-400 mb-4">
             {"We're here to help you"}

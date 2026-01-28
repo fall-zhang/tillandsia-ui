@@ -39,7 +39,7 @@ export function useCurrentTimeIndicator (
         const endOfWeekDate = endOfWeek(currentDate, { weekStartsOn: 0 })
         isCurrentTimeVisible = isWithinInterval(now, {
           start: startOfWeekDate,
-          end: endOfWeekDate
+          end: endOfWeekDate,
         })
       }
 

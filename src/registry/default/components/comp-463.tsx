@@ -28,7 +28,7 @@ type PaginationProps = {
 
 export default function Component ({
   currentPage,
-  totalPages
+  totalPages,
 }: PaginationProps) {
   const id = useId()
   return (

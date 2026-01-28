@@ -29,8 +29,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-350' },
       { name: 'comp-351' },
       { name: 'comp-352' },
-      { name: 'comp-353' }
-    ]
+      { name: 'comp-353' },
+    ],
   },
   {
     slug: 'alert',
@@ -47,8 +47,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-275' },
       { name: 'comp-276' },
       { name: 'comp-277' },
-      { name: 'comp-278' }
-    ]
+      { name: 'comp-278' },
+    ],
   },
   {
     slug: 'avatar',
@@ -76,8 +76,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-409' },
       { name: 'comp-410' },
       { name: 'comp-411' },
-      { name: 'comp-412' }
-    ]
+      { name: 'comp-412' },
+    ],
   },
   {
     slug: 'badge',
@@ -95,8 +95,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-422' },
       { name: 'comp-423' },
       { name: 'comp-424' },
-      { name: 'comp-425' }
-    ]
+      { name: 'comp-425' },
+    ],
   },
   {
     slug: 'banner',
@@ -113,8 +113,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-309' },
       { name: 'comp-310' },
       { name: 'comp-311' },
-      { name: 'comp-312' }
-    ]
+      { name: 'comp-312' },
+    ],
   },
   {
     slug: 'breadcrumb',
@@ -127,8 +127,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-450' },
       { name: 'comp-451' },
       { name: 'comp-452' },
-      { name: 'comp-453' }
-    ]
+      { name: 'comp-453' },
+    ],
   },
   {
     slug: 'button',
@@ -187,8 +187,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-125' },
       { name: 'comp-126' },
       { name: 'comp-127' },
-      { name: 'comp-128' }
-    ]
+      { name: 'comp-128' },
+    ],
   },
   {
     slug: 'calendar-date-picker',
@@ -221,8 +221,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-41' },
       { name: 'comp-42' },
       { name: 'comp-511' },
-      { name: 'comp-512' }
-    ]
+      { name: 'comp-512' },
+    ],
   },
   {
     slug: 'checkbox',
@@ -247,8 +247,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-147' },
       { name: 'comp-148' },
       { name: 'comp-149' },
-      { name: 'comp-150' }
-    ]
+      { name: 'comp-150' },
+    ],
   },
   {
     slug: 'image-cropper',
@@ -264,8 +264,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-561' },
       { name: 'comp-562' },
       { name: 'comp-563' },
-      { name: 'comp-564' }
-    ]
+      { name: 'comp-564' },
+    ],
   },
   {
     slug: 'dialog',
@@ -291,8 +291,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-330' },
       { name: 'comp-331' },
       { name: 'comp-332' },
-      { name: 'comp-333' }
-    ]
+      { name: 'comp-333' },
+    ],
   },
   {
     slug: 'dropdown',
@@ -312,8 +312,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-377' },
       { name: 'comp-378' },
       { name: 'comp-379' },
-      { name: 'comp-380' }
-    ]
+      { name: 'comp-380' },
+    ],
   },
   {
     slug: 'file-upload',
@@ -332,13 +332,13 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-551' },
       { name: 'comp-552' },
       { name: 'comp-553' },
-      { name: 'comp-554' }
-    ]
+      { name: 'comp-554' },
+    ],
   },
   {
     slug: 'event-calendar',
     name: 'Event calendar',
-    components: [{ name: 'comp-542' }]
+    components: [{ name: 'comp-542' }],
   },
   {
     slug: 'input',
@@ -402,8 +402,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-55' },
       { name: 'comp-486' },
       { name: 'comp-56' },
-      { name: 'comp-57' }
-    ]
+      { name: 'comp-57' },
+    ],
   },
   {
     slug: 'navbar',
@@ -428,9 +428,9 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-593' },
       { name: 'comp-594' },
       { name: 'comp-595' },
-      { name: 'comp-596' }
+      { name: 'comp-596' },
     ],
-    isNew: true
+    isNew: true,
   },
   {
     slug: 'notification',
@@ -457,8 +457,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-297' },
       { name: 'comp-298' },
       { name: 'comp-299' },
-      { name: 'comp-300' }
-    ]
+      { name: 'comp-300' },
+    ],
   },
   {
     slug: 'pagination',
@@ -475,8 +475,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-462' },
       { name: 'comp-463' },
       { name: 'comp-464' },
-      { name: 'comp-465' }
-    ]
+      { name: 'comp-465' },
+    ],
   },
   {
     slug: 'popover',
@@ -490,8 +490,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-386' },
       { name: 'comp-387' },
       { name: 'comp-388' },
-      { name: 'comp-389' }
-    ]
+      { name: 'comp-389' },
+    ],
   },
   {
     slug: 'radio',
@@ -516,8 +516,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-167' },
       { name: 'comp-168' },
       { name: 'comp-169' },
-      { name: 'comp-170' }
-    ]
+      { name: 'comp-170' },
+    ],
   },
   {
     slug: 'select',
@@ -573,8 +573,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-236' },
       { name: 'comp-237' },
       { name: 'comp-238' },
-      { name: 'comp-239' }
-    ]
+      { name: 'comp-239' },
+    ],
   },
   {
     slug: 'slider',
@@ -606,8 +606,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-263' },
       { name: 'comp-264' },
       { name: 'comp-265' },
-      { name: 'comp-266' }
-    ]
+      { name: 'comp-266' },
+    ],
   },
   {
     slug: 'stepper',
@@ -629,8 +629,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-526' },
       { name: 'comp-527' },
       { name: 'comp-528' },
-      { name: 'comp-529' }
-    ]
+      { name: 'comp-529' },
+    ],
   },
   {
     slug: 'switch',
@@ -652,8 +652,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-185' },
       { name: 'comp-186' },
       { name: 'comp-187' },
-      { name: 'comp-188' }
-    ]
+      { name: 'comp-188' },
+    ],
   },
   {
     slug: 'table',
@@ -678,8 +678,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-482' },
       { name: 'comp-483' },
       { name: 'comp-484' },
-      { name: 'comp-485' }
-    ]
+      { name: 'comp-485' },
+    ],
   },
   {
     slug: 'tabs',
@@ -704,8 +704,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-442' },
       { name: 'comp-443' },
       { name: 'comp-444' },
-      { name: 'comp-445' }
-    ]
+      { name: 'comp-445' },
+    ],
   },
   {
     slug: 'textarea',
@@ -729,8 +729,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-74' },
       { name: 'comp-75' },
       { name: 'comp-76' },
-      { name: 'comp-77' }
-    ]
+      { name: 'comp-77' },
+    ],
   },
   {
     slug: 'timeline',
@@ -747,8 +747,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-538' },
       { name: 'comp-539' },
       { name: 'comp-540' },
-      { name: 'comp-541' }
-    ]
+      { name: 'comp-541' },
+    ],
   },
   {
     slug: 'tooltip',
@@ -765,8 +765,8 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-362' },
       { name: 'comp-363' },
       { name: 'comp-364' },
-      { name: 'comp-365' }
-    ]
+      { name: 'comp-365' },
+    ],
   },
   {
     slug: 'tree',
@@ -786,10 +786,10 @@ export const categories: ComponentCategory[] = [
       { name: 'comp-576' },
       { name: 'comp-597' },
       { name: 'comp-598' },
-      { name: 'comp-599' }
+      { name: 'comp-599' },
     ],
-    isNew: true
-  }
+    isNew: true,
+  },
 ]
 
 export function getCategory (slug: string): ComponentCategory | undefined {

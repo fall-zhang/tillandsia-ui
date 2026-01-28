@@ -11,7 +11,7 @@ export default function Component () {
     subDays(today, 17),
     addDays(today, 2),
     addDays(today, 6),
-    addDays(today, 8)
+    addDays(today, 8),
   ])
 
   return (

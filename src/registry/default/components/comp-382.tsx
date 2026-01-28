@@ -18,7 +18,7 @@ const initialNotifications = [
     action: 'requested review on',
     target: 'PR #42: Feature implementation',
     timestamp: '15 minutes ago',
-    unread: true
+    unread: true,
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const initialNotifications = [
     action: 'shared',
     target: 'New component library',
     timestamp: '45 minutes ago',
-    unread: true
+    unread: true,
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const initialNotifications = [
     action: 'assigned you to',
     target: 'API integration task',
     timestamp: '4 hours ago',
-    unread: false
+    unread: false,
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const initialNotifications = [
     action: 'replied to your comment in',
     target: 'Authentication flow',
     timestamp: '12 hours ago',
-    unread: false
+    unread: false,
   },
   {
     id: 5,
@@ -50,7 +50,7 @@ const initialNotifications = [
     action: 'commented on',
     target: 'Dashboard redesign',
     timestamp: '2 days ago',
-    unread: false
+    unread: false,
   },
   {
     id: 6,
@@ -58,8 +58,8 @@ const initialNotifications = [
     action: 'mentioned you in',
     target: 'Origin UI open graph image',
     timestamp: '2 weeks ago',
-    unread: false
-  }
+    unread: false,
+  },
 ]
 
 function Dot ({ className }: { className?: string }) {
@@ -86,7 +86,7 @@ export default function Component () {
     setNotifications(
       notifications.map((notification) => ({
         ...notification,
-        unread: false
+        unread: false,
       }))
     )
   }

@@ -60,12 +60,12 @@ const columns: ColumnDef<Item>[] = [
       <div className="truncate font-medium">{row.getValue('name')}</div>
     ),
     sortUndefined: 'last',
-    sortDescFirst: false
+    sortDescFirst: false,
   },
   {
     id: 'email',
     header: 'Email',
-    accessorKey: 'email'
+    accessorKey: 'email',
   },
   {
     id: 'location',
@@ -76,12 +76,12 @@ const columns: ColumnDef<Item>[] = [
         <span className="text-lg leading-none">{row.original.flag}</span>{' '}
         {row.getValue('location')}
       </div>
-    )
+    ),
   },
   {
     id: 'status',
     header: 'Status',
-    accessorKey: 'status'
+    accessorKey: 'status',
   },
   {
     id: 'balance',
@@ -91,11 +91,11 @@ const columns: ColumnDef<Item>[] = [
       const amount = parseFloat(row.getValue('balance'))
       const formatted = new Intl.NumberFormat('en-US', {
         style: 'currency',
-        currency: 'USD'
+        currency: 'USD',
       }).format(amount)
       return formatted
-    }
-  }
+    },
+  },
 ]
 
 export default function Component () {
@@ -125,10 +125,10 @@ export default function Component () {
     onSortingChange: setSorting,
     state: {
       sorting,
-      columnOrder
+      columnOrder,
     },
     onColumnOrderChange: setColumnOrder,
-    enableSortingRemoval: false
+    enableSortingRemoval: false,
   })
 
   // reorder columns after drag & drop
@@ -195,7 +195,7 @@ export default function Component () {
             : (
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-24 text-center">
-                No results.
+                  No results.
                 </TableCell>
               </TableRow>
             )}
@@ -221,7 +221,7 @@ export default function Component () {
 }
 
 const DraggableTableHeader = ({
-  header
+  header,
 }: {
   header: Header<Item, unknown>
 }) => {
@@ -231,9 +231,9 @@ const DraggableTableHeader = ({
     listeners,
     setNodeRef,
     transform,
-    transition
+    transition,
   } = useSortable({
-    id: header.column.id
+    id: header.column.id,
   })
 
   const style: CSSProperties = {
@@ -243,7 +243,7 @@ const DraggableTableHeader = ({
     transition,
     whiteSpace: 'nowrap',
     width: header.column.getSize(),
-    zIndex: isDragging ? 1 : 0
+    zIndex: isDragging ? 1 : 0,
   }
   let sortState:'none' | 'ascending' | 'descending' = 'none'
   const headSort = header.column.getIsSorted()
@@ -309,7 +309,7 @@ const DraggableTableHeader = ({
                 size={16}
                 aria-hidden="true"
               />
-            )
+            ),
           }[header.column.getIsSorted() as string] ?? (
             <ChevronUpIcon
               className="shrink-0 opacity-0 group-hover:opacity-60"
@@ -325,7 +325,7 @@ const DraggableTableHeader = ({
 
 const DragAlongCell = ({ cell }: { cell: Cell<Item, unknown> }) => {
   const { isDragging, setNodeRef, transform, transition } = useSortable({
-    id: cell.column.id
+    id: cell.column.id,
   })
 
   const style: CSSProperties = {
@@ -334,7 +334,7 @@ const DragAlongCell = ({ cell }: { cell: Cell<Item, unknown> }) => {
     transform: CSS.Translate.toString(transform),
     transition,
     width: cell.column.getSize(),
-    zIndex: isDragging ? 1 : 0
+    zIndex: isDragging ? 1 : 0,
   }
 
   return (

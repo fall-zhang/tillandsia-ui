@@ -50,7 +50,7 @@ const columns: ColumnDef<Item>[] = [
                 ? `Collapse details for ${row.original.name}`
                 : `Expand details for ${row.original.name}`,
               size: 'icon',
-              variant: 'ghost'
+              variant: 'ghost',
             }}
           >
             {row.getIsExpanded()
@@ -71,7 +71,7 @@ const columns: ColumnDef<Item>[] = [
           </Button>
         )
         : undefined
-    }
+    },
   },
   {
     id: 'select',
@@ -91,18 +91,18 @@ const columns: ColumnDef<Item>[] = [
         onCheckedChange={(value) => row.toggleSelected(!!value)}
         aria-label="Select row"
       />
-    )
+    ),
   },
   {
     header: 'Name',
     accessorKey: 'name',
     cell: ({ row }) => (
       <div className="font-medium">{row.getValue('name')}</div>
-    )
+    ),
   },
   {
     header: 'Email',
-    accessorKey: 'email'
+    accessorKey: 'email',
   },
   {
     header: 'Location',
@@ -112,7 +112,7 @@ const columns: ColumnDef<Item>[] = [
         <span className="text-lg leading-none">{row.original.flag}</span>{' '}
         {row.getValue('location')}
       </div>
-    )
+    ),
   },
   {
     header: 'Status',
@@ -126,7 +126,7 @@ const columns: ColumnDef<Item>[] = [
       >
         {row.getValue('status')}
       </Badge>
-    )
+    ),
   },
   {
     header: () => <div className="text-right">Balance</div>,
@@ -135,11 +135,11 @@ const columns: ColumnDef<Item>[] = [
       const amount = parseFloat(row.getValue('balance'))
       const formatted = new Intl.NumberFormat('en-US', {
         style: 'currency',
-        currency: 'USD'
+        currency: 'USD',
       }).format(amount)
       return <div className="text-right">{formatted}</div>
-    }
-  }
+    },
+  },
 ]
 
 export default function Component () {
@@ -161,7 +161,7 @@ export default function Component () {
     columns,
     getRowCanExpand: (row) => Boolean(row.original.note),
     getCoreRowModel: getCoreRowModel(),
-    getExpandedRowModel: getExpandedRowModel()
+    getExpandedRowModel: getExpandedRowModel(),
   })
 
   return (
@@ -227,7 +227,7 @@ export default function Component () {
             : (
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-24 text-center">
-                No results.
+                  No results.
                 </TableCell>
               </TableRow>
             )}

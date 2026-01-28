@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
 interface Tag {
-id: string;
-label: string;
-color?: string;
+  id: string;
+  label: string;
+  color?: string;
 }
 
 interface UseTagsProps {
@@ -22,8 +22,8 @@ export function useTags ({
     'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300',
     'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300',
     'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300',
-    'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300'
-  ]
+    'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300',
+  ],
 }: UseTagsProps = {}) {
   const [tags, setTags] = useState<Tag[]>(defaultTags)
 
@@ -34,8 +34,8 @@ export function useTags ({
       ...tags,
       {
         ...tag,
-        color: tag.color || defaultColors[tags.length % defaultColors.length]
-      }
+        color: tag.color || defaultColors[tags.length % defaultColors.length],
+      },
     ]
     setTags(newTags)
     onChange?.(newTags)
@@ -60,6 +60,6 @@ export function useTags ({
     addTag,
     removeTag,
     removeLastTag,
-    hasReachedMax: tags.length >= maxTags
+    hasReachedMax: tags.length >= maxTags,
   }
 }

@@ -10,16 +10,16 @@ interface AnimatedGradientBackgroundProps {
 }
 
 interface Beam {
-    x: number;
-    y: number;
-    width: number;
-    length: number;
-    angle: number;
-    speed: number;
-    opacity: number;
-    hue: number;
-    pulse: number;
-    pulseSpeed: number;
+  x: number;
+  y: number;
+  width: number;
+  length: number;
+  angle: number;
+  speed: number;
+  opacity: number;
+  hue: number;
+  pulse: number;
+  pulseSpeed: number;
 }
 
 function createBeam (width: number, height: number): Beam {
@@ -34,13 +34,13 @@ function createBeam (width: number, height: number): Beam {
     opacity: 0.12 + Math.random() * 0.16,
     hue: 190 + Math.random() * 70,
     pulse: Math.random() * Math.PI * 2,
-    pulseSpeed: 0.02 + Math.random() * 0.03
+    pulseSpeed: 0.02 + Math.random() * 0.03,
   }
 }
 
 export default function BeamsBackground ({
   className,
-  intensity = 'strong'
+  intensity = 'strong',
 }: AnimatedGradientBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const beamsRef = useRef<Beam[]>([])
@@ -50,7 +50,7 @@ export default function BeamsBackground ({
   const opacityMap = {
     subtle: 0.7,
     medium: 0.85,
-    strong: 1
+    strong: 1,
   }
 
   useEffect(() => {
@@ -99,7 +99,7 @@ export default function BeamsBackground ({
 
       // Calculate pulsing opacity
       const pulsingOpacity =
-                beam.opacity *
+        beam.opacity *
                 (0.8 + Math.sin(beam.pulse) * 0.2) *
                 opacityMap[intensity]
 
@@ -181,15 +181,15 @@ export default function BeamsBackground ({
       <motion.div
         className="absolute inset-0 bg-neutral-950/5"
         animate={{
-          opacity: [0.05, 0.15, 0.05]
+          opacity: [0.05, 0.15, 0.05],
         }}
         transition={{
           duration: 10,
           ease: 'easeInOut',
-          repeat: Number.POSITIVE_INFINITY
+          repeat: Number.POSITIVE_INFINITY,
         }}
         style={{
-          backdropFilter: 'blur(50px)'
+          backdropFilter: 'blur(50px)',
         }}
       />
 

@@ -12,29 +12,29 @@ const initialFiles = [
     size: 1528737,
     type: 'image/jpeg',
     url: 'https://picsum.photos/1000/800?grayscale&random=1',
-    id: 'image-01-123456789'
+    id: 'image-01-123456789',
   },
   {
     name: 'image-02.jpg',
     size: 1528737,
     type: 'image/jpeg',
     url: 'https://picsum.photos/1000/800?grayscale&random=2',
-    id: 'image-02-123456789'
+    id: 'image-02-123456789',
   },
   {
     name: 'image-03.jpg',
     size: 1528737,
     type: 'image/jpeg',
     url: 'https://picsum.photos/1000/800?grayscale&random=3',
-    id: 'image-03-123456789'
+    id: 'image-03-123456789',
   },
   {
     name: 'image-04.jpg',
     size: 1528737,
     type: 'image/jpeg',
     url: 'https://picsum.photos/1000/800?grayscale&random=4',
-    id: 'image-04-123456789'
-  }
+    id: 'image-04-123456789',
+  },
 ]
 
 export default function Component () {
@@ -51,14 +51,14 @@ export default function Component () {
       handleDrop,
       openFileDialog,
       removeFile,
-      getInputProps
-    }
+      getInputProps,
+    },
   ] = useFileUpload({
     accept: 'image/svg+xml,image/png,image/jpeg,image/jpg,image/gif',
     maxSize,
     multiple: true,
     maxFiles,
-    initialFiles
+    initialFiles,
   })
 
   return (
@@ -83,7 +83,7 @@ export default function Component () {
             <div className="flex w-full flex-col gap-3">
               <div className="flex items-center justify-between gap-2">
                 <h3 className="truncate text-sm font-medium">
-                Uploaded Files ({files.length})
+                  Uploaded Files ({files.length})
                 </h3>
                 <Button
                   variant="outline"
@@ -95,7 +95,7 @@ export default function Component () {
                     className="-ms-0.5 size-3.5 opacity-60"
                     aria-hidden="true"
                   />
-                Add more
+                  Add more
                 </Button>
               </div>
 
@@ -133,11 +133,11 @@ export default function Component () {
               </div>
               <p className="mb-1.5 text-sm font-medium">Drop your images here</p>
               <p className="text-muted-foreground text-xs">
-              SVG, PNG, JPG or GIF (max. {maxSizeMB}MB)
+                SVG, PNG, JPG or GIF (max. {maxSizeMB}MB)
               </p>
               <Button variant="outline" className="mt-4" onClick={openFileDialog}>
                 <UploadIcon className="-ms-1 opacity-60" aria-hidden="true" />
-              Select images
+                Select images
               </Button>
             </div>
           )}

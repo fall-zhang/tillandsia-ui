@@ -16,7 +16,7 @@ export default function Component () {
         className="rounded-md border p-2"
         classNames={{
           month_caption: 'ms-2.5 me-20 justify-start',
-          nav: 'justify-end'
+          nav: 'justify-end',
         }}
       />
       <p

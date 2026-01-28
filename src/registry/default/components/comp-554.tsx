@@ -94,10 +94,10 @@ export default function Component () {
       handleDrop,
       openFileDialog,
       removeFile,
-      getInputProps
-    }
+      getInputProps,
+    },
   ] = useFileUpload({
-    accept: 'image/*'
+    accept: 'image/*',
   })
 
   const previewUrl = files[0]?.preview || null
@@ -126,7 +126,7 @@ export default function Component () {
       console.error('Missing data for apply:', {
         previewUrl,
         fileId,
-        croppedAreaPixels
+        croppedAreaPixels,
       })
       // Remove file if apply is clicked without crop data?
       if (fileId) {

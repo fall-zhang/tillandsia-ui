@@ -27,7 +27,7 @@ export default function Component () {
   const [emails, setEmails] = useState([
     'mark@yourcompany.com',
     'jane@yourcompany.com',
-    ''
+    '',
   ])
   const [copied, setCopied] = useState<boolean>(false)
   const inputRef = useRef<HTMLInputElement>(null)

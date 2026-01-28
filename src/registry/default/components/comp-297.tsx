@@ -14,7 +14,7 @@ export default function Component () {
         toast({
           title: "We couldn't complete your request!",
           description: 'There was a problem with your request.',
-          action: <ToastAction altText="Try again">Try again</ToastAction>
+          action: <ToastAction altText="Try again">Try again</ToastAction>,
         })
       }}
     >

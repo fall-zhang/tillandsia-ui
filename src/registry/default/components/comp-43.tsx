@@ -22,7 +22,7 @@ export default function Component () {
   const disabledRanges = [
     [now, now.add({ days: 5 })],
     [now.add({ days: 14 }), now.add({ days: 16 })],
-    [now.add({ days: 23 }), now.add({ days: 24 })]
+    [now.add({ days: 23 }), now.add({ days: 24 })],
   ]
 
   const { locale } = useLocale()

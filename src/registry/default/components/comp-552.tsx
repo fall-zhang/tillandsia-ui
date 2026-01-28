@@ -27,22 +27,22 @@ const initialFiles = [
     size: 252873,
     type: 'application/zip',
     url: 'https://example.com/intro.zip',
-    id: 'intro.zip-1744638436563-8u5xuls'
+    id: 'intro.zip-1744638436563-8u5xuls',
   },
   {
     name: 'image-01.jpg',
     size: 1528737,
     type: 'image/jpeg',
     url: 'https://picsum.photos/1000/800?grayscale&random=1',
-    id: 'image-01-123456789'
+    id: 'image-01-123456789',
   },
   {
     name: 'audio.mp3',
     size: 1528737,
     type: 'audio/mpeg',
     url: 'https://example.com/audio.mp3',
-    id: 'audio-123456789'
-  }
+    id: 'audio-123456789',
+  },
 ]
 
 const getFileIcon = (file: { file: File | { type: string; name: string } }) => {
@@ -57,7 +57,7 @@ const getFileIcon = (file: { file: File | { type: string; name: string } }) => {
         name.endsWith('.pdf') ||
         type.includes('word') ||
         name.endsWith('.doc') ||
-        name.endsWith('.docx')
+        name.endsWith('.docx'),
     },
     archive: {
       icon: FileArchiveIcon,
@@ -65,27 +65,27 @@ const getFileIcon = (file: { file: File | { type: string; name: string } }) => {
         type.includes('zip') ||
         type.includes('archive') ||
         name.endsWith('.zip') ||
-        name.endsWith('.rar')
+        name.endsWith('.rar'),
     },
     excel: {
       icon: FileSpreadsheetIcon,
       conditions: (type: string, name: string) =>
         type.includes('excel') ||
         name.endsWith('.xls') ||
-        name.endsWith('.xlsx')
+        name.endsWith('.xlsx'),
     },
     video: {
       icon: VideoIcon,
-      conditions: (type: string) => type.includes('video/')
+      conditions: (type: string) => type.includes('video/'),
     },
     audio: {
       icon: HeadphonesIcon,
-      conditions: (type: string) => type.includes('audio/')
+      conditions: (type: string) => type.includes('audio/'),
     },
     image: {
       icon: ImageIcon,
-      conditions: (type: string) => type.startsWith('image/')
-    }
+      conditions: (type: string) => type.startsWith('image/'),
+    },
   }
 
   for (const { icon: Icon, conditions } of Object.values(iconMap)) {
@@ -152,13 +152,13 @@ export default function Component () {
       openFileDialog,
       removeFile,
       clearFiles,
-      getInputProps
-    }
+      getInputProps,
+    },
   ] = useFileUpload({
     multiple: true,
     maxFiles,
     maxSize,
-    initialFiles
+    initialFiles,
   })
 
   return (
@@ -183,7 +183,7 @@ export default function Component () {
             <div className="flex w-full flex-col gap-3">
               <div className="flex items-center justify-between gap-2">
                 <h3 className="truncate text-sm font-medium">
-                Files ({files.length})
+                  Files ({files.length})
                 </h3>
                 <div className="flex gap-2">
                   <Button variant="outline" size="sm" onClick={openFileDialog}>
@@ -191,14 +191,14 @@ export default function Component () {
                       className="-ms-0.5 size-3.5 opacity-60"
                       aria-hidden="true"
                     />
-                  Add files
+                    Add files
                   </Button>
                   <Button variant="outline" size="sm" onClick={clearFiles}>
                     <Trash2Icon
                       className="-ms-0.5 size-3.5 opacity-60"
                       aria-hidden="true"
                     />
-                  Remove all
+                    Remove all
                   </Button>
                 </div>
               </div>
@@ -241,11 +241,11 @@ export default function Component () {
               </div>
               <p className="mb-1.5 text-sm font-medium">Drop your files here</p>
               <p className="text-muted-foreground text-xs">
-              Max {maxFiles} files ∙ Up to {maxSizeMB}MB
+                Max {maxFiles} files ∙ Up to {maxSizeMB}MB
               </p>
               <Button variant="outline" className="mt-4" onClick={openFileDialog}>
                 <UploadIcon className="-ms-1 opacity-60" aria-hidden="true" />
-              Select images
+                Select images
               </Button>
             </div>
           )}

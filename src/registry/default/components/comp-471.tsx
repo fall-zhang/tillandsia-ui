@@ -17,7 +17,7 @@ const programmingLanguages = [
     paradigm: 'Multi-paradigm',
     extension: '.js',
     latestVersion: 'ES2021',
-    popularity: 'High'
+    popularity: 'High',
   },
   {
     id: '2',
@@ -28,7 +28,7 @@ const programmingLanguages = [
     paradigm: 'Multi-paradigm',
     extension: '.py',
     latestVersion: '3.10',
-    popularity: 'High'
+    popularity: 'High',
   },
   {
     id: '3',
@@ -39,7 +39,7 @@ const programmingLanguages = [
     paradigm: 'Object-oriented',
     extension: '.java',
     latestVersion: '17',
-    popularity: 'High'
+    popularity: 'High',
   },
   {
     id: '4',
@@ -50,7 +50,7 @@ const programmingLanguages = [
     paradigm: 'Multi-paradigm',
     extension: '.cpp',
     latestVersion: 'C++20',
-    popularity: 'High'
+    popularity: 'High',
   },
   {
     id: '5',
@@ -61,8 +61,8 @@ const programmingLanguages = [
     paradigm: 'Multi-paradigm',
     extension: '.rb',
     latestVersion: '3.0',
-    popularity: 'Low'
-  }
+    popularity: 'Low',
+  },
 ]
 
 export default function Component () {

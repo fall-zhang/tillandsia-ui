@@ -1,14 +1,14 @@
-import { SettingsIcon } from "lucide-react"
+import { SettingsIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu"
+  DropdownMenuTrigger
+} from '@/registry/default/ui/dropdown-menu'
 
-export default function SettingsMenu() {
+export default function SettingsMenu () {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

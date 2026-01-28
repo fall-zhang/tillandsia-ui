@@ -44,11 +44,11 @@ const columns: ColumnDef<Item>[] = [
       <div className="truncate font-medium">{row.getValue('name')}</div>
     ),
     sortUndefined: 'last',
-    sortDescFirst: false
+    sortDescFirst: false,
   },
   {
     header: 'Email',
-    accessorKey: 'email'
+    accessorKey: 'email',
   },
   {
     header: 'Location',
@@ -58,11 +58,11 @@ const columns: ColumnDef<Item>[] = [
         <span className="text-lg leading-none">{row.original.flag}</span>{' '}
         {row.getValue('location')}
       </div>
-    )
+    ),
   },
   {
     header: 'Status',
-    accessorKey: 'status'
+    accessorKey: 'status',
   },
   {
     header: 'Balance',
@@ -71,31 +71,31 @@ const columns: ColumnDef<Item>[] = [
       const amount = parseFloat(row.getValue('balance'))
       const formatted = new Intl.NumberFormat('en-US', {
         style: 'currency',
-        currency: 'USD'
+        currency: 'USD',
       }).format(amount)
       return formatted
-    }
+    },
   },
   {
     header: 'Department',
-    accessorKey: 'department'
+    accessorKey: 'department',
   },
   {
     header: 'Role',
-    accessorKey: 'role'
+    accessorKey: 'role',
   },
   {
     header: 'Join Date',
-    accessorKey: 'joinDate'
+    accessorKey: 'joinDate',
   },
   {
     header: 'Last Active',
-    accessorKey: 'lastActive'
+    accessorKey: 'lastActive',
   },
   {
     header: 'Performance',
-    accessorKey: 'performance'
-  }
+    accessorKey: 'performance',
+  },
 ]
 
 export default function Component () {
@@ -103,8 +103,8 @@ export default function Component () {
   const [sorting, setSorting] = useState<SortingState>([
     {
       id: 'name',
-      desc: false
-    }
+      desc: false,
+    },
   ])
 
   useEffect(() => {
@@ -126,9 +126,9 @@ export default function Component () {
     getSortedRowModel: getSortedRowModel(),
     onSortingChange: setSorting,
     state: {
-      sorting
+      sorting,
     },
-    enableSortingRemoval: false
+    enableSortingRemoval: false,
   })
 
   return (
@@ -136,7 +136,7 @@ export default function Component () {
       <Table
         className="table-fixed"
         style={{
-          width: table.getCenterTotalSize()
+          width: table.getCenterTotalSize(),
         }}
       >
         <TableHeader>
@@ -158,8 +158,8 @@ export default function Component () {
                     {...{
                       colSpan: header.colSpan,
                       style: {
-                        width: header.getSize()
-                      }
+                        width: header.getSize(),
+                      },
                     }}
                   >
                     {header.isPlaceholder
@@ -202,7 +202,7 @@ export default function Component () {
                               size={16}
                               aria-hidden="true"
                             />
-                          )
+                          ),
                         }[header.column.getIsSorted() as string] ?? null}
                       </div>
                       )}
@@ -213,7 +213,7 @@ export default function Component () {
                           onMouseDown: header.getResizeHandler(),
                           onTouchStart: header.getResizeHandler(),
                           className:
-                            'absolute top-0 h-full w-4 cursor-col-resize user-select-none touch-none -right-2 z-10 flex justify-center before:absolute before:w-px before:inset-y-0 before:bg-border before:translate-x-px'
+                            'absolute top-0 h-full w-4 cursor-col-resize user-select-none touch-none -right-2 z-10 flex justify-center before:absolute before:w-px before:inset-y-0 before:bg-border before:translate-x-px',
                         }}
                       />
                     )}
@@ -242,7 +242,7 @@ export default function Component () {
             : (
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-24 text-center">
-                No results.
+                  No results.
                 </TableCell>
               </TableRow>
             )}

@@ -1,29 +1,29 @@
-import { useId } from "react"
-import { SearchIcon } from "lucide-react"
+import { useId } from 'react'
+import { SearchIcon } from 'lucide-react'
 
-import Logo from "@/registry/default/components/navbar-components/logo"
-import { Button } from "@/registry/default/ui/button"
-import { Input } from "@/registry/default/ui/input"
+import Logo from '@/registry/default/components/navbar-components/logo'
+import { Button } from '@/registry/default/ui/button'
+import { Input } from '@/registry/default/ui/input'
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
-  NavigationMenuList,
-} from "@/registry/default/ui/navigation-menu"
+  NavigationMenuList
+} from '@/registry/default/ui/navigation-menu'
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
+  PopoverTrigger
+} from '@/registry/default/ui/popover'
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
-  { href: "#", label: "Products" },
-  { href: "#", label: "Categories" },
-  { href: "#", label: "Deals" },
+  { href: '#', label: 'Products' },
+  { href: '#', label: 'Categories' },
+  { href: '#', label: 'Deals' },
 ]
 
-export default function Component() {
+export default function Component () {
   const id = useId()
 
   return (

@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import React from "react"
-import { hotkeysCoreFeature, syncDataLoaderFeature } from "@headless-tree/core"
-import { useTree } from "@headless-tree/react"
+import React from 'react'
+import { hotkeysCoreFeature, syncDataLoaderFeature } from '@headless-tree/core'
+import { useTree } from '@headless-tree/react'
 
-import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree"
+import { Tree, TreeItem, TreeItemLabel } from '@/registry/default/ui/tree'
 
 interface Item {
   name: string
@@ -14,33 +14,33 @@ interface Item {
 }
 
 const items: Record<string, Item> = {
-  main: { name: "Documentation", children: ["guides", "api", "resources"] },
-  guides: { name: "User Guides", children: ["getting-started", "advanced"] },
-  "getting-started": {
-    name: "Getting Started",
-    children: ["installation", "setup"],
+  main: { name: 'Documentation', children: ['guides', 'api', 'resources'] },
+  guides: { name: 'User Guides', children: ['getting-started', 'advanced'] },
+  'getting-started': {
+    name: 'Getting Started',
+    children: ['installation', 'setup'],
   },
-  installation: { name: "Installation", href: "#", current: true },
-  setup: { name: "Configuration", href: "#" },
-  advanced: { name: "Advanced Usage", href: "#" },
-  api: { name: "API Reference", children: ["endpoints", "models"] },
-  endpoints: { name: "Endpoints", href: "#" },
-  models: { name: "Data Models", href: "#" },
-  resources: { name: "Resources", children: ["examples", "faq"] },
-  examples: { name: "Code Examples", href: "#" },
-  faq: { name: "FAQ", href: "#" },
+  installation: { name: 'Installation', href: '#', current: true },
+  setup: { name: 'Configuration', href: '#' },
+  advanced: { name: 'Advanced Usage', href: '#' },
+  api: { name: 'API Reference', children: ['endpoints', 'models'] },
+  endpoints: { name: 'Endpoints', href: '#' },
+  models: { name: 'Data Models', href: '#' },
+  resources: { name: 'Resources', children: ['examples', 'faq'] },
+  examples: { name: 'Code Examples', href: '#' },
+  faq: { name: 'FAQ', href: '#' },
 }
 
 const indent = 20
 
 // Find the path from root to the current item
-function findPathToCurrent(
+function findPathToCurrent (
   items: Record<string, Item>,
   rootId: string
 ): string[] {
   const path: string[] = []
 
-  function findPath(itemId: string): boolean {
+  function findPath (itemId: string): boolean {
     const item = items[itemId]
     if (!item) return false
 
@@ -69,17 +69,17 @@ function findPathToCurrent(
 }
 
 // Get all parent IDs that need to be expanded
-const pathToCurrent = findPathToCurrent(items, "main")
+const pathToCurrent = findPathToCurrent(items, 'main')
 // Remove the current item from the path if it's a leaf node
 const expandedItems = pathToCurrent.filter((id) => items[id].children?.length)
 
-export default function Component() {
+export default function Component () {
   const tree = useTree<Item>({
     initialState: {
       expandedItems,
     },
     indent,
-    rootItemId: "main",
+    rootItemId: 'main',
     getItemName: (item) => item.getItemData().name,
     isItemFolder: (item) => (item.getItemData()?.children?.length ?? 0) > 0,
     dataLoader: {
@@ -99,16 +99,18 @@ export default function Component() {
               item={item}
               asChild={!!item.getItemData()?.href}
             >
-              {item.getItemData()?.href ? (
-                <a
-                  href={item.getItemData().href}
-                  data-current={item.getItemData().current}
-                >
-                  <TreeItemLabel className="in-data-[current=true]:bg-accent in-data-[current=true]:text-accent-foreground" />
-                </a>
-              ) : (
-                <TreeItemLabel />
-              )}
+              {item.getItemData()?.href
+                ? (
+                  <a
+                    href={item.getItemData().href}
+                    data-current={item.getItemData().current}
+                  >
+                    <TreeItemLabel className="in-data-[current=true]:bg-accent in-data-[current=true]:text-accent-foreground" />
+                  </a>
+                )
+                : (
+                  <TreeItemLabel />
+                )}
             </TreeItem>
           )
         })}
@@ -119,7 +121,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Menu navigation tree ∙{" "}
+        Menu navigation tree ∙{' '}
         <a
           href="https://headless-tree.lukasbach.com"
           className="hover:text-foreground underline"

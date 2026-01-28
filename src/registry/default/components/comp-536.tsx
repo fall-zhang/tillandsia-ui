@@ -17,7 +17,7 @@ const items = [
     action: 'opened a new issue',
     description:
       "I'm having trouble with the new component library. It's not rendering properly.",
-    image: '/avatar-40-01.jpg'
+    image: '/avatar-40-01.jpg',
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const items = [
     action: 'commented on',
     description:
       "Hey Hannah, I'm having trouble with the new component library. It's not rendering properly.",
-    image: '/avatar-40-02.jpg'
+    image: '/avatar-40-02.jpg',
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const items = [
     action: 'assigned you to',
     description:
       'The new component library is not rendering properly. Can you take a look?',
-    image: '/avatar-40-03.jpg'
+    image: '/avatar-40-03.jpg',
   },
   {
     id: 4,
@@ -43,8 +43,8 @@ const items = [
     title: 'Alex Morgan',
     action: 'closed the issue',
     description: 'The issue has been fixed. Please review the changes.',
-    image: '/avatar-40-05.jpg'
-  }
+    image: '/avatar-40-05.jpg',
+  },
 ]
 
 export default function Component () {

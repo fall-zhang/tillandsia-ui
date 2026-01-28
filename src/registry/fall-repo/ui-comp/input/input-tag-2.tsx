@@ -24,7 +24,7 @@ const TagInput: React.FC<TagInputProps> = ({
   allowedPattern = /^[a-zA-Z0-9\u4e00-\u9fa5\-_]+$/,
   onTagsChange,
   className = '',
-  disabled = false
+  disabled = false,
 }) => {
   // 状态管理
   const [tags, setTags] = useState<Tag[]>(initialTags)
@@ -76,7 +76,7 @@ const TagInput: React.FC<TagInputProps> = ({
 
     const newTag: Tag = {
       id: generateId(),
-      text: trimmedText
+      text: trimmedText,
     }
 
     setTags([...tags, newTag])

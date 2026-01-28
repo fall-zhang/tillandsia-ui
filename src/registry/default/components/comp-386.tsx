@@ -14,28 +14,28 @@ const tips = [
   {
     title: 'Welcome to Dashboard',
     description:
-      "This is your new workspace. Here you'll find all your projects, recent activities, settings, and more."
+      "This is your new workspace. Here you'll find all your projects, recent activities, settings, and more.",
   },
   {
     title: 'Quick Actions',
     description:
-      'Use the toolbar above to create new projects, invite team members, or access settings.'
+      'Use the toolbar above to create new projects, invite team members, or access settings.',
   },
   {
     title: 'Need Help?',
     description:
-      'Click the support icon in the top right corner to access our help center and documentation.'
+      'Click the support icon in the top right corner to access our help center and documentation.',
   },
   {
     title: 'Keyboard Shortcuts',
     description:
-      'Press ⌘K to open the command palette. Use arrow keys to navigate and Enter to select an action.'
+      'Press ⌘K to open the command palette. Use arrow keys to navigate and Enter to select an action.',
   },
   {
     title: 'Stay Updated',
     description:
-      'Enable notifications to receive updates about your projects, team activity, and important deadlines.'
-  }
+      'Enable notifications to receive updates about your projects, team activity, and important deadlines.',
+  },
 ]
 
 export default function Component () {

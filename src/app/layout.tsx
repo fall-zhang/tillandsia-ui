@@ -12,19 +12,19 @@ import './globals.css'
 
 const fontSans = FontSans({
   subsets: ['latin'],
-  variable: '--font-sans'
+  variable: '--font-sans',
 })
 
 const fontHeading = FontHeading({
   subsets: ['latin'],
-  variable: '--font-heading'
+  variable: '--font-heading',
 })
 
 export const viewport: Viewport = {
   initialScale: 1,
   width: 'device-width',
   maximumScale: 1,
-  viewportFit: 'cover'
+  viewportFit: 'cover',
 }
 
 export const metadata: Metadata = {
@@ -32,11 +32,11 @@ export const metadata: Metadata = {
   title:
     'Origin UI - Beautiful UI components built with Tailwind CSS and React',
   description:
-    'An extensive collection of copy-and-paste components for quickly building app UIs. Free, open-source, and ready to drop into your projects.'
+    'An extensive collection of copy-and-paste components for quickly building app UIs. Free, open-source, and ready to drop into your projects.',
 }
 
 export default function RootLayout ({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode
 }>) {

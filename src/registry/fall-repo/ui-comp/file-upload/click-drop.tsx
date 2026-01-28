@@ -12,28 +12,28 @@ import { motion, AnimatePresence } from 'motion/react'
 import { Card, CardContent } from '@/registry/default/ui/card'
 import { UploadCloud, File as FileIcon, X, CheckCircle } from 'lucide-react'
 
-type UploadStatus = 'idle' | 'dragging' | 'uploading' | 'success' | 'error';
+type UploadStatus = 'idle' | 'dragging' | 'uploading' | 'success' | 'error'
 
 interface FileUploadProps {
-    onUploadSuccess?: (file: File) => void;
-    onUploadError?: (error: string) => void;
-    acceptedFileTypes?: string[]; // e.g., ["image/png", "image/jpeg"]
-    maxFileSize?: number; // in bytes
-    currentFile?: File | null; // Add current file prop
-    onFileRemove?: () => void; // Add callback for file removal
+  onUploadSuccess?: (file: File) => void;
+  onUploadError?: (error: string) => void;
+  acceptedFileTypes?: string[]; // e.g., ["image/png", "image/jpeg"]
+  maxFileSize?: number; // in bytes
+  currentFile?: File | null; // Add current file prop
+  onFileRemove?: () => void; // Add callback for file removal
 }
 
 const cardVariants = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -20 }
+  exit: { opacity: 0, y: -20 },
 }
 
 const dropzoneVariants = {
   idle: {
     scale: 1,
     borderColor: 'var(--border-color)',
-    backgroundColor: 'var(--bg-color)'
+    backgroundColor: 'var(--bg-color)',
   },
   dragging: {
     scale: 1.02,
@@ -42,9 +42,9 @@ const dropzoneVariants = {
     transition: {
       type: 'spring',
       stiffness: 400,
-      damping: 25
-    }
-  }
+      damping: 25,
+    },
+  },
 }
 
 const iconVariants = {
@@ -56,9 +56,9 @@ const iconVariants = {
       repeat: Number.POSITIVE_INFINITY,
       repeatType: 'reverse' as const,
       duration: 1,
-      ease: 'easeInOut'
-    }
-  }
+      ease: 'easeInOut',
+    },
+  },
 }
 
 const progressVariants = {
@@ -66,8 +66,8 @@ const progressVariants = {
   animate: (progress: number) => ({
     pathLength: progress / 100,
     opacity: 1,
-    transition: { duration: 0.5, ease: 'easeOut' }
-  })
+    transition: { duration: 0.5, ease: 'easeOut' },
+  }),
 }
 
 const successIconVariants = {
@@ -78,9 +78,9 @@ const successIconVariants = {
     transition: {
       type: 'spring',
       stiffness: 200,
-      damping: 20
-    }
-  }
+      damping: 20,
+    },
+  },
 }
 
 export default function FileUpload ({
@@ -89,7 +89,7 @@ export default function FileUpload ({
   acceptedFileTypes,
   maxFileSize = 5 * 1024 * 1024,
   currentFile: initialFile = null,
-  onFileRemove
+  onFileRemove,
 }: FileUploadProps) {
   const [file, setFile] = useState<File | null>(initialFile)
   const [status, setStatus] = useState<UploadStatus>('idle')
@@ -286,7 +286,7 @@ export default function FileUpload ({
         '--border-color': 'rgb(var(--zinc-200) / 0.5)',
         '--bg-color': 'rgb(var(--zinc-50) / 0.3)',
         '--primary-color': 'rgb(var(--violet-500))',
-        '--primary-bg': 'rgb(var(--violet-50) / 0.2)'
+        '--primary-bg': 'rgb(var(--violet-50) / 0.2)',
       } as React.CSSProperties }
     >
       <Card className="w-full max-w-md mx-auto overflow-hidden min-h-[250px] flex flex-col bg-white dark:bg-zinc-900 border-zinc-200/50 dark:border-zinc-800/50 shadow-lg shadow-zinc-200/50 dark:shadow-zinc-900/50">
@@ -303,7 +303,7 @@ export default function FileUpload ({
                   transition={{
                     type: 'spring',
                     stiffness: 300,
-                    damping: 25
+                    damping: 25,
                   }}
                   className="flex flex-col items-center text-center w-full"
                   aria-live="polite"
@@ -313,13 +313,13 @@ export default function FileUpload ({
                       className="relative w-32 h-32 mb-4 rounded-lg overflow-hidden ring-2 ring-violet-500/20"
                       initial={{
                         rotate: -10,
-                        scale: 0.9
+                        scale: 0.9,
                       }}
                       animate={{ rotate: 0, scale: 1 }}
                       transition={{
                         type: 'spring',
                         stiffness: 300,
-                        damping: 20
+                        damping: 20,
                       }}
                     >
                       <img
@@ -336,7 +336,7 @@ export default function FileUpload ({
                     />
                   )}
                   <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-2">
-                                        Current File
+                    Current File
                   </h3>
                   <div className="w-full max-w-xs bg-zinc-50/50 dark:bg-zinc-800/50 rounded-lg p-3 mb-4 backdrop-blur-sm">
                     <p
@@ -348,7 +348,7 @@ export default function FileUpload ({
                     <div className="grid grid-cols-2 gap-2 text-xs">
                       <div className="flex flex-col space-y-1">
                         <span className="text-zinc-500 dark:text-zinc-400">
-                                                    Size
+                          Size
                         </span>
                         <span className="font-medium text-zinc-700 dark:text-zinc-300">
                           {formatBytes(file.size)}
@@ -356,7 +356,7 @@ export default function FileUpload ({
                       </div>
                       <div className="flex flex-col space-y-1">
                         <span className="text-zinc-500 dark:text-zinc-400">
-                                                    Type
+                          Type
                         </span>
                         <span className="font-medium text-zinc-700 dark:text-zinc-300">
                           {file.type
@@ -367,7 +367,7 @@ export default function FileUpload ({
                       </div>
                       <div className="flex flex-col space-y-1">
                         <span className="text-zinc-500 dark:text-zinc-400">
-                                                    Modified
+                          Modified
                         </span>
                         <span className="font-medium text-zinc-700 dark:text-zinc-300">
                           {new Date(
@@ -377,10 +377,10 @@ export default function FileUpload ({
                       </div>
                       <div className="flex flex-col space-y-1">
                         <span className="text-zinc-500 dark:text-zinc-400">
-                                                    Status
+                          Status
                         </span>
                         <span className="font-medium text-emerald-600 dark:text-emerald-400">
-                                                    Ready
+                          Ready
                         </span>
                       </div>
                     </div>
@@ -392,7 +392,7 @@ export default function FileUpload ({
                       className="px-4 py-2 text-sm font-medium text-white bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-900"
                       aria-label="Replace file"
                     >
-                                            Replace File
+                      Replace File
                     </button>
                     <button
                       onClick={handleRemoveFile}
@@ -400,7 +400,7 @@ export default function FileUpload ({
                       className="px-4 py-2 text-sm font-medium text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 border border-red-200 hover:border-red-300 dark:border-red-800 dark:hover:border-red-700 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-900"
                       aria-label="Remove file"
                     >
-                                            Remove
+                      Remove
                     </button>
                   </div>
                 </motion.div>
@@ -462,9 +462,9 @@ export default function FileUpload ({
                   </motion.div>
                   <p className="mb-2 text-sm text-zinc-600 dark:text-zinc-400 transition-all duration-500">
                     <span className="font-semibold text-violet-600/90 dark:text-violet-400/90 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors duration-500">
-                                            Click to upload
+                      Click to upload
                     </span>{' '}
-                                        or drag and drop
+                    or drag and drop
                   </p>
                   <p className="text-xs text-zinc-500/90 dark:text-zinc-500/90 group-hover:text-zinc-500 dark:group-hover:text-zinc-400 transition-colors duration-500">
                     {acceptedFileTypes &&
@@ -499,7 +499,7 @@ export default function FileUpload ({
                   transition={{
                     type: 'spring',
                     stiffness: 300,
-                    damping: 25
+                    damping: 25,
                   }}
                   className="w-full flex flex-col items-center"
                   aria-live="polite"
@@ -514,7 +514,7 @@ export default function FileUpload ({
                       transition={{
                         duration: 2,
                         repeat: Number.POSITIVE_INFINITY,
-                        ease: 'linear'
+                        ease: 'linear',
                       }}
                       aria-label="Upload progress indicator"
                       role="progressbar"
@@ -551,7 +551,7 @@ export default function FileUpload ({
                         delay: 0.2,
                         type: 'spring',
                         stiffness: 300,
-                        damping: 25
+                        damping: 25,
                       }}
                     >
                       <FileIcon
@@ -567,7 +567,7 @@ export default function FileUpload ({
                     {file.name}
                   </p>
                   <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                                        Uploading... {Math.round(progress)}%
+                    Uploading... {Math.round(progress)}%
                   </p>
                   <button
                     onClick={resetState}
@@ -575,7 +575,7 @@ export default function FileUpload ({
                     className="mt-4 px-3 py-1.5 text-xs font-medium text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 rounded-md border border-red-200/50 dark:border-red-800/50 hover:bg-red-50/50 dark:hover:bg-red-900/20 transition-all duration-300"
                     aria-label="Cancel upload"
                   >
-                                        Cancel
+                    Cancel
                   </button>
                 </motion.div>
               )}
@@ -587,7 +587,7 @@ export default function FileUpload ({
                   transition={{
                     type: 'spring',
                     stiffness: 300,
-                    damping: 25
+                    damping: 25,
                   }}
                   className="flex flex-col items-center text-center"
                   aria-live="polite"
@@ -600,7 +600,7 @@ export default function FileUpload ({
                       transition={{
                         delay: 0.1,
                         duration: 0.8,
-                        ease: 'easeOut'
+                        ease: 'easeOut',
                       }}
                     />
                     <motion.div
@@ -615,7 +615,7 @@ export default function FileUpload ({
                     </motion.div>
                   </div>
                   <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-1">
-                                        Upload Successful!
+                    Upload Successful!
                   </h3>
                   <p
                     className="text-sm text-zinc-600 dark:text-zinc-400 mb-4 truncate max-w-[200px]"
@@ -629,7 +629,7 @@ export default function FileUpload ({
                     className="px-4 py-2 text-sm font-medium text-white bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 rounded-lg transition-all duration-300 shadow-lg shadow-violet-500/20 dark:shadow-violet-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-900"
                     aria-label="Upload another file"
                   >
-                                        Upload Another File
+                    Upload Another File
                   </button>
                 </motion.div>
               )}
@@ -639,22 +639,22 @@ export default function FileUpload ({
                   initial={{
                     opacity: 0,
                     scale: 0.8,
-                    rotate: -10
+                    rotate: -10,
                   }}
                   animate={{
                     opacity: 1,
                     scale: 1,
-                    rotate: 0
+                    rotate: 0,
                   }}
                   exit={{
                     opacity: 0,
                     scale: 0.8,
-                    rotate: 10
+                    rotate: 10,
                   }}
                   transition={{
                     type: 'spring',
                     stiffness: 300,
-                    damping: 25
+                    damping: 25,
                   }}
                   className="flex flex-col items-center text-center text-red-600 dark:text-red-500"
                   role="alert"
@@ -662,11 +662,11 @@ export default function FileUpload ({
                   <motion.div
                     initial={{ rotate: 0 }}
                     animate={{
-                      rotate: [0, -10, 10, -10, 10, 0]
+                      rotate: [0, -10, 10, -10, 10, 0],
                     }}
                     transition={{
                       duration: 0.5,
-                      ease: 'easeInOut'
+                      ease: 'easeInOut',
                     }}
                   >
                     <X
@@ -675,7 +675,7 @@ export default function FileUpload ({
                     />
                   </motion.div>
                   <p className="text-sm font-medium mb-1">
-                                        Upload Failed
+                    Upload Failed
                   </p>
                   <p className="text-xs mb-4 max-w-xs">
                     {error || 'An unknown error occurred.'}
@@ -686,7 +686,7 @@ export default function FileUpload ({
                     className="px-4 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 bg-zinc-100/80 hover:bg-zinc-200/80 dark:bg-zinc-800/80 dark:hover:bg-zinc-700/80 rounded-lg transition-all duration-300 backdrop-blur-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-900"
                     aria-label="Try uploading again"
                   >
-                                        Try Again
+                    Try Again
                   </button>
                 </motion.div>
               )}

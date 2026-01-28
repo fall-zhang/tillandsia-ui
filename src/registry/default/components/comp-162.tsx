@@ -11,7 +11,7 @@ export default function Component () {
     { value: '1', label: 'Palette', Icon: SwatchBook },
     { value: '2', label: 'Brush', Icon: Brush },
     { value: '3', label: 'Eraser', Icon: Eraser },
-    { value: '4', label: 'Cut', Icon: Scissors }
+    { value: '4', label: 'Cut', Icon: Scissors },
   ]
 
   return (

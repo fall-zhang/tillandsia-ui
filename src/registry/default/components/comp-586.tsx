@@ -1,12 +1,12 @@
-import { useId } from "react"
-import { MicIcon, SearchIcon } from "lucide-react"
+import { useId } from 'react'
+import { MicIcon, SearchIcon } from 'lucide-react'
 
-import Logo from "@/registry/default/components/navbar-components/logo"
-import ThemeToggle from "@/registry/default/components/navbar-components/theme-toggle"
-import { Button } from "@/registry/default/ui/button"
-import { Input } from "@/registry/default/ui/input"
+import Logo from '@/registry/default/components/navbar-components/logo'
+import ThemeToggle from '@/registry/default/components/navbar-components/theme-toggle'
+import { Button } from '@/registry/default/ui/button'
+import { Input } from '@/registry/default/ui/input'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
 
   return (

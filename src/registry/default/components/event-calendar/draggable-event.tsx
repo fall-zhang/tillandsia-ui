@@ -34,7 +34,7 @@ export function DraggableEvent ({
   multiDayWidth,
   isFirstDay = true,
   isLastDay = true,
-  'aria-hidden': ariaHidden
+  'aria-hidden': ariaHidden,
 }: DraggableEventProps) {
   const { activeId } = useCalendarDnd()
   const elementRef = useRef<HTMLDivElement>(null)
@@ -60,8 +60,8 @@ export function DraggableEvent ({
         multiDayWidth,
         dragHandlePosition,
         isFirstDay,
-        isLastDay
-      }
+        isLastDay,
+      },
     })
 
   // Handle mouse down to track where on the event the user clicked
@@ -70,7 +70,7 @@ export function DraggableEvent ({
       const rect = elementRef.current.getBoundingClientRect()
       setDragHandlePosition({
         x: e.clientX - rect.left,
-        y: e.clientY - rect.top
+        y: e.clientY - rect.top,
       })
     }
   }
@@ -91,12 +91,12 @@ export function DraggableEvent ({
       transform: CSS.Translate.toString(transform),
       height: height || 'auto',
       width:
-          isMultiDayEvent && multiDayWidth ? `${multiDayWidth}%` : undefined
+          isMultiDayEvent && multiDayWidth ? `${multiDayWidth}%` : undefined,
     }
     : {
       height: height || 'auto',
       width:
-          isMultiDayEvent && multiDayWidth ? `${multiDayWidth}%` : undefined
+          isMultiDayEvent && multiDayWidth ? `${multiDayWidth}%` : undefined,
     }
 
   // Handle touch start to track where on the event the user touched
@@ -107,7 +107,7 @@ export function DraggableEvent ({
       if (touch) {
         setDragHandlePosition({
           x: touch.clientX - rect.left,
-          y: touch.clientY - rect.top
+          y: touch.clientY - rect.top,
         })
       }
     }

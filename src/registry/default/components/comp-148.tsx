@@ -23,11 +23,11 @@ const initialTree: TreeNode = {
       label: 'Waterfalls',
       children: [
         { id: '4', label: 'Niagara Falls' },
-        { id: '5', label: 'Angel Falls', defaultChecked: true }
-      ]
+        { id: '5', label: 'Angel Falls', defaultChecked: true },
+      ],
     },
-    { id: '6', label: 'Grand Canyon' }
-  ]
+    { id: '6', label: 'Grand Canyon' },
+  ],
 }
 
 export default function Component () {

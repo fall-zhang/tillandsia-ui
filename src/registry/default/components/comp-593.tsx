@@ -1,18 +1,18 @@
-import { BookmarkIcon, HomeIcon } from "lucide-react"
+import { BookmarkIcon, HomeIcon } from 'lucide-react'
 
-import DatePicker from "@/registry/default/components/navbar-components/date-picker"
-import Filters from "@/registry/default/components/navbar-components/filters"
+import DatePicker from '@/registry/default/components/navbar-components/date-picker'
+import Filters from '@/registry/default/components/navbar-components/filters'
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/registry/default/ui/breadcrumb"
-import { Button } from "@/registry/default/ui/button"
+  BreadcrumbSeparator
+} from '@/registry/default/ui/breadcrumb'
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   return (
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">

@@ -12,9 +12,9 @@ export interface CalendarEvent {
 }
 
 export type EventColor =
-  | 'sky'
-  | 'amber'
-  | 'violet'
-  | 'rose'
-  | 'emerald'
-  | 'orange'
+  | 'sky' |
+  'amber' |
+  'violet' |
+  'rose' |
+  'emerald' |
+  'orange'

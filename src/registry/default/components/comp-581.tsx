@@ -1,29 +1,29 @@
-import InfoMenu from "@/registry/default/components/navbar-components/info-menu"
-import Logo from "@/registry/default/components/navbar-components/logo"
-import NotificationMenu from "@/registry/default/components/navbar-components/notification-menu"
-import UserMenu from "@/registry/default/components/navbar-components/user-menu"
-import { Button } from "@/registry/default/ui/button"
+import InfoMenu from '@/registry/default/components/navbar-components/info-menu'
+import Logo from '@/registry/default/components/navbar-components/logo'
+import NotificationMenu from '@/registry/default/components/navbar-components/notification-menu'
+import UserMenu from '@/registry/default/components/navbar-components/user-menu'
+import { Button } from '@/registry/default/ui/button'
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
-  NavigationMenuList,
-} from "@/registry/default/ui/navigation-menu"
+  NavigationMenuList
+} from '@/registry/default/ui/navigation-menu'
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
+  PopoverTrigger
+} from '@/registry/default/ui/popover'
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
-  { href: "#", label: "Home" },
-  { href: "#", label: "Features" },
-  { href: "#", label: "Pricing" },
-  { href: "#", label: "About" },
+  { href: '#', label: 'Home' },
+  { href: '#', label: 'Features' },
+  { href: '#', label: 'Pricing' },
+  { href: '#', label: 'About' },
 ]
 
-export default function Component() {
+export default function Component () {
   return (
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">

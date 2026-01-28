@@ -72,7 +72,7 @@ const CountrySelect = ({
   disabled,
   value,
   onChange,
-  options
+  options,
 }: CountrySelectProps) => {
   const handleSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
     onChange(event.target.value as RPNInput.Country)

@@ -16,18 +16,18 @@ const options = [
   {
     label: 'Merge pull request',
     description:
-      'All commits from this branch will be added to the base branch via a commit version.'
+      'All commits from this branch will be added to the base branch via a commit version.',
   },
   {
     label: 'Squash and merge',
     description:
-      'The 6 commits from this branch will be combined into one commit in the base branch.'
+      'The 6 commits from this branch will be combined into one commit in the base branch.',
   },
   {
     label: 'Rebase and merge',
     description:
-      'The 6 commits from this branch will be rebased and added to the base branch.'
-  }
+      'The 6 commits from this branch will be rebased and added to the base branch.',
+  },
 ]
 
 export default function Component () {

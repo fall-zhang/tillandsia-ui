@@ -20,7 +20,7 @@ const links = [
   { text: 'Layouts', href: '/layouts', isNew: true },
   { text: 'Fall', href: '/fall' },
   { text: 'App Shell', href: '/app-shell' },
-  { text: 'Easing Classes', href: '/easings' }
+  { text: 'Easing Classes', href: '/easings' },
 ]
 
 export default function Header () {

@@ -1,28 +1,28 @@
-import { HouseIcon, InboxIcon, SparklesIcon, ZapIcon } from "lucide-react"
+import { HouseIcon, InboxIcon, SparklesIcon, ZapIcon } from 'lucide-react'
 
-import Logo from "@/registry/default/components/navbar-components/logo"
-import UserMenu from "@/registry/default/components/navbar-components/user-menu"
-import { Button } from "@/registry/default/ui/button"
+import Logo from '@/registry/default/components/navbar-components/logo'
+import UserMenu from '@/registry/default/components/navbar-components/user-menu'
+import { Button } from '@/registry/default/ui/button'
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
-  NavigationMenuList,
-} from "@/registry/default/ui/navigation-menu"
+  NavigationMenuList
+} from '@/registry/default/ui/navigation-menu'
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
+  PopoverTrigger
+} from '@/registry/default/ui/popover'
 
 // Navigation links array
 const navigationLinks = [
-  { href: "#", label: "Home", icon: HouseIcon, active: true },
-  { href: "#", label: "Inbox", icon: InboxIcon },
-  { href: "#", label: "Insights", icon: ZapIcon },
+  { href: '#', label: 'Home', icon: HouseIcon, active: true },
+  { href: '#', label: 'Inbox', icon: InboxIcon },
+  { href: '#', label: 'Insights', icon: ZapIcon },
 ]
 
-export default function Component() {
+export default function Component () {
   return (
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">

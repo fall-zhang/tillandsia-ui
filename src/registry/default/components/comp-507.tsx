@@ -19,31 +19,31 @@ export default function Component () {
   const today = new Date()
   const yesterday = {
     from: subDays(today, 1),
-    to: subDays(today, 1)
+    to: subDays(today, 1),
   }
   const last7Days = {
     from: subDays(today, 6),
-    to: today
+    to: today,
   }
   const last30Days = {
     from: subDays(today, 29),
-    to: today
+    to: today,
   }
   const monthToDate = {
     from: startOfMonth(today),
-    to: today
+    to: today,
   }
   const lastMonth = {
     from: startOfMonth(subMonths(today, 1)),
-    to: endOfMonth(subMonths(today, 1))
+    to: endOfMonth(subMonths(today, 1)),
   }
   const yearToDate = {
     from: startOfYear(today),
-    to: today
+    to: today,
   }
   const lastYear = {
     from: startOfYear(subYears(today, 1)),
-    to: endOfYear(subYears(today, 1))
+    to: endOfYear(subYears(today, 1)),
   }
   const [month, setMonth] = useState(today)
   const [date, setDate] = useState<DateRange | undefined>(last7Days)
@@ -62,7 +62,7 @@ export default function Component () {
                   onClick={() => {
                     setDate({
                       from: today,
-                      to: today
+                      to: today,
                     })
                     setMonth(today)
                   }}
@@ -161,7 +161,7 @@ export default function Component () {
             onMonthChange={setMonth}
             className="p-2"
             disabled={[
-              { after: today } // Dates before today
+              { after: today }, // Dates before today
             ]}
           />
         </div>

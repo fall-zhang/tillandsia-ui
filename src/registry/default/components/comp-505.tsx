@@ -31,7 +31,7 @@ export default function Component () {
     { time: '16:00', available: true },
     { time: '16:30', available: true },
     { time: '17:00', available: true },
-    { time: '17:30', available: true }
+    { time: '17:30', available: true },
   ]
 
   return (
@@ -49,7 +49,7 @@ export default function Component () {
             }}
             className="p-2 sm:pe-5"
             disabled={[
-              { before: today } // Dates before today
+              { before: today }, // Dates before today
             ]}
           />
           <div className="relative w-full max-sm:h-48 sm:w-40">

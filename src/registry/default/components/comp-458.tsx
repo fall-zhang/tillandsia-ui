@@ -12,7 +12,7 @@ type PaginationProps = {
 
 export default function Component ({
   currentPage,
-  totalPages
+  totalPages,
 }: PaginationProps) {
   return (
     <div className="flex items-center justify-between gap-3">

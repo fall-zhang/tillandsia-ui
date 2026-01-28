@@ -25,40 +25,40 @@ const countries = [
     items: [
       { value: 'United States', flag: '🇺🇸' },
       { value: 'Canada', flag: '🇨🇦' },
-      { value: 'Mexico', flag: '🇲🇽' }
-    ]
+      { value: 'Mexico', flag: '🇲🇽' },
+    ],
   },
   {
     continent: 'Africa',
     items: [
       { value: 'South Africa', flag: '🇿🇦' },
       { value: 'Nigeria', flag: '🇳🇬' },
-      { value: 'Morocco', flag: '🇲🇦' }
-    ]
+      { value: 'Morocco', flag: '🇲🇦' },
+    ],
   },
   {
     continent: 'Asia',
     items: [
       { value: 'China', flag: '🇨🇳' },
       { value: 'Japan', flag: '🇯🇵' },
-      { value: 'India', flag: '🇮🇳' }
-    ]
+      { value: 'India', flag: '🇮🇳' },
+    ],
   },
   {
     continent: 'Europe',
     items: [
       { value: 'United Kingdom', flag: '🇬🇧' },
       { value: 'France', flag: '🇫🇷' },
-      { value: 'Germany', flag: '🇩🇪' }
-    ]
+      { value: 'Germany', flag: '🇩🇪' },
+    ],
   },
   {
     continent: 'Oceania',
     items: [
       { value: 'Australia', flag: '🇦🇺' },
-      { value: 'New Zealand', flag: '🇳🇿' }
-    ]
-  }
+      { value: 'New Zealand', flag: '🇳🇿' },
+    ],
+  },
 ]
 
 export default function Component () {

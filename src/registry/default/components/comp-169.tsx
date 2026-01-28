@@ -6,7 +6,7 @@ import { RadioGroup, RadioGroupItem } from '@/registry/default/ui/radio-group'
 const items = [
   { value: '1', label: 'Light', image: '/ui-light.png' },
   { value: '2', label: 'Dark', image: '/ui-dark.png' },
-  { value: '3', label: 'System', image: '/ui-system.png' }
+  { value: '3', label: 'System', image: '/ui-system.png' },
 ]
 
 export default function Component () {

@@ -106,7 +106,7 @@ Object.defineProperty(ShuffleText.prototype, 'isRunning', {
     return this._isRunning
   },
   enumerable: false,
-  configurable: true
+  configurable: true,
 })
 
 const MainPage = () => {

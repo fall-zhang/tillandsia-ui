@@ -17,19 +17,19 @@ import {
 } from '@/registry/default/ui/card'
 
 interface BentoItem {
-    title: string;
-    description: string;
-    icon: React.ReactNode;
-    status?: string;
-    tags?: string[];
-    meta?: string;
-    cta?: string;
-    colSpan?: number;
-    hasPersistentHover?: boolean;
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  status?: string;
+  tags?: string[];
+  meta?: string;
+  cta?: string;
+  colSpan?: number;
+  hasPersistentHover?: boolean;
 }
 
 interface BentoGridProps {
-    items: BentoItem[];
+  items: BentoItem[];
 }
 
 const itemsSample: BentoItem[] = [
@@ -42,7 +42,7 @@ const itemsSample: BentoItem[] = [
     status: 'Superhost',
     tags: ['Beachfront', 'Pool', 'Luxury'],
     colSpan: 2,
-    hasPersistentHover: true
+    hasPersistentHover: true,
   },
   {
     title: 'Downtown Loft',
@@ -51,14 +51,14 @@ const itemsSample: BentoItem[] = [
             'Modern urban living in the heart of the city. Walking distance to restaurants and attractions.',
     icon: <Building className="w-4 h-4 text-emerald-500" />,
     status: 'Instant Book',
-    tags: ['Urban', 'Modern']
+    tags: ['Urban', 'Modern'],
   },
   {
     title: 'Popular Areas',
     description:
             'Discover trending neighborhoods with the highest guest satisfaction',
     icon: <MapPin className="w-4 h-4 text-red-500" />,
-    status: 'New'
+    status: 'New',
   },
   {
     title: 'Bali Villa',
@@ -66,14 +66,14 @@ const itemsSample: BentoItem[] = [
             'A luxurious villa in Bali with a private pool and stunning views of the ocean',
     icon: <HomeIcon className="w-4 h-4 text-amber-500" />,
     meta: '12 houses',
-    tags: ['Housing', 'Tools']
+    tags: ['Housing', 'Tools'],
   },
   {
     title: 'Travel Collections',
     description: 'Curated lists of unique stays and experiences worldwide',
     icon: <Heart className="w-4 h-4 text-purple-500" />,
     meta: 'Updated weekly',
-    tags: ['Featured', 'Curated']
+    tags: ['Featured', 'Curated'],
   },
   {
     title: 'Local Guide',
@@ -82,7 +82,7 @@ const itemsSample: BentoItem[] = [
             'Expert recommendations for local attractions and hidden gems',
     icon: <Compass className="w-4 h-4 text-sky-500" />,
     status: 'Featured',
-    tags: ['Local', 'Guide']
+    tags: ['Local', 'Guide'],
   },
   {
     title: 'Exclusive Experiences',
@@ -92,8 +92,8 @@ const itemsSample: BentoItem[] = [
     icon: <Camera className="w-4 h-4 text-indigo-500" />,
     status: 'Premium',
     tags: ['Activities', 'Local'],
-    colSpan: 2
-  }
+    colSpan: 2,
+  },
 ]
 
 export default function BentoGrid ({ items = itemsSample }: BentoGridProps) {
@@ -159,7 +159,7 @@ export default function BentoGrid ({ items = itemsSample }: BentoGridProps) {
                       key={`${item.title}-${tag}`}
                       className="px-2 py-1 rounded-md bg-black/5 dark:bg-white/10 backdrop-blur-xs transition-all duration-200"
                     >
-                     #{tag}
+                      #{tag}
                     </span>
                   ))}
                 </div>

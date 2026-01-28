@@ -9,13 +9,13 @@ import { codeToHast } from 'shiki/bundle/web'
 export async function highlight (code: string, lang: BundledLanguage) {
   const hast = await codeToHast(code, {
     lang,
-    theme: 'github-dark'
+    theme: 'github-dark',
   })
 
   return toJsxRuntime(hast, {
     Fragment,
     jsx,
-    jsxs
+    jsxs,
   }) as JSX.Element
 }
 
@@ -30,7 +30,7 @@ export default function CodeBlock ({
   code,
   lang,
   initial,
-  preHighlighted
+  preHighlighted,
 }: Props) {
   const [content, setContent] = useState<JSX.Element | null>(
     preHighlighted || initial || null

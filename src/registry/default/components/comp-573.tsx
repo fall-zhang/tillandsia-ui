@@ -1,16 +1,16 @@
-"use client"
+'use client'
 
-import React from "react"
+import React from 'react'
 import {
   FeatureImplementation,
   hotkeysCoreFeature,
   selectionFeature,
-  syncDataLoaderFeature,
-} from "@headless-tree/core"
-import { useTree } from "@headless-tree/react"
-import { FolderIcon, FolderOpenIcon } from "lucide-react"
+  syncDataLoaderFeature
+} from '@headless-tree/core'
+import { useTree } from '@headless-tree/react'
+import { FolderIcon, FolderOpenIcon } from 'lucide-react'
 
-import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree"
+import { Tree, TreeItem, TreeItemLabel } from '@/registry/default/ui/tree'
 
 interface Item {
   name: string
@@ -19,32 +19,32 @@ interface Item {
 
 const items: Record<string, Item> = {
   company: {
-    name: "Company",
-    children: ["engineering", "marketing", "operations"],
+    name: 'Company',
+    children: ['engineering', 'marketing', 'operations'],
   },
   engineering: {
-    name: "Engineering",
-    children: ["frontend", "backend", "platform-team"],
+    name: 'Engineering',
+    children: ['frontend', 'backend', 'platform-team'],
   },
-  frontend: { name: "Frontend", children: ["design-system", "web-platform"] },
-  "design-system": {
-    name: "Design System",
-    children: ["components", "tokens", "guidelines"],
+  frontend: { name: 'Frontend', children: ['design-system', 'web-platform'] },
+  'design-system': {
+    name: 'Design System',
+    children: ['components', 'tokens', 'guidelines'],
   },
-  components: { name: "Components" },
-  tokens: { name: "Tokens" },
-  guidelines: { name: "Guidelines" },
-  "web-platform": { name: "Web Platform" },
-  backend: { name: "Backend", children: ["apis", "infrastructure"] },
-  apis: { name: "APIs" },
-  infrastructure: { name: "Infrastructure" },
-  "platform-team": { name: "Platform Team" },
-  marketing: { name: "Marketing", children: ["content", "seo"] },
-  content: { name: "Content" },
-  seo: { name: "SEO" },
-  operations: { name: "Operations", children: ["hr", "finance"] },
-  hr: { name: "HR" },
-  finance: { name: "Finance" },
+  components: { name: 'Components' },
+  tokens: { name: 'Tokens' },
+  guidelines: { name: 'Guidelines' },
+  'web-platform': { name: 'Web Platform' },
+  backend: { name: 'Backend', children: ['apis', 'infrastructure'] },
+  apis: { name: 'APIs' },
+  infrastructure: { name: 'Infrastructure' },
+  'platform-team': { name: 'Platform Team' },
+  marketing: { name: 'Marketing', children: ['content', 'seo'] },
+  content: { name: 'Content' },
+  seo: { name: 'SEO' },
+  operations: { name: 'Operations', children: ['hr', 'finance'] },
+  hr: { name: 'HR' },
+  finance: { name: 'Finance' },
 }
 
 const indent = 20
@@ -81,14 +81,14 @@ const doubleClickExpandFeature: FeatureImplementation = {
   },
 }
 
-export default function Component() {
+export default function Component () {
   const tree = useTree<Item>({
     initialState: {
-      expandedItems: ["engineering", "frontend", "design-system"],
-      selectedItems: ["components"],
+      expandedItems: ['engineering', 'frontend', 'design-system'],
+      selectedItems: ['components'],
     },
     indent,
-    rootItemId: "company",
+    rootItemId: 'company',
     getItemName: (item) => item.getItemData().name,
     isItemFolder: (item) => (item.getItemData()?.children?.length ?? 0) > 0,
     dataLoader: {
@@ -112,11 +112,13 @@ export default function Component() {
               <TreeItemLabel>
                 <span className="flex items-center gap-2">
                   {item.isFolder() &&
-                    (item.isExpanded() ? (
-                      <FolderOpenIcon className="text-muted-foreground pointer-events-none size-4" />
-                    ) : (
-                      <FolderIcon className="text-muted-foreground pointer-events-none size-4" />
-                    ))}
+                    (item.isExpanded()
+                      ? (
+                        <FolderOpenIcon className="text-muted-foreground pointer-events-none size-4" />
+                      )
+                      : (
+                        <FolderIcon className="text-muted-foreground pointer-events-none size-4" />
+                      ))}
                   {item.getItemName()}
                 </span>
               </TreeItemLabel>
@@ -130,7 +132,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Tree with items expandable on double click ∙{" "}
+        Tree with items expandable on double click ∙{' '}
         <a
           href="https://headless-tree.lukasbach.com"
           className="hover:text-foreground underline"

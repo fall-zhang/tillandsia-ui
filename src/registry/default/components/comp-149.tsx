@@ -12,7 +12,7 @@ export default function Component () {
     { value: '4', label: 'Thursday', defaultChecked: true },
     { value: '5', label: 'Friday', defaultChecked: true },
     { value: '6', label: 'Saturday' },
-    { value: '7', label: 'Sunday', disabled: true }
+    { value: '7', label: 'Sunday', disabled: true },
   ]
 
   return (

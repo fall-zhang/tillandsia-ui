@@ -15,7 +15,7 @@ export default function Component () {
         onSelect={setDate}
         className="rounded-md border p-2"
         classNames={{
-          day_button: 'rounded-full'
+          day_button: 'rounded-full',
         }}
       />
       <p

@@ -17,11 +17,11 @@ export default function Component () {
       handleDrop,
       openFileDialog,
       removeFile,
-      getInputProps
-    }
+      getInputProps,
+    },
   ] = useFileUpload({
     accept: 'image/*',
-    maxSize
+    maxSize,
   })
 
   const previewUrl = files[0]?.preview || null
@@ -64,10 +64,10 @@ export default function Component () {
                   <ImageUpIcon className="size-4 opacity-60" />
                 </div>
                 <p className="mb-1.5 text-sm font-medium">
-                Drop your image here or click to browse
+                  Drop your image here or click to browse
                 </p>
                 <p className="text-muted-foreground text-xs">
-                Max size: {maxSizeMB}MB
+                  Max size: {maxSizeMB}MB
                 </p>
               </div>
             )}

@@ -20,14 +20,14 @@ const items = [
       {
         title: 'What about performance?',
         content:
-          'We optimize every component for maximum performance and minimal bundle size.'
+          'We optimize every component for maximum performance and minimal bundle size.',
       },
       {
         title: 'How is the documentation?',
         content:
-          'Our documentation is comprehensive and includes live examples for every component.'
-      }
-    ]
+          'Our documentation is comprehensive and includes live examples for every component.',
+      },
+    ],
   },
   {
     id: '2',
@@ -36,14 +36,14 @@ const items = [
       {
         title: 'Can I use custom themes?',
         content:
-          'Yes, our theming system is fully customizable and supports both light and dark modes.'
+          'Yes, our theming system is fully customizable and supports both light and dark modes.',
       },
       {
         title: 'What about Tailwind support?',
         content:
-          'We have first-class support for Tailwind CSS with custom utility classes.'
-      }
-    ]
+          'We have first-class support for Tailwind CSS with custom utility classes.',
+      },
+    ],
   },
   {
     id: '3',
@@ -53,14 +53,14 @@ const items = [
         title: "What's the bundle size impact?",
         content:
           'Our components are tree-shakeable and typically add minimal overhead to your bundle.',
-        open: true
+        open: true,
       },
       {
         title: 'How is code splitting handled?',
         content:
-          'We support automatic code splitting for optimal loading performance.'
-      }
-    ]
+          'We support automatic code splitting for optimal loading performance.',
+      },
+    ],
   },
   {
     id: '4',
@@ -69,15 +69,15 @@ const items = [
       {
         title: 'Which screen readers are supported?',
         content:
-          'We test with NVDA, VoiceOver, and JAWS to ensure broad compatibility.'
+          'We test with NVDA, VoiceOver, and JAWS to ensure broad compatibility.',
       },
       {
         title: 'What about keyboard navigation?',
         content:
-          'Full keyboard navigation support is implemented following WAI-ARIA best practices.'
-      }
-    ]
-  }
+          'Full keyboard navigation support is implemented following WAI-ARIA best practices.',
+      },
+    ],
+  },
 ]
 
 export default function Component () {
@@ -119,7 +119,7 @@ export default function Component () {
 function CollapsibleDemo ({
   title,
   content,
-  open
+  open,
 }: {
   title: string
   content: string

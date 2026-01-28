@@ -14,7 +14,7 @@ function FloatingPaths ({ position }: { position: number }) {
       684 - i * 5 * position
     } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
     color: `rgba(15,23,42,${0.1 + i * 0.03})`,
-    width: 0.5 + i * 0.03
+    width: 0.5 + i * 0.03,
   }))
 
   return (
@@ -36,12 +36,12 @@ function FloatingPaths ({ position }: { position: number }) {
             animate={{
               pathLength: 1,
               opacity: [0.3, 0.6, 0.3],
-              pathOffset: [0, 1, 0]
+              pathOffset: [0, 1, 0],
             }}
             transition={{
               duration: 20 + Math.random() * 10,
               repeat: Number.POSITIVE_INFINITY,
-              ease: 'linear'
+              ease: 'linear',
             }}
           />
         ))}
@@ -51,9 +51,9 @@ function FloatingPaths ({ position }: { position: number }) {
 }
 
 export default function BackgroundPaths ({
-  title = 'Background Paths'
+  title = 'Background Paths',
 }: {
-    title?: string;
+  title?: string;
 }) {
   const words = title.split(' ')
 
@@ -86,7 +86,7 @@ export default function BackgroundPaths ({
                       delay: wordIndex * 0.1 + letterIndex * 0.03,
                       type: 'spring',
                       stiffness: 150,
-                      damping: 25
+                      damping: 25,
                     }}
                     className="inline-block text-transparent bg-clip-text
                                bg-gradient-to-r from-neutral-900 to-neutral-700/80

@@ -23,14 +23,14 @@ interface UseProgressTimerProps {
 function useProgressTimer ({
   duration,
   interval = 100,
-  onComplete
+  onComplete,
 }: UseProgressTimerProps) {
   const [progress, setProgress] = useState(duration)
   const timerRef = useRef(0)
   const timerState = useRef({
     startTime: 0,
     remaining: duration,
-    isPaused: false
+    isPaused: false,
   })
 
   const cleanup = useCallback(() => {
@@ -43,7 +43,7 @@ function useProgressTimer ({
     timerState.current = {
       startTime: 0,
       remaining: duration,
-      isPaused: false
+      isPaused: false,
     }
   }, [duration, cleanup])
 
@@ -93,7 +93,7 @@ function useProgressTimer ({
     start,
     pause,
     resume,
-    reset
+    reset,
   }
 }
 
@@ -102,7 +102,7 @@ export default function Component () {
   const toastDuration = 5000
   const { progress, start, pause, resume, reset } = useProgressTimer({
     duration: toastDuration,
-    onComplete: () => setOpen(false)
+    onComplete: () => setOpen(false),
   })
 
   const handleOpenChange = useCallback(
@@ -177,7 +177,7 @@ export default function Component () {
             className="pointer-events-none absolute bottom-0 left-0 h-1 w-full bg-emerald-500"
             style={{
               width: `${(progress / toastDuration) * 100}%`,
-              transition: 'width 100ms linear'
+              transition: 'width 100ms linear',
             }}
           />
         </div>

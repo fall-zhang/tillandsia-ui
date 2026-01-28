@@ -17,15 +17,15 @@ const items = [
       { name: 'Edge', supported: true, version: '115' },
       { name: 'Firefox', supported: false, version: '111' },
       { name: 'Opera', supported: true, version: '101' },
-      { name: 'Safari', supported: false, version: 'No' }
+      { name: 'Safari', supported: false, version: 'No' },
     ],
     mobile: [
       { name: 'Chrome Android', supported: true, version: '115' },
       { name: 'Firefox Android', supported: false, version: 'No' },
       { name: 'Opera Android', supported: true, version: '77' },
       { name: 'Safari iOS', supported: false, version: 'No' },
-      { name: 'Samsung Internet', supported: true, version: '23' }
-    ]
+      { name: 'Samsung Internet', supported: true, version: '23' },
+    ],
   },
   {
     feature: 'view-timeline',
@@ -34,15 +34,15 @@ const items = [
       { name: 'Edge', supported: true, version: '115' },
       { name: 'Firefox', supported: false, version: '114' },
       { name: 'Opera', supported: true, version: '101' },
-      { name: 'Safari', supported: false, version: 'No' }
+      { name: 'Safari', supported: false, version: 'No' },
     ],
     mobile: [
       { name: 'Chrome Android', supported: true, version: '115' },
       { name: 'Firefox Android', supported: false, version: 'No' },
       { name: 'Opera Android', supported: true, version: '77' },
       { name: 'Safari iOS', supported: false, version: 'No' },
-      { name: 'Samsung Internet', supported: true, version: '23' }
-    ]
+      { name: 'Samsung Internet', supported: true, version: '23' },
+    ],
   },
   {
     feature: 'font-size-adjust',
@@ -51,16 +51,16 @@ const items = [
       { name: 'Edge', supported: true, version: '127' },
       { name: 'Firefox', supported: false, version: '3' },
       { name: 'Opera', supported: true, version: '113' },
-      { name: 'Safari', supported: true, version: '16.4' }
+      { name: 'Safari', supported: true, version: '16.4' },
     ],
     mobile: [
       { name: 'Chrome Android', supported: true, version: '127' },
       { name: 'Firefox Android', supported: true, version: '4' },
       { name: 'Opera Android', supported: true, version: '84' },
       { name: 'Safari iOS', supported: true, version: '16.4' },
-      { name: 'Samsung Internet', supported: false, version: 'No' }
-    ]
-  }
+      { name: 'Samsung Internet', supported: false, version: 'No' },
+    ],
+  },
 ]
 
 export default function Component () {

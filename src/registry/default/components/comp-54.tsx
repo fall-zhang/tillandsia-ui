@@ -17,7 +17,7 @@ export default function Component () {
         type="text"
         ref={withMask('AA99 AAA', {
           placeholder: '',
-          showMaskOnHover: false
+          showMaskOnHover: false,
         })}
       />
       <p

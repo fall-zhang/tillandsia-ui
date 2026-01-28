@@ -24,12 +24,12 @@ import {
 const organizations = [
   {
     value: 'originui',
-    label: 'Origin UI'
+    label: 'Origin UI',
   },
   {
     value: 'cruip',
-    label: 'Cruip'
-  }
+    label: 'Cruip',
+  },
 ]
 
 export default function Component () {

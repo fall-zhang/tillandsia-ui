@@ -17,7 +17,7 @@ function Form () {
   const [formState, setFormState] = useState({
     email: '',
     status: 'idle' as FormStatus,
-    message: ''
+    message: '',
   })
 
   const isLoading = formState.status === 'loading'
@@ -32,20 +32,20 @@ function Form () {
         setFormState((prev) => ({
           ...prev,
           status: 'error',
-          message: result.error
+          message: result.error,
         }))
       } else {
         setFormState({
           email: '',
           status: 'success',
-          message: 'Thanks for subscribing!'
+          message: 'Thanks for subscribing!',
         })
       }
     } catch (error) {
       setFormState((prev) => ({
         ...prev,
         status: 'error',
-        message: error instanceof Error ? error.message : 'Failed to subscribe'
+        message: error instanceof Error ? error.message : 'Failed to subscribe',
       }))
     }
   }

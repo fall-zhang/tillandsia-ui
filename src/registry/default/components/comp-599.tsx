@@ -1,17 +1,17 @@
-"use client"
+'use client'
 
-import React from "react"
+import React from 'react'
 import {
   checkboxesFeature,
   hotkeysCoreFeature,
   selectionFeature,
-  syncDataLoaderFeature,
-} from "@headless-tree/core"
-import { useTree } from "@headless-tree/react"
-import { FileIcon, FolderIcon, FolderOpenIcon } from "lucide-react"
+  syncDataLoaderFeature
+} from '@headless-tree/core'
+import { useTree } from '@headless-tree/react'
+import { FileIcon, FolderIcon, FolderOpenIcon } from 'lucide-react'
 
-import { Checkbox } from "@/registry/default/ui/checkbox"
-import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree"
+import { Checkbox } from '@/registry/default/ui/checkbox'
+import { Tree, TreeItem, TreeItemLabel } from '@/registry/default/ui/tree'
 
 interface Item {
   name: string
@@ -20,44 +20,44 @@ interface Item {
 
 const items: Record<string, Item> = {
   company: {
-    name: "Company",
-    children: ["engineering", "marketing", "operations"],
+    name: 'Company',
+    children: ['engineering', 'marketing', 'operations'],
   },
   engineering: {
-    name: "Engineering",
-    children: ["frontend", "backend", "platform-team"],
+    name: 'Engineering',
+    children: ['frontend', 'backend', 'platform-team'],
   },
-  frontend: { name: "Frontend", children: ["design-system", "web-platform"] },
-  "design-system": {
-    name: "Design System",
-    children: ["components", "tokens", "guidelines"],
+  frontend: { name: 'Frontend', children: ['design-system', 'web-platform'] },
+  'design-system': {
+    name: 'Design System',
+    children: ['components', 'tokens', 'guidelines'],
   },
-  components: { name: "Components" },
-  tokens: { name: "Tokens" },
-  guidelines: { name: "Guidelines" },
-  "web-platform": { name: "Web Platform" },
-  backend: { name: "Backend", children: ["apis", "infrastructure"] },
-  apis: { name: "APIs" },
-  infrastructure: { name: "Infrastructure" },
-  "platform-team": { name: "Platform Team" },
-  marketing: { name: "Marketing", children: ["content", "seo"] },
-  content: { name: "Content" },
-  seo: { name: "SEO" },
-  operations: { name: "Operations", children: ["hr", "finance"] },
-  hr: { name: "HR" },
-  finance: { name: "Finance" },
+  components: { name: 'Components' },
+  tokens: { name: 'Tokens' },
+  guidelines: { name: 'Guidelines' },
+  'web-platform': { name: 'Web Platform' },
+  backend: { name: 'Backend', children: ['apis', 'infrastructure'] },
+  apis: { name: 'APIs' },
+  infrastructure: { name: 'Infrastructure' },
+  'platform-team': { name: 'Platform Team' },
+  marketing: { name: 'Marketing', children: ['content', 'seo'] },
+  content: { name: 'Content' },
+  seo: { name: 'SEO' },
+  operations: { name: 'Operations', children: ['hr', 'finance'] },
+  hr: { name: 'HR' },
+  finance: { name: 'Finance' },
 }
 
 const indent = 20
 
-export default function Component() {
+export default function Component () {
   const tree = useTree<Item>({
     initialState: {
-      expandedItems: ["engineering", "frontend", "design-system"],
-      checkedItems: ["components", "tokens"],
+      expandedItems: ['engineering', 'frontend', 'design-system'],
+      checkedItems: ['components', 'tokens'],
     },
     indent,
-    rootItemId: "company",
+    rootItemId: 'company',
     getItemName: (item) => item.getItemData().name,
     isItemFolder: (item) => (item.getItemData()?.children?.length ?? 0) > 0,
     dataLoader: {
@@ -92,7 +92,7 @@ export default function Component() {
                     {
                       checked: true,
                       unchecked: false,
-                      indeterminate: "indeterminate" as const,
+                      indeterminate: 'indeterminate' as const,
                     }[item.getCheckedState()]
                   }
                   onCheckedChange={(checked) => {
@@ -103,15 +103,19 @@ export default function Component() {
                 <TreeItem item={item} className="flex-1 not-last:pb-0">
                   <TreeItemLabel className="before:bg-background relative before:absolute before:inset-x-0 before:-inset-y-0.5 before:-z-10">
                     <span className="flex items-center gap-2">
-                      {item.isFolder() ? (
-                        item.isExpanded() ? (
-                          <FolderOpenIcon className="text-muted-foreground pointer-events-none size-4" />
-                        ) : (
-                          <FolderIcon className="text-muted-foreground pointer-events-none size-4" />
+                      {item.isFolder()
+                        ? (
+                          item.isExpanded()
+                            ? (
+                              <FolderOpenIcon className="text-muted-foreground pointer-events-none size-4" />
+                            )
+                            : (
+                              <FolderIcon className="text-muted-foreground pointer-events-none size-4" />
+                            )
                         )
-                      ) : (
-                        <FileIcon className="text-muted-foreground pointer-events-none size-4" />
-                      )}
+                        : (
+                          <FileIcon className="text-muted-foreground pointer-events-none size-4" />
+                        )}
                       {item.getItemName()}
                     </span>
                   </TreeItemLabel>
@@ -128,7 +132,7 @@ export default function Component() {
           role="region"
           className="text-muted-foreground mt-2 text-xs"
         >
-          Tree with canCheckFolders option ∙{" "}
+          Tree with canCheckFolders option ∙{' '}
           <a
             href="https://headless-tree.lukasbach.com"
             className="hover:text-foreground underline"

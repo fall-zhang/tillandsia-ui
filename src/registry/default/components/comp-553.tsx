@@ -29,22 +29,22 @@ const initialFiles = [
     size: 252873,
     type: 'application/zip',
     url: 'https://example.com/intro.zip',
-    id: 'intro.zip-1744638436563-8u5xuls'
+    id: 'intro.zip-1744638436563-8u5xuls',
   },
   {
     name: 'image-01.jpg',
     size: 1528737,
     type: 'image/jpeg',
     url: 'https://picsum.photos/1000/800?grayscale&random=1',
-    id: 'image-01-123456789'
+    id: 'image-01-123456789',
   },
   {
     name: 'audio.mp3',
     size: 1528737,
     type: 'audio/mpeg',
     url: 'https://example.com/audio.mp3',
-    id: 'audio-123456789'
-  }
+    id: 'audio-123456789',
+  },
 ]
 
 const getFileIcon = (file: { file: File | { type: string; name: string } }) => {
@@ -59,7 +59,7 @@ const getFileIcon = (file: { file: File | { type: string; name: string } }) => {
         name.endsWith('.pdf') ||
         type.includes('word') ||
         name.endsWith('.doc') ||
-        name.endsWith('.docx')
+        name.endsWith('.docx'),
     },
     archive: {
       icon: FileArchiveIcon,
@@ -67,27 +67,27 @@ const getFileIcon = (file: { file: File | { type: string; name: string } }) => {
         type.includes('zip') ||
         type.includes('archive') ||
         name.endsWith('.zip') ||
-        name.endsWith('.rar')
+        name.endsWith('.rar'),
     },
     excel: {
       icon: FileSpreadsheetIcon,
       conditions: (type: string, name: string) =>
         type.includes('excel') ||
         name.endsWith('.xls') ||
-        name.endsWith('.xlsx')
+        name.endsWith('.xlsx'),
     },
     video: {
       icon: VideoIcon,
-      conditions: (type: string) => type.includes('video/')
+      conditions: (type: string) => type.includes('video/'),
     },
     audio: {
       icon: HeadphonesIcon,
-      conditions: (type: string) => type.includes('audio/')
+      conditions: (type: string) => type.includes('audio/'),
     },
     image: {
       icon: ImageIcon,
-      conditions: (type: string) => type.startsWith('image/')
-    }
+      conditions: (type: string) => type.startsWith('image/'),
+    },
   }
 
   for (const { icon: Icon, conditions } of Object.values(iconMap)) {
@@ -210,7 +210,7 @@ export default function Component () {
     const newProgressItems = addedFiles.map((file) => ({
       fileId: file.id,
       progress: 0,
-      completed: false
+      completed: false,
     }))
 
     // Add new progress items to state
@@ -269,14 +269,14 @@ export default function Component () {
       openFileDialog,
       removeFile,
       clearFiles,
-      getInputProps
-    }
+      getInputProps,
+    },
   ] = useFileUpload({
     multiple: true,
     maxFiles,
     maxSize,
     initialFiles,
-    onFilesAdded: handleFilesAdded
+    onFilesAdded: handleFilesAdded,
   })
 
   return (

@@ -12,7 +12,7 @@ import {
 
 const CopyButton = ({
   componentSource,
-  className
+  className,
 }: {
   componentSource: string | null
   className?: string

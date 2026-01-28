@@ -17,6 +17,6 @@ export function useCopy (duration = 1500) {
 
   return {
     copied,
-    copy
+    copy,
   }
 }

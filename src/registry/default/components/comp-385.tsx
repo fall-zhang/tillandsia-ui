@@ -13,18 +13,18 @@ const tips = [
   {
     title: 'Welcome to Dashboard',
     description:
-      "This is your new workspace. Here you'll find all your projects, recent activities, settings, and more."
+      "This is your new workspace. Here you'll find all your projects, recent activities, settings, and more.",
   },
   {
     title: 'Quick Actions',
     description:
-      'Use the toolbar above to create new projects, invite team members, or access settings.'
+      'Use the toolbar above to create new projects, invite team members, or access settings.',
   },
   {
     title: 'Need Help?',
     description:
-      'Click the support icon in the top right corner to access our help center and documentation.'
-  }
+      'Click the support icon in the top right corner to access our help center and documentation.',
+  },
 ]
 
 export default function Component () {

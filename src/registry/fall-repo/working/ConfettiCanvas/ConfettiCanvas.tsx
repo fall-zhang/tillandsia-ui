@@ -1,4 +1,4 @@
-import React, { MouseEvent, useEffect, useRef } from 'react'
+import { MouseEvent, useEffect, useRef } from 'react'
 import confetti from 'canvas-confetti'
 import s from './ConfettiCanvas.module.css'
 export default function () {

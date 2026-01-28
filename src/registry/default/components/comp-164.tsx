@@ -11,7 +11,7 @@ export default function Component () {
     { value: '3', label: '6 CPU' },
     { value: '4', label: '8 CPU' },
     { value: '5', label: '12 CPU' },
-    { value: '6', label: '16 CPU', disabled: true }
+    { value: '6', label: '16 CPU', disabled: true },
   ]
 
   return (

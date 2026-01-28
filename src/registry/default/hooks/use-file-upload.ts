@@ -68,17 +68,17 @@ export const useFileUpload = (
     multiple = false,
     initialFiles = [],
     onFilesChange,
-    onFilesAdded
+    onFilesAdded,
   } = options
 
   const [state, setState] = useState<FileUploadState>({
     files: initialFiles.map((file) => ({
       file,
       id: file.id,
-      preview: file.url
+      preview: file.url,
     })),
     isDragging: false,
-    errors: []
+    errors: [],
   })
 
   const inputRef = useRef<HTMLInputElement>(null)
@@ -158,7 +158,7 @@ export const useFileUpload = (
       const newState = {
         ...prev,
         files: [],
-        errors: []
+        errors: [],
       }
 
       onFilesChange?.(newState.files)
@@ -226,7 +226,7 @@ export const useFileUpload = (
           validFiles.push({
             file,
             id: generateUniqueId(file),
-            preview: createPreview(file)
+            preview: createPreview(file),
           })
         }
       })
@@ -244,13 +244,13 @@ export const useFileUpload = (
           return {
             ...prev,
             files: newFiles,
-            errors
+            errors,
           }
         })
       } else if (errors.length > 0) {
         setState((prev) => ({
           ...prev,
-          errors
+          errors,
         }))
       }
 
@@ -269,7 +269,7 @@ export const useFileUpload = (
       generateUniqueId,
       clearFiles,
       onFilesChange,
-      onFilesAdded
+      onFilesAdded,
     ]
   )
 
@@ -292,7 +292,7 @@ export const useFileUpload = (
         return {
           ...prev,
           files: newFiles,
-          errors: []
+          errors: [],
         }
       })
     },
@@ -302,7 +302,7 @@ export const useFileUpload = (
   const clearErrors = useCallback(() => {
     setState((prev) => ({
       ...prev,
-      errors: []
+      errors: [],
     }))
   }, [])
 
@@ -375,7 +375,7 @@ export const useFileUpload = (
         onChange: handleFileChange,
         accept: props.accept || accept,
         multiple: props.multiple !== undefined ? props.multiple : multiple,
-        ref: inputRef
+        ref: inputRef,
       }
     },
     [accept, multiple, handleFileChange]
@@ -394,8 +394,8 @@ export const useFileUpload = (
       handleDrop,
       handleFileChange,
       openFileDialog,
-      getInputProps
-    }
+      getInputProps,
+    },
   ]
 }
 

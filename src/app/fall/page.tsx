@@ -53,7 +53,7 @@ function CategoryCard ({
   slug,
   name,
   componentsCount,
-  isNew = false
+  isNew = false,
 }: CategoryCardProps) {
   const href = `/fall/${slug}`
   const imageBasePath = `/img/thumbs/${slug}`

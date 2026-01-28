@@ -26,7 +26,7 @@ import {
 } from '@/registry/default/ui/tooltip'
 
 export default function ComponentDetails ({
-  component
+  component,
 }: {
   component: RegistryItem
 }) {
@@ -112,16 +112,16 @@ export default function ComponentDetails ({
                 {code === ''
                   ? (
                     <p className="text-muted-foreground text-sm">
-                    No code available. If you think this is an error, please{' '}
+                      No code available. If you think this is an error, please{' '}
                       <a
                         href="https://github.com/origin-space/originui/issues"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-foreground font-medium underline hover:no-underline"
                       >
-                      open an issue
+                        open an issue
                       </a>
-                    .
+                      .
                     </p>
                   )
                   : (

@@ -7,24 +7,24 @@ import { useTags } from '@/hooks/use-tags'
 import { useOnClickOutside } from 'usehooks-ts'
 
 interface Tag {
-    id: string;
-    label: string;
-    color?: string;
+  id: string;
+  label: string;
+  color?: string;
 }
 
 interface TagInputProps {
-    onChange?: (tags: Tag[]) => void;
-    defaultTags?: Tag[];
-    suggestions?: Tag[];
-    maxTags?: number;
-    label?: string;
-    placeholder?: string;
-    error?: string;
+  onChange?: (tags: Tag[]) => void;
+  defaultTags?: Tag[];
+  suggestions?: Tag[];
+  maxTags?: number;
+  label?: string;
+  placeholder?: string;
+  error?: string;
 }
 const defaultKokonutTag: Tag = {
   id: 'kokonut-ui',
   label: 'KokonutUI',
-  color: 'bg-indigo-100 text-indigo-700 border border-indigo-200 dark:bg-indigo-900/30 dark:text-indigo-300 dark:border-indigo-700/30'
+  color: 'bg-indigo-100 text-indigo-700 border border-indigo-200 dark:bg-indigo-900/30 dark:text-indigo-300 dark:border-indigo-700/30',
 }
 
 const tagStyles = {
@@ -32,8 +32,8 @@ const tagStyles = {
   colors: {
     blue: 'bg-blue-50 text-blue-700 border border-blue-200 hover:border-blue-300 dark:bg-blue-900/30 dark:text-blue-300 dark:border-blue-700/30 dark:hover:border-blue-600/50',
     purple: 'bg-purple-50 text-purple-700 border border-purple-200 hover:border-purple-300 dark:bg-purple-900/30 dark:text-purple-300 dark:border-purple-700/30 dark:hover:border-purple-600/50',
-    green: 'bg-green-50 text-green-700 border border-green-200 hover:border-green-300 dark:bg-green-900/30 dark:text-green-300 dark:border-green-700/30 dark:hover:border-green-600/50'
-  }
+    green: 'bg-green-50 text-green-700 border border-green-200 hover:border-green-300 dark:bg-green-900/30 dark:text-green-300 dark:border-green-700/30 dark:hover:border-green-600/50',
+  },
 }
 
 export default function InputTag ({
@@ -42,17 +42,17 @@ export default function InputTag ({
   suggestions = [
     { id: 'nextjs', label: 'Next.js' },
     { id: 'react', label: 'React' },
-    { id: 'tailwind', label: 'Tailwind' }
+    { id: 'tailwind', label: 'Tailwind' },
   ],
   maxTags = 10,
   label = 'Tags',
   placeholder = 'Add tags...',
-  error
+  error,
 }: TagInputProps) {
   const { tags, addTag, removeTag, removeLastTag } = useTags({
     onChange,
     defaultTags,
-    maxTags
+    maxTags,
   })
   const [input, setInput] = useState('')
   const [isOpen, setIsOpen] = useState(false)
@@ -68,9 +68,9 @@ export default function InputTag ({
     .slice(0, 5)
 
   const canAddNewTag =
-        !suggestions.find(
-          (s) => s.label.toLowerCase() === input.toLowerCase()
-        ) && input.length > 0
+    !suggestions.find(
+      (s) => s.label.toLowerCase() === input.toLowerCase()
+    ) && input.length > 0
 
   function handleKeyDown (e: React.KeyboardEvent) {
     if (e.key === 'Backspace' && input === '' && tags.length > 0) {
@@ -218,7 +218,7 @@ export default function InputTag ({
                     addTag({
                       id: input,
                       label: input,
-                      color: randomColor
+                      color: randomColor,
                     })
                     setInput('')
                     setIsOpen(false)

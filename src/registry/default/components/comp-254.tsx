@@ -28,7 +28,7 @@ export default function Component () {
     handleInputChange,
     handleSliderChange,
     resetToDefault,
-    showReset
+    showReset,
   } = useSliderWithInput({ minValue, maxValue, initialValue, defaultValue })
 
   return (

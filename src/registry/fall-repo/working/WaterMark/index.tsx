@@ -3,7 +3,7 @@ import styles from './index.module.scss'
 import clsx from 'clsx'
 import { Button } from '@/registry/default/ui/button'
 
-export default function WaterMarkLayout() {
+export default function WaterMarkLayout () {
   const [imageSrc, setImageSrc] = useState('')
   const canvasRef = useRef<HTMLCanvasElement>(null)
   // const slug = useParams()
@@ -35,15 +35,16 @@ export default function WaterMarkLayout() {
       </div>}
       <div style={{ display: 'flex', marginTop: '20px' }}>
         {
-          imageSrc ? <>
-            <input onChange={onSelectFile}>
-              <Button >导入新图片</Button>
-            </input>
-            <Button onClick={onSaveImage}>另存为</Button>
-          </> :
-              <div className={styles.operation}>
-                <Button>请选择文件</Button>
-              </div>
+          imageSrc
+            ? <>
+              <input onChange={onSelectFile}>
+                <Button >导入新图片</Button>
+              </input>
+              <Button onClick={onSaveImage}>另存为</Button>
+            </>
+            : <div className={styles.operation}>
+              <Button>请选择文件</Button>
+            </div>
         }
       </div>
     </div>
@@ -54,20 +55,20 @@ export default function WaterMarkLayout() {
 const WaterMarkConfig: React.FC<{ className?: string }> = ({ className }) => {
   const positionArr = {
     x: ['left', 'center', 'right'],
-    y: ['top', 'center', 'bottom']
+    y: ['top', 'center', 'bottom'],
   }
   return (<form className={className}>
-   
-      <div className="">
-        水印内容
-      </div>
-      <div className="">
-        水印大小
-      </div>
+
+    <div className="">
+      水印内容
+    </div>
+    <div className="">
+      水印大小
+    </div>
     <span>预设水印</span>
-      预设水印一：全局水印，斜方向排列，重复
-      预设水印二：全局水印，斜方向排列，重复
-      预设水印三：定制水印
+    预设水印一：全局水印，斜方向排列，重复
+    预设水印二：全局水印，斜方向排列，重复
+    预设水印三：定制水印
     {/* <Form.Item >
       <Button type='primary'>应用</Button>
     </Form.Item> */}

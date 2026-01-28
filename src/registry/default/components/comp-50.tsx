@@ -14,7 +14,7 @@ export default function Component () {
     getCardNumberProps,
     getExpiryDateProps,
     getCVCProps,
-    getCardImageProps
+    getCardImageProps,
   } = usePaymentInputs()
 
   return (
@@ -35,7 +35,7 @@ export default function Component () {
                 <svg
                   className="overflow-hidden rounded-sm"
                   {...getCardImageProps({
-                    images: images as unknown as CardImages
+                    images: images as unknown as CardImages,
                   })}
                   width={20}
                 />

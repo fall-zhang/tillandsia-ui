@@ -142,7 +142,7 @@ const columns: ColumnDef<Item>[] = [
     ),
     size: 28,
     enableSorting: false,
-    enableHiding: false
+    enableHiding: false,
   },
   {
     header: 'Name',
@@ -152,12 +152,12 @@ const columns: ColumnDef<Item>[] = [
     ),
     size: 180,
     filterFn: multiColumnFilterFn,
-    enableHiding: false
+    enableHiding: false,
   },
   {
     header: 'Email',
     accessorKey: 'email',
-    size: 220
+    size: 220,
   },
   {
     header: 'Location',
@@ -168,7 +168,7 @@ const columns: ColumnDef<Item>[] = [
         {row.getValue('location')}
       </div>
     ),
-    size: 180
+    size: 180,
   },
   {
     header: 'Status',
@@ -184,11 +184,11 @@ const columns: ColumnDef<Item>[] = [
       </Badge>
     ),
     size: 100,
-    filterFn: statusFilterFn
+    filterFn: statusFilterFn,
   },
   {
     header: 'Performance',
-    accessorKey: 'performance'
+    accessorKey: 'performance',
   },
   {
     header: 'Balance',
@@ -197,19 +197,19 @@ const columns: ColumnDef<Item>[] = [
       const amount = parseFloat(row.getValue('balance'))
       const formatted = new Intl.NumberFormat('en-US', {
         style: 'currency',
-        currency: 'USD'
+        currency: 'USD',
       }).format(amount)
       return formatted
     },
-    size: 120
+    size: 120,
   },
   {
     id: 'actions',
     header: () => <span className="sr-only">Actions</span>,
     cell: ({ row }) => <RowActions row={row} />,
     size: 60,
-    enableHiding: false
-  }
+    enableHiding: false,
+  },
 ]
 
 export default function Component () {
@@ -218,15 +218,15 @@ export default function Component () {
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({})
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
-    pageSize: 10
+    pageSize: 10,
   })
   const inputRef = useRef<HTMLInputElement>(null)
 
   const [sorting, setSorting] = useState<SortingState>([
     {
       id: 'name',
-      desc: false
-    }
+      desc: false,
+    },
   ])
 
   const [data, setData] = useState<Item[]>([])
@@ -267,8 +267,8 @@ export default function Component () {
       sorting,
       pagination,
       columnFilters,
-      columnVisibility
-    }
+      columnVisibility,
+    },
   })
 
   // Get unique status values
@@ -546,7 +546,7 @@ export default function Component () {
                                 size={16}
                                 aria-hidden="true"
                               />
-                            )
+                            ),
                           }[header.column.getIsSorted() as string] ?? null}
                         </div>
                       ) : (
@@ -586,7 +586,7 @@ export default function Component () {
                     colSpan={columns.length}
                     className="h-24 text-center"
                   >
-                  No results.
+                    No results.
                   </TableCell>
                 </TableRow>
               )}

@@ -10,16 +10,16 @@ import {
 const steps = [
   {
     step: 1,
-    title: 'Step One'
+    title: 'Step One',
   },
   {
     step: 2,
-    title: 'Step Two'
+    title: 'Step Two',
   },
   {
     step: 3,
-    title: 'Step Three'
-  }
+    title: 'Step Three',
+  },
 ]
 
 export default function Component () {

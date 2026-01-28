@@ -10,7 +10,7 @@ export default function Component () {
   const today = new Date()
   const [date, setDate] = useState<DateRange | undefined>({
     from: today,
-    to: addDays(today, 48)
+    to: addDays(today, 48),
   })
 
   return (
@@ -26,7 +26,7 @@ export default function Component () {
         classNames={{
           months: 'sm:flex-col md:flex-row gap-8',
           month:
-            'relative first-of-type:before:hidden before:absolute max-md:before:inset-x-2 max-md:before:h-px max-md:before:-top-4 md:before:inset-y-2 md:before:w-px before:bg-border md:before:-left-4'
+            'relative first-of-type:before:hidden before:absolute max-md:before:inset-x-2 max-md:before:h-px max-md:before:-top-4 md:before:inset-y-2 md:before:w-px before:bg-border md:before:-left-4',
         }}
       />
       <p

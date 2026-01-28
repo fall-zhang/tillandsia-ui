@@ -48,7 +48,7 @@ function EventWrapper ({
   dndListeners,
   dndAttributes,
   onMouseDown,
-  onTouchStart
+  onTouchStart,
 }: EventWrapperProps) {
   // Always use the currentTime (if provided) to determine if the event is in the past
   const displayEnd = currentTime
@@ -112,7 +112,7 @@ export function EventItem ({
   dndListeners,
   dndAttributes,
   onMouseDown,
-  onTouchStart
+  onTouchStart,
 }: EventItemProps) {
   const eventColor = event.color
 

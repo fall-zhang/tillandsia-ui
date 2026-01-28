@@ -15,12 +15,12 @@ export default function Component () {
           { dayOfWeek: [0, 6] }, // Weekends
           {
             from: addDays(today, 14), // 14th day from now
-            to: addDays(today, 16) // 16th day from now
+            to: addDays(today, 16), // 16th day from now
           },
           {
             from: addDays(today, 23), // 23th day from now
-            to: addDays(today, 24) // 24th day from now
-          }
+            to: addDays(today, 24), // 24th day from now
+          },
         ]}
         excludeDisabled
         className="rounded-md border p-2"

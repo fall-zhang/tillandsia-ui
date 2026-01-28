@@ -1,5 +1,5 @@
 import { RegistryItem } from 'shadcn/registry'
-interface FallRegistryItem extends RegistryItem{
+interface FallRegistryItem extends RegistryItem {
   meta:{
     desc:string
     tags:string[],
@@ -27,10 +27,10 @@ export const categories: ComponentCategory[] = [
         meta: {
           desc: '',
           tags: ['alert', 'warning'],
-          colSpan: 2
-        }
-      }
-    ]
+          colSpan: 2,
+        },
+      },
+    ],
   },
   {
     slug: 'background',
@@ -42,8 +42,8 @@ export const categories: ComponentCategory[] = [
         meta: {
           desc: '',
           tags: ['alert', 'warning'],
-          colSpan: 2
-        }
+          colSpan: 2,
+        },
       },
       {
         name: 'background/path-bg',
@@ -51,11 +51,11 @@ export const categories: ComponentCategory[] = [
         meta: {
           desc: '',
           tags: ['alert', 'warning'],
-          colSpan: 2
-        }
-      }
-    ]
-  }
+          colSpan: 2,
+        },
+      },
+    ],
+  },
 ]
 
 export function getCategory (slug: string): ComponentCategory | undefined {

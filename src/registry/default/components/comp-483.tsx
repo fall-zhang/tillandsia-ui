@@ -77,7 +77,7 @@ const columns: ColumnDef<Item>[] = [
       />
     ),
     size: 28,
-    enableSorting: false
+    enableSorting: false,
   },
   {
     header: 'Name',
@@ -85,12 +85,12 @@ const columns: ColumnDef<Item>[] = [
     cell: ({ row }) => (
       <div className="font-medium">{row.getValue('name')}</div>
     ),
-    size: 180
+    size: 180,
   },
   {
     header: 'Email',
     accessorKey: 'email',
-    size: 200
+    size: 200,
   },
   {
     header: 'Location',
@@ -101,7 +101,7 @@ const columns: ColumnDef<Item>[] = [
         {row.getValue('location')}
       </div>
     ),
-    size: 180
+    size: 180,
   },
   {
     header: 'Status',
@@ -116,7 +116,7 @@ const columns: ColumnDef<Item>[] = [
         {row.getValue('status')}
       </Badge>
     ),
-    size: 120
+    size: 120,
   },
   {
     header: 'Balance',
@@ -125,26 +125,26 @@ const columns: ColumnDef<Item>[] = [
       const amount = parseFloat(row.getValue('balance'))
       const formatted = new Intl.NumberFormat('en-US', {
         style: 'currency',
-        currency: 'USD'
+        currency: 'USD',
       }).format(amount)
       return formatted
     },
-    size: 120
-  }
+    size: 120,
+  },
 ]
 
 export default function Component () {
   const id = useId()
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
-    pageSize: 5
+    pageSize: 5,
   })
 
   const [sorting, setSorting] = useState<SortingState>([
     {
       id: 'name',
-      desc: false
-    }
+      desc: false,
+    },
   ])
 
   const [data, setData] = useState<Item[]>([])
@@ -170,8 +170,8 @@ export default function Component () {
     onPaginationChange: setPagination,
     state: {
       sorting,
-      pagination
-    }
+      pagination,
+    },
   })
 
   return (
@@ -225,7 +225,7 @@ export default function Component () {
                                 size={16}
                                 aria-hidden="true"
                               />
-                            )
+                            ),
                           }[header.column.getIsSorted() as string] ?? null}
                         </div>
                       ) : (
@@ -265,7 +265,7 @@ export default function Component () {
                     colSpan={columns.length}
                     className="h-24 text-center"
                   >
-                  No results.
+                    No results.
                   </TableCell>
                 </TableRow>
               )}

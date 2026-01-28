@@ -26,7 +26,7 @@ export default function Component () {
     getCardNumberProps,
     getExpiryDateProps,
     getCVCProps,
-    getCardImageProps
+    getCardImageProps,
   } = usePaymentInputs()
   const couponInputRef = useRef<HTMLInputElement>(null)
   const [showCouponInput, setShowCouponInput] = useState(false)
@@ -107,7 +107,7 @@ export default function Component () {
                         <svg
                           className="overflow-hidden rounded-sm"
                           {...getCardImageProps({
-                            images: images as unknown as CardImages
+                            images: images as unknown as CardImages,
                           })}
                           width={20}
                         />
@@ -140,7 +140,7 @@ export default function Component () {
                   onClick={() => setShowCouponInput(true)}
                   className="text-sm underline hover:no-underline"
                 >
-                + Add coupon
+                  + Add coupon
                 </button>
               )
               : (

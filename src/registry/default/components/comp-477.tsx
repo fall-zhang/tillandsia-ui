@@ -50,18 +50,18 @@ const columns: ColumnDef<Item>[] = [
         onCheckedChange={(value) => row.toggleSelected(!!value)}
         aria-label="Select row"
       />
-    )
+    ),
   },
   {
     header: 'Name',
     accessorKey: 'name',
     cell: ({ row }) => (
       <div className="font-medium">{row.getValue('name')}</div>
-    )
+    ),
   },
   {
     header: 'Email',
-    accessorKey: 'email'
+    accessorKey: 'email',
   },
   {
     header: 'Location',
@@ -71,7 +71,7 @@ const columns: ColumnDef<Item>[] = [
         <span className="text-lg leading-none">{row.original.flag}</span>{' '}
         {row.getValue('location')}
       </div>
-    )
+    ),
   },
   {
     header: 'Status',
@@ -85,7 +85,7 @@ const columns: ColumnDef<Item>[] = [
       >
         {row.getValue('status')}
       </Badge>
-    )
+    ),
   },
   {
     header: () => <div className="text-right">Balance</div>,
@@ -94,11 +94,11 @@ const columns: ColumnDef<Item>[] = [
       const amount = parseFloat(row.getValue('balance'))
       const formatted = new Intl.NumberFormat('en-US', {
         style: 'currency',
-        currency: 'USD'
+        currency: 'USD',
       }).format(amount)
       return <div className="text-right">{formatted}</div>
-    }
-  }
+    },
+  },
 ]
 
 export default function Component () {
@@ -118,7 +118,7 @@ export default function Component () {
   const table = useReactTable({
     data,
     columns,
-    getCoreRowModel: getCoreRowModel()
+    getCoreRowModel: getCoreRowModel(),
   })
 
   return (
@@ -161,7 +161,7 @@ export default function Component () {
             : (
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-24 text-center">
-                No results.
+                  No results.
                 </TableCell>
               </TableRow>
             )}
@@ -172,7 +172,7 @@ export default function Component () {
             <TableCell className="text-right">
               {new Intl.NumberFormat('en-US', {
                 style: 'currency',
-                currency: 'USD'
+                currency: 'USD',
               }).format(data.reduce((total, item) => total + item.balance, 0))}
             </TableCell>
           </TableRow>

@@ -13,7 +13,7 @@ export default function Component () {
     value,
     characterCount,
     handleChange,
-    maxLength: limit
+    maxLength: limit,
   } = useCharacterLimit({ maxLength })
 
   return (

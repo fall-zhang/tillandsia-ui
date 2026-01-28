@@ -62,7 +62,7 @@ export function EventCalendar ({
   onEventUpdate,
   onEventDelete,
   className,
-  initialView = 'month'
+  initialView = 'month',
 }: EventCalendarProps) {
   const [currentDate, setCurrentDate] = useState(new Date())
   const [view, setView] = useState<CalendarView>(initialView)
@@ -84,18 +84,18 @@ export function EventCalendar ({
       }
 
       switch (e.key.toLowerCase()) {
-      case 'm':
-        setView('month')
-        break
-      case 'w':
-        setView('week')
-        break
-      case 'd':
-        setView('day')
-        break
-      case 'a':
-        setView('agenda')
-        break
+        case 'm':
+          setView('month')
+          break
+        case 'w':
+          setView('week')
+          break
+        case 'd':
+          setView('day')
+          break
+        case 'a':
+          setView('agenda')
+          break
       }
     }
 
@@ -165,7 +165,7 @@ export function EventCalendar ({
       title: '',
       start: startTime,
       end: addHoursToDate(startTime, 1),
-      allDay: false
+      allDay: false,
     }
     setSelectedEvent(newEvent)
     setIsEventDialogOpen(true)
@@ -177,17 +177,17 @@ export function EventCalendar ({
       // Show toast notification when an event is updated
       toast(`Event "${event.title}" updated`, {
         description: format(new Date(event.start), 'MMM d, yyyy'),
-        position: 'bottom-left'
+        position: 'bottom-left',
       })
     } else {
       onEventAdd?.({
         ...event,
-        id: Math.random().toString(36).substring(2, 11)
+        id: Math.random().toString(36).substring(2, 11),
       })
       // Show toast notification when an event is added
       toast(`Event "${event.title}" added`, {
         description: format(new Date(event.start), 'MMM d, yyyy'),
-        position: 'bottom-left'
+        position: 'bottom-left',
       })
     }
     setIsEventDialogOpen(false)
@@ -204,7 +204,7 @@ export function EventCalendar ({
     if (deletedEvent) {
       toast(`Event "${deletedEvent.title}" deleted`, {
         description: format(new Date(deletedEvent.start), 'MMM d, yyyy'),
-        position: 'bottom-left'
+        position: 'bottom-left',
       })
     }
   }
@@ -215,7 +215,7 @@ export function EventCalendar ({
     // Show toast notification when an event is updated via drag and drop
     toast(`Event "${updatedEvent.title}" moved`, {
       description: format(new Date(updatedEvent.start), 'MMM d, yyyy'),
-      position: 'bottom-left'
+      position: 'bottom-left',
     })
   }
 
@@ -263,7 +263,7 @@ export function EventCalendar ({
         {
           '--event-height': `${EventHeight}px`,
           '--event-gap': `${EventGap}px`,
-          '--week-cells-height': `${WeekCellsHeight}px`
+          '--week-cells-height': `${WeekCellsHeight}px`,
         } as React.CSSProperties
       }
     >

@@ -11,7 +11,7 @@ export default function Component () {
   const disabledRanges = [
     [now, now], // Disables today
     [now.add({ days: 14 }), now.add({ days: 14 })], // Disables only the 14th day from now
-    [now.add({ days: 23 }), now.add({ days: 23 })] // Disables only the 23rd day from now
+    [now.add({ days: 23 }), now.add({ days: 23 })], // Disables only the 23rd day from now
   ]
 
   const { locale } = useLocale()

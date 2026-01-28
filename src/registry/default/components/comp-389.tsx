@@ -28,26 +28,26 @@ const tourSteps: TourStep[] = [
     icon: HeartIcon,
     title: 'Heart',
     description:
-      "This is your new workspace. Here you'll find all your projects, recent activities, settings, and more."
+      "This is your new workspace. Here you'll find all your projects, recent activities, settings, and more.",
   },
   {
     icon: DiamondIcon,
     title: 'Diamond',
     description:
-      'Use the toolbar above to create new projects, invite team members, or access settings.'
+      'Use the toolbar above to create new projects, invite team members, or access settings.',
   },
   {
     icon: ClubIcon,
     title: 'Club',
     description:
-      'Click the support icon in the top right corner to access our help center and documentation.'
+      'Click the support icon in the top right corner to access our help center and documentation.',
   },
   {
     icon: SpadeIcon,
     title: 'Spade',
     description:
-      'Press ⌘K to open the command palette. Use arrow keys to navigate and Enter to select an action.'
-  }
+      'Press ⌘K to open the command palette. Use arrow keys to navigate and Enter to select an action.',
+  },
 ]
 
 interface CardProps {

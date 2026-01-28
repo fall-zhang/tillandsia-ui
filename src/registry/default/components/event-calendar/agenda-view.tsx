@@ -20,7 +20,7 @@ interface AgendaViewProps {
 export function AgendaView ({
   currentDate,
   events,
-  onEventSelect
+  onEventSelect,
 }: AgendaViewProps) {
   // Show events for the next days based on constant
   const days = useMemo(() => {
@@ -52,7 +52,7 @@ export function AgendaView ({
             />
             <h3 className="text-lg font-medium">No events found</h3>
             <p className="text-muted-foreground">
-            There are no events scheduled for this time period.
+              There are no events scheduled for this time period.
             </p>
           </div>
         )

@@ -2,19 +2,19 @@ import {
   BookIcon,
   InfoIcon,
   LifeBuoyIcon,
-  MessageCircleMoreIcon,
-} from "lucide-react"
+  MessageCircleMoreIcon
+} from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from '@/registry/default/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu"
+  DropdownMenuTrigger
+} from '@/registry/default/ui/dropdown-menu'
 
-export default function InfoMenu() {
+export default function InfoMenu () {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

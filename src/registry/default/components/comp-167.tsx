@@ -10,7 +10,7 @@ export default function Component () {
     { value: '2', label: 'Sad', icon: '🙁' },
     { value: '3', label: 'Neutral', icon: '😐' },
     { value: '4', label: 'Happy', icon: '🙂' },
-    { value: '5', label: 'Laughing', icon: '😀' }
+    { value: '5', label: 'Laughing', icon: '😀' },
   ]
 
   return (

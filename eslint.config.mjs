@@ -1,14 +1,16 @@
-import standard from './eslint-standard.config.mjs'
+import standard from 'eslint-config-standard-new'
 import lintReact from 'eslint-plugin-react'
 import jslint from '@eslint/js'
 import lintReactHooks from 'eslint-plugin-react-hooks'
 import tslint from 'typescript-eslint'
 import lintNext from '@next/eslint-plugin-next'
+import stylistic from '@stylistic/eslint-plugin'
 import { defineConfig } from 'eslint/config'
 const defaultConfig = {
   plugins: {
     react: lintReact,
-    'react-hooks': lintReactHooks
+    'react-hooks': lintReactHooks,
+    '@stylistic': stylistic,
   },
   settings: { react: { version: '18.3' } },
   rules: {
@@ -26,37 +28,45 @@ const defaultConfig = {
     'react/react-in-jsx-scope': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    '@stylistic/comma-dangle': ['error', {
+      arrays: 'always-multiline',
+      objects: 'always-multiline',
+      imports: 'never',
+      exports: 'never',
+      functions: 'never',
+    }],
     // typescript
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/no-explicit-any': 'warn',
     '@typescript-eslint/no-this-alias': 'warn',
-    '@typescript-eslint/no-unused-expressions': 'off'
-  }
+    '@typescript-eslint/no-unused-expressions': 'off',
+  },
 }
 const nextConfig = {
   plugins: {
-    '@next/next': lintNext
+    '@next/next': lintNext,
   },
   settings: { react: { version: '18.3' } },
-  rules: lintNext.configs.recommended.rules
+  rules: lintNext.configs.recommended.rules,
 }
 // "extends": ["next/core-web-vitals", "next/typescript"]
 export default defineConfig([
   // 只对我修改的部分进行
   {
     name: 'app/files-to-lint',
-    files: ['./src/**/*.{tsx,ts,js,mjs,jsx}', './*.{ts,js,mjs}']
+    files: ['./src/**/*.{tsx,ts,js,mjs,jsx}', './*.{ts,js,mjs}'],
   },
   // global ignores
-  {
-    name: 'app/files-to-ignore',
-    ignores: ['**/temp.js', '**/.next/**', '**/node_modules/**']
-  },
+
   jslint.configs.recommended,
   nextConfig,
   lintReact.configs.flat.recommended,
   lintReact.configs.flat['jsx-runtime'],
   standard, // js 标准配置
   ...tslint.configs.recommended,
-  defaultConfig
+  defaultConfig,
+  {
+    name: 'app/files-to-ignore',
+    ignores: ['**/temp.js', '**/.next/**', '**/node_modules/**'],
+  },
 ])

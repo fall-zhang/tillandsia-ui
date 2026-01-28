@@ -48,13 +48,13 @@ export function DayView ({
   currentDate,
   events,
   onEventSelect,
-  onEventCreate
+  onEventCreate,
 }: DayViewProps) {
   const hours = useMemo(() => {
     const dayStart = startOfDay(currentDate)
     return eachHourOfInterval({
       start: addHours(dayStart, StartHour),
-      end: addHours(dayStart, EndHour - 1)
+      end: addHours(dayStart, EndHour - 1),
     })
   }, [currentDate])
 
@@ -170,7 +170,7 @@ export function DayView ({
         height,
         left,
         width,
-        zIndex: 10 + columnIndex // Higher columns get higher z-index
+        zIndex: 10 + columnIndex, // Higher columns get higher z-index
       })
     })
 
@@ -251,7 +251,7 @@ export function DayView ({
                 height: `${positionedEvent.height}px`,
                 left: `${positionedEvent.left * 100}%`,
                 width: `${positionedEvent.width * 100}%`,
-                zIndex: positionedEvent.zIndex
+                zIndex: positionedEvent.zIndex,
               }}
             >
               <div className="size-full">

@@ -128,7 +128,7 @@ const items = [
   { id: 117, price: 890 },
   { id: 118, price: 895 },
   { id: 119, price: 898 },
-  { id: 120, price: 900 }
+  { id: 120, price: 900 },
 ]
 
 export default function Component () {
@@ -145,7 +145,7 @@ export default function Component () {
     inputValues,
     validateAndUpdateValue,
     handleInputChange,
-    handleSliderChange
+    handleSliderChange,
   } = useSliderWithInput({ minValue, maxValue, initialValue: [200, 780] }) // set initialValue: [minValue, maxValue] to show all items by default
 
   // Calculate the price step based on the min and max prices
@@ -200,7 +200,7 @@ export default function Component () {
               key={i}
               className="flex flex-1 justify-center"
               style={{
-                height: `${(count / maxCount) * 100}%`
+                height: `${(count / maxCount) * 100}%`,
               }}
             >
               <span

@@ -17,7 +17,7 @@ export default function Component () {
         type="text"
         ref={withMask('99:99:99', {
           placeholder: '-',
-          showMaskOnHover: false
+          showMaskOnHover: false,
         })}
       />
       <p

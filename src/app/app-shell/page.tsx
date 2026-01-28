@@ -7,7 +7,7 @@ import AppCard from './AppCard'
 export const metadata: Metadata = {
   title: 'App shell built with Tailwind CSS and React - Origin UI',
   description:
-    'Beautiful UI layouts built with Tailwind CSS and React to help you get started with your next project.'
+    'Beautiful UI layouts built with Tailwind CSS and React to help you get started with your next project.',
 }
 
 const cards = [
@@ -18,7 +18,7 @@ const cards = [
     repoUrl:
       'https://github.com/origin-space/ui-experiments/tree/main/apps/experiment-07',
     cmd: 'npx shadcn init https://ui-experiment-07.vercel.app/r/experiment-07.json',
-    imgHeight: 700
+    imgHeight: 700,
   },
   {
     id: 6,
@@ -27,7 +27,7 @@ const cards = [
     repoUrl:
       'https://github.com/origin-space/ui-experiments/tree/main/apps/experiment-06',
     cmd: 'npx shadcn init https://ui-experiment-06.vercel.app/r/experiment-06.json',
-    imgHeight: 688
+    imgHeight: 688,
   },
   {
     id: 5,
@@ -36,7 +36,7 @@ const cards = [
     repoUrl:
       'https://github.com/origin-space/ui-experiments/tree/main/apps/experiment-05',
     cmd: 'npx shadcn init https://ui-experiment-05.vercel.app/r/experiment-05.json',
-    imgHeight: 770
+    imgHeight: 770,
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ const cards = [
     repoUrl:
       'https://github.com/origin-space/ui-experiments/tree/main/apps/experiment-04',
     cmd: 'npx shadcn init https://ui-experiment-04.vercel.app/r/experiment-04.json',
-    imgHeight: 894
+    imgHeight: 894,
   },
   {
     id: 3,
@@ -54,7 +54,7 @@ const cards = [
     repoUrl:
       'https://github.com/origin-space/ui-experiments/tree/main/apps/experiment-03',
     cmd: 'npx shadcn init https://ui-experiment-03.vercel.app/r/experiment-03.json',
-    imgHeight: 829
+    imgHeight: 829,
   },
   {
     id: 2,
@@ -63,7 +63,7 @@ const cards = [
     repoUrl:
       'https://github.com/origin-space/ui-experiments/tree/main/apps/experiment-02',
     cmd: 'npx shadcn init https://ui-experiment-02.vercel.app/r/experiment-02.json',
-    imgHeight: 700
+    imgHeight: 700,
   },
   {
     id: 1,
@@ -72,8 +72,8 @@ const cards = [
     repoUrl:
       'https://github.com/origin-space/ui-experiments/tree/main/apps/experiment-01',
     cmd: 'npx shadcn init https://ui-experiments-green.vercel.app/r/experiment-01.json',
-    imgHeight: 894
-  }
+    imgHeight: 894,
+  },
 ]
 
 export default function Page () {

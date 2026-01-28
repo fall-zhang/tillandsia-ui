@@ -1,16 +1,16 @@
-import { useId } from "react"
-import { ListFilterIcon } from "lucide-react"
+import { useId } from 'react'
+import { ListFilterIcon } from 'lucide-react'
 
-import { Button } from "@/registry/default/ui/button"
-import { Checkbox } from "@/registry/default/ui/checkbox"
-import { Label } from "@/registry/default/ui/label"
+import { Button } from '@/registry/default/ui/button'
+import { Checkbox } from '@/registry/default/ui/checkbox'
+import { Label } from '@/registry/default/ui/label'
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
+  PopoverTrigger
+} from '@/registry/default/ui/popover'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   return (
     <div className="flex flex-col gap-4">

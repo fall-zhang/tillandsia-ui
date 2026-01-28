@@ -1,17 +1,17 @@
-"use client"
+'use client'
 
-import { useId, useState } from "react"
-import { LayoutGridIcon, PlusIcon, SearchIcon } from "lucide-react"
+import { useId, useState } from 'react'
+import { LayoutGridIcon, PlusIcon, SearchIcon } from 'lucide-react'
 
-import InfoMenu from "@/registry/default/components/navbar-components/info-menu"
-import NotificationMenu from "@/registry/default/components/navbar-components/notification-menu"
-import SettingsMenu from "@/registry/default/components/navbar-components/settings-menu"
-import { Button } from "@/registry/default/ui/button"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
-import { Switch } from "@/registry/default/ui/switch"
+import InfoMenu from '@/registry/default/components/navbar-components/info-menu'
+import NotificationMenu from '@/registry/default/components/navbar-components/notification-menu'
+import SettingsMenu from '@/registry/default/components/navbar-components/settings-menu'
+import { Button } from '@/registry/default/ui/button'
+import { Input } from '@/registry/default/ui/input'
+import { Label } from '@/registry/default/ui/label'
+import { Switch } from '@/registry/default/ui/switch'
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   const [checked, setChecked] = useState<boolean>(true)
 

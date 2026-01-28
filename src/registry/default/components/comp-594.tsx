@@ -1,12 +1,12 @@
-import { SparklesIcon, UploadIcon } from "lucide-react"
+import { SparklesIcon, UploadIcon } from 'lucide-react'
 
-import AppToggle from "@/registry/default/components/navbar-components/app-toggle"
-import TeamSwitcher from "@/registry/default/components/navbar-components/team-switcher"
-import { Button } from "@/registry/default/ui/button"
+import AppToggle from '@/registry/default/components/navbar-components/app-toggle'
+import TeamSwitcher from '@/registry/default/components/navbar-components/team-switcher'
+import { Button } from '@/registry/default/ui/button'
 
-const teams = ["Acme Inc.", "Origin UI", "Junon"]
+const teams = ['Acme Inc.', 'Origin UI', 'Junon']
 
-export default function Component() {
+export default function Component () {
   return (
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">

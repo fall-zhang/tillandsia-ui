@@ -20,12 +20,12 @@ type PaginationProps = {
 export default function Component ({
   currentPage,
   totalPages,
-  paginationItemsToDisplay = 5
+  paginationItemsToDisplay = 5,
 }: PaginationProps) {
   const { pages, showLeftEllipsis, showRightEllipsis } = usePagination({
     currentPage,
     totalPages,
-    paginationItemsToDisplay
+    paginationItemsToDisplay,
   })
 
   return (
@@ -36,7 +36,7 @@ export default function Component ({
           <PaginationLink
             className={cn(
               buttonVariants({
-                variant: 'outline'
+                variant: 'outline',
               }),
               'rounded-none shadow-none focus-visible:z-10 aria-disabled:pointer-events-none [&[aria-disabled]>svg]:opacity-50'
             )}
@@ -62,7 +62,7 @@ export default function Component ({
             <PaginationLink
               className={cn(
                 buttonVariants({
-                  variant: 'outline'
+                  variant: 'outline',
                 }),
                 'rounded-none shadow-none focus-visible:z-10',
                 page === currentPage && 'bg-accent'
@@ -81,7 +81,7 @@ export default function Component ({
             <PaginationEllipsis
               className={cn(
                 buttonVariants({
-                  variant: 'outline'
+                  variant: 'outline',
                 }),
                 'pointer-events-none rounded-none shadow-none'
               )}
@@ -94,7 +94,7 @@ export default function Component ({
           <PaginationLink
             className={cn(
               buttonVariants({
-                variant: 'outline'
+                variant: 'outline',
               }),
               'rounded-none shadow-none focus-visible:z-10 aria-disabled:pointer-events-none [&[aria-disabled]>svg]:opacity-50'
             )}

@@ -16,12 +16,12 @@ interface SearchFieldProps {
 
 const baseOptions: Option[] = registryTags.map((tag) => ({
   value: tag,
-  label: tag
+  label: tag,
 }))
 
 export default function SearchField ({
   selectedTags,
-  onTagChange
+  onTagChange,
 }: SearchFieldProps) {
   const [inputValue, setInputValue] = useState('')
   const handleMultipleSelectorChange = (selected: Option[]) => {
@@ -38,7 +38,7 @@ export default function SearchField ({
     if (selectedTags.length === 0) {
       return baseOptions.map((option) => ({
         ...option,
-        label: `${option.value}`
+        label: `${option.value}`,
       }))
     }
 
@@ -50,7 +50,7 @@ export default function SearchField ({
         label: `${option.value}`,
         disable:
           !selectedTags.includes(option.value) &&
-          !availableTags.includes(option.value as RegistryTag)
+          !availableTags.includes(option.value as RegistryTag),
       }))
       .sort((a, b) => {
         // Selected tags first
@@ -74,14 +74,14 @@ export default function SearchField ({
         <MultipleSelector
           commandProps={{
             label: 'Search components',
-            shouldFilter: false
+            shouldFilter: false,
           }}
           inputProps={{
             onValueChange: (v) => {
               setInputValue(v)
               return v
             },
-            autoFocus: selectedTags.length === 0
+            autoFocus: selectedTags.length === 0,
           }}
           defaultOptions={baseOptions}
           options={getFilteredOptions().filter(

@@ -56,7 +56,7 @@ const getPinningStyles = (column: Column<Item>): CSSProperties => {
     right: isPinned === 'right' ? `${column.getAfter('right')}px` : undefined,
     position: isPinned ? 'sticky' : 'relative',
     width: column.getSize(),
-    zIndex: isPinned ? 1 : 0
+    zIndex: isPinned ? 1 : 0,
   }
 }
 
@@ -66,11 +66,11 @@ const columns: ColumnDef<Item>[] = [
     accessorKey: 'name',
     cell: ({ row }) => (
       <div className="truncate font-medium">{row.getValue('name')}</div>
-    )
+    ),
   },
   {
     header: 'Email',
-    accessorKey: 'email'
+    accessorKey: 'email',
   },
   {
     header: 'Location',
@@ -80,11 +80,11 @@ const columns: ColumnDef<Item>[] = [
         <span className="text-lg leading-none">{row.original.flag}</span>{' '}
         {row.getValue('location')}
       </div>
-    )
+    ),
   },
   {
     header: 'Status',
-    accessorKey: 'status'
+    accessorKey: 'status',
   },
   {
     header: 'Balance',
@@ -93,31 +93,31 @@ const columns: ColumnDef<Item>[] = [
       const amount = parseFloat(row.getValue('balance'))
       const formatted = new Intl.NumberFormat('en-US', {
         style: 'currency',
-        currency: 'USD'
+        currency: 'USD',
       }).format(amount)
       return formatted
-    }
+    },
   },
   {
     header: 'Department',
-    accessorKey: 'department'
+    accessorKey: 'department',
   },
   {
     header: 'Role',
-    accessorKey: 'role'
+    accessorKey: 'role',
   },
   {
     header: 'Join Date',
-    accessorKey: 'joinDate'
+    accessorKey: 'joinDate',
   },
   {
     header: 'Last Active',
-    accessorKey: 'lastActive'
+    accessorKey: 'lastActive',
   },
   {
     header: 'Performance',
-    accessorKey: 'performance'
-  }
+    accessorKey: 'performance',
+  },
 ]
 
 export default function Component () {
@@ -143,9 +143,9 @@ export default function Component () {
     getSortedRowModel: getSortedRowModel(),
     onSortingChange: setSorting,
     state: {
-      sorting
+      sorting,
     },
-    enableSortingRemoval: false
+    enableSortingRemoval: false,
   })
 
   return (
@@ -153,7 +153,7 @@ export default function Component () {
       <Table
         className="[&_td]:border-border [&_th]:border-border table-fixed border-separate border-spacing-0 [&_tfoot_td]:border-t [&_th]:border-b [&_tr]:border-none [&_tr:not(:last-child)_td]:border-b"
         style={{
-          width: table.getTotalSize()
+          width: table.getTotalSize(),
         }}
       >
         <TableHeader>
@@ -237,7 +237,7 @@ export default function Component () {
                                     className="opacity-60"
                                     aria-hidden="true"
                                   />
-                                Stick to left
+                                  Stick to left
                                 </DropdownMenuItem>
                                 <DropdownMenuItem
                                   onClick={() => header.column.pin('right')}
@@ -247,7 +247,7 @@ export default function Component () {
                                     className="opacity-60"
                                     aria-hidden="true"
                                   />
-                                Stick to right
+                                  Stick to right
                                 </DropdownMenuItem>
                               </DropdownMenuContent>
                             </DropdownMenu>
@@ -259,7 +259,7 @@ export default function Component () {
                             onMouseDown: header.getResizeHandler(),
                             onTouchStart: header.getResizeHandler(),
                             className:
-                              'absolute top-0 h-full w-4 cursor-col-resize user-select-none touch-none -right-2 z-10 flex justify-center before:absolute before:w-px before:inset-y-0 before:bg-border before:-translate-x-px'
+                              'absolute top-0 h-full w-4 cursor-col-resize user-select-none touch-none -right-2 z-10 flex justify-center before:absolute before:w-px before:inset-y-0 before:bg-border before:-translate-x-px',
                           }}
                         />
                       )}
@@ -282,9 +282,9 @@ export default function Component () {
                     const { column } = cell
                     const isPinned = column.getIsPinned()
                     const isLastLeftPinned =
-                    isPinned === 'left' && column.getIsLastColumn('left')
+                      isPinned === 'left' && column.getIsLastColumn('left')
                     const isFirstRightPinned =
-                    isPinned === 'right' && column.getIsFirstColumn('right')
+                      isPinned === 'right' && column.getIsFirstColumn('right')
 
                     return (
                       <TableCell
@@ -313,7 +313,7 @@ export default function Component () {
             : (
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-24 text-center">
-                No results.
+                  No results.
                 </TableCell>
               </TableRow>
             )}

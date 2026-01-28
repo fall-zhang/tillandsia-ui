@@ -8,7 +8,7 @@ export default function HeaderLink ({
   href,
   external = false,
   className,
-  isNew = false
+  isNew = false,
 }: {
   text: string
   href: string
@@ -52,7 +52,7 @@ export default function HeaderLink ({
             </Link>
             {isNew && (
               <span className="text-muted-foreground/80 text-xs text-[10px] font-medium uppercase">
-              New
+                New
               </span>
             )}
           </>

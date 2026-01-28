@@ -77,7 +77,7 @@ const action:SearchSelectItem[] = categories.map(item => {
   const res:SearchSelectItem = {
     id: item.name,
     label: item.name,
-    icon: ''
+    icon: '',
   }
   return res
 })
@@ -87,16 +87,16 @@ const listItemMotion = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.3
-    }
+      duration: 0.3,
+    },
   },
   exit: {
     opacity: 0,
     y: -10,
     transition: {
-      duration: 0.2
-    }
-  }
+      duration: 0.2,
+    },
+  },
 }
 
 const listContainerMotion = {
@@ -106,23 +106,23 @@ const listContainerMotion = {
     height: 'auto',
     transition: {
       height: {
-        duration: 0.4
+        duration: 0.4,
       },
-      staggerChildren: 0.1
-    }
+      staggerChildren: 0.1,
+    },
   },
   exit: {
     opacity: 0,
     height: 0,
     transition: {
       height: {
-        duration: 0.3
+        duration: 0.3,
       },
       opacity: {
-        duration: 0.2
-      }
-    }
-  }
+        duration: 0.2,
+      },
+    },
+  },
 }
 type SearchCompProp = {
   actions?: SearchSelectItem[];
@@ -131,7 +131,7 @@ type SearchCompProp = {
 
 function SearchComp ({
   actions = action,
-  defaultOpen = false
+  defaultOpen = false,
 }: SearchCompProp) {
   const [query, setQuery] = useState('')
   const [result, setResult] = useState<SearchResult | null>(null)

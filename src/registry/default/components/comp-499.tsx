@@ -26,7 +26,7 @@ export default function Component () {
                 </span>
               </th>
             )
-          }
+          },
         }}
       />
       <p

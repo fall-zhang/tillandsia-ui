@@ -39,13 +39,13 @@ export default function Component () {
                   size={16}
                   aria-hidden="true"
                 />
-              Updating...
+                Updating...
               </>
             )
             : (
               <>
                 <DownloadIcon size={16} className="-ms-0.5" aria-hidden="true" />
-              Update now
+                Update now
               </>
             )}
         </Button>

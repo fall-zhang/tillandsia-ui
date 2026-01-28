@@ -1,41 +1,41 @@
-import { ChevronsUpDown } from "lucide-react"
-import { Select as SelectPrimitive } from "radix-ui"
+import { ChevronsUpDown } from 'lucide-react'
+import { Select as SelectPrimitive } from 'radix-ui'
 
-import SettingsMenu from "@/registry/default/components/navbar-components/settings-menu"
-import UserMenu from "@/registry/default/components/navbar-components/user-menu"
+import SettingsMenu from '@/registry/default/components/navbar-components/settings-menu'
+import UserMenu from '@/registry/default/components/navbar-components/user-menu'
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbList,
-  BreadcrumbSeparator,
-} from "@/registry/default/ui/breadcrumb"
-import { Button } from "@/registry/default/ui/button"
+  BreadcrumbSeparator
+} from '@/registry/default/ui/breadcrumb'
+import { Button } from '@/registry/default/ui/button'
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
-  NavigationMenuList,
-} from "@/registry/default/ui/navigation-menu"
+  NavigationMenuList
+} from '@/registry/default/ui/navigation-menu'
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
+  PopoverTrigger
+} from '@/registry/default/ui/popover'
 import {
   Select,
   SelectContent,
   SelectItem,
-  SelectValue,
-} from "@/registry/default/ui/select"
+  SelectValue
+} from '@/registry/default/ui/select'
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
-  { href: "#", label: "Dashboard" },
-  { href: "#", label: "Docs" },
-  { href: "#", label: "API reference" },
+  { href: '#', label: 'Dashboard' },
+  { href: '#', label: 'Docs' },
+  { href: '#', label: 'API reference' },
 ]
 
-export default function Component() {
+export default function Component () {
   return (
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">

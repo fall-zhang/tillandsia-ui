@@ -3,36 +3,36 @@ import {
   FeatherIcon,
   HouseIcon,
   PlusIcon,
-  SearchIcon,
-} from "lucide-react"
+  SearchIcon
+} from 'lucide-react'
 
-import NotificationMenu from "@/registry/default/components/navbar-components/notification-menu"
-import TeamSwitcher from "@/registry/default/components/navbar-components/team-switcher"
-import UserMenu from "@/registry/default/components/navbar-components/user-menu"
-import { Button } from "@/registry/default/ui/button"
+import NotificationMenu from '@/registry/default/components/navbar-components/notification-menu'
+import TeamSwitcher from '@/registry/default/components/navbar-components/team-switcher'
+import UserMenu from '@/registry/default/components/navbar-components/user-menu'
+import { Button } from '@/registry/default/ui/button'
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
-  NavigationMenuList,
-} from "@/registry/default/ui/navigation-menu"
+  NavigationMenuList
+} from '@/registry/default/ui/navigation-menu'
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
+  PopoverTrigger
+} from '@/registry/default/ui/popover'
 
-const teams = ["Acme Inc.", "Origin UI", "Junon"]
+const teams = ['Acme Inc.', 'Origin UI', 'Junon']
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
-  { href: "#", label: "Dashboard", icon: HouseIcon },
-  { href: "#", label: "Explore", icon: CompassIcon },
-  { href: "#", label: "Write", icon: FeatherIcon },
-  { href: "#", label: "Search", icon: SearchIcon },
+  { href: '#', label: 'Dashboard', icon: HouseIcon },
+  { href: '#', label: 'Explore', icon: CompassIcon },
+  { href: '#', label: 'Write', icon: FeatherIcon },
+  { href: '#', label: 'Search', icon: SearchIcon },
 ]
 
-export default function Component() {
+export default function Component () {
   return (
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">

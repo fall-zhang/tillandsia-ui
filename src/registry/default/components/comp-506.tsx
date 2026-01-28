@@ -92,7 +92,7 @@ export default function Component () {
             onMonthChange={setMonth}
             className="p-2"
             disabled={[
-              { after: today } // Dates before today
+              { after: today }, // Dates before today
             ]}
           />
         </div>

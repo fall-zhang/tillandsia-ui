@@ -36,62 +36,62 @@ const items = [
     value: 'analytics platform',
     label: 'Analytics Platform',
     icon: LineChartIcon,
-    number: 2451
+    number: 2451,
   },
   {
     value: 'ai services',
     label: 'AI Services',
     icon: BrainIcon,
-    number: 1832
+    number: 1832,
   },
   {
     value: 'database systems',
     label: 'Database Systems',
     icon: DatabaseIcon,
-    number: 1654
+    number: 1654,
   },
   {
     value: 'compute resources',
     label: 'Compute Resources',
     icon: CpuIcon,
-    number: 943
+    number: 943,
   },
   {
     value: 'network services',
     label: 'Network Services',
     icon: NetworkIcon,
-    number: 832
+    number: 832,
   },
   {
     value: 'web services',
     label: 'Web Services',
     icon: GlobeIcon,
-    number: 654
+    number: 654,
   },
   {
     value: 'monitoring tools',
     label: 'Monitoring Tools',
     icon: SearchIcon,
-    number: 432
+    number: 432,
   },
   {
     value: 'server management',
     label: 'Server Management',
     icon: ServerIcon,
-    number: 321
+    number: 321,
   },
   {
     value: 'infrastructure',
     label: 'Infrastructure',
     icon: BlocksIcon,
-    number: 234
+    number: 234,
   },
   {
     value: 'frontend services',
     label: 'Frontend Services',
     icon: LayoutIcon,
-    number: 123
-  }
+    number: 123,
+  },
 ]
 
 export default function Component () {
@@ -131,7 +131,7 @@ export default function Component () {
               )
               : (
                 <span className="text-muted-foreground">
-                Select service category
+                  Select service category
                 </span>
               )}
             <ChevronDownIcon

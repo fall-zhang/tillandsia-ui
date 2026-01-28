@@ -9,7 +9,7 @@ interface PageHeaderProps {
 export default function PageHeader ({
   title,
   className,
-  children
+  children,
 }: PageHeaderProps) {
   return (
     <div className={cn('mb-16 text-center', className)}>

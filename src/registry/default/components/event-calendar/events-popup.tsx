@@ -22,7 +22,7 @@ export function EventsPopup ({
   events,
   position,
   onClose,
-  onEventSelect
+  onEventSelect,
 }: EventsPopupProps) {
   const popupRef = useRef<HTMLDivElement>(null)
 
@@ -92,7 +92,7 @@ export function EventsPopup ({
       className="bg-background absolute z-50 max-h-96 w-80 overflow-auto rounded-md border shadow-lg"
       style={{
         top: `${adjustedPosition.top}px`,
-        left: `${adjustedPosition.left}px`
+        left: `${adjustedPosition.left}px`,
       }}
     >
       <div className="bg-background sticky top-0 flex items-center justify-between border-b p-3">

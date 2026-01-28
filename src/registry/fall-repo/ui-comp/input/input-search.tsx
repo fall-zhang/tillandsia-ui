@@ -34,7 +34,7 @@ const allActionsSample = [
     icon: <PlaneTakeoff className="h-4 w-4 text-blue-500" />,
     description: 'Operator',
     short: '⌘K',
-    end: 'Agent'
+    end: 'Agent',
   },
   {
     id: '2',
@@ -42,7 +42,7 @@ const allActionsSample = [
     icon: <BarChart2 className="h-4 w-4 text-orange-500" />,
     description: 'gpt-4o',
     short: '⌘cmd+p',
-    end: 'Command'
+    end: 'Command',
   },
   {
     id: '3',
@@ -50,7 +50,7 @@ const allActionsSample = [
     icon: <Video className="h-4 w-4 text-purple-500" />,
     description: 'gpt-4o',
     short: '',
-    end: 'Application'
+    end: 'Application',
   },
   {
     id: '4',
@@ -58,7 +58,7 @@ const allActionsSample = [
     icon: <AudioLines className="h-4 w-4 text-green-500" />,
     description: 'gpt-4o voice',
     short: '',
-    end: 'Active'
+    end: 'Active',
   },
   {
     id: '5',
@@ -66,16 +66,16 @@ const allActionsSample = [
     icon: <LayoutGrid className="h-4 w-4 text-blue-500" />,
     description: 'Components',
     short: '',
-    end: 'Link'
-  }
+    end: 'Link',
+  },
 ]
 
 function ActionSearchBar ({
   actions = allActionsSample,
-  defaultOpen = false
+  defaultOpen = false,
 }: {
-    actions?: Action[];
-    defaultOpen?: boolean;
+  actions?: Action[];
+  defaultOpen?: boolean;
 }) {
   const [query, setQuery] = useState('')
   const [result, setResult] = useState<SearchResult | null>(null)
@@ -116,23 +116,23 @@ function ActionSearchBar ({
       height: 'auto',
       transition: {
         height: {
-          duration: 0.4
+          duration: 0.4,
         },
-        staggerChildren: 0.1
-      }
+        staggerChildren: 0.1,
+      },
     },
     exit: {
       opacity: 0,
       height: 0,
       transition: {
         height: {
-          duration: 0.3
+          duration: 0.3,
         },
         opacity: {
-          duration: 0.2
-        }
-      }
-    }
+          duration: 0.2,
+        },
+      },
+    },
   }
 
   const item = {
@@ -141,16 +141,16 @@ function ActionSearchBar ({
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.3
-      }
+        duration: 0.3,
+      },
     },
     exit: {
       opacity: 0,
       y: -10,
       transition: {
-        duration: 0.2
-      }
-    }
+        duration: 0.2,
+      },
+    },
   }
 
   const handleFocus = () => {

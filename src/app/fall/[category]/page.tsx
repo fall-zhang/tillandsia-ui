@@ -35,7 +35,7 @@ export async function generateMetadata ({ params }: Props): Promise<Metadata> {
       title:
         'Event calendar component built with React and Tailwind CSS - Origin UI',
       description:
-        'An event calendar component built with React and Tailwind CSS. Originally built in v0 and currently in early alpha stage.'
+        'An event calendar component built with React and Tailwind CSS. Originally built in v0 and currently in early alpha stage.',
     }
   }
 
@@ -45,13 +45,13 @@ export async function generateMetadata ({ params }: Props): Promise<Metadata> {
       : `${category.name} components built with React and Tailwind CSS - Origin UI`,
     description: isSingleComponent
       ? `A beautiful and accessible ${category.name.toLowerCase()} component built with React and Tailwind CSS.`
-      : `A collection of beautiful and accessible ${category.name.toLowerCase()} components built with React and Tailwind CSS.`
+      : `A collection of beautiful and accessible ${category.name.toLowerCase()} components built with React and Tailwind CSS.`,
   }
 }
 
 export async function generateStaticParams () {
   return categories.map((category) => ({
-    category: category.slug
+    category: category.slug,
   }))
 }
 

@@ -63,22 +63,22 @@ const initialFiles = [
     size: 528737,
     type: 'application/pdf',
     url: 'https://example.com/document.pdf',
-    id: 'document.pdf-1744638436563-8u5xuls'
+    id: 'document.pdf-1744638436563-8u5xuls',
   },
   {
     name: 'intro.zip',
     size: 252873,
     type: 'application/zip',
     url: 'https://example.com/intro.zip',
-    id: 'intro.zip-1744638436563-8u5xuls'
+    id: 'intro.zip-1744638436563-8u5xuls',
   },
   {
     name: 'conclusion.xlsx',
     size: 352873,
     type: 'application/xlsx',
     url: 'https://example.com/conclusion.xlsx',
-    id: 'conclusion.xlsx-1744638436563-8u5xuls'
-  }
+    id: 'conclusion.xlsx-1744638436563-8u5xuls',
+  },
 ]
 
 export default function Component () {
@@ -95,13 +95,13 @@ export default function Component () {
       openFileDialog,
       removeFile,
       clearFiles,
-      getInputProps
-    }
+      getInputProps,
+    },
   ] = useFileUpload({
     multiple: true,
     maxFiles,
     maxSize,
-    initialFiles
+    initialFiles,
   })
 
   return (
@@ -127,14 +127,14 @@ export default function Component () {
             <div className="flex w-full flex-col gap-3">
               <div className="flex items-center justify-between gap-2">
                 <h3 className="truncate text-sm font-medium">
-                Uploaded Files ({files.length})
+                  Uploaded Files ({files.length})
                 </h3>
                 <Button variant="outline" size="sm" onClick={clearFiles}>
                   <Trash2Icon
                     className="-ms-0.5 size-3.5 opacity-60"
                     aria-hidden="true"
                   />
-                Remove all
+                  Remove all
                 </Button>
               </div>
               <div className="w-full space-y-2">
@@ -182,7 +182,7 @@ export default function Component () {
                     onClick={openFileDialog}
                   >
                     <UploadIcon className="-ms-1 opacity-60" aria-hidden="true" />
-                  Add more
+                    Add more
                   </Button>
                 )}
               </div>
@@ -198,11 +198,11 @@ export default function Component () {
               </div>
               <p className="mb-1.5 text-sm font-medium">Upload files</p>
               <p className="text-muted-foreground text-xs">
-              Max {maxFiles} files ∙ Up to {maxSize}MB
+                Max {maxFiles} files ∙ Up to {maxSize}MB
               </p>
               <Button variant="outline" className="mt-4" onClick={openFileDialog}>
                 <UploadIcon className="-ms-1 opacity-60" aria-hidden="true" />
-              Select files
+                Select files
               </Button>
             </div>
           )}

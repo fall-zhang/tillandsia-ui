@@ -99,7 +99,7 @@ export function CheckboxTree ({ tree, renderNode }: CheckboxTreeProps) {
       node,
       isChecked: isChecked(node),
       onCheckedChange: () => handleCheck(node),
-      children
+      children,
     })
   }
 

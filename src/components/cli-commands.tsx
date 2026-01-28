@@ -17,7 +17,7 @@ export default function CliCommands ({ name }: { name: string }) {
     pnpm: `pnpm dlx shadcn@latest add https://originui.com/r/${name}.json`,
     npm: `npx shadcn@latest add https://originui.com/r/${name}.json`,
     yarn: `npx shadcn@latest add https://originui.com/r/${name}.json`,
-    bun: `bunx --bun shadcn@latest add https://originui.com/r/${name}.json`
+    bun: `bunx --bun shadcn@latest add https://originui.com/r/${name}.json`,
   }
 
   return (
@@ -27,7 +27,7 @@ export default function CliCommands ({ name }: { name: string }) {
         onValueChange={(value) => {
           setConfig({
             ...config,
-            packageManager: value as 'pnpm' | 'npm' | 'yarn' | 'bun'
+            packageManager: value as 'pnpm' | 'npm' | 'yarn' | 'bun',
           })
         }}
         className="rounded-md bg-zinc-950 dark:bg-zinc-900"

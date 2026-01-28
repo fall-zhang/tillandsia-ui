@@ -1,7 +1,7 @@
-import { BotMessageSquareIcon, MessageCircleDashedIcon } from "lucide-react"
+import { BotMessageSquareIcon, MessageCircleDashedIcon } from 'lucide-react'
 
-import UserMenu from "@/registry/default/components/navbar-components/user-menu"
-import { Button } from "@/registry/default/ui/button"
+import UserMenu from '@/registry/default/components/navbar-components/user-menu'
+import { Button } from '@/registry/default/ui/button'
 import {
   Select,
   SelectContent,
@@ -9,10 +9,10 @@ import {
   SelectItem,
   SelectLabel,
   SelectTrigger,
-  SelectValue,
-} from "@/registry/default/ui/select"
+  SelectValue
+} from '@/registry/default/ui/select'
 
-export default function Component() {
+export default function Component () {
   return (
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">

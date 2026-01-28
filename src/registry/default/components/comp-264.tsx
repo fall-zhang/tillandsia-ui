@@ -72,7 +72,7 @@ function SliderWithInput ({
   initialValue,
   defaultValue,
   label,
-  onRegisterReset
+  onRegisterReset,
 }: {
   minValue: number
   maxValue: number
@@ -87,7 +87,7 @@ function SliderWithInput ({
     validateAndUpdateValue,
     handleInputChange,
     handleSliderChange,
-    resetToDefault
+    resetToDefault,
   } = useSliderWithInput({ minValue, maxValue, initialValue, defaultValue })
 
   // Register the reset function when the component mounts

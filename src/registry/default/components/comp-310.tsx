@@ -25,7 +25,7 @@ export default function Component () {
     hours: 0,
     minutes: 0,
     seconds: 0,
-    isExpired: false
+    isExpired: false,
   })
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export default function Component () {
           hours: 0,
           minutes: 0,
           seconds: 0,
-          isExpired: true
+          isExpired: true,
         })
         return
       }
@@ -56,7 +56,7 @@ export default function Component () {
         hours,
         minutes,
         seconds,
-        isExpired: false
+        isExpired: false,
       })
     }
 

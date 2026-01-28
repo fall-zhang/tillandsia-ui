@@ -1,59 +1,59 @@
-import { useId } from "react"
+import { useId } from 'react'
 import {
   FileTextIcon,
   GlobeIcon,
   HomeIcon,
   LayersIcon,
-  UsersIcon,
-} from "lucide-react"
+  UsersIcon
+} from 'lucide-react'
 
-import Logo from "@/registry/default/components/navbar-components/logo"
-import ThemeToggle from "@/registry/default/components/navbar-components/theme-toggle"
-import UserMenu from "@/registry/default/components/navbar-components/user-menu"
-import { Button } from "@/registry/default/ui/button"
+import Logo from '@/registry/default/components/navbar-components/logo'
+import ThemeToggle from '@/registry/default/components/navbar-components/theme-toggle'
+import UserMenu from '@/registry/default/components/navbar-components/user-menu'
+import { Button } from '@/registry/default/ui/button'
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
-  NavigationMenuList,
-} from "@/registry/default/ui/navigation-menu"
+  NavigationMenuList
+} from '@/registry/default/ui/navigation-menu'
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
+  PopoverTrigger
+} from '@/registry/default/ui/popover'
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
-} from "@/registry/default/ui/select"
+  SelectValue
+} from '@/registry/default/ui/select'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
-  TooltipTrigger,
-} from "@/registry/default/ui/tooltip"
+  TooltipTrigger
+} from '@/registry/default/ui/tooltip'
 
 // Navigation links with icons for desktop icon-only navigation
 const navigationLinks = [
-  { href: "#", label: "Dashboard", icon: HomeIcon, active: true },
-  { href: "#", label: "Projects", icon: LayersIcon },
-  { href: "#", label: "Documentation", icon: FileTextIcon },
-  { href: "#", label: "Team", icon: UsersIcon },
+  { href: '#', label: 'Dashboard', icon: HomeIcon, active: true },
+  { href: '#', label: 'Projects', icon: LayersIcon },
+  { href: '#', label: 'Documentation', icon: FileTextIcon },
+  { href: '#', label: 'Team', icon: UsersIcon },
 ]
 
 // Language options
 const languages = [
-  { value: "en", label: "En" },
-  { value: "es", label: "Es" },
-  { value: "fr", label: "Fr" },
-  { value: "de", label: "De" },
-  { value: "ja", label: "Ja" },
+  { value: 'en', label: 'En' },
+  { value: 'es', label: 'Es' },
+  { value: 'fr', label: 'Fr' },
+  { value: 'de', label: 'De' },
+  { value: 'ja', label: 'Ja' },
 ]
 
-export default function Component() {
+export default function Component () {
   const id = useId()
 
   return (

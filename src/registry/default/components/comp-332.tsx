@@ -23,23 +23,23 @@ export default function Component () {
     {
       title: 'Welcome to Origin UI',
       description:
-        'Discover a powerful collection of components designed to enhance your development workflow.'
+        'Discover a powerful collection of components designed to enhance your development workflow.',
     },
     {
       title: 'Customizable Components',
       description:
-        'Each component is fully customizable and built with modern web standards in mind.'
+        'Each component is fully customizable and built with modern web standards in mind.',
     },
     {
       title: 'Ready to Start?',
       description:
-        'Begin building amazing interfaces with our comprehensive component library.'
+        'Begin building amazing interfaces with our comprehensive component library.',
     },
     {
       title: 'Get Support',
       description:
-        'Access our extensive documentation and community resources to make the most of Origin UI.'
-    }
+        'Access our extensive documentation and community resources to make the most of Origin UI.',
+    },
   ]
 
   const totalSteps = stepContent.length
@@ -101,7 +101,7 @@ export default function Component () {
                     type="button"
                     onClick={handleContinue}
                   >
-                  Next
+                    Next
                     <ArrowRightIcon
                       className="-me-1 opacity-60 transition-transform group-hover:translate-x-0.5"
                       size={16}

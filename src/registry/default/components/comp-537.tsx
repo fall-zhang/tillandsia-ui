@@ -12,33 +12,33 @@ const items = [
   {
     id: 1,
     date: 'Mar 15, 2024',
-    title: 'Project Kickoff'
+    title: 'Project Kickoff',
   },
   {
     id: 2,
     date: 'Mar 22, 2024',
-    title: 'Design Phase'
+    title: 'Design Phase',
   },
   {
     id: 3,
     date: 'Apr 5, 2024',
-    title: 'Development Sprint'
+    title: 'Development Sprint',
   },
   {
     id: 4,
     date: 'Apr 19, 2024',
-    title: 'Testing & Deployment'
+    title: 'Testing & Deployment',
   },
   {
     id: 5,
     date: 'May 3, 2024',
-    title: 'User Training'
+    title: 'User Training',
   },
   {
     id: 6,
     date: 'May 17, 2024',
-    title: 'Project Handover'
-  }
+    title: 'Project Handover',
+  },
 ]
 
 export default function Component () {

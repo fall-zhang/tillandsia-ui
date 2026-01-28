@@ -11,7 +11,7 @@ export default function Component () {
     { value: '1', label: 'Hobby', price: '$9/mo' },
     { value: '2', label: 'Plus', price: '$29/mo' },
     { value: '3', label: 'Team', price: '$49/mo' },
-    { value: '4', label: 'Enterprise', price: 'Custom' }
+    { value: '4', label: 'Enterprise', price: 'Custom' },
   ]
 
   return (

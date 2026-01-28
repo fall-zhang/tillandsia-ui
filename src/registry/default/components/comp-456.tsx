@@ -16,7 +16,7 @@ type PaginationProps = {
 
 export default function Component ({
   currentPage,
-  totalPages
+  totalPages,
 }: PaginationProps) {
   return (
     <Pagination>
@@ -26,7 +26,7 @@ export default function Component ({
             className={cn(
               'aria-disabled:pointer-events-none aria-disabled:opacity-50',
               buttonVariants({
-                variant: 'outline'
+                variant: 'outline',
               })
             )}
             href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}
@@ -48,7 +48,7 @@ export default function Component ({
             className={cn(
               'aria-disabled:pointer-events-none aria-disabled:opacity-50',
               buttonVariants({
-                variant: 'outline'
+                variant: 'outline',
               })
             )}
             href={

@@ -2,17 +2,17 @@ import {
   ChevronLeftIcon,
   HistoryIcon,
   MessageSquareText,
-  UserRoundPlus,
-} from "lucide-react"
+  UserRoundPlus
+} from 'lucide-react'
 
 import {
   Avatar,
   AvatarFallback,
-  AvatarImage,
-} from "@/registry/default/ui/avatar"
-import { Button } from "@/registry/default/ui/button"
+  AvatarImage
+} from '@/registry/default/ui/avatar'
+import { Button } from '@/registry/default/ui/button'
 
-export default function Component() {
+export default function Component () {
   return (
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">

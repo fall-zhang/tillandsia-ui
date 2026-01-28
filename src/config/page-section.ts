@@ -1,5 +1,5 @@
 import { RegistryItem } from 'shadcn/registry'
-interface FallRegistryItem extends RegistryItem{
+interface FallRegistryItem extends RegistryItem {
   meta:{
     tags:string[],
     style?: 1 | 2
@@ -25,11 +25,11 @@ export const categories: ComponentCategory[] = [
         type: 'registry:lib',
         meta: {
           originUrl: '',
-          tags: ['alert', 'warning']
-        }
-      }
-    ]
-  }
+          tags: ['alert', 'warning'],
+        },
+      },
+    ],
+  },
 ]
 
 export function getCategory (slug: string): ComponentCategory | undefined {

@@ -31,15 +31,15 @@ const items = [
         title: 'What about performance?',
         content:
           'We optimize every component for maximum performance and minimal bundle size.',
-        icon: GaugeIcon
+        icon: GaugeIcon,
       },
       {
         title: 'How is the documentation?',
         content:
           'Our documentation is comprehensive and includes live examples for every component.',
-        icon: CircleDashedIcon
-      }
-    ]
+        icon: CircleDashedIcon,
+      },
+    ],
   },
   {
     id: '2',
@@ -50,15 +50,15 @@ const items = [
         title: 'Can I use custom themes?',
         content:
           'Yes, our theming system is fully customizable and supports both light and dark modes.',
-        icon: GaugeIcon
+        icon: GaugeIcon,
       },
       {
         title: 'What about Tailwind support?',
         content:
           'We have first-class support for Tailwind CSS with custom utility classes.',
-        icon: CircleDashedIcon
-      }
-    ]
+        icon: CircleDashedIcon,
+      },
+    ],
   },
   {
     id: '3',
@@ -70,15 +70,15 @@ const items = [
         content:
           'Our components are tree-shakeable and typically add minimal overhead to your bundle.',
         open: true,
-        icon: GaugeIcon
+        icon: GaugeIcon,
       },
       {
         title: 'How is code splitting handled?',
         content:
           'We support automatic code splitting for optimal loading performance.',
-        icon: CircleDashedIcon
-      }
-    ]
+        icon: CircleDashedIcon,
+      },
+    ],
   },
   {
     id: '4',
@@ -89,16 +89,16 @@ const items = [
         title: 'Which screen readers are supported?',
         content:
           'We test with NVDA, VoiceOver, and JAWS to ensure broad compatibility.',
-        icon: GaugeIcon
+        icon: GaugeIcon,
       },
       {
         title: 'What about keyboard navigation?',
         content:
           'Full keyboard navigation support is implemented following WAI-ARIA best practices.',
-        icon: CircleDashedIcon
-      }
-    ]
-  }
+        icon: CircleDashedIcon,
+      },
+    ],
+  },
 ]
 
 export default function Component () {
@@ -144,7 +144,7 @@ function CollapsibleDemo ({
   title,
   content,
   open,
-  icon: Icon
+  icon: Icon,
 }: {
   title: string
   content: string

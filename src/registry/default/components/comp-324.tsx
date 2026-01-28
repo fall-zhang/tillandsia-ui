@@ -82,7 +82,7 @@ export default function Component () {
             <div className="text-center">
               <DialogClose asChild>
                 <Button type="button" ref={closeButtonRef}>
-                Close
+                  Close
                 </Button>
               </DialogClose>
             </div>
@@ -114,12 +114,12 @@ export default function Component () {
                   role="alert"
                   aria-live="polite"
                 >
-                Invalid code. Please try again.
+                  Invalid code. Please try again.
                 </p>
               )}
               <p className="text-center text-sm">
                 <a className="underline hover:no-underline" href="#">
-                Resend code
+                  Resend code
                 </a>
               </p>
             </div>

@@ -6,7 +6,7 @@ export default function ComponentCard ({
   isSearchPage = false,
   children,
   component,
-  className
+  className,
 }: {
   isSearchPage?: boolean
   children: React.ReactNode

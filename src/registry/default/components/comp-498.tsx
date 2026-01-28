@@ -21,8 +21,8 @@ export default function Component () {
   ) => {
     const _event = {
       target: {
-        value: String(_value)
-      }
+        value: String(_value),
+      },
     } as React.ChangeEvent<HTMLSelectElement>
     _e(_event)
   }
@@ -71,7 +71,7 @@ export default function Component () {
                 </SelectContent>
               </Select>
             )
-          }
+          },
         }}
       />
       <p

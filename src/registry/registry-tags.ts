@@ -50,12 +50,11 @@ export const registryTags = [
   'counter',
   'copy',
   'credit card',
-  'darkmode',
+  'dark mode',
   'date',
   'delete',
   'disabled',
   'drag and drop',
-  'emblor',
   'equalizer',
   'error',
   'feedback',
@@ -97,7 +96,7 @@ export const registryTags = [
   'range slider',
   'rating',
   'react aria',
-  'react daypicker',
+  'react day picker',
   'read-only',
   'required',
   'reset',
@@ -134,7 +133,9 @@ export const registryTags = [
   'vote',
   'warning',
   'week',
-  'zoom'
+  'navbar',
+  'navigation',
+  'zoom',
 ] as const
 
 export type RegistryTag = (typeof registryTags)[number]

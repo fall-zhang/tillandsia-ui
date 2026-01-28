@@ -1,32 +1,32 @@
-import { ChevronsUpDown } from "lucide-react"
-import { Select as SelectPrimitive } from "radix-ui"
+import { ChevronsUpDown } from 'lucide-react'
+import { Select as SelectPrimitive } from 'radix-ui'
 
-import Logo from "@/registry/default/components/navbar-components/logo"
-import NotificationMenu from "@/registry/default/components/navbar-components/notification-menu"
-import UserMenu from "@/registry/default/components/navbar-components/user-menu"
+import Logo from '@/registry/default/components/navbar-components/logo'
+import NotificationMenu from '@/registry/default/components/navbar-components/notification-menu'
+import UserMenu from '@/registry/default/components/navbar-components/user-menu'
 import {
   Breadcrumb,
   BreadcrumbEllipsis,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbSeparator,
-} from "@/registry/default/ui/breadcrumb"
-import { Button } from "@/registry/default/ui/button"
+  BreadcrumbSeparator
+} from '@/registry/default/ui/breadcrumb'
+import { Button } from '@/registry/default/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu"
+  DropdownMenuTrigger
+} from '@/registry/default/ui/dropdown-menu'
 import {
   Select,
   SelectContent,
   SelectItem,
-  SelectValue,
-} from "@/registry/default/ui/select"
+  SelectValue
+} from '@/registry/default/ui/select'
 
-export default function Component() {
+export default function Component () {
   return (
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">
@@ -60,8 +60,8 @@ export default function Component() {
                 <BreadcrumbLink href="#">Personal Account</BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="max-md:hidden">
-                {" "}
-                /{" "}
+                {' '}
+                /{' '}
               </BreadcrumbSeparator>
               <BreadcrumbItem className="max-md:hidden">
                 <BreadcrumbLink href="#">Projects</BreadcrumbLink>

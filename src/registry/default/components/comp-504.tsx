@@ -32,7 +32,7 @@ export default function Component () {
 
   const years = eachYearOfInterval({
     start: startOfYear(startDate),
-    end: endOfYear(endDate)
+    end: endOfYear(endDate),
   })
 
   return (
@@ -49,7 +49,7 @@ export default function Component () {
         className="overflow-hidden rounded-md border p-2"
         classNames={{
           month_caption: 'ms-2.5 me-20 justify-start',
-          nav: 'justify-end'
+          nav: 'justify-end',
         }}
         components={{
           CaptionLabel: (props: CaptionLabelProps) => (
@@ -78,7 +78,7 @@ export default function Component () {
                 {props.children}
               </MonthGrid>
             )
-          }
+          },
         }}
       />
       <p
@@ -109,7 +109,7 @@ function MonthGrid ({
   years,
   currentYear,
   currentMonth,
-  onMonthSelect
+  onMonthSelect,
 }: {
   className?: string
   children: React.ReactNode
@@ -150,7 +150,7 @@ function MonthGrid ({
             {years.map((year) => {
               const months = eachMonthOfInterval({
                 start: startOfYear(year),
-                end: endOfYear(year)
+                end: endOfYear(year),
               })
               const isCurrentYear = year.getFullYear() === currentYear
 
@@ -202,7 +202,7 @@ function MonthGrid ({
 function CaptionLabel ({
   children,
   isYearView,
-  setIsYearView
+  setIsYearView,
 }: {
   isYearView: boolean
   setIsYearView: React.Dispatch<React.SetStateAction<boolean>>
@@ -228,7 +228,7 @@ function CaptionLabel ({
 function CollapsibleYear ({
   title,
   children,
-  open
+  open,
 }: {
   title: string
   children: React.ReactNode

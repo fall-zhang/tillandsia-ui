@@ -32,7 +32,7 @@ const defaultConfig = {
   padding: 20,
   plotSize: 100,
   animationDuration: 1000,
-  pauseDuration: 1000
+  pauseDuration: 1000,
 }
 
 type AnimationType = 'translate' | 'scale' | 'rotate'
@@ -63,7 +63,7 @@ const EasingSVG = ({
   config,
   duration,
   animationType,
-  pauseDuration
+  pauseDuration,
 }: {
   easing: Easing
   config: typeof defaultConfig
@@ -85,7 +85,7 @@ const EasingSVG = ({
       animationTimingFunction: `cubic-bezier(${easing.points.join(',')})`,
       animationIterationCount: '1',
       animationFillMode: 'forwards',
-      animationDelay: '0s'
+      animationDelay: '0s',
     }
   }
 
@@ -161,7 +161,7 @@ const EasingSVG = ({
             animationTimingFunction: 'linear',
             animationIterationCount: '1',
             animationFillMode: 'forwards',
-            animationDelay: '0s'
+            animationDelay: '0s',
           }}
         />
       </g>
@@ -191,7 +191,7 @@ const AnimatedSquare = ({
   easing,
   duration,
   animationType,
-  pauseDuration
+  pauseDuration,
 }: {
   easing: Easing
   duration: number
@@ -206,13 +206,13 @@ const AnimatedSquare = ({
     const baseStyle = {
       ['--bezier-coordinates' as string]: easing.points.join(','),
       ['--animation-duration' as string]: `${duration}s`,
-      ['--total-duration' as string]: `${duration + pauseDuration}s`
+      ['--total-duration' as string]: `${duration + pauseDuration}s`,
     }
 
     const animationName = {
       translate: 'translateSquare',
       scale: 'scaleSquare',
-      rotate: 'rotateSquare'
+      rotate: 'rotateSquare',
     }[animationType]
 
     return {
@@ -222,7 +222,7 @@ const AnimatedSquare = ({
       animationTimingFunction: `cubic-bezier(${easing.points.join(',')})`,
       animationIterationCount: '1',
       animationFillMode: 'forwards',
-      animationDelay: '0s'
+      animationDelay: '0s',
     }
   }
 
@@ -306,21 +306,21 @@ export default function Easings ({ easings }: EasingsProps) {
     return easings.filter((easing) => {
       const name = easing.name.toLowerCase()
       switch (easingFilter) {
-      case 'in':
-        return (
-          (name.startsWith('easein') && !name.includes('inout')) ||
+        case 'in':
+          return (
+            (name.startsWith('easein') && !name.includes('inout')) ||
             name === 'ease-in'
-        )
-      case 'out':
-        return name.startsWith('easeout') || name === 'ease-out'
-      case 'in-out':
-        return (
-          name.startsWith('easeinout') ||
+          )
+        case 'out':
+          return name.startsWith('easeout') || name === 'ease-out'
+        case 'in-out':
+          return (
+            name.startsWith('easeinout') ||
             name === 'ease-in-out' ||
             name === 'ease'
-        )
-      default:
-        return true
+          )
+        default:
+          return true
       }
     })
   }

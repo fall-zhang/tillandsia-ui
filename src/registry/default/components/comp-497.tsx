@@ -21,8 +21,8 @@ export default function Component () {
   ) => {
     const _event = {
       target: {
-        value: String(_value)
-      }
+        value: String(_value),
+      },
     } as React.ChangeEvent<HTMLSelectElement>
     _e(_event)
   }
@@ -35,7 +35,7 @@ export default function Component () {
         onSelect={setDate}
         className="rounded-md border p-2"
         classNames={{
-          month_caption: 'mx-0'
+          month_caption: 'mx-0',
         }}
         captionLayout="dropdown"
         defaultMonth={new Date()}
@@ -75,7 +75,7 @@ export default function Component () {
                 </SelectContent>
               </Select>
             )
-          }
+          },
         }}
       />
       <p

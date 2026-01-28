@@ -6,70 +6,70 @@ import MultipleSelector, { Option } from '@/registry/default/ui/multiselect'
 const frameworks: Option[] = [
   {
     value: 'next.js',
-    label: 'Next.js'
+    label: 'Next.js',
   },
   {
     value: 'sveltekit',
-    label: 'SvelteKit'
+    label: 'SvelteKit',
   },
   {
     value: 'nuxt.js',
     label: 'Nuxt.js',
-    disable: true
+    disable: true,
   },
   {
     value: 'remix',
-    label: 'Remix'
+    label: 'Remix',
   },
   {
     value: 'astro',
-    label: 'Astro'
+    label: 'Astro',
   },
   {
     value: 'angular',
-    label: 'Angular'
+    label: 'Angular',
   },
   {
     value: 'vue',
-    label: 'Vue.js'
+    label: 'Vue.js',
   },
   {
     value: 'react',
-    label: 'React'
+    label: 'React',
   },
   {
     value: 'ember',
-    label: 'Ember.js'
+    label: 'Ember.js',
   },
   {
     value: 'gatsby',
-    label: 'Gatsby'
+    label: 'Gatsby',
   },
   {
     value: 'eleventy',
     label: 'Eleventy',
-    disable: true
+    disable: true,
   },
   {
     value: 'solid',
-    label: 'SolidJS'
+    label: 'SolidJS',
   },
   {
     value: 'preact',
-    label: 'Preact'
+    label: 'Preact',
   },
   {
     value: 'qwik',
-    label: 'Qwik'
+    label: 'Qwik',
   },
   {
     value: 'alpine',
-    label: 'Alpine.js'
+    label: 'Alpine.js',
   },
   {
     value: 'lit',
-    label: 'Lit'
-  }
+    label: 'Lit',
+  },
 ]
 
 export default function Component () {
@@ -79,7 +79,7 @@ export default function Component () {
       <Label>Multiselect</Label>
       <MultipleSelector
         commandProps={{
-          label: 'Select frameworks'
+          label: 'Select frameworks',
         }}
         value={frameworks.slice(0, 2)}
         defaultOptions={frameworks}

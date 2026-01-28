@@ -81,14 +81,14 @@ const columns: ColumnDef<Item>[] = [
         onCheckedChange={(value) => row.toggleSelected(!!value)}
         aria-label="Select row"
       />
-    )
+    ),
   },
   {
     header: 'Keyword',
     accessorKey: 'keyword',
     cell: ({ row }) => (
       <div className="font-medium">{row.getValue('keyword')}</div>
-    )
+    ),
   },
   {
     header: 'Intents',
@@ -102,7 +102,7 @@ const columns: ColumnDef<Item>[] = [
               Informational: 'bg-indigo-400/20 text-indigo-500',
               Navigational: 'bg-emerald-400/20 text-emerald-500',
               Commercial: 'bg-amber-400/20 text-amber-500',
-              Transactional: 'bg-rose-400/20 text-rose-500'
+              Transactional: 'bg-rose-400/20 text-rose-500',
             }[intent]
 
             return (
@@ -122,12 +122,12 @@ const columns: ColumnDef<Item>[] = [
     },
     enableSorting: false,
     meta: {
-      filterVariant: 'select'
+      filterVariant: 'select',
     },
     filterFn: (row, id, filterValue) => {
       const rowValue = row.getValue(id)
       return Array.isArray(rowValue) && rowValue.includes(filterValue)
-    }
+    },
   },
   {
     header: 'Volume',
@@ -136,20 +136,20 @@ const columns: ColumnDef<Item>[] = [
       const volume = parseInt(row.getValue('volume'))
       return new Intl.NumberFormat('en-US', {
         notation: 'compact',
-        maximumFractionDigits: 1
+        maximumFractionDigits: 1,
       }).format(volume)
     },
     meta: {
-      filterVariant: 'range'
-    }
+      filterVariant: 'range',
+    },
   },
   {
     header: 'CPC',
     accessorKey: 'cpc',
     cell: ({ row }) => <div>${row.getValue('cpc')}</div>,
     meta: {
-      filterVariant: 'range'
-    }
+      filterVariant: 'range',
+    },
   },
   {
     header: 'Traffic',
@@ -158,12 +158,12 @@ const columns: ColumnDef<Item>[] = [
       const traffic = parseInt(row.getValue('traffic'))
       return new Intl.NumberFormat('en-US', {
         notation: 'compact',
-        maximumFractionDigits: 1
+        maximumFractionDigits: 1,
       }).format(traffic)
     },
     meta: {
-      filterVariant: 'range'
-    }
+      filterVariant: 'range',
+    },
   },
   {
     header: 'Link',
@@ -173,8 +173,8 @@ const columns: ColumnDef<Item>[] = [
         {row.getValue('link')} <ExternalLinkIcon size={12} aria-hidden="true" />
       </a>
     ),
-    enableSorting: false
-  }
+    enableSorting: false,
+  },
 ]
 
 const items: Item[] = [
@@ -185,7 +185,7 @@ const items: Item[] = [
     volume: 2507,
     cpc: 2.5,
     traffic: 88,
-    link: 'https://originui.com'
+    link: 'https://originui.com',
   },
   {
     id: '2',
@@ -194,7 +194,7 @@ const items: Item[] = [
     volume: 1850,
     cpc: 4.75,
     traffic: 65,
-    link: 'https://originui.com/input'
+    link: 'https://originui.com/input',
   },
   {
     id: '3',
@@ -203,7 +203,7 @@ const items: Item[] = [
     volume: 3200,
     cpc: 3.25,
     traffic: 112,
-    link: 'https://originui.com/badge'
+    link: 'https://originui.com/badge',
   },
   {
     id: '4',
@@ -212,7 +212,7 @@ const items: Item[] = [
     volume: 890,
     cpc: 1.95,
     traffic: 45,
-    link: 'https://originui.com/alert'
+    link: 'https://originui.com/alert',
   },
   {
     id: '5',
@@ -221,7 +221,7 @@ const items: Item[] = [
     volume: 4100,
     cpc: 5.5,
     traffic: 156,
-    link: 'https://originui.com/tabs'
+    link: 'https://originui.com/tabs',
   },
   {
     id: '6',
@@ -230,7 +230,7 @@ const items: Item[] = [
     volume: 1200,
     cpc: 1.25,
     traffic: 42,
-    link: 'https://originui.com/table'
+    link: 'https://originui.com/table',
   },
   {
     id: '7',
@@ -239,7 +239,7 @@ const items: Item[] = [
     volume: 760,
     cpc: 6.8,
     traffic: 28,
-    link: 'https://originui.com/avatar'
+    link: 'https://originui.com/avatar',
   },
   {
     id: '8',
@@ -248,8 +248,8 @@ const items: Item[] = [
     volume: 950,
     cpc: 1.8,
     traffic: 35,
-    link: 'https://originui.com'
-  }
+    link: 'https://originui.com',
+  },
 ]
 
 export default function Component () {
@@ -257,8 +257,8 @@ export default function Component () {
   const [sorting, setSorting] = useState<SortingState>([
     {
       id: 'traffic',
-      desc: false
-    }
+      desc: false,
+    },
   ])
 
   const table = useReactTable({
@@ -266,7 +266,7 @@ export default function Component () {
     columns,
     state: {
       sorting,
-      columnFilters
+      columnFilters,
     },
     onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
@@ -276,7 +276,7 @@ export default function Component () {
     getFacetedUniqueValues: getFacetedUniqueValues(), // generate unique values for select filter/autocomplete
     getFacetedMinMaxValues: getFacetedMinMaxValues(), // generate min/max values for range filter
     onSortingChange: setSorting,
-    enableSortingRemoval: false
+    enableSortingRemoval: false,
   })
 
   return (
@@ -359,7 +359,7 @@ export default function Component () {
                               size={16}
                               aria-hidden="true"
                             />
-                          )
+                          ),
                         }[header.column.getIsSorted() as string] ?? (
                           <span className="size-4" aria-hidden="true" />
                         )}
@@ -395,7 +395,7 @@ export default function Component () {
             : (
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-24 text-center">
-                No results.
+                  No results.
                 </TableCell>
               </TableRow>
             )}
@@ -452,7 +452,7 @@ function Filter ({ column }: { column: Column<any, unknown> }) {
             onChange={(e) =>
               column.setFilterValue((old: [number, number]) => [
                 e.target.value ? Number(e.target.value) : undefined,
-                old?.[1]
+                old?.[1],
               ])
             }
             placeholder="Min"
@@ -466,7 +466,7 @@ function Filter ({ column }: { column: Column<any, unknown> }) {
             onChange={(e) =>
               column.setFilterValue((old: [number, number]) => [
                 old?.[0],
-                e.target.value ? Number(e.target.value) : undefined
+                e.target.value ? Number(e.target.value) : undefined,
               ])
             }
             placeholder="Max"

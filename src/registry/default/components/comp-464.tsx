@@ -27,7 +27,7 @@ type PaginationProps = {
 
 export default function Component ({
   currentPage,
-  totalPages
+  totalPages,
 }: PaginationProps) {
   return (
     <Pagination>

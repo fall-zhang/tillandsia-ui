@@ -1,32 +1,32 @@
-"use client"
+'use client'
 
-import { useId, useState } from "react"
-import { ClockIcon, PowerIcon, PowerOffIcon, ZapIcon } from "lucide-react"
+import { useId, useState } from 'react'
+import { ClockIcon, PowerIcon, PowerOffIcon, ZapIcon } from 'lucide-react'
 
-import { Badge } from "@/registry/default/ui/badge"
-import { Button } from "@/registry/default/ui/button"
-import { Label } from "@/registry/default/ui/label"
+import { Badge } from '@/registry/default/ui/badge'
+import { Button } from '@/registry/default/ui/button'
+import { Label } from '@/registry/default/ui/label'
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
-  NavigationMenuList,
-} from "@/registry/default/ui/navigation-menu"
+  NavigationMenuList
+} from '@/registry/default/ui/navigation-menu'
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
-import { Switch } from "@/registry/default/ui/switch"
+  PopoverTrigger
+} from '@/registry/default/ui/popover'
+import { Switch } from '@/registry/default/ui/switch'
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
-  { href: "#", label: "Overview", active: true },
-  { href: "#", label: "Graphs" },
-  { href: "#", label: "Backups" },
+  { href: '#', label: 'Overview', active: true },
+  { href: '#', label: 'Graphs' },
+  { href: '#', label: 'Backups' },
 ]
 
-export default function Component() {
+export default function Component () {
   const id = useId()
   const [checked, setChecked] = useState<boolean>(true)
 

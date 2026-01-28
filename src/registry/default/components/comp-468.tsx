@@ -15,7 +15,7 @@ const items = [
     email: 'alex.t@company.com',
     location: 'San Francisco, US',
     status: 'Active',
-    balance: '$1,250.00'
+    balance: '$1,250.00',
   },
   {
     id: '2',
@@ -23,7 +23,7 @@ const items = [
     email: 'sarah.c@company.com',
     location: 'Singapore',
     status: 'Active',
-    balance: '$600.00'
+    balance: '$600.00',
   },
   {
     id: '3',
@@ -31,7 +31,7 @@ const items = [
     email: 'j.wilson@company.com',
     location: 'London, UK',
     status: 'Inactive',
-    balance: '$650.00'
+    balance: '$650.00',
   },
   {
     id: '4',
@@ -39,7 +39,7 @@ const items = [
     email: 'm.garcia@company.com',
     location: 'Madrid, Spain',
     status: 'Active',
-    balance: '$0.00'
+    balance: '$0.00',
   },
   {
     id: '5',
@@ -47,8 +47,8 @@ const items = [
     email: 'd.kim@company.com',
     location: 'Seoul, KR',
     status: 'Active',
-    balance: '-$1,000.00'
-  }
+    balance: '-$1,000.00',
+  },
 ]
 
 export default function Component () {

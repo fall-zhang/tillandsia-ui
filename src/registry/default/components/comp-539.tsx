@@ -24,29 +24,29 @@ const items: {
     user: 'Matt',
     image: '/avatar-40-02.jpg',
     action: 'post',
-    date: new Date(Date.now() - 59000) // 59 seconds ago
+    date: new Date(Date.now() - 59000), // 59 seconds ago
   },
   {
     id: 2,
     user: 'Matt',
     image: '/avatar-40-02.jpg',
     action: 'reply',
-    date: new Date(Date.now() - 180000) // 3 minutes ago
+    date: new Date(Date.now() - 180000), // 3 minutes ago
   },
   {
     id: 3,
     user: 'Matt',
     image: '/avatar-40-02.jpg',
     action: 'edit',
-    date: new Date(Date.now() - 300000) // 5 minutes ago
+    date: new Date(Date.now() - 300000), // 5 minutes ago
   },
   {
     id: 4,
     user: 'Matt',
     image: '/avatar-40-02.jpg',
     action: 'create',
-    date: new Date(Date.now() - 600000) // 10 minutes ago
-  }
+    date: new Date(Date.now() - 600000), // 10 minutes ago
+  },
 ]
 
 type ActionType = 'post' | 'reply' | 'edit' | 'create'
@@ -56,7 +56,7 @@ function getActionIcon (action: ActionType): LucideIcon {
     post: BookOpenIcon,
     reply: MessageCircleIcon,
     edit: PencilIcon,
-    create: PlusIcon
+    create: PlusIcon,
   }
   return icons[action]
 }
@@ -66,7 +66,7 @@ function getActionText (action: ActionType): string {
     post: 'wrote a new post',
     reply: 'replied to a comment',
     edit: 'edited a post',
-    create: 'created a new project'
+    create: 'created a new project',
   }
   return texts[action]
 }

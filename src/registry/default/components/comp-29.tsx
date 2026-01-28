@@ -10,7 +10,7 @@ export default function Component () {
       formatOptions={{
         style: 'currency',
         currency: 'EUR',
-        currencySign: 'accounting'
+        currencySign: 'accounting',
       }}
     >
       <div className="*:not-first:mt-2">

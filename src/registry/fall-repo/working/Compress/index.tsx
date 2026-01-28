@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { DOMAttributes, FC, ReactNode, useRef, useState } from 'react'
-import type{ MouseEvent } from 'react'
+import type { MouseEvent } from 'react'
 import { Button } from '@/registry/default/ui/button'
 import { cn } from '@/registry/default/lib/utils'
 

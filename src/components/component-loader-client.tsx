@@ -34,7 +34,7 @@ export default function ComponentLoader<TProps extends object> ({
           />
         </div>
       ),
-      ssr: false
+      ssr: false,
     }
   ) as ComponentType<TProps>
 

@@ -15,22 +15,22 @@ const initialFiles = [
     size: 1528737,
     type: 'image/jpeg',
     url: 'https://picsum.photos/1000/800?grayscale&random=1',
-    id: 'image-01-123456789'
+    id: 'image-01-123456789',
   },
   {
     name: 'image-02.jpg',
     size: 2345678,
     type: 'image/jpeg',
     url: 'https://picsum.photos/1000/800?grayscale&random=2',
-    id: 'image-02-123456789'
+    id: 'image-02-123456789',
   },
   {
     name: 'image-03.jpg',
     size: 3456789,
     type: 'image/jpeg',
     url: 'https://picsum.photos/1000/800?grayscale&random=3',
-    id: 'image-03-123456789'
-  }
+    id: 'image-03-123456789',
+  },
 ]
 
 export default function Component () {
@@ -48,14 +48,14 @@ export default function Component () {
       openFileDialog,
       removeFile,
       clearFiles,
-      getInputProps
-    }
+      getInputProps,
+    },
   ] = useFileUpload({
     accept: 'image/svg+xml,image/png,image/jpeg,image/jpg,image/gif',
     maxSize,
     multiple: true,
     maxFiles,
-    initialFiles
+    initialFiles,
   })
 
   return (

@@ -45,7 +45,7 @@ export function MonthView ({
   currentDate,
   events,
   onEventSelect,
-  onEventCreate
+  onEventCreate,
 }: MonthViewProps) {
   const days = useMemo(() => {
     const monthStart = startOfMonth(currentDate)
@@ -86,7 +86,7 @@ export function MonthView ({
   const [isMounted, setIsMounted] = useState(false)
   const { contentRef, getVisibleEventCount } = useEventVisibility({
     eventHeight: EventHeight,
-    eventGap: EventGap
+    eventGap: EventGap,
   })
 
   useEffect(() => {
@@ -230,7 +230,7 @@ export function MonthView ({
                             className="max-w-52 p-3"
                             style={
                               {
-                                '--event-height': `${EventHeight}px`
+                                '--event-height': `${EventHeight}px`,
                               } as React.CSSProperties
                             }
                           >

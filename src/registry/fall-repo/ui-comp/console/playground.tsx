@@ -50,7 +50,7 @@ console.info(
           welcome to
         </text>
         <text textAnchor="end" fontSize="50" x="725" y="175">
-         console playground
+          console playground
         </text>
       </svg>
     </>

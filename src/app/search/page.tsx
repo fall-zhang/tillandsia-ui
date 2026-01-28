@@ -7,7 +7,7 @@ import ComponentsContainer from './components-container'
 
 export const metadata: Metadata = {
   title: 'Search a Origin UI component',
-  description: 'Search for components in the Origin UI library.'
+  description: 'Search for components in the Origin UI library.',
 }
 
 export default function Page () {

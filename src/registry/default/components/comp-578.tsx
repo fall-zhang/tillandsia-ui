@@ -1,71 +1,71 @@
-import { BookOpenIcon, InfoIcon, LifeBuoyIcon } from "lucide-react"
+import { BookOpenIcon, InfoIcon, LifeBuoyIcon } from 'lucide-react'
 
-import Logo from "@/registry/default/components/navbar-components/logo"
-import { cn } from "@/registry/default/lib/utils"
-import { Button } from "@/registry/default/ui/button"
+import Logo from '@/registry/default/components/navbar-components/logo'
+import { cn } from '@/registry/default/lib/utils'
+import { Button } from '@/registry/default/ui/button'
 import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/registry/default/ui/navigation-menu"
+  NavigationMenuTrigger
+} from '@/registry/default/ui/navigation-menu'
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
+  PopoverTrigger
+} from '@/registry/default/ui/popover'
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
-  { href: "#", label: "Home" },
+  { href: '#', label: 'Home' },
   {
-    label: "Features",
+    label: 'Features',
     submenu: true,
-    type: "description",
+    type: 'description',
     items: [
       {
-        href: "#",
-        label: "Components",
-        description: "Browse all components in the library.",
+        href: '#',
+        label: 'Components',
+        description: 'Browse all components in the library.',
       },
       {
-        href: "#",
-        label: "Documentation",
-        description: "Learn how to use the library.",
+        href: '#',
+        label: 'Documentation',
+        description: 'Learn how to use the library.',
       },
       {
-        href: "#",
-        label: "Templates",
-        description: "Pre-built layouts for common use cases.",
+        href: '#',
+        label: 'Templates',
+        description: 'Pre-built layouts for common use cases.',
       },
     ],
   },
   {
-    label: "Pricing",
+    label: 'Pricing',
     submenu: true,
-    type: "simple",
+    type: 'simple',
     items: [
-      { href: "#", label: "Product A" },
-      { href: "#", label: "Product B" },
-      { href: "#", label: "Product C" },
-      { href: "#", label: "Product D" },
+      { href: '#', label: 'Product A' },
+      { href: '#', label: 'Product B' },
+      { href: '#', label: 'Product C' },
+      { href: '#', label: 'Product D' },
     ],
   },
   {
-    label: "About",
+    label: 'About',
     submenu: true,
-    type: "icon",
+    type: 'icon',
     items: [
-      { href: "#", label: "Getting Started", icon: "BookOpenIcon" },
-      { href: "#", label: "Tutorials", icon: "LifeBuoyIcon" },
-      { href: "#", label: "About Us", icon: "InfoIcon" },
+      { href: '#', label: 'Getting Started', icon: 'BookOpenIcon' },
+      { href: '#', label: 'Tutorials', icon: 'LifeBuoyIcon' },
+      { href: '#', label: 'About Us', icon: 'InfoIcon' },
     ],
   },
 ]
 
-export default function Component() {
+export default function Component () {
   return (
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">
@@ -111,29 +111,31 @@ export default function Component() {
                 <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
                   {navigationLinks.map((link, index) => (
                     <NavigationMenuItem key={index} className="w-full">
-                      {link.submenu ? (
-                        <>
-                          <div className="text-muted-foreground px-2 py-1.5 text-xs font-medium">
+                      {link.submenu
+                        ? (
+                          <>
+                            <div className="text-muted-foreground px-2 py-1.5 text-xs font-medium">
+                              {link.label}
+                            </div>
+                            <ul>
+                              {link.items.map((item, itemIndex) => (
+                                <li key={itemIndex}>
+                                  <NavigationMenuLink
+                                    href={item.href}
+                                    className="py-1.5"
+                                  >
+                                    {item.label}
+                                  </NavigationMenuLink>
+                                </li>
+                              ))}
+                            </ul>
+                          </>
+                        )
+                        : (
+                          <NavigationMenuLink href={link.href} className="py-1.5">
                             {link.label}
-                          </div>
-                          <ul>
-                            {link.items.map((item, itemIndex) => (
-                              <li key={itemIndex}>
-                                <NavigationMenuLink
-                                  href={item.href}
-                                  className="py-1.5"
-                                >
-                                  {item.label}
-                                </NavigationMenuLink>
-                              </li>
-                            ))}
-                          </ul>
-                        </>
-                      ) : (
-                        <NavigationMenuLink href={link.href} className="py-1.5">
-                          {link.label}
-                        </NavigationMenuLink>
-                      )}
+                          </NavigationMenuLink>
+                        )}
                       {/* Add separator between different types of items */}
                       {index < navigationLinks.length - 1 &&
                         // Show separator if:
@@ -146,12 +148,12 @@ export default function Component() {
                           (link.submenu &&
                             navigationLinks[index + 1].submenu &&
                             link.type !== navigationLinks[index + 1].type)) && (
-                          <div
-                            role="separator"
-                            aria-orientation="horizontal"
-                            className="bg-border -mx-1 my-1 h-px w-full"
-                          />
-                        )}
+                        <div
+                          role="separator"
+                          aria-orientation="horizontal"
+                          className="bg-border -mx-1 my-1 h-px w-full"
+                        />
+                      )}
                     </NavigationMenuItem>
                   ))}
                 </NavigationMenuList>
@@ -176,9 +178,9 @@ export default function Component() {
                         <NavigationMenuContent className="data-[motion=from-end]:slide-in-from-right-16! data-[motion=from-start]:slide-in-from-left-16! data-[motion=to-end]:slide-out-to-right-16! data-[motion=to-start]:slide-out-to-left-16! z-50 p-1">
                           <ul
                             className={cn(
-                              link.type === "description"
-                                ? "min-w-64"
-                                : "min-w-48"
+                              link.type === 'description'
+                                ? 'min-w-64'
+                                : 'min-w-48'
                             )}
                           >
                             {link.items.map((item, itemIndex) => (
@@ -188,23 +190,23 @@ export default function Component() {
                                   className="py-1.5"
                                 >
                                   {/* Display icon if present */}
-                                  {link.type === "icon" && "icon" in item && (
+                                  {link.type === 'icon' && 'icon' in item && (
                                     <div className="flex items-center gap-2">
-                                      {item.icon === "BookOpenIcon" && (
+                                      {item.icon === 'BookOpenIcon' && (
                                         <BookOpenIcon
                                           size={16}
                                           className="text-foreground opacity-60"
                                           aria-hidden="true"
                                         />
                                       )}
-                                      {item.icon === "LifeBuoyIcon" && (
+                                      {item.icon === 'LifeBuoyIcon' && (
                                         <LifeBuoyIcon
                                           size={16}
                                           className="text-foreground opacity-60"
                                           aria-hidden="true"
                                         />
                                       )}
-                                      {item.icon === "InfoIcon" && (
+                                      {item.icon === 'InfoIcon' && (
                                         <InfoIcon
                                           size={16}
                                           className="text-foreground opacity-60"
@@ -216,24 +218,24 @@ export default function Component() {
                                   )}
 
                                   {/* Display label with description if present */}
-                                  {link.type === "description" &&
-                                  "description" in item ? (
-                                    <div className="space-y-1">
-                                      <div className="font-medium">
-                                        {item.label}
+                                  {link.type === 'description' &&
+                                  'description' in item ? (
+                                      <div className="space-y-1">
+                                        <div className="font-medium">
+                                          {item.label}
+                                        </div>
+                                        <p className="text-muted-foreground line-clamp-2 text-xs">
+                                          {item.description}
+                                        </p>
                                       </div>
-                                      <p className="text-muted-foreground line-clamp-2 text-xs">
-                                        {item.description}
-                                      </p>
-                                    </div>
-                                  ) : (
+                                    ) : (
                                     // Display simple label if not icon or description type
-                                    !link.type ||
-                                    (link.type !== "icon" &&
-                                      link.type !== "description" && (
-                                        <span>{item.label}</span>
-                                      ))
-                                  )}
+                                      !link.type ||
+                                    (link.type !== 'icon' &&
+                                      link.type !== 'description' && (
+                                      <span>{item.label}</span>
+                                    ))
+                                    )}
                                 </NavigationMenuLink>
                               </li>
                             ))}

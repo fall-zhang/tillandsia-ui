@@ -13,7 +13,7 @@ export function useSliderWithInput ({
   minValue = 0,
   maxValue = 100,
   initialValue = [minValue],
-  defaultValue = [minValue]
+  defaultValue = [minValue],
 }: UseSliderWithInputProps) {
   const [sliderValue, setSliderValue] = useState(initialValue)
   const [inputValues, setInputValues] = useState(
@@ -96,6 +96,6 @@ export function useSliderWithInput ({
     handleInputChange,
     handleSliderChange,
     resetToDefault,
-    showReset
+    showReset,
   }
 }

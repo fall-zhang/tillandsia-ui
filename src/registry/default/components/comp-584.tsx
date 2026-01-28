@@ -1,32 +1,32 @@
-import { useId } from "react"
-import { SearchIcon } from "lucide-react"
+import { useId } from 'react'
+import { SearchIcon } from 'lucide-react'
 
-import Logo from "@/registry/default/components/navbar-components/logo"
-import NotificationMenu from "@/registry/default/components/navbar-components/notification-menu"
-import UserMenu from "@/registry/default/components/navbar-components/user-menu"
-import { Button } from "@/registry/default/ui/button"
-import { Input } from "@/registry/default/ui/input"
+import Logo from '@/registry/default/components/navbar-components/logo'
+import NotificationMenu from '@/registry/default/components/navbar-components/notification-menu'
+import UserMenu from '@/registry/default/components/navbar-components/user-menu'
+import { Button } from '@/registry/default/ui/button'
+import { Input } from '@/registry/default/ui/input'
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
-  NavigationMenuList,
-} from "@/registry/default/ui/navigation-menu"
+  NavigationMenuList
+} from '@/registry/default/ui/navigation-menu'
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
+  PopoverTrigger
+} from '@/registry/default/ui/popover'
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
-  { href: "#", label: "Home", active: true },
-  { href: "#", label: "Features" },
-  { href: "#", label: "Pricing" },
-  { href: "#", label: "About" },
+  { href: '#', label: 'Home', active: true },
+  { href: '#', label: 'Features' },
+  { href: '#', label: 'Pricing' },
+  { href: '#', label: 'About' },
 ]
 
-export default function Component() {
+export default function Component () {
   const id = useId()
 
   return (

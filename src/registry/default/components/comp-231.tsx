@@ -32,7 +32,7 @@ export default function Component () {
       .map((timezone) => {
         const formatter = new Intl.DateTimeFormat('en', {
           timeZone: timezone,
-          timeZoneName: 'shortOffset'
+          timeZoneName: 'shortOffset',
         })
         const parts = formatter.formatToParts(new Date())
         const offset =
@@ -44,7 +44,7 @@ export default function Component () {
           label: `(${modifiedOffset}) ${timezone.replace(/_/g, ' ')}`,
           numericOffset: parseInt(
             offset.replace('GMT', '').replace('+', '') || '0'
-          )
+          ),
         }
       })
       .sort((a, b) => a.numericOffset - b.numericOffset)

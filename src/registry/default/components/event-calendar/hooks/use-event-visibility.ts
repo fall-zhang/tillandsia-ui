@@ -19,7 +19,7 @@ interface EventVisibilityResult {
  */
 export function useEventVisibility ({
   eventHeight,
-  eventGap
+  eventGap,
 }: EventVisibilityOptions): EventVisibilityResult {
   // Use the standard pattern for React refs
   const contentRef = useRef<HTMLDivElement>(null)
@@ -80,6 +80,6 @@ export function useEventVisibility ({
   return {
     contentRef,
     contentHeight,
-    getVisibleEventCount
+    getVisibleEventCount,
   } as EventVisibilityResult
 }

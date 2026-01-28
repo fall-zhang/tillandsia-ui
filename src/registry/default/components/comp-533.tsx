@@ -15,28 +15,28 @@ const items = [
     date: '15 minutes ago',
     title: 'Pull Request Submitted',
     description:
-      'Submitted PR #342 with new feature implementation. Waiting for code review from team leads.'
+      'Submitted PR #342 with new feature implementation. Waiting for code review from team leads.',
   },
   {
     id: 2,
     date: '10 minutes ago',
     title: 'CI Pipeline Started',
     description:
-      'Automated tests and build process initiated. Running unit tests and code quality checks.'
+      'Automated tests and build process initiated. Running unit tests and code quality checks.',
   },
   {
     id: 3,
     date: '5 minutes ago',
     title: 'Code Review Feedback',
     description:
-      'Received comments on PR. Minor adjustments needed in error handling and documentation.'
+      'Received comments on PR. Minor adjustments needed in error handling and documentation.',
   },
   {
     id: 4,
     title: 'Changes Pushed',
     description:
-      'Implemented requested changes and pushed updates to feature branch. Awaiting final approval.'
-  }
+      'Implemented requested changes and pushed updates to feature branch. Awaiting final approval.',
+  },
 ]
 
 export default function Component () {

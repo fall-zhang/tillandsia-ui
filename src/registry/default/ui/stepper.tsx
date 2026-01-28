@@ -80,7 +80,7 @@ function Stepper ({
       value={{
         activeStep: currentStep,
         setActiveStep,
-        orientation
+        orientation,
       }}
     >
       <div

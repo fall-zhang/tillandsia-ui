@@ -33,25 +33,25 @@ const buttonVariants = {
   initial: {
     gap: 0,
     paddingLeft: '.5rem',
-    paddingRight: '.5rem'
+    paddingRight: '.5rem',
   },
   animate: (isSelected: boolean) => ({
     gap: isSelected ? '.5rem' : 0,
     paddingLeft: isSelected ? '1rem' : '.5rem',
-    paddingRight: isSelected ? '1rem' : '.5rem'
-  })
+    paddingRight: isSelected ? '1rem' : '.5rem',
+  }),
 }
 
 const spanVariants = {
   initial: { width: 0, opacity: 0 },
   animate: { width: 'auto', opacity: 1 },
-  exit: { width: 0, opacity: 0 }
+  exit: { width: 0, opacity: 0 },
 }
 
 const notificationVariants = {
   initial: { opacity: 0, y: 10 },
   animate: { opacity: 1, y: -10 },
-  exit: { opacity: 0, y: -20 }
+  exit: { opacity: 0, y: -20 },
 }
 
 const lineVariants:Variants = {
@@ -59,13 +59,13 @@ const lineVariants:Variants = {
   animate: {
     scaleX: 1,
     x: '0%',
-    transition: { duration: 0.2, ease: 'easeOut' }
+    transition: { duration: 0.2, ease: 'easeOut' },
   },
   exit: {
     scaleX: 0,
     x: '50%',
-    transition: { duration: 0.2, ease: 'easeIn' }
-  }
+    transition: { duration: 0.2, ease: 'easeIn' },
+  },
 }
 
 const transition:Transition = { type: 'spring', bounce: 0, duration: 0.4 }
@@ -73,13 +73,13 @@ const transition:Transition = { type: 'spring', bounce: 0, duration: 0.4 }
 export function Toolbar ({
   className,
   activeColor = 'text-primary',
-  onSearch
+  onSearch,
 }: ToolbarProps) {
   const [selected, setSelected] = React.useState<string | null>('filter')
   const [isToggled, setIsToggled] = React.useState(false)
   const [activeNotification, setActiveNotification] = React.useState<
         string | null
-    >(null)
+  >(null)
   const outsideClickRef = React.useRef(null)
 
   const toolbarItems: ToolbarItem[] = [
@@ -89,7 +89,7 @@ export function Toolbar ({
     { id: 'share', title: 'Share', icon: Share2 },
     { id: 'notifications', title: 'Notifications', icon: Bell },
     { id: 'profile', title: 'Profile', icon: User },
-    { id: 'theme', title: 'Theme', icon: Sun }
+    { id: 'theme', title: 'Theme', icon: Sun },
   ]
 
   const handleItemClick = (itemId: string) => {
@@ -126,7 +126,7 @@ export function Toolbar ({
                     (item) => item.id === activeNotification
                   )?.title
                 }{' '}
-                                clicked!
+                clicked!
               </div>
               <motion.div
                 variants={lineVariants}
