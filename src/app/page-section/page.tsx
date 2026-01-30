@@ -3,7 +3,6 @@ import Link from 'next/link'
 
 import { categories } from '@/config/components-fall'
 
-import { SubscribeBottom } from '@/components/subscribe-form'
 import { NewIcon } from '@/components/icons/new-icon'
 export default function Page () {
   return (
@@ -35,7 +34,6 @@ export default function Page () {
             ))}
         </div>
       </div>
-      <SubscribeBottom />
     </div>
   )
 }

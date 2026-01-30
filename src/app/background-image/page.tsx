@@ -182,5 +182,17 @@ const gradientArr = [
 ]
 
 export default function Page () {
-  return <></>
+  function onClickImage () {
+
+  }
+  return <>
+    {
+      gradientArr.forEach(gradient => {
+        <div className="size-8 rounded" style={{
+          backgroundImage: gradient,
+        }}>
+        </div>
+      })
+    }
+  </>
 }
