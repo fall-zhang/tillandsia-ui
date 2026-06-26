@@ -2,6 +2,7 @@ import { RiArrowRightUpLine } from '@remixicon/react'
 
 import { cn } from '@/registry/default/lib/utils'
 import { Link } from '@tanstack/react-router'
+import { FileRouteTypes } from '@/routeTree.gen'
 
 export default function HeaderLink ({
   text,
@@ -11,7 +12,7 @@ export default function HeaderLink ({
   isNew = false,
 }: {
   text: string
-  href: string
+  href: FileRouteTypes['to']
   external?: boolean
   className?: string
   isNew?: boolean

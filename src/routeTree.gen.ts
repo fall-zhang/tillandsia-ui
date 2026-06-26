@@ -14,14 +14,12 @@ import { Route as SearchIndexRouteImport } from './routes/search/index'
 import { Route as PageSectionIndexRouteImport } from './routes/page-section/index'
 import { Route as GradientIndexRouteImport } from './routes/gradient/index'
 import { Route as FormIndexRouteImport } from './routes/form/index'
-import { Route as FallIndexRouteImport } from './routes/fall/index'
 import { Route as EasingsIndexRouteImport } from './routes/easings/index'
 import { Route as AppShellIndexRouteImport } from './routes/app-shell/index'
 import { Route as ThemePageRouteImport } from './routes/theme/page'
 import { Route as ErrNotFoundRouteImport } from './routes/err/not-found'
 import { Route as BackgroundImagePageRouteImport } from './routes/background-image/page'
 import { Route as CategoryPageRouteImport } from './routes/$category/page'
-import { Route as FallCategoryPageRouteImport } from './routes/fall/$category/page'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,11 +44,6 @@ const GradientIndexRoute = GradientIndexRouteImport.update({
 const FormIndexRoute = FormIndexRouteImport.update({
   id: '/form/',
   path: '/form/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FallIndexRoute = FallIndexRouteImport.update({
-  id: '/fall/',
-  path: '/fall/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EasingsIndexRoute = EasingsIndexRouteImport.update({
@@ -83,11 +76,6 @@ const CategoryPageRoute = CategoryPageRouteImport.update({
   path: '/$category/page',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FallCategoryPageRoute = FallCategoryPageRouteImport.update({
-  id: '/fall/$category/page',
-  path: '/fall/$category/page',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -97,12 +85,10 @@ export interface FileRoutesByFullPath {
   '/theme/page': typeof ThemePageRoute
   '/app-shell/': typeof AppShellIndexRoute
   '/easings/': typeof EasingsIndexRoute
-  '/fall/': typeof FallIndexRoute
   '/form/': typeof FormIndexRoute
   '/gradient/': typeof GradientIndexRoute
   '/page-section/': typeof PageSectionIndexRoute
   '/search/': typeof SearchIndexRoute
-  '/fall/$category/page': typeof FallCategoryPageRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -112,12 +98,10 @@ export interface FileRoutesByTo {
   '/theme/page': typeof ThemePageRoute
   '/app-shell': typeof AppShellIndexRoute
   '/easings': typeof EasingsIndexRoute
-  '/fall': typeof FallIndexRoute
   '/form': typeof FormIndexRoute
   '/gradient': typeof GradientIndexRoute
   '/page-section': typeof PageSectionIndexRoute
   '/search': typeof SearchIndexRoute
-  '/fall/$category/page': typeof FallCategoryPageRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -128,12 +112,10 @@ export interface FileRoutesById {
   '/theme/page': typeof ThemePageRoute
   '/app-shell/': typeof AppShellIndexRoute
   '/easings/': typeof EasingsIndexRoute
-  '/fall/': typeof FallIndexRoute
   '/form/': typeof FormIndexRoute
   '/gradient/': typeof GradientIndexRoute
   '/page-section/': typeof PageSectionIndexRoute
   '/search/': typeof SearchIndexRoute
-  '/fall/$category/page': typeof FallCategoryPageRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -145,12 +127,10 @@ export interface FileRouteTypes {
     | '/theme/page'
     | '/app-shell/'
     | '/easings/'
-    | '/fall/'
     | '/form/'
     | '/gradient/'
     | '/page-section/'
     | '/search/'
-    | '/fall/$category/page'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -160,12 +140,10 @@ export interface FileRouteTypes {
     | '/theme/page'
     | '/app-shell'
     | '/easings'
-    | '/fall'
     | '/form'
     | '/gradient'
     | '/page-section'
     | '/search'
-    | '/fall/$category/page'
   id:
     | '__root__'
     | '/'
@@ -175,12 +153,10 @@ export interface FileRouteTypes {
     | '/theme/page'
     | '/app-shell/'
     | '/easings/'
-    | '/fall/'
     | '/form/'
     | '/gradient/'
     | '/page-section/'
     | '/search/'
-    | '/fall/$category/page'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -191,12 +167,10 @@ export interface RootRouteChildren {
   ThemePageRoute: typeof ThemePageRoute
   AppShellIndexRoute: typeof AppShellIndexRoute
   EasingsIndexRoute: typeof EasingsIndexRoute
-  FallIndexRoute: typeof FallIndexRoute
   FormIndexRoute: typeof FormIndexRoute
   GradientIndexRoute: typeof GradientIndexRoute
   PageSectionIndexRoute: typeof PageSectionIndexRoute
   SearchIndexRoute: typeof SearchIndexRoute
-  FallCategoryPageRoute: typeof FallCategoryPageRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -234,13 +208,6 @@ declare module '@tanstack/react-router' {
       path: '/form'
       fullPath: '/form/'
       preLoaderRoute: typeof FormIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/fall/': {
-      id: '/fall/'
-      path: '/fall'
-      fullPath: '/fall/'
-      preLoaderRoute: typeof FallIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/easings/': {
@@ -285,13 +252,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CategoryPageRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/fall/$category/page': {
-      id: '/fall/$category/page'
-      path: '/fall/$category/page'
-      fullPath: '/fall/$category/page'
-      preLoaderRoute: typeof FallCategoryPageRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -303,12 +263,10 @@ const rootRouteChildren: RootRouteChildren = {
   ThemePageRoute: ThemePageRoute,
   AppShellIndexRoute: AppShellIndexRoute,
   EasingsIndexRoute: EasingsIndexRoute,
-  FallIndexRoute: FallIndexRoute,
   FormIndexRoute: FormIndexRoute,
   GradientIndexRoute: GradientIndexRoute,
   PageSectionIndexRoute: PageSectionIndexRoute,
   SearchIndexRoute: SearchIndexRoute,
-  FallCategoryPageRoute: FallCategoryPageRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

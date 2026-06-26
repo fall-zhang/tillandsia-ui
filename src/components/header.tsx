@@ -14,10 +14,15 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger
 } from '@/registry/default/ui/dropdown-menu'
+import { FileRouteTypes } from '@/routeTree.gen'
 
-const links = [
-  { text: 'Layouts', href: '/layouts', isNew: true },
-  { text: 'Fall', href: '/fall' },
+const links: Array<{
+  text: string
+  href: FileRouteTypes['to'],
+  isNew?: boolean
+}> = [
+  // { text: 'Layouts', href: '/layouts', isNew: true },
+  // { text: 'Fall', href: '/fall' },
   { text: 'App Shell', href: '/app-shell' },
   { text: 'Easing Classes', href: '/easings' },
 ]

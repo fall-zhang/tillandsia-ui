@@ -26,7 +26,7 @@ export async function subscribe (email: string): Promise<SubscribeResult> {
   if (!result.success) {
     return {
       success: false,
-      error: result.error.errors[0]?.message || 'Invalid email format.',
+      error: result.error?.message || 'Invalid email format.',
     }
   }
 

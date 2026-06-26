@@ -16,7 +16,7 @@ const OpenInV0 = ({ componentSource }: { componentSource: string }) => {
     <TooltipProvider delayDuration={0}>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Link
+          {/* <Link
             className={cn(
               buttonVariants({
                 variant: 'ghost',
@@ -42,7 +42,7 @@ const OpenInV0 = ({ componentSource }: { componentSource: string }) => {
                 fillRule="evenodd"
               ></path>
             </svg>
-          </Link>
+          </Link> */}
         </TooltipTrigger>
         <TooltipContent className="text-muted-foreground px-2 py-1 text-xs">
           Open in v0
