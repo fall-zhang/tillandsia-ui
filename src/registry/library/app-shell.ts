@@ -1,20 +1,14 @@
-import { RegistryItem } from 'shadcn/schema'
-interface FallRegistryItem extends RegistryItem {
-  meta:{
-    tags:string[],
-    style?: 1 | 2
-    originUrl:string
-  }
-}
+import { CustomRegistryItem } from '@/types/registry-item'
+
 export interface ComponentCategory {
   slug: string
   name: string
-  zhName?:string
-  components: FallRegistryItem []
+  zhName?: string
+  components: CustomRegistryItem []
   isNew?: boolean
 }
 
-export const categories: ComponentCategory[] = [
+export const appShellCategories: ComponentCategory[] = [
   {
     slug: 'accordion',
     name: 'Accordion',
@@ -33,5 +27,5 @@ export const categories: ComponentCategory[] = [
 ]
 
 export function getCategory (slug: string): ComponentCategory | undefined {
-  return categories.find((category) => category.slug === slug)
+  return appShellCategories.find((category) => category.slug === slug)
 }

@@ -95,7 +95,7 @@ function TimelineDate ({
   className,
   ...props
 }: TimelineDateProps) {
-  const Comp = asChild ? Slot : 'time'
+  const Comp = asChild ? Slot.Root : 'time'
 
   return (
     <Comp

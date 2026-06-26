@@ -324,7 +324,7 @@ export default function FileUpload ({
                     >
                       <img
                         src={previewUrl}
-                        alt={`Preview of ${file.name}`}
+                        alt={`Preview of ${file?.name}`}
                         className="w-full h-full object-cover"
                       />
                     </motion.div>
