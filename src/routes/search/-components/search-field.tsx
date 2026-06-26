@@ -11,7 +11,7 @@ import MultipleSelector, { Option } from './multiselect'
 
 interface SearchFieldProps {
   selectedTags: string[]
-  onTagChange: (tags: string[]) => void
+  onTagChange: (tags: RegistryTag[]) => void
 }
 
 const baseOptions: Option[] = registryTags.map((tag) => ({

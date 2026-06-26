@@ -84,7 +84,10 @@ function CategoryCard ({
         )
         : (
           <Link
-            to='.'
+            to={'/$category/page'}
+            params={{
+              category: slug,
+            }}
             className="peer relative inline-flex overflow-hidden rounded-xl border sm:flex dark:border-zinc-700/80"
             tabIndex={-1}
           >
@@ -97,7 +100,11 @@ function CategoryCard ({
         <h2>
           {!isComingSoon
             ? (
-              <Link to={'.'} className="text-sm font-medium hover:underline">
+              <Link to={'/$category/page'}
+                params={{
+                  category: slug,
+                }}
+                className="text-sm font-medium hover:underline">
                 {name}
               </Link>
             )

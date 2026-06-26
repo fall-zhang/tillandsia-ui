@@ -4,7 +4,6 @@ import { createFileRoute } from '@tanstack/react-router'
 import { getCategory } from '@/config/components'
 import { getComponentsByNames } from '@/lib/utils'
 import ComponentCard from '@/components/component-card'
-import ComponentDetails from '@/components/component-details'
 import ComponentLoader from '@/components/component-loader-server'
 import Cta from '@/components/cta'
 import PageGrid from '@/components/page-grid'
@@ -23,18 +22,13 @@ type Props = {
   category: string
 }
 
-async function Page (props: Props) {
+function Page (props: Props) {
   const category = getCategory(props.category)
 
   if (!category) {
     // notFound()
-    return
+    return <>No Result</>
   }
-
-  const components = getComponentsByNames(
-    category.components.map((item) => item.name)
-  )
-
   // Determine the description text based on category
   const getDescriptionText = () => {
     // Special case for event-calendar
@@ -77,7 +71,9 @@ async function Page (props: Props) {
       ? `A ${category.name.toLowerCase()} component built with React and Tailwind CSS.`
       : `A growing collection of ${components.length} ${category.name.toLowerCase()} components built with React and Tailwind CSS.`
   }
-
+  const components = getComponentsByNames(
+    category.components.map((item) => item.name)
+  )
   return (
     <>
       <PageHeader title={category.name}>{getDescriptionText()}</PageHeader>
@@ -89,7 +85,7 @@ async function Page (props: Props) {
             className="data-[slot=comp-542]:px-0"
           >
             <ComponentLoader component={component} />
-            <ComponentDetails component={component} />
+            {/* <ComponentDetails component={component} /> */}
           </ComponentCard>
         ))}
       </PageGrid>

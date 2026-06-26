@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useMemo } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import type { RegistryItem } from 'shadcn/registry'
 
 import { getComponents } from '@/lib/utils'
@@ -9,37 +9,42 @@ import ComponentDetails from '@/components/component-details'
 import ComponentLoader from '@/components/component-loader-client'
 import PageGrid from '@/components/page-grid'
 import type { RegistryTag } from '@/registry/registry-tags'
-
 import SearchField from './search-field'
+import { useParams } from '@tanstack/react-router'
 
-export default function ComponentsContainer (props:{
-  param:string
-}) {
-  const searchParams = useSearchParams()
-  const tags = useMemo(() => {
-    return (searchParams
-      ?.get('tags')
-      ?.split(',')
-      .filter(Boolean)
-      .map((tag) => tag.replace(/\+/g, ' ')) || []) as RegistryTag[]
-  }, [searchParams])
 
+export default function ComponentsContainer () {
+  // param.tags
+  // const searchParams = useSearchParams()
+  // const param = useParams({
+  //   from: '/search/',
+  // })
+  // const tags = useMemo(() => {
+  //   return (searchParams
+  //     ?.get('tags')
+  //     ?.split(',')
+  //     .filter(Boolean)
+  //     .map((tag) => tag.replace(/\+/g, ' ')) || []) as RegistryTag[]
+  // }, [searchParams])
+
+  const [tags, setTags] = useState<RegistryTag[]>([])
   const filtered = useMemo(() => {
-    if (!tags.length) return []
+    // if (!tags.length) return []
     return getComponents(tags)
-  }, [tags])
+  }, [])
 
-  const updateTags = useCallback((newTags: string[]) => {
-    const url = new URL(window.location.href)
-    if (newTags.length > 0) {
-      const formattedTags = newTags
-        .map((tag) => tag.replace(/\s+/g, '+'))
-        .join(',')
-      url.searchParams.set('tags', formattedTags)
-    } else {
-      url.searchParams.delete('tags')
-    }
-    window.history.replaceState({}, '', url.toString())
+  const updateTags = useCallback((newTags: RegistryTag[]) => {
+    setTags(newTags)
+    // const url = new URL(window.location.href)
+    // if (newTags.length > 0) {
+    //   const formattedTags = newTags
+    //     .map((tag) => tag.replace(/\s+/g, '+'))
+    //     .join(',')
+    //   url.searchParams.set('tags', formattedTags)
+    // } else {
+    //   url.searchParams.delete('tags')
+    // }
+    // window.history.replaceState({}, '', url.toString())
   }, [])
 
   return (
