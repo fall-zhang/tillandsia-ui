@@ -14,7 +14,11 @@ export default function Component () {
       <Calendar
         className="rounded-md border p-2"
         value={date}
-        onChange={setDate}
+        onChange={(data) => {
+          if (!Array.isArray(data)) {
+            setDate(data)
+          }
+        }}
       />
       <p
         className="text-muted-foreground mt-4 text-center text-xs"

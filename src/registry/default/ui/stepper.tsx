@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { createContext, useContext } from 'react'
-import { Slot } from '@radix-ui/react-slot'
+import { Slot } from 'radix-ui'
 import { CheckIcon, LoaderCircleIcon } from 'lucide-react'
 
 import { cn } from '@/registry/default/lib/utils'

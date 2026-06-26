@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import * as SliderPrimitive from '@radix-ui/react-slider'
+import { Slider as SliderPrimitive } from 'radix-ui'
 
 import { cn } from '@/registry/default/lib/utils'
 import {
@@ -25,6 +25,7 @@ function Slider ({
   tooltipContent?: (value: number) => React.ReactNode
 }) {
   const [internalValues, setInternalValues] = React.useState<number[]>(
+    // eslint-disable-next-line no-nested-ternary
     Array.isArray(value)
       ? value
       : Array.isArray(defaultValue)
