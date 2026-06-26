@@ -3,7 +3,6 @@ import lintReact from 'eslint-plugin-react'
 import jslint from '@eslint/js'
 import lintReactHooks from 'eslint-plugin-react-hooks'
 import tslint from 'typescript-eslint'
-import lintNext from '@next/eslint-plugin-next'
 import stylistic from '@stylistic/eslint-plugin'
 import { defineConfig } from 'eslint/config'
 const defaultConfig = {
@@ -42,14 +41,6 @@ const defaultConfig = {
     '@typescript-eslint/no-unused-expressions': 'off',
   },
 }
-const nextConfig = {
-  plugins: {
-    '@next/next': lintNext,
-  },
-  settings: { react: { version: '18.3' } },
-  rules: lintNext.configs.recommended.rules,
-}
-// "extends": ["next/core-web-vitals", "next/typescript"]
 export default defineConfig([
   // 只对我修改的部分进行
   {
@@ -59,7 +50,6 @@ export default defineConfig([
   // global ignores
 
   jslint.configs.recommended,
-  nextConfig,
   lintReact.configs.flat.recommended,
   lintReact.configs.flat['jsx-runtime'],
   standard, // js 标准配置
@@ -67,6 +57,6 @@ export default defineConfig([
   defaultConfig,
   {
     name: 'app/files-to-ignore',
-    ignores: ['**/temp.js', '**/.next/**', '**/node_modules/**'],
+    ignores: ['**/temp.js', '**/node_modules/**'],
   },
 ])
