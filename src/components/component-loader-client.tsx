@@ -19,7 +19,8 @@ export default function ComponentLoader<TProps extends object> ({
   const path = component.files[0].path
   const newPath = path.replace('registry/', '')
   const Component = React.lazy(
-    () => import(`@/registry/${newPath}`).catch(() => () => null)
+    () => import(`@/registry/${newPath}`).catch(() => {
+    })
   ) as ComponentType<TProps>
 
   return <Suspense fallback={<div

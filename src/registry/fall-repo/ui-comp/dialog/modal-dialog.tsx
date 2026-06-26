@@ -1,6 +1,6 @@
-import * as Dialog from '@radix-ui/react-dialog'
 
-export default () => {
+import { Dialog } from 'radix-ui'
+const ModalDialog = () => {
   return (
     <Dialog.Root>
       <Dialog.Trigger className="w-32 mx-auto py-2 ml-2 shadow-sm rounded-md bg-indigo-600 text-white mt-4 flex items-center justify-center">
@@ -65,3 +65,5 @@ export default () => {
     </Dialog.Root>
   )
 }
+
+export default ModalDialog

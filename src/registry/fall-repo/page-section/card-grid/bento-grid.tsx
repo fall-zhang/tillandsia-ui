@@ -100,10 +100,9 @@ export default function BentoGrid ({ items = itemsSample }: BentoGridProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 max-w-7xl mx-auto">
       {items.map((item) => (
-        <Link
-          href="https://kokonutui.com"
+        <div
           key={`${item.title}-${item.status || item.meta}`}
-          className={cn(
+          className={cn('cursor-pointer',
             item.colSpan || 'col-span-1',
             item.colSpan === 2 ? 'md:col-span-2' : ''
           )}
@@ -179,7 +178,7 @@ export default function BentoGrid ({ items = itemsSample }: BentoGridProps) {
               )}
             />
           </Card>
-        </Link>
+        </div>
       ))}
     </div>
   )
