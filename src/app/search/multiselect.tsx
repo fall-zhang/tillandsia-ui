@@ -149,21 +149,19 @@ function isOptionsExist (groupOption: GroupOption, targetOption: Option[]) {
   return false
 }
 
-const CommandEmpty = ({
-  className,
-  ...props
-}: React.ComponentProps<typeof CommandPrimitive.Empty>) => {
+const CommandEmpty:React.FC<{
+  children:React.ReactNode
+}> = ({ children }) => {
   const render = useCommandState((state) => state.filtered.count === 0)
 
   if (!render) return null
 
   return (
     <div
-      className={cn('px-2 py-4 text-center text-sm', className)}
+      className={cn('px-2 py-4 text-center text-sm')}
       cmdk-empty=""
       role="presentation"
-      {...props}
-    />
+    >{children}</div>
   )
 }
 
@@ -392,20 +390,19 @@ const MultipleSelector = ({
     return undefined
   }
 
-  const EmptyItem = React.useCallback(() => {
-    if (!emptyIndicator) return undefined
+  let EmptyItem:React.ReactNode
+  if (!emptyIndicator) {
+    EmptyItem = undefined
+  }
 
-    // For async search that showing emptyIndicator
-    if (onSearch && !creatable && Object.keys(options).length === 0) {
-      return (
-        <CommandItem value="-" disabled>
-          {emptyIndicator}
-        </CommandItem>
-      )
-    }
+  // For async search that showing emptyIndicator
+  if (onSearch && !creatable && Object.keys(options).length === 0) {
+    EmptyItem = <CommandItem value="-" disabled>
+      {emptyIndicator}
+    </CommandItem>
+  }
 
-    return <CommandEmpty>{emptyIndicator}</CommandEmpty>
-  }, [creatable, emptyIndicator, onSearch, options])
+  EmptyItem = <CommandEmpty> {emptyIndicator} </CommandEmpty>
 
   const selectables = React.useMemo<GroupOption>(
     () => removePickedOption(options, selected),
@@ -583,7 +580,7 @@ const MultipleSelector = ({
                 )
                 : (
                   <>
-                    {EmptyItem()}
+                    {EmptyItem}
                     {CreatableItem()}
                     {!selectFirstItem && (
                       <CommandItem value="-" className="hidden" />
