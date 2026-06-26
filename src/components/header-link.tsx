@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import { RiArrowRightUpLine } from '@remixicon/react'
 
 import { cn } from '@/registry/default/lib/utils'
+import { Link } from '@tanstack/react-router'
 
 export default function HeaderLink ({
   text,
@@ -42,7 +42,7 @@ export default function HeaderLink ({
         : (
           <>
             <Link
-              href={href}
+              to={href}
               className={cn(
                 'inline-flex gap-0.5 text-sm hover:underline',
                 className

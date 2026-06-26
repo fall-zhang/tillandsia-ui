@@ -1,7 +1,6 @@
 'use client'
 
-import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@tanstack/react-router'
 import LogoDark from '@/assets/logo-dark.svg'
 import Logo from '@/assets/logo.svg'
 import { RiGithubFill, RiMenu2Line, RiTwitterXFill } from '@remixicon/react'
@@ -33,23 +32,22 @@ export default function Header () {
         aria-hidden="true"
       ></div>
       <div className="mx-auto flex h-[72px] w-full max-w-6xl items-center justify-between gap-3">
-        <Link className="shrink-0" href="/" aria-label="Home">
+        <Link className="shrink-0" to="/" aria-label="Home">
           <span className="sr-only">Origin UI</span>
-          <Image
+          <img
             src={Logo}
             alt="Origin UI logo"
             width={117}
             height={24}
             className="dark:hidden"
-            priority={true}
           />
-          <Image
+          <img
             src={LogoDark}
             alt="Origin UI logo"
             width={117}
             height={24}
             className="hidden dark:block"
-            priority={true}
+            fetchPriority='low'
           />
         </Link>
         <div className="flex items-center">

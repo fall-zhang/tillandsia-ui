@@ -75,7 +75,7 @@ if (require.main === module) {
 }
 
 // 导出函数供其他模块使用
-module.exports = {
+export {
   transformArray,
-  generateTypeScriptFile,
+  generateTypeScriptFile
 }

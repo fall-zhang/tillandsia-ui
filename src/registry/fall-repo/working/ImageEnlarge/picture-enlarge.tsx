@@ -2,7 +2,7 @@ import React, { MouseEvent, useRef, useState } from 'react'
 import styles from './picture-enlarge.module.css'
 import { Button } from '@/registry/default/ui/button'
 
-// import Animate from 'public/img/profile-bg.jpg'
+import Animate from '@/img/profile-bg.jpg'
 // import type { HTML } from 'react'
 
 
@@ -18,7 +18,7 @@ const PictureBigger: React.FC = () => {
   const [showMask, setShowMask] = useState(false)
   const image = new Image()
 
-  image.src = Animate.src
+  image.src = Animate
   const imageRef = useRef<HTMLImageElement>(null)
 
   function moveOrigin (ev: MouseEvent<HTMLImageElement>) {

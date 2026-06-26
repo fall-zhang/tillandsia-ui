@@ -1,18 +1,19 @@
 'use client'
 
 import { useEffect } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { Link, useNavigate } from '@tanstack/react-router'
 import { RiSearch2Line } from '@remixicon/react'
 
 export default function SearchButton () {
-  const router = useRouter()
+  const router = useNavigate()
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault()
-        router.push('/search')
+        router({
+          to: '/search',
+        })
       }
     }
 
@@ -22,7 +23,7 @@ export default function SearchButton () {
 
   return (
     <Link
-      href="/search"
+      to="/search"
       className="bg-background text-foreground placeholder:text-muted-foreground/70 focus:border-ring focus:ring-ring/50 inline-flex h-10 w-fit min-w-72 cursor-text rounded-full border px-4 py-2 text-sm outline-none focus:ring-[3px]"
     >
       <span className="flex grow items-center gap-2">

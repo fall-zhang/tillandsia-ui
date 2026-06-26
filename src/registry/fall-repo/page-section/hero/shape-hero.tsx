@@ -1,15 +1,7 @@
 'use client'
 
-import { motion } from 'motion/react'
-import { Pacifico } from 'next/font/google'
-import Image from 'next/image'
+import { motion, Variants } from 'motion/react'
 import { cn } from '@/registry/default/lib/utils'
-
-const pacifico = Pacifico({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-pacifico',
-})
 
 function ElegantShape ({
   className,
@@ -86,7 +78,7 @@ export default function HeroGeometric ({
   title1?: string;
   title2?: string;
 }) {
-  const fadeUpVariants = {
+  const fadeUpVariants:Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i: number) => ({
       opacity: 1,
@@ -159,7 +151,7 @@ export default function HeroGeometric ({
             animate="visible"
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8 md:mb-12"
           >
-            <Image
+            <img
               src="https://kokonutui.com/logo.svg"
               alt="Kokonut UI"
               width={20}
@@ -183,8 +175,7 @@ export default function HeroGeometric ({
               <br />
               <span
                 className={cn(
-                  'bg-clip-text text-transparent bg-linear-to-r from-indigo-300 via-white/90 to-rose-300 ',
-                  pacifico.className
+                  'bg-clip-text text-transparent bg-linear-to-r from-indigo-300 via-white/90 to-rose-300 '
                 )}
               >
                 {title2}

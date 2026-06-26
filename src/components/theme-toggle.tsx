@@ -2,7 +2,7 @@
 
 import { useId, useState } from 'react'
 import { RiMoonClearLine, RiSunLine } from '@remixicon/react'
-import { useTheme } from 'next-themes'
+import { useTheme } from '@/context/theme-context'
 
 export default function ThemeToggle () {
   const id = useId()

@@ -1,4 +1,4 @@
-const Playground = () => {
+export const Playground = () => {
   console.clear()
 
   const supportFirefox = true

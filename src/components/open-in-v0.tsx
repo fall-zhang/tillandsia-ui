@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import { Link } from '@tanstack/react-router'
 
 import { cn } from '@/registry/default/lib/utils'
 import { buttonVariants } from '@/registry/default/ui/button'

@@ -1,7 +1,6 @@
 'use client'
 
 import { JSX, useEffect, useState } from 'react'
-import { DialogDescription } from '@radix-ui/react-dialog'
 import { CodeIcon } from 'lucide-react'
 import type { RegistryItem } from 'shadcn/registry'
 
@@ -16,6 +15,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
   DialogTrigger
 } from '@/registry/default/ui/dialog'
 import {
@@ -100,7 +100,7 @@ export default function ComponentDetails ({
         <DialogContent className="sm:max-w-[600px]">
           <DialogHeader>
             <DialogTitle className="text-left">Installation</DialogTitle>
-            <DialogDescription className="sr-only">
+            < DialogDescription className="sr-only">
               Use the CLI to add components to your project
             </DialogDescription>
           </DialogHeader>
