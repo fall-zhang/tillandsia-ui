@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createFileRoute } from '@tanstack/react-router'
 
-import { getCategory } from '@/config/components'
+import { getCategory } from '@/registry/library/components'
 import { getComponentsByNames } from '@/lib/utils'
 import ComponentCard from '@/components/component-card'
 import ComponentLoader from '@/components/component-loader-server'

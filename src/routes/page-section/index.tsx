@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createFileRoute, Link } from '@tanstack/react-router'
 
-import { categories } from '@/config/components-fall'
+import { categories } from '@/registry/library/components-fall'
 
 import { NewIcon } from '@/components/icons/new-icon'
 

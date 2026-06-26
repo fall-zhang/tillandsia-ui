@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { categories } from '@/config/components'
+import { categories } from '@/registry/library/components'
 import SearchButton from '@/components/search-button'
 import { NewIcon } from '@/components/icons/new-icon'
 
