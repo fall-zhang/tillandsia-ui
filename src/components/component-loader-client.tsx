@@ -1,8 +1,8 @@
 'use client'
 
-import React, { ComponentType, Suspense } from 'react'
+import { Suspense, useEffect, FC, useState } from 'react'
 import { LoaderCircleIcon } from 'lucide-react'
-import type { RegistryItem } from 'shadcn/registry'
+import type { RegistryItem } from 'shadcn/schema'
 
 
 interface ComponentLoaderProps {
@@ -13,15 +13,33 @@ export default function ComponentLoader<TProps extends object> ({
   component,
   ...props
 }: ComponentLoaderProps & TProps) {
+  const [CurrentCompo, setCurrentCompo] = useState<FC>()
+
+  useEffect(() => {
+    let isDestroy = false
+    async function loadComp () {
+      const Component = await import(`@/registry/default/components/${component.name}.tsx`)
+      if (isDestroy) {
+        return
+      }
+      setCurrentCompo(() => Component.default)
+    }
+    loadComp()
+    return () => {
+      isDestroy = true
+    }
+  }, [component.name])
   if (!component.files?.length) {
-    return null
+    return <></>
   }
-  const path = component.files[0].path
-  const newPath = path.replace('registry/', '')
-  const Component = React.lazy(
-    () => import(`@/registry/${newPath}`).catch(() => {
-    })
-  ) as ComponentType<TProps>
+  if (!CurrentCompo) {
+    return <></>
+  }
+  // const path = component.files[0].path
+  // const newPath = path.replace('registry/', '')
+  // const Component = React.lazy(
+  //   () => import(`@/registry/${newPath}.tsx`)
+  // ) as ComponentType<TProps>
 
   return <Suspense fallback={<div
     data-comp-loading="true"
@@ -34,6 +52,6 @@ export default function ComponentLoader<TProps extends object> ({
       aria-hidden="true"
     />
   </div>}>
-    <Component {...(props as TProps)} currentPage={1} totalPages={10} />
+    <CurrentCompo {...(props as TProps)} />
   </Suspense>
 }

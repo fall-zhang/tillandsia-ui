@@ -1,7 +1,7 @@
 import { FC, useState, useEffect, Suspense, lazy, ComponentType } from 'react'
 
 
-import type { RegistryItem } from 'shadcn/registry'
+import type { RegistryItem } from 'shadcn/schema'
 
 interface ComponentLoaderProps {
   component: RegistryItem

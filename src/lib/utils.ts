@@ -1,7 +1,7 @@
 import registry from '@/registry.json'
-import type { RegistryItem } from 'shadcn/registry'
 
 import type { RegistryTag } from '@/registry/registry-tags'
+import { RegistryItem } from 'shadcn/schema'
 
 const components = registry.items as unknown as RegistryItem[]
 

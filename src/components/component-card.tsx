@@ -1,6 +1,5 @@
-import type { RegistryItem } from 'shadcn/registry'
-
 import { cn } from '@/registry/default/lib/utils'
+import { RegistryItem } from 'shadcn/schema'
 
 export default function ComponentCard ({
   isSearchPage = false,
@@ -43,7 +42,7 @@ export default function ComponentCard ({
 
     return cn(baseClasses, startClasses)
   }
-  let styleClasses = ''
+  let styleClasses
   if (component.meta?.style === 1) {
     styleClasses = 'flex justify-center items-center'
   } else if (component.meta?.style === 2) {

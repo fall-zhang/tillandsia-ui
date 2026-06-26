@@ -9,7 +9,7 @@ import ComponentLoader from '../-components/component-loader-server'
 import Cta from '@/components/cta'
 import PageGrid from '@/components/page-grid'
 import PageHeader from '@/components/page-header'
-import { RegistryItem } from 'shadcn/registry'
+import { RegistryItem } from 'shadcn/schema'
 
 export const Route = createFileRoute('/fall/$category/page')({
   component: RouteComponent,

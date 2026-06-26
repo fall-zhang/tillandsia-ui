@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as SearchIndexRouteImport } from './routes/search/index'
 import { Route as PageSectionIndexRouteImport } from './routes/page-section/index'
 import { Route as GradientIndexRouteImport } from './routes/gradient/index'
+import { Route as FormIndexRouteImport } from './routes/form/index'
 import { Route as FallIndexRouteImport } from './routes/fall/index'
 import { Route as EasingsIndexRouteImport } from './routes/easings/index'
 import { Route as AppShellIndexRouteImport } from './routes/app-shell/index'
@@ -40,6 +41,11 @@ const PageSectionIndexRoute = PageSectionIndexRouteImport.update({
 const GradientIndexRoute = GradientIndexRouteImport.update({
   id: '/gradient/',
   path: '/gradient/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FormIndexRoute = FormIndexRouteImport.update({
+  id: '/form/',
+  path: '/form/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FallIndexRoute = FallIndexRouteImport.update({
@@ -92,6 +98,7 @@ export interface FileRoutesByFullPath {
   '/app-shell/': typeof AppShellIndexRoute
   '/easings/': typeof EasingsIndexRoute
   '/fall/': typeof FallIndexRoute
+  '/form/': typeof FormIndexRoute
   '/gradient/': typeof GradientIndexRoute
   '/page-section/': typeof PageSectionIndexRoute
   '/search/': typeof SearchIndexRoute
@@ -106,6 +113,7 @@ export interface FileRoutesByTo {
   '/app-shell': typeof AppShellIndexRoute
   '/easings': typeof EasingsIndexRoute
   '/fall': typeof FallIndexRoute
+  '/form': typeof FormIndexRoute
   '/gradient': typeof GradientIndexRoute
   '/page-section': typeof PageSectionIndexRoute
   '/search': typeof SearchIndexRoute
@@ -121,6 +129,7 @@ export interface FileRoutesById {
   '/app-shell/': typeof AppShellIndexRoute
   '/easings/': typeof EasingsIndexRoute
   '/fall/': typeof FallIndexRoute
+  '/form/': typeof FormIndexRoute
   '/gradient/': typeof GradientIndexRoute
   '/page-section/': typeof PageSectionIndexRoute
   '/search/': typeof SearchIndexRoute
@@ -137,6 +146,7 @@ export interface FileRouteTypes {
     | '/app-shell/'
     | '/easings/'
     | '/fall/'
+    | '/form/'
     | '/gradient/'
     | '/page-section/'
     | '/search/'
@@ -151,6 +161,7 @@ export interface FileRouteTypes {
     | '/app-shell'
     | '/easings'
     | '/fall'
+    | '/form'
     | '/gradient'
     | '/page-section'
     | '/search'
@@ -165,6 +176,7 @@ export interface FileRouteTypes {
     | '/app-shell/'
     | '/easings/'
     | '/fall/'
+    | '/form/'
     | '/gradient/'
     | '/page-section/'
     | '/search/'
@@ -180,6 +192,7 @@ export interface RootRouteChildren {
   AppShellIndexRoute: typeof AppShellIndexRoute
   EasingsIndexRoute: typeof EasingsIndexRoute
   FallIndexRoute: typeof FallIndexRoute
+  FormIndexRoute: typeof FormIndexRoute
   GradientIndexRoute: typeof GradientIndexRoute
   PageSectionIndexRoute: typeof PageSectionIndexRoute
   SearchIndexRoute: typeof SearchIndexRoute
@@ -214,6 +227,13 @@ declare module '@tanstack/react-router' {
       path: '/gradient'
       fullPath: '/gradient/'
       preLoaderRoute: typeof GradientIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/form/': {
+      id: '/form/'
+      path: '/form'
+      fullPath: '/form/'
+      preLoaderRoute: typeof FormIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/fall/': {
@@ -284,6 +304,7 @@ const rootRouteChildren: RootRouteChildren = {
   AppShellIndexRoute: AppShellIndexRoute,
   EasingsIndexRoute: EasingsIndexRoute,
   FallIndexRoute: FallIndexRoute,
+  FormIndexRoute: FormIndexRoute,
   GradientIndexRoute: GradientIndexRoute,
   PageSectionIndexRoute: PageSectionIndexRoute,
   SearchIndexRoute: SearchIndexRoute,

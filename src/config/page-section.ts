@@ -1,4 +1,4 @@
-import { RegistryItem } from 'shadcn/registry'
+import { RegistryItem } from 'shadcn/schema'
 interface FallRegistryItem extends RegistryItem {
   meta:{
     tags:string[],

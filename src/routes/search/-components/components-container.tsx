@@ -1,7 +1,6 @@
 'use client'
 
 import { useCallback, useMemo, useState } from 'react'
-import type { RegistryItem } from 'shadcn/registry'
 
 import { getComponents } from '@/lib/utils'
 import ComponentCard from '@/components/component-card'
@@ -10,7 +9,7 @@ import ComponentLoader from '@/components/component-loader-client'
 import PageGrid from '@/components/page-grid'
 import type { RegistryTag } from '@/registry/registry-tags'
 import SearchField from './search-field'
-import { useParams } from '@tanstack/react-router'
+import { RegistryItem } from 'shadcn/schema'
 
 
 export default function ComponentsContainer () {

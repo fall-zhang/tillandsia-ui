@@ -1,17 +1,17 @@
-import { RegistryItem } from 'shadcn/registry'
-interface FallRegistryItem extends RegistryItem {
-  meta:{
-    desc:string
-    tags:string[],
+import { RegistryItem } from 'shadcn/schema'
+type FallRegistryItem = RegistryItem & {
+  meta: {
+    desc: string
+    tags: string[],
     colSpan?: 1 | 2 | 3
     style?: 1 | 2
-    originUrl?:string
+    originUrl?: string
   }
 }
 export interface ComponentCategory {
   slug: string
   name: string
-  zhName?:string
+  zhName?: string
   components: FallRegistryItem []
   isNew?: boolean
 }
