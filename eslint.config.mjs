@@ -3,13 +3,12 @@ import lintReact from 'eslint-plugin-react'
 import jslint from '@eslint/js'
 import lintReactHooks from 'eslint-plugin-react-hooks'
 import tslint from 'typescript-eslint'
-import stylistic from '@stylistic/eslint-plugin'
 import { defineConfig } from 'eslint/config'
+import { reactRefresh } from 'eslint-plugin-react-refresh'
 const defaultConfig = {
   plugins: {
     react: lintReact,
     'react-hooks': lintReactHooks,
-    '@stylistic': stylistic,
   },
   settings: { react: { version: '18.3' } },
   rules: {
@@ -19,6 +18,7 @@ const defaultConfig = {
     // 'no-unused-vars': 'off',
     // 异步处理
     // react
+    'no-undef': 0,
     'react/no-this-in-sfc': 1,
     'react/prop-types': 0,
     'react/display-name': 'off',
@@ -52,6 +52,7 @@ export default defineConfig([
   jslint.configs.recommended,
   lintReact.configs.flat.recommended,
   lintReact.configs.flat['jsx-runtime'],
+  reactRefresh.configs.vite(),
   standard, // js 标准配置
   ...tslint.configs.recommended,
   defaultConfig,
